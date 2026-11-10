@@ -1,0 +1,364 @@
+{
+  "rules": [
+    {
+      "id": "mound.sun.raised",
+      "when": {"mound.sun": "raised"},
+      "area": "career", "tone": "positive", "weight": 3, "planet": "sun",
+      "title": {"en": "Radiant, recognised presence", "hi": "चमकता, सम्मानित व्यक्तित्व"},
+      "text": {"en": "A full Sun mound suggests confidence, warmth and a natural ability to stand out. Recognition and good relations with people in authority tend to come your way when you lead with generosity.", "hi": "भरा हुआ सूर्य पर्वत आत्मविश्वास, गर्मजोशी और सहज रूप से अलग दिखने की क्षमता का संकेत है। जब आप उदारता से आगे बढ़ते हैं, तो मान-सम्मान और अधिकारियों से अच्छे संबंध आपकी ओर आते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.sun.normal",
+      "when": {"mound.sun": "normal"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "sun",
+      "title": {"en": "Balanced self-confidence", "hi": "संतुलित आत्मविश्वास"},
+      "text": {"en": "Your Sun mound is balanced: you can take the lead when needed without needing the spotlight all the time.", "hi": "आपका सूर्य पर्वत संतुलित है: ज़रूरत हो तो आप नेतृत्व कर सकते हैं, पर हर समय सुर्ख़ियों की चाह नहीं रखते।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.sun.flat",
+      "when": {"mound.sun": "flat"},
+      "area": "career", "tone": "caution", "weight": 2, "planet": "sun",
+      "title": {"en": "A quiet light, ready to shine", "hi": "शांत रोशनी, चमकने को तैयार"},
+      "text": {"en": "A flat Sun mound can mean you hold back or doubt your own worth. Owning your achievements and taking small, visible steps builds the confidence the Sun rewards.", "hi": "सपाट सूर्य पर्वत बताता है कि आप खुद को रोक सकते हैं या अपनी क़ीमत पर शक कर सकते हैं। अपनी उपलब्धियों को अपनाएँ और छोटे, दिखने वाले कदम उठाएँ — इससे वह आत्मविश्वास बढ़ता है जिसका सूर्य फल देता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.sun.crossed",
+      "when": {"mound.sun.crossed": true},
+      "area": "career", "tone": "caution", "weight": 2, "planet": "sun",
+      "title": {"en": "Scattered efforts for recognition", "hi": "पहचान के लिए बिखरे प्रयास"},
+      "text": {"en": "Many lines cutting the Sun mound can show energy split between too many aims, or bumps on the road to recognition. Choosing one main goal lets your light gather strength.", "hi": "सूर्य पर्वत को काटती कई रेखाएँ बताती हैं कि ऊर्जा बहुत-से लक्ष्यों में बँट सकती है या पहचान की राह में रुकावटें आ सकती हैं। एक मुख्य लक्ष्य चुनें, तो आपकी रोशनी एकत्र होकर मज़बूत होगी।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.sun.with_sun_line",
+      "when": {"mound.sun": "raised", "sun.present": true, "sun.depth": ["medium", "deep"]},
+      "area": "career", "tone": "positive", "weight": 3, "planet": "sun",
+      "title": {"en": "Name and fame", "hi": "नाम और यश"},
+      "text": {"en": "A strong Sun line (Keerthi Rekha) reaching a full Sun mound is one of the classic marks of success. It points to talent that earns admiration, helpful connections and openings that can lift your career.", "hi": "भरे हुए सूर्य पर्वत तक पहुँचती मज़बूत सूर्य रेखा (कीर्ति रेखा) सफलता के पारंपरिक चिह्नों में से एक है। यह ऐसी प्रतिभा का संकेत है जो प्रशंसा पाती है, साथ ही मददगार संबंधों और करियर को ऊँचा उठाने वाले अवसरों का भी।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.moon.raised",
+      "when": {"mound.moon": "raised"},
+      "area": "mind", "tone": "neutral", "weight": 2, "planet": "moon",
+      "title": {"en": "Rich imagination and feeling", "hi": "समृद्ध कल्पना और भावना"},
+      "text": {"en": "A full Moon mound shows imagination, empathy and a love of beauty, music and travel. Because you feel deeply, a calm routine and creative outlets keep your emotions in healthy balance.", "hi": "भरा हुआ चंद्र पर्वत कल्पनाशीलता, सहानुभूति और सौंदर्य, संगीत व यात्रा के प्रेम को दर्शाता है। आप गहराई से महसूस करते हैं, इसलिए शांत दिनचर्या और रचनात्मक काम आपकी भावनाओं को स्वस्थ संतुलन में रखते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.moon.normal",
+      "when": {"mound.moon": "normal"},
+      "area": "mind", "tone": "neutral", "weight": 1, "planet": "moon",
+      "title": {"en": "Emotionally steady", "hi": "भावनात्मक रूप से स्थिर"},
+      "text": {"en": "A balanced Moon mound suggests emotional maturity and a clear, receptive mind.", "hi": "संतुलित चंद्र पर्वत भावनात्मक परिपक्वता और साफ़, ग्रहणशील मन का संकेत देता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.moon.flat",
+      "when": {"mound.moon": "flat"},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "moon",
+      "title": {"en": "Nourish your inner world", "hi": "अपने मन को पोषण दें"},
+      "text": {"en": "A flat Moon mound may mean you set feelings aside or find it hard to rest and receive care. Time for music, nature, water and nourishing food helps refill your reserves.", "hi": "सपाट चंद्र पर्वत बताता है कि आप भावनाओं को किनारे रख सकते हैं या आराम करना और देखभाल स्वीकारना कठिन लग सकता है। संगीत, प्रकृति, पानी और पौष्टिक भोजन के लिए समय निकालना आपकी ऊर्जा फिर से भरता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.moon.crossed",
+      "when": {"mound.moon.crossed": true},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "moon",
+      "title": {"en": "A busy emotional landscape", "hi": "भावनाओं की हलचल"},
+      "text": {"en": "Many lines over the Moon mound can point to restless thoughts or changeable moods. Journalling, quiet evenings and talking things through help settle the waters.", "hi": "चंद्र पर्वत पर बहुत-सी रेखाएँ बेचैन विचारों या बदलते मन की ओर इशारा कर सकती हैं। डायरी लिखना, शांत शामें और अपनी बात किसी से साझा करना मन के पानी को शांत करते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.moon.with_moon_line",
+      "when": {"mound.moon": "raised", "moon_line.present": true},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "moon",
+      "title": {"en": "A strong lunar pull", "hi": "चंद्रमा का प्रबल प्रभाव"},
+      "text": {"en": "A Moon line on a full Moon mound gives strong lunar influence: creativity and intuition, along with a tendency to dwell on feelings or worry too much about yourself. Artistic work and grounding routines turn this sensitivity into a gift.", "hi": "भरे हुए चंद्र पर्वत पर चंद्र रेखा चंद्रमा का प्रबल प्रभाव देती है: रचनात्मकता और अंतर्ज्ञान, साथ ही भावनाओं में डूबे रहने या अपने बारे में ज़्यादा चिंता करने का झुकाव। कलात्मक काम और स्थिर दिनचर्या इस संवेदनशीलता को वरदान में बदल देते हैं।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.mars.raised",
+      "when": {"mound.mars": "raised"},
+      "area": "personality", "tone": "positive", "weight": 2, "planet": "mars",
+      "title": {"en": "Courage and strong drive", "hi": "साहस और प्रबल जोश"},
+      "text": {"en": "A full Mars area shows courage, energy and the will to overcome obstacles. Sport, physical work or demanding goals give this fire a healthy channel.", "hi": "भरा हुआ मंगल क्षेत्र साहस, ऊर्जा और बाधाओं को पार करने की इच्छाशक्ति दिखाता है। खेल, शारीरिक मेहनत या चुनौती भरे लक्ष्य इस अग्नि को स्वस्थ दिशा देते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mars.normal",
+      "when": {"mound.mars": "normal"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "mars",
+      "title": {"en": "Balanced courage", "hi": "संतुलित साहस"},
+      "text": {"en": "You can stand your ground when needed, and you prefer to pick your battles wisely.", "hi": "ज़रूरत पड़ने पर आप डटकर खड़े हो सकते हैं, और समझदारी से तय करते हैं कि किस बात पर लड़ना है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mars.flat",
+      "when": {"mound.mars": "flat"},
+      "area": "personality", "tone": "caution", "weight": 2, "planet": "mars",
+      "title": {"en": "Building inner courage", "hi": "भीतरी साहस बढ़ाएँ"},
+      "text": {"en": "A flat Mars area may mean you avoid confrontation or run low on drive. Regular exercise and small, brave goals build your strength step by step.", "hi": "सपाट मंगल क्षेत्र बताता है कि आप टकराव से बच सकते हैं या जोश कम पड़ सकता है। नियमित व्यायाम और छोटे-छोटे साहसी लक्ष्य कदम-दर-कदम आपकी ताक़त बढ़ाते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mars.crossed",
+      "when": {"mound.mars.crossed": true},
+      "area": "personality", "tone": "caution", "weight": 2, "planet": "mars",
+      "title": {"en": "Channel friction wisely", "hi": "टकराव को सही दिशा दें"},
+      "text": {"en": "Many lines across the Mars area can point to friction, rivalry or a quick temper. Physical activity and patient communication turn that energy into determination.", "hi": "मंगल क्षेत्र पर बहुत-सी रेखाएँ टकराव, होड़ या जल्दी आने वाले गुस्से की ओर इशारा कर सकती हैं। शारीरिक गतिविधि और धैर्य भरी बातचीत इस ऊर्जा को दृढ़ संकल्प में बदल देती है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mars.with_mars_line",
+      "when": {"mound.mars": "raised", "mars_line.present": true, "mars_line.depth": ["medium", "deep"], "mars_line.breaks": "none"},
+      "area": "health", "tone": "positive", "weight": 2, "planet": "mars",
+      "title": {"en": "Vital, active energy", "hi": "जीवंत, सक्रिय ऊर्जा"},
+      "text": {"en": "A clear, unbroken Mars line beside a strong Mars area adds vitality, fortitude and stamina, and often a gift for athletic or skilled physical work. Balancing effort with cooling rest keeps Pitta in check.", "hi": "मज़बूत मंगल क्षेत्र के साथ साफ़, बिना टूटी मंगल रेखा ऊर्जा, धैर्य और सहनशक्ति बढ़ाती है, और अक्सर खेल या हुनर वाले शारीरिक काम की प्रतिभा देती है। मेहनत के साथ ठंडक देने वाला आराम पित्त को संतुलित रखता है।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.mercury.raised",
+      "when": {"mound.mercury": "raised"},
+      "area": "career", "tone": "positive", "weight": 3, "planet": "mercury",
+      "title": {"en": "Quick mind, business sense", "hi": "तेज़ दिमाग़, व्यापारिक समझ"},
+      "text": {"en": "A full Mercury mound shows quick wit, good communication and a head for trade. Writing, teaching, sales, accounting or negotiation can suit you well.", "hi": "भरा हुआ बुध पर्वत हाज़िरजवाबी, अच्छे संवाद और व्यापार की समझ दिखाता है। लेखन, अध्यापन, बिक्री, लेखा-जोखा या मोलभाव वाले काम आपके लिए अच्छे हो सकते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mercury.normal",
+      "when": {"mound.mercury": "normal"},
+      "area": "mind", "tone": "neutral", "weight": 1, "planet": "mercury",
+      "title": {"en": "Clear communicator", "hi": "साफ़ बात कहने वाले"},
+      "text": {"en": "You express yourself clearly and learn at a steady, reliable pace.", "hi": "आप अपनी बात साफ़ ढंग से रखते हैं और स्थिर, भरोसेमंद गति से सीखते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mercury.flat",
+      "when": {"mound.mercury": "flat"},
+      "area": "career", "tone": "caution", "weight": 2, "planet": "mercury",
+      "title": {"en": "Find your voice", "hi": "अपनी आवाज़ पहचानें"},
+      "text": {"en": "A flat Mercury mound may mean you hold back your ideas or feel unsure in business matters. Practising speaking up and learning one practical skill at a time builds your confidence.", "hi": "सपाट बुध पर्वत बताता है कि आप अपने विचार रोक सकते हैं या व्यापारिक मामलों में अनिश्चित महसूस कर सकते हैं। खुलकर बोलने का अभ्यास और एक-एक करके व्यावहारिक कौशल सीखना आपका आत्मविश्वास बढ़ाता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mercury.crossed",
+      "when": {"mound.mercury.crossed": true},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "mercury",
+      "title": {"en": "A restless, many-sided mind", "hi": "चंचल, बहुमुखी मन"},
+      "text": {"en": "Many lines on the Mercury mound can show a busy mind that jumps between plans. Lists, deadlines and enough sleep help you turn cleverness into results.", "hi": "बुध पर्वत पर बहुत-सी रेखाएँ एक व्यस्त मन दिखा सकती हैं जो एक योजना से दूसरी पर कूदता रहता है। सूचियाँ, समय-सीमाएँ और पूरी नींद आपकी चतुराई को नतीजों में बदलने में मदद करती हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.mercury.with_mercury_line",
+      "when": {"mound.mercury": "raised", "mercury.present": true},
+      "area": "career", "tone": "positive", "weight": 3, "planet": "mercury",
+      "title": {"en": "Intuition for business", "hi": "व्यापार की सहज समझ"},
+      "text": {"en": "A Mercury line (Budha Rekha) reaching a full Mercury mound is linked with business acumen, a healing touch and a good instinct for timing. Trust your hunches, and rest when mental tiredness builds.", "hi": "भरे हुए बुध पर्वत तक पहुँचती बुध रेखा व्यापारिक कुशलता, उपचार की क्षमता और सही समय की अच्छी समझ से जुड़ी है। अपने अंतर्ज्ञान पर भरोसा करें, और मानसिक थकान बढ़े तो आराम करें।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.jupiter.raised",
+      "when": {"mound.jupiter": "raised"},
+      "area": "spirituality", "tone": "positive", "weight": 3, "planet": "jupiter",
+      "title": {"en": "Wisdom and good fortune", "hi": "ज्ञान और सौभाग्य"},
+      "text": {"en": "A full Jupiter mound suggests optimism, faith, sound judgement and a gift for guiding others. Teaching, counselling, law or finance may draw you, and generosity tends to come back to you.", "hi": "भरा हुआ गुरु पर्वत आशावाद, आस्था, सही निर्णय और दूसरों को राह दिखाने की प्रतिभा का संकेत देता है। अध्यापन, परामर्श, क़ानून या वित्त आपको आकर्षित कर सकते हैं, और आपकी उदारता अक्सर लौटकर आपके पास आती है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.jupiter.normal",
+      "when": {"mound.jupiter": "normal"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "jupiter",
+      "title": {"en": "Healthy self-respect", "hi": "स्वस्थ आत्म-सम्मान"},
+      "text": {"en": "Your Jupiter mound is balanced: you have healthy ambition and respect for learning without excess pride.", "hi": "आपका गुरु पर्वत संतुलित है: आपमें स्वस्थ महत्वाकांक्षा और ज्ञान के प्रति आदर है, बिना ज़्यादा अहंकार के।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.jupiter.flat",
+      "when": {"mound.jupiter": "flat"},
+      "area": "spirituality", "tone": "caution", "weight": 2, "planet": "jupiter",
+      "title": {"en": "Grow your faith in yourself", "hi": "खुद पर विश्वास बढ़ाएँ"},
+      "text": {"en": "A flat Jupiter mound may mean you doubt your direction or have not yet found a mentor. Seeking a good teacher and studying what inspires you steadily builds wisdom and confidence.", "hi": "सपाट गुरु पर्वत बताता है कि आप अपनी दिशा पर शक कर सकते हैं या अभी तक कोई मार्गदर्शक नहीं मिला है। अच्छे गुरु की तलाश और जो आपको प्रेरित करे उसका अध्ययन धीरे-धीरे ज्ञान और आत्मविश्वास बढ़ाता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.jupiter.crossed",
+      "when": {"mound.jupiter.crossed": true},
+      "area": "career", "tone": "caution", "weight": 2, "planet": "jupiter",
+      "title": {"en": "Interrupted studies or plans", "hi": "बीच में रुकी पढ़ाई या योजनाएँ"},
+      "text": {"en": "Lines cutting across the Jupiter mound can point to interference, insecurity or plans that change course. Finishing one course of study before starting another helps your efforts bear fruit.", "hi": "गुरु पर्वत को काटती रेखाएँ बाधा, असुरक्षा या बदलती योजनाओं की ओर इशारा कर सकती हैं। एक पढ़ाई या कोर्स पूरा करके ही दूसरा शुरू करें, तो आपकी मेहनत फल देती है।"},
+      "source": "ch4"
+    },
+    {
+      "id": "mound.jupiter.with_jupiter_line",
+      "when": {"mound.jupiter": "raised", "jupiter_line.present": true},
+      "area": "career", "tone": "positive", "weight": 3, "planet": "jupiter",
+      "title": {"en": "A seeker of knowledge", "hi": "ज्ञान का खोजी"},
+      "text": {"en": "A Jupiter line (Dīksha Rekha) with a full Jupiter mound draws you toward higher learning and good teachers, and supports patient, wise investment. Moderation keeps Jupiter's blessings from tipping into excess.", "hi": "भरे हुए गुरु पर्वत के साथ गुरु रेखा (दीक्षा रेखा) आपको उच्च शिक्षा और अच्छे गुरुओं की ओर ले जाती है, और धैर्य भरे, समझदार निवेश में साथ देती है। संयम गुरु के आशीर्वाद को अति में बदलने से रोकता है।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.venus.raised",
+      "when": {"mound.venus": "raised"},
+      "area": "love", "tone": "positive", "weight": 3, "planet": "venus",
+      "title": {"en": "Warmth, charm and artistry", "hi": "स्नेह, आकर्षण और कला"},
+      "text": {"en": "A full Venus mound shows affection, charm, a love of beauty and creative talent. You enjoy life's pleasures and bring harmony to people around you.", "hi": "भरा हुआ शुक्र पर्वत स्नेह, आकर्षण, सौंदर्य-प्रेम और रचनात्मक प्रतिभा दिखाता है। आप जीवन के सुखों का आनंद लेते हैं और आसपास के लोगों में सामंजस्य लाते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.venus.normal",
+      "when": {"mound.venus": "normal"},
+      "area": "love", "tone": "neutral", "weight": 1, "planet": "venus",
+      "title": {"en": "Balanced affection", "hi": "संतुलित स्नेह"},
+      "text": {"en": "You give and receive love in a steady, balanced way, and you enjoy comfort without excess.", "hi": "आप स्थिर और संतुलित ढंग से प्रेम देते और पाते हैं, और बिना अति के सुख-सुविधा का आनंद लेते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.venus.flat",
+      "when": {"mound.venus": "flat"},
+      "area": "love", "tone": "caution", "weight": 2, "planet": "venus",
+      "title": {"en": "Make room for joy", "hi": "आनंद के लिए जगह बनाएँ"},
+      "text": {"en": "A flat Venus mound may show reserve in love or too little time for enjoyment. Art, music, good company and small comforts help open your heart.", "hi": "सपाट शुक्र पर्वत प्रेम में संकोच या आनंद के लिए बहुत कम समय का संकेत दे सकता है। कला, संगीत, अच्छी संगति और छोटी-छोटी खुशियाँ आपके दिल को खोलती हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.venus.crossed",
+      "when": {"mound.venus.crossed": true},
+      "area": "love", "tone": "caution", "weight": 2, "planet": "venus",
+      "title": {"en": "Busy heart, mixed desires", "hi": "व्यस्त दिल, उलझी इच्छाएँ"},
+      "text": {"en": "Many lines on the Venus mound can show strong desires pulling in different directions or a tangle of relationships. Clear commitments and honest conversations bring calm.", "hi": "शुक्र पर्वत पर बहुत-सी रेखाएँ अलग-अलग दिशाओं में खींचती प्रबल इच्छाएँ या रिश्तों की उलझन दिखा सकती हैं। स्पष्ट प्रतिबद्धता और ईमानदार बातचीत शांति लाती है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.venus.with_venus_belt",
+      "when": {"mound.venus": "raised", "venus_belt.present": true, "venus_belt.breaks": "none"},
+      "area": "love", "tone": "positive", "weight": 2, "planet": "venus",
+      "title": {"en": "Affection and artistic gifts", "hi": "स्नेह और कलात्मक प्रतिभा"},
+      "text": {"en": "A clean Venus belt (Shukra Mekhala) with a full Venus mound strengthens your affectionate nature and your pull toward the performing, visual or literary arts. Pouring that feeling into creative work and steady relationships brings deep satisfaction.", "hi": "भरे हुए शुक्र पर्वत के साथ साफ़ शुक्र मेखला आपके स्नेही स्वभाव और मंच, दृश्य या साहित्यिक कलाओं की ओर आपके झुकाव को मज़बूत करती है। इस भावना को रचनात्मक काम और स्थिर रिश्तों में लगाने से गहरा संतोष मिलता है।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.saturn.raised",
+      "when": {"mound.saturn": "raised"},
+      "area": "career", "tone": "neutral", "weight": 2, "planet": "saturn",
+      "title": {"en": "Discipline and endurance", "hi": "अनुशासन और सहनशक्ति"},
+      "text": {"en": "A full Saturn mound suggests a serious, disciplined and hard-working nature. You can achieve lasting results through patience; making time for joy and company keeps heaviness away.", "hi": "भरा हुआ शनि पर्वत गंभीर, अनुशासित और मेहनती स्वभाव का संकेत देता है। धैर्य से आप स्थायी नतीजे पा सकते हैं; खुशी और लोगों के साथ के लिए समय निकालना भारीपन को दूर रखता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.saturn.normal",
+      "when": {"mound.saturn": "normal"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "saturn",
+      "title": {"en": "Sensible and responsible", "hi": "समझदार और ज़िम्मेदार"},
+      "text": {"en": "Your Saturn mound is balanced: you take responsibility seriously while still enjoying life.", "hi": "आपका शनि पर्वत संतुलित है: आप ज़िम्मेदारी को गंभीरता से लेते हैं और साथ ही जीवन का आनंद भी लेते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.saturn.flat",
+      "when": {"mound.saturn": "flat"},
+      "area": "wealth", "tone": "caution", "weight": 1, "planet": "saturn",
+      "title": {"en": "Build steady habits", "hi": "स्थिर आदतें बनाएँ"},
+      "text": {"en": "A flat Saturn mound may mean structure and long-term planning do not come naturally. A simple routine and regular saving build the stability that Saturn rewards.", "hi": "सपाट शनि पर्वत बताता है कि व्यवस्था और लंबी योजना बनाना आपको स्वाभाविक रूप से नहीं आता। सरल दिनचर्या और नियमित बचत वह स्थिरता बनाती है जिसका शनि फल देता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.saturn.crossed",
+      "when": {"mound.saturn.crossed": true},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "saturn",
+      "title": {"en": "Lighten the load", "hi": "बोझ हल्का करें"},
+      "text": {"en": "Many lines on the Saturn mound can point to worry, delays or carrying too much responsibility. Sharing burdens, keeping a calm routine and seeing each delay as preparation help you move forward.", "hi": "शनि पर्वत पर बहुत-सी रेखाएँ चिंता, देरी या बहुत ज़्यादा ज़िम्मेदारी उठाने की ओर इशारा कर सकती हैं। बोझ बाँटना, शांत दिनचर्या रखना और हर देरी को तैयारी का समय मानना आपको आगे बढ़ने में मदद करता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.saturn.with_saturn_line",
+      "when": {"mound.saturn": "raised", "saturn_line.present": true},
+      "area": "career", "tone": "neutral", "weight": 2, "planet": "saturn",
+      "title": {"en": "Authority through patience", "hi": "धैर्य से मिलने वाला अधिकार"},
+      "text": {"en": "A distinct Saturn line (Shani Rekha) with a strong Saturn mound points to endurance, positions of responsibility and loyal friends, with wealth that grows slowly through long-term effort. Guard against over-worry and trust the pace of your progress.", "hi": "मज़बूत शनि पर्वत के साथ अलग से दिखने वाली शनि रेखा सहनशक्ति, ज़िम्मेदारी वाले पद और वफ़ादार मित्रों की ओर इशारा करती है, साथ ही ऐसे धन की ओर जो लंबी मेहनत से धीरे-धीरे बढ़ता है। ज़्यादा चिंता से बचें और अपनी प्रगति की गति पर भरोसा रखें।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.rahu.raised",
+      "when": {"mound.rahu": "raised"},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "rahu",
+      "title": {"en": "Big ambitions, restless energy", "hi": "बड़ी महत्वाकांक्षा, बेचैन ऊर्जा"},
+      "text": {"en": "A pronounced Rahu area between the Saturn and Sun mounds suggests big ambitions, originality and a hunger for more. Clear values and honest goals help you use this drive without being pulled into excess.", "hi": "शनि और सूर्य पर्वत के बीच उभरा राहु क्षेत्र बड़ी महत्वाकांक्षा, मौलिकता और ज़्यादा पाने की भूख का संकेत देता है। स्पष्ट मूल्य और ईमानदार लक्ष्य आपको अति में खिंचे बिना इस जोश का उपयोग करने में मदद करते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.rahu.normal",
+      "when": {"mound.rahu": "normal"},
+      "area": "mind", "tone": "neutral", "weight": 1, "planet": "rahu",
+      "title": {"en": "Curiosity in balance", "hi": "संतुलित जिज्ञासा"},
+      "text": {"en": "Rahu's influence is moderate in your hand: you are curious about the new and unusual while staying grounded.", "hi": "आपके हाथ में राहु का प्रभाव मध्यम है: आप नई और अनोखी चीज़ों के प्रति जिज्ञासु हैं, फिर भी ज़मीन से जुड़े रहते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.rahu.flat",
+      "when": {"mound.rahu": "flat"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "rahu",
+      "title": {"en": "Rahu's influence is quiet", "hi": "राहु का शांत प्रभाव"},
+      "text": {"en": "A shallow Rahu area suggests its restless pull is mild in this life. You can explore new technology and ideas at your own pace.", "hi": "हल्का राहु क्षेत्र बताता है कि इस जीवन में इसका बेचैन खिंचाव कम है। आप नई तकनीक और विचारों को अपनी गति से खोज सकते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.rahu.crossed",
+      "when": {"mound.rahu.crossed": true},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "rahu",
+      "title": {"en": "Untangle mixed signals", "hi": "उलझे संकेत सुलझाएँ"},
+      "text": {"en": "Many lines across the Rahu area can point to confusion, rumours or too many temptations. Simplifying your commitments and steering clear of addictive habits keeps your mind clear.", "hi": "राहु क्षेत्र पर बहुत-सी रेखाएँ भ्रम, अफ़वाहों या बहुत-से प्रलोभनों की ओर इशारा कर सकती हैं। अपनी प्रतिबद्धताओं को सरल रखना और लत वाली आदतों से दूर रहना आपके मन को साफ़ रखता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.rahu.fate_end",
+      "when": {"fate.end": "rahu"},
+      "area": "career", "tone": "caution", "weight": 2, "planet": "rahu",
+      "title": {"en": "Fate line toward Rahu", "hi": "राहु की ओर भाग्य रेखा"},
+      "text": {"en": "A fate line ending near Rahu's area is a classic sign of Rahu's strong role in your path, bringing unconventional turns, foreign links or work with technology. Staying ethical and patient lets these unusual openings work in your favour.", "hi": "राहु क्षेत्र के पास ख़त्म होने वाली भाग्य रेखा आपके जीवन-पथ में राहु की प्रबल भूमिका का पारंपरिक संकेत है, जो लीक से हटकर मोड़, विदेशी संबंध या तकनीक से जुड़ा काम ला सकती है। नैतिक और धैर्यवान बने रहें, तो ये अनोखे अवसर आपके पक्ष में काम करते हैं।"},
+      "source": "ch5"
+    },
+    {
+      "id": "mound.ketu.raised",
+      "when": {"mound.ketu": "raised"},
+      "area": "spirituality", "tone": "caution", "weight": 2, "planet": "ketu",
+      "title": {"en": "Strong pull of the past", "hi": "अतीत का प्रबल खिंचाव"},
+      "text": {"en": "A pronounced Ketu area near the wrist suggests a strong link with ancestry, the past and your inner life. Meditation and purposeful work help you use its detachment as insight rather than self-doubt.", "hi": "कलाई के पास उभरा केतु क्षेत्र पूर्वजों, अतीत और आपके भीतरी जीवन से गहरे जुड़ाव का संकेत देता है। ध्यान और सार्थक काम इसके वैराग्य को आत्म-संदेह के बजाय गहरी समझ में बदलने में मदद करते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.ketu.normal",
+      "when": {"mound.ketu": "normal"},
+      "area": "spirituality", "tone": "neutral", "weight": 1, "planet": "ketu",
+      "title": {"en": "Balanced inner life", "hi": "संतुलित भीतरी जीवन"},
+      "text": {"en": "Ketu is balanced in your hand: you can let go when needed while staying engaged with life.", "hi": "आपके हाथ में केतु संतुलित है: ज़रूरत पड़ने पर आप छोड़ सकते हैं, फिर भी जीवन से जुड़े रहते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.ketu.flat",
+      "when": {"mound.ketu": "flat"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "ketu",
+      "title": {"en": "Grounded in the present", "hi": "वर्तमान में जड़ें"},
+      "text": {"en": "Ketu's influence appears mild, which tends to keep you focused on the here and now. A small spiritual practice can add depth whenever you want it.", "hi": "केतु का प्रभाव हल्का दिखता है, जो आपको अक्सर यहीं और अभी पर केंद्रित रखता है। जब चाहें, एक छोटी आध्यात्मिक साधना जीवन में गहराई जोड़ सकती है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.ketu.crossed",
+      "when": {"mound.ketu.crossed": true},
+      "area": "mind", "tone": "caution", "weight": 2, "planet": "ketu",
+      "title": {"en": "Settle inner unrest", "hi": "भीतरी बेचैनी शांत करें"},
+      "text": {"en": "Many lines around the Ketu area can reflect self-doubt or restlessness tied to old patterns. Steady routines, warm food and quiet reflection help you feel rooted.", "hi": "केतु क्षेत्र के आसपास बहुत-सी रेखाएँ पुराने ढर्रों से जुड़े आत्म-संदेह या बेचैनी को दर्शा सकती हैं। स्थिर दिनचर्या, गरम भोजन और शांत चिंतन आपको जड़ों से जुड़ा महसूस कराते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "mound.ketu.fate_start",
+      "when": {"fate.start": "ketu"},
+      "area": "spirituality", "tone": "caution", "weight": 2, "planet": "ketu",
+      "title": {"en": "Fate line rising from Ketu", "hi": "केतु से उठती भाग्य रेखा"},
+      "text": {"en": "A fate line that begins near Ketu's house suggests that ancestral ties and past patterns strongly shape your path. Honouring your roots while choosing your own direction turns this into a source of depth.", "hi": "केतु गृह के पास से शुरू होने वाली भाग्य रेखा बताती है कि पूर्वजों के बंधन और पुराने ढर्रे आपकी राह को गहराई से आकार देते हैं। अपनी जड़ों का सम्मान करते हुए अपनी दिशा खुद चुनें, तो यही गहराई का स्रोत बन जाता है।"},
+      "source": "ch5"
+    }
+  ]
+}

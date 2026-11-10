@@ -1,0 +1,11 @@
+{
+  "id": "hastrekha",
+  "name": "Hastrekha",
+  "repo": "its-ash/hastrekha",
+  "package": "com.itsash.hastrekha",
+  "tagline": "Offline Vedic palm reading from a photo, in English or Hindi.",
+  "description": "Take a photo of your palm and get a Vedic palm reading in English or Hindi. Hastrekha finds the lines on your phone, lets you check them, then explains the hand type, lines, mounds and signs, life areas, a timeline, your birth star and remedies. Nothing leaves your phone. For reflection and enjoyment, not advice.",
+  "category": "Lifestyle",
+  "icon": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+  "homepage": "https://hastrekha.itsash.in/"
+}

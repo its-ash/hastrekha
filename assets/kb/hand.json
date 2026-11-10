@@ -1,0 +1,289 @@
+{
+  "elements": [
+    {
+      "key": "air",
+      "dosha": "Vāta",
+      "devanagari": "वात",
+      "name": {"en": "Air Hand", "hi": "वायु हस्त"},
+      "looks": {
+        "en": "A slim, often rectangular palm with slightly knobbly joints, and fingers that look noticeably long or short next to the palm. The skin tends to feel cool and dry, the nails are thin, and the palm carries many fine, branching lines.",
+        "hi": "हथेली पतली और अक्सर आयताकार होती है, जोड़ थोड़े उभरे दिखते हैं, और उंगलियाँ हथेली की तुलना में काफ़ी लंबी या छोटी लगती हैं। त्वचा अक्सर ठंडी और सूखी रहती है, नाखून पतले होते हैं और हथेली पर बहुत-सी महीन, शाखाओं वाली रेखाएँ होती हैं।"
+      },
+      "nature": {
+        "en": "You are quick, inventive and adaptable, with ideas that often arrive faster than you can finish them. Your energy comes in bursts, so you shine at beginnings and do best with a rhythm that helps you see things through.",
+        "hi": "आप फुर्तीले, नए विचारों से भरे और हर माहौल में ढल जाने वाले हैं। विचार अक्सर इतनी तेज़ी से आते हैं कि उन्हें पूरा करने का समय कम पड़ता है। आपकी ऊर्जा लहरों में आती है, इसलिए आप शुरुआत करने में माहिर हैं और एक नियमित लय आपको काम पूरा करने में मदद करती है।"
+      },
+      "strengths": [
+        {"en": "You are good with your hands and pick up new skills quickly.", "hi": "आपके हाथों में हुनर है और आप नए कौशल जल्दी सीख लेते हैं।"},
+        {"en": "Words come easily to you, and you enjoy sharing ideas.", "hi": "आप आसानी से अपनी बात कह लेते हैं और विचार बाँटना आपको अच्छा लगता है।"},
+        {"en": "You have a creative, artistic streak.", "hi": "आपके भीतर एक रचनात्मक, कलात्मक झुकाव है।"},
+        {"en": "You adjust to change more easily than most people.", "hi": "बदलाव के साथ आप ज़्यादातर लोगों से जल्दी तालमेल बिठा लेते हैं।"}
+      ],
+      "challenges": [
+        {"en": "Long-term plans can lose their spark for you halfway through.", "hi": "लंबी योजनाएँ बीच रास्ते में आपके लिए अपना आकर्षण खो सकती हैं।"},
+        {"en": "You may push your mind hard and then suddenly feel drained.", "hi": "आप मन पर ज़्यादा ज़ोर डालकर अचानक थकान महसूस कर सकते हैं।"},
+        {"en": "Rigid rules and controlling authority can make you restless.", "hi": "सख़्त नियम और हुक्म चलाने वाले लोग आपको बेचैन कर सकते हैं।"}
+      ],
+      "balance": [
+        {"en": "Keep regular times for meals and sleep; routine steadies Vāta.", "hi": "भोजन और नींद का समय नियमित रखें; दिनचर्या वात को स्थिर करती है।"},
+        {"en": "Choose warm, cooked, lightly oily food over cold, dry snacks.", "hi": "ठंडे, सूखे नाश्ते की जगह गरम, पका हुआ और थोड़ा चिकनाई वाला भोजन चुनें।"},
+        {"en": "A gentle warm-oil self-massage (abhyanga) and quiet evenings help you settle.", "hi": "गुनगुने तेल से हल्की मालिश (अभ्यंग) और शांत शामें आपको स्थिर रखती हैं।"},
+        {"en": "Finish one task before you start the next.", "hi": "अगला काम शुरू करने से पहले एक काम पूरा करें।"}
+      ]
+    },
+    {
+      "key": "fire",
+      "dosha": "Pitta",
+      "devanagari": "पित्त",
+      "name": {"en": "Fire Hand", "hi": "अग्नि हस्त"},
+      "looks": {
+        "en": "Warm, smooth and slightly padded skin, often rosy or freckled. The fingers are of medium length, the palm forms a gentle triangular hollow, and the lines are clear and medium-deep, often forking or crossing at their ends. The nails are soft and pinkish.",
+        "hi": "त्वचा गरम, चिकनी और थोड़ी गद्देदार होती है, जिसमें लालिमा या छोटे धब्बे दिख सकते हैं। उंगलियाँ मध्यम लंबाई की होती हैं, हथेली के बीच हल्का त्रिकोणीय गड्ढा-सा बनता है, और रेखाएँ साफ़ और मध्यम गहरी होती हैं जिनके सिरों पर अक्सर शाखाएँ या कट बनते हैं। नाखून नरम और गुलाबी रंगत लिए होते हैं।"
+      },
+      "nature": {
+        "en": "You are sharp, focused and driven, with a mind that loves analysis and a natural competitive spirit. Beneath the intensity lies real generosity, and you often use your strength to help others.",
+        "hi": "आप तेज़ दिमाग़ वाले, एकाग्र और लक्ष्य पर डटे रहने वाले हैं। विश्लेषण आपको अच्छा लगता है और आगे बढ़ने की होड़ आपके स्वभाव में है। इस तीव्रता के पीछे सच्ची उदारता भी है, और आप अक्सर अपनी ताक़त दूसरों की मदद में लगाते हैं।"
+      },
+      "strengths": [
+        {"en": "You see details others miss and think things through clearly.", "hi": "आप वे बारीकियाँ देख लेते हैं जो दूसरों से छूट जाती हैं, और बातों को साफ़ सोचते हैं।"},
+        {"en": "You take charge and make decisions with confidence.", "hi": "आप ज़िम्मेदारी संभालते हैं और भरोसे के साथ फ़ैसले लेते हैं।"},
+        {"en": "Challenges and competition bring out your best.", "hi": "चुनौती और प्रतियोगिता में आपकी सबसे अच्छी क्षमता सामने आती है।"},
+        {"en": "You have a generous, giving side.", "hi": "आपके भीतर देने और बाँटने वाला उदार पक्ष है।"}
+      ],
+      "challenges": [
+        {"en": "Your temper can flare quickly when you are provoked.", "hi": "उकसाए जाने पर आपका गुस्सा जल्दी भड़क सकता है।"},
+        {"en": "Strong opinions can come across as controlling.", "hi": "आपकी पक्की राय कभी-कभी दूसरों को हावी होने जैसी लग सकती है।"},
+        {"en": "You may overwork and ignore the need to cool down.", "hi": "आप ज़रूरत से ज़्यादा काम करके ठंडा होने की ज़रूरत को अनदेखा कर सकते हैं।"}
+      ],
+      "balance": [
+        {"en": "Favour cooling foods such as cucumber, coconut water and sweet fruits, and go easy on fried or very spicy food.", "hi": "खीरा, नारियल पानी और मीठे फल जैसे ठंडक देने वाले आहार लें, और तला या बहुत तीखा खाना कम करें।"},
+        {"en": "Do not skip meals; regular eating keeps your inner fire steady.", "hi": "भोजन न छोड़ें; समय पर खाना आपकी भीतरी अग्नि को संतुलित रखता है।"},
+        {"en": "Spend calm time near water or under the evening sky.", "hi": "पानी के पास या शाम के खुले आसमान के नीचे शांत समय बिताएँ।"},
+        {"en": "Take one slow breath before you react in a heated moment.", "hi": "गरम माहौल में जवाब देने से पहले एक धीमी, गहरी साँस लें।"}
+      ]
+    },
+    {
+      "key": "water",
+      "dosha": "Kapha",
+      "devanagari": "कफ",
+      "name": {"en": "Water Hand", "hi": "जल हस्त"},
+      "looks": {
+        "en": "A firm, solid and rounded palm with smooth joints, a strong fleshy thumb, and fingers that are often short next to the palm with squarish tips. The lines are fewer but deep and well rooted, and the nails are thick, smooth and even.",
+        "hi": "हथेली मज़बूत, ठोस और गोलाई लिए होती है, जोड़ कम दिखते हैं, अंगूठा मांसल और मज़बूत होता है, और उंगलियाँ अक्सर हथेली की तुलना में छोटी और सिरों पर चौकोर होती हैं। रेखाएँ कम पर गहरी और मज़बूती से जमी होती हैं, और नाखून मोटे, चिकने और एक जैसे होते हैं।"
+      },
+      "nature": {
+        "en": "You are steady, patient and dependable, and your actions usually speak louder than your words. You remember well, stay loyal, and once you choose a path you rarely abandon it.",
+        "hi": "आप स्थिर, धैर्यवान और भरोसेमंद हैं, और आपके काम अक्सर आपके शब्दों से ज़्यादा बोलते हैं। आपकी याददाश्त अच्छी है, आप वफ़ादार रहते हैं, और एक बार रास्ता चुन लें तो उसे शायद ही छोड़ते हैं।"
+      },
+      "strengths": [
+        {"en": "You work patiently and methodically.", "hi": "आप धैर्य और व्यवस्थित ढंग से काम करते हैं।"},
+        {"en": "People can rely on you; you are loyal and constant.", "hi": "लोग आप पर भरोसा कर सकते हैं; आप वफ़ादार और अटल हैं।"},
+        {"en": "You have a strong long-term memory.", "hi": "आपकी लंबे समय तक याद रखने की क्षमता मज़बूत है।"},
+        {"en": "You have good stamina and do not tire easily.", "hi": "आपमें अच्छी सहनशक्ति है और आप आसानी से नहीं थकते।"}
+      ],
+      "challenges": [
+        {"en": "New ideas and changes may make you wary at first.", "hi": "नए विचार और बदलाव शुरू में आपको शंकित कर सकते हैं।"},
+        {"en": "Comfort can slowly turn into sluggishness.", "hi": "आराम धीरे-धीरे सुस्ती में बदल सकता है।"},
+        {"en": "You may hold on to feelings or old habits for too long.", "hi": "आप भावनाओं या पुरानी आदतों को ज़रूरत से ज़्यादा समय तक पकड़े रह सकते हैं।"}
+      ],
+      "balance": [
+        {"en": "Move briskly every day; activity keeps Kapha light.", "hi": "रोज़ तेज़ गति से चलें या व्यायाम करें; गतिविधि कफ को हल्का रखती है।"},
+        {"en": "Choose lighter, warm meals with spices like ginger and black pepper, and limit heavy sweets.", "hi": "अदरक और काली मिर्च जैसे मसालों वाला हल्का, गरम भोजन चुनें और भारी मिठाइयाँ कम करें।"},
+        {"en": "Rise early and avoid long daytime naps.", "hi": "सुबह जल्दी उठें और दिन में लंबी नींद से बचें।"},
+        {"en": "Try one small new thing each week.", "hi": "हर हफ़्ते कोई एक छोटी नई चीज़ आज़माएँ।"}
+      ]
+    }
+  ],
+  "mixed": [
+    {
+      "keys": ["air", "water"],
+      "looks": {
+        "en": "A medium build that feels cool and slightly moist, with pale or ashy skin and nails thicker than a pure Air hand.",
+        "hi": "मध्यम बनावट वाला हाथ जो ठंडा और हल्का नम लगता है, त्वचा का रंग फीका या राख जैसा, और नाखून शुद्ध वायु हस्त से मोटे।"
+      },
+      "nature": {
+        "en": "You blend Air's quick imagination with Water's patience, so you can both dream up ideas and stay with them. You may feel the cold easily; warmth, gentle movement and routine suit you best.",
+        "hi": "आपमें वायु की तेज़ कल्पना और जल का धैर्य दोनों हैं, इसलिए आप विचार गढ़ भी सकते हैं और उन पर टिके भी रह सकते हैं। आपको ठंड जल्दी लग सकती है; गर्माहट, हल्की गतिविधि और नियमित दिनचर्या आपके लिए सबसे अच्छी है।"
+      }
+    },
+    {
+      "keys": ["air", "fire"],
+      "looks": {
+        "en": "A medium to long hand that feels warm and dry, with the fingers narrowing slightly at their base.",
+        "hi": "मध्यम से लंबा हाथ जो गरम और सूखा लगता है, और उंगलियाँ अपने मूल पर थोड़ी पतली हो जाती हैं।"
+      },
+      "nature": {
+        "en": "Air's ideas meet Fire's drive, so you think fast and act on what you think. Watch for dryness, heat and overwork, and build proper rest into your week.",
+        "hi": "वायु के विचार और अग्नि का जोश मिलते हैं, इसलिए आप तेज़ सोचते हैं और उस पर तुरंत अमल करते हैं। रूखेपन, गर्मी और ज़्यादा काम पर नज़र रखें, और हफ़्ते में पूरा आराम ज़रूर शामिल करें।"
+      }
+    },
+    {
+      "keys": ["fire", "water"],
+      "looks": {
+        "en": "A medium to rounded build with soft, fleshy fingers and square tips; the hand feels cool but may show reddish patches.",
+        "hi": "मध्यम से गोल बनावट, नरम और मांसल उंगलियाँ जिनके सिरे चौकोर हों; हाथ छूने में ठंडा लगता है पर उस पर लाल धब्बे दिख सकते हैं।"
+      },
+      "nature": {
+        "en": "Fire's focus is grounded by Water's stamina, giving you ambition and staying power together. You tend to finish what you start; stay flexible when plans need to change.",
+        "hi": "अग्नि की एकाग्रता को जल की सहनशक्ति ज़मीन देती है, जिससे आपमें महत्वाकांक्षा और टिके रहने की क्षमता दोनों आती हैं। आप जो शुरू करते हैं उसे पूरा करते हैं; बस योजना बदलनी पड़े तो लचीले बने रहें।"
+      }
+    }
+  ],
+  "gunas": [
+    {
+      "key": "sattva",
+      "devanagari": "सत्त्व",
+      "name": {"en": "Sattva", "hi": "सत्त्व"},
+      "about": {
+        "en": "Sattva is the quality of light, clarity and upward growth. It shows as kindness, clean habits, respect for teachers and a love of learning, festivals and shared celebration. Its gift is a peaceful mind, and it grows through study, devotion and a simple, honest life.",
+        "hi": "सत्त्व प्रकाश, स्पष्टता और ऊपर उठने का गुण है। यह दयालुता, शुद्ध आदतों, गुरुजनों के प्रति आदर, और ज्ञान, पर्व-त्योहार व मिल-जुलकर उत्सव मनाने के प्रेम के रूप में दिखता है। इसका वरदान शांत मन है, और यह अध्ययन, भक्ति और सरल, सच्चे जीवन से बढ़ता है।"
+      },
+      "zone": {"en": "Upper palm, just below the fingers", "hi": "ऊपरी हथेली, उंगलियों के ठीक नीचे"},
+      "planets": ["sun", "moon", "jupiter"]
+    },
+    {
+      "key": "rajas",
+      "devanagari": "रजस्",
+      "name": {"en": "Rajas", "hi": "रजस"},
+      "about": {
+        "en": "Rajas is the quality of movement, desire and outward energy. It gives courage, ambition and the urge to explore and compete. When it runs too high it can turn into restlessness, pride or envy, so it works best when channelled into purposeful effort.",
+        "hi": "रजस गति, इच्छा और बाहर की ओर बहने वाली ऊर्जा का गुण है। यह साहस, महत्वाकांक्षा और खोजने व आगे बढ़ने की चाह देता है। जब यह बहुत बढ़ जाए तो बेचैनी, अहंकार या ईर्ष्या में बदल सकता है, इसलिए इसे सार्थक मेहनत में लगाना सबसे अच्छा है।"
+      },
+      "zone": {"en": "Middle of the palm", "hi": "हथेली का मध्य भाग"},
+      "planets": ["mercury", "venus"]
+    },
+    {
+      "key": "tamas",
+      "devanagari": "तमस्",
+      "name": {"en": "Tamas", "hi": "तमस"},
+      "about": {
+        "en": "Tamas is the quality of weight, rest and stability. Old texts mostly warn about its heaviness, such as inertia, fear or confusion, yet it also gives endurance, patience and the strength to hold firm through hard times. In balance, it is the ground that lets you rest and recover.",
+        "hi": "तमस भारीपन, विश्राम और स्थिरता का गुण है। पुराने ग्रंथ ज़्यादातर इसके भारीपन — जैसे आलस्य, डर या भ्रम — से सावधान करते हैं, पर यही गुण सहनशक्ति, धैर्य और कठिन समय में डटे रहने की ताक़त भी देता है। संतुलन में यह वह आधार है जिस पर आप आराम करते और फिर से शक्ति पाते हैं।"
+      },
+      "zone": {"en": "Lower palm, toward the wrist", "hi": "निचली हथेली, कलाई की ओर"},
+      "planets": ["mars", "saturn", "rahu", "ketu"]
+    }
+  ],
+  "fingers": [
+    {
+      "key": "thumb",
+      "sanskrit": "Angushta",
+      "devanagari": "अंगुष्ठ",
+      "name": {"en": "Thumb", "hi": "अंगूठा"},
+      "element": "air",
+      "rashis": [],
+      "about": {
+        "en": "Your thumb stands for ether (ākāśa), the space that holds all other elements, and reflects your willpower and endurance. Ayurveda groups ether with air under Vāta. No planet or zodiac sign is placed on the thumb; it contains and supports the four fingers.",
+        "hi": "आपका अंगूठा आकाश तत्व का प्रतीक है — वह स्थान जो बाकी सभी तत्वों को धारण करता है — और आपकी इच्छाशक्ति व सहनशक्ति को दर्शाता है। आयुर्वेद आकाश को वायु के साथ वात में गिनता है। अंगूठे पर कोई ग्रह या राशि नहीं रखी जाती; यह चारों उंगलियों को सहारा देता है।"
+      }
+    },
+    {
+      "key": "index",
+      "sanskrit": "Tarjani",
+      "devanagari": "तर्जनी",
+      "name": {"en": "Index finger", "hi": "तर्जनी"},
+      "element": "water",
+      "planet": "jupiter",
+      "rashis": ["cancer", "scorpio", "pisces"],
+      "about": {
+        "en": "Your index finger carries the water element and is ruled by Jupiter. It speaks of ethics, observances and the ability to hold on to knowledge. The three water signs sit on it: Cancer at the tip, Scorpio in the middle and Pisces at the base.",
+        "hi": "आपकी तर्जनी में जल तत्व है और इसका स्वामी गुरु (बृहस्पति) है। यह नैतिकता, नियम-पालन और ज्ञान को सँजोकर रखने की क्षमता से जुड़ी है। तीनों जल राशियाँ इसी पर हैं: सिरे पर कर्क, बीच में वृश्चिक और मूल पर मीन।"
+      }
+    },
+    {
+      "key": "middle",
+      "sanskrit": "Madhyama",
+      "devanagari": "मध्यमा",
+      "name": {"en": "Middle finger", "hi": "मध्यमा"},
+      "element": "air",
+      "planet": "saturn",
+      "rashis": ["libra", "aquarius", "gemini"],
+      "about": {
+        "en": "Your middle finger carries the air element and is ruled by Saturn. It reflects practicality, method, change and movement. The three air signs sit on it: Libra at the tip, Aquarius in the middle and Gemini at the base.",
+        "hi": "आपकी मध्यमा में वायु तत्व है और इसका स्वामी शनि है। यह व्यावहारिकता, कार्य-पद्धति, बदलाव और गति को दर्शाती है। तीनों वायु राशियाँ इसी पर हैं: सिरे पर तुला, बीच में कुंभ और मूल पर मिथुन।"
+      }
+    },
+    {
+      "key": "ring",
+      "sanskrit": "Anamika",
+      "devanagari": "अनामिका",
+      "name": {"en": "Ring finger", "hi": "अनामिका"},
+      "element": "fire",
+      "planet": "sun",
+      "rashis": ["aries", "leo", "sagittarius"],
+      "about": {
+        "en": "Your ring finger carries the fire element and is ruled by the Sun. It reflects perception, discernment and personal power. The three fire signs sit on it: Aries at the tip, Leo in the middle and Sagittarius at the base.",
+        "hi": "आपकी अनामिका में अग्नि तत्व है और इसका स्वामी सूर्य है। यह समझ, विवेक और व्यक्तिगत शक्ति को दर्शाती है। तीनों अग्नि राशियाँ इसी पर हैं: सिरे पर मेष, बीच में सिंह और मूल पर धनु।"
+      }
+    },
+    {
+      "key": "little",
+      "sanskrit": "Kanishtha",
+      "devanagari": "कनिष्ठा",
+      "name": {"en": "Little finger", "hi": "कनिष्ठा"},
+      "element": "water",
+      "planet": "mercury",
+      "rashis": ["capricorn", "taurus", "virgo"],
+      "about": {
+        "en": "Your little finger carries the earth element, which Ayurveda groups with water under Kapha, and is ruled by Mercury. It reflects speech, communication and turning plans into material results. The three earth signs sit on it: Capricorn at the tip, Taurus in the middle and Virgo at the base.",
+        "hi": "आपकी कनिष्ठा में पृथ्वी तत्व है, जिसे आयुर्वेद जल के साथ कफ में गिनता है, और इसका स्वामी बुध है। यह वाणी, संवाद और योजनाओं को ठोस नतीजों में बदलने की क्षमता को दर्शाती है। तीनों पृथ्वी राशियाँ इसी पर हैं: सिरे पर मकर, बीच में वृषभ और मूल पर कन्या।"
+      }
+    }
+  ],
+  "learn": [
+    {
+      "id": "learn.vedic_palmistry",
+      "chapter": 0,
+      "title": {"en": "What is Vedic palmistry?", "hi": "वैदिक हस्तरेखा क्या है?"},
+      "body": {
+        "en": "Hasta Rekha Shastra, the Indian art of reading the hand, grew up alongside Jyotish (Vedic astrology) and Ayurveda. It is part of Samudrika Shastra, the old study of marks and signs on the body. In India a palm reader is usually expected to know astrology too, because every line and mound is linked to one of the nine planets.\n\nLines are not fixed forever. The four primary lines (life, head, heart and fate) change little, but smaller lines and branches can appear, fade or join over the years, and tradition links these shifts to the karma you build up or work through. Lines usually take clear shape from around the age of twelve.\n\nSome palms carry a few deep lines; others a fine web of many. Neither is better. A few strong lines can feel like a river carrying you toward a clear point, while many fine lines can feel like a journey with many side paths that still lead back to what matters. Read everything in this app as tendencies to understand and work with, not as a fixed fate.",
+        "hi": "हस्त रेखा शास्त्र, यानी हाथ पढ़ने की भारतीय विद्या, ज्योतिष और आयुर्वेद के साथ-साथ विकसित हुई। यह सामुद्रिक शास्त्र का हिस्सा है, जिसमें शरीर पर बने चिह्नों और लक्षणों का अध्ययन होता है। भारत में हस्तरेखा पढ़ने वाले से ज्योतिष की जानकारी की भी उम्मीद की जाती है, क्योंकि हर रेखा और पर्वत नौ ग्रहों में से किसी एक से जुड़ा होता है।\n\nरेखाएँ हमेशा के लिए स्थिर नहीं होतीं। चार मुख्य रेखाएँ — आयु, मस्तिष्क, हृदय और भाग्य — बहुत कम बदलती हैं, पर छोटी रेखाएँ और शाखाएँ सालों में उभर सकती हैं, धुंधली हो सकती हैं या आपस में मिल सकती हैं। परंपरा इन बदलावों को आपके कर्मों से जोड़ती है। लगभग बारह वर्ष की आयु से रेखाएँ साफ़ आकार लेने लगती हैं।\n\nकुछ हथेलियों में कम पर गहरी रेखाएँ होती हैं, कुछ में बहुत-सी महीन रेखाओं का जाल। इनमें कोई बेहतर या कमतर नहीं है। कुछ गहरी रेखाएँ ऐसा अनुभव दे सकती हैं जैसे कोई नदी आपको एक साफ़ मंज़िल की ओर ले जा रही हो, जबकि बहुत-सी महीन रेखाएँ ऐसी यात्रा जैसी लगती हैं जिसमें कई मोड़ आते हैं, फिर भी रास्ता ज़रूरी बातों पर लौट आता है। इस ऐप की हर बात को एक झुकाव की तरह देखें, जिसे समझकर आप आगे बढ़ सकते हैं, न कि तय भाग्य की तरह।"
+      }
+    },
+    {
+      "id": "learn.which_hand",
+      "chapter": 1,
+      "title": {"en": "Which hand should you read?", "hi": "कौन-सा हाथ पढ़ें?"},
+      "body": {
+        "en": "Traditions differ on which hand to read. Older sources read a man's right hand and a woman's left. Another view says the left hand shows what you bring from the past and the right shows what is unfolding now and ahead. Many readers simply prefer your dominant hand, the one you work and earn with, because its lines are shaped most by your own effort.\n\nWhen both hands show the same pattern, that pattern is taken as well confirmed. When they differ, the dominant hand has the final word. If you use both hands equally, read the one with deeper or fuller lines.\n\nHastrekha follows the dominant-hand approach. Photograph the hand you use most; if you also scan the other hand, compare the two to see what you were given and what you are making of it.",
+        "hi": "कौन-सा हाथ पढ़ा जाए, इस पर परंपराएँ अलग-अलग हैं। पुराने ग्रंथ पुरुष का दायाँ और स्त्री का बायाँ हाथ पढ़ने की सलाह देते हैं। एक दूसरा मत कहता है कि बायाँ हाथ अतीत से लाई गई बातें दिखाता है और दायाँ हाथ वर्तमान और आगे की बातें। बहुत से जानकार सीधे आपके प्रमुख हाथ को देखते हैं — वही हाथ जिससे आप काम करते और कमाते हैं — क्योंकि उसकी रेखाएँ आपकी अपनी मेहनत से सबसे ज़्यादा बनती हैं।\n\nअगर दोनों हाथों में एक-सा पैटर्न दिखे, तो उसे पक्का संकेत माना जाता है। अगर दोनों अलग हों, तो अंतिम फ़ैसला प्रमुख हाथ का होता है। अगर आप दोनों हाथ बराबर इस्तेमाल करते हैं, तो उस हाथ को पढ़ें जिसकी रेखाएँ ज़्यादा गहरी या भरी हुई हैं।\n\nहस्तरेखा ऐप प्रमुख हाथ वाला तरीका अपनाता है। जिस हाथ का आप सबसे ज़्यादा उपयोग करते हैं, उसकी फ़ोटो लें; दूसरे हाथ को भी स्कैन करें तो दोनों की तुलना करके देखें कि आपको क्या मिला है और आप उससे क्या बना रहे हैं।"
+      }
+    },
+    {
+      "id": "learn.hand_elements",
+      "chapter": 2,
+      "title": {"en": "Hand elements and the doshas", "hi": "हाथ के तत्व और दोष"},
+      "body": {
+        "en": "Vedic palmistry first reads the hand through Ayurveda. The five great elements (pañca mahābhūta) gather into three doshas: Vāta is air and ether, Pitta is fire, and Kapha is water and earth. Because the shape of the hand changes very little over a lifetime, it is a reliable first clue to your constitution.\n\nAn Air (Vāta) hand is slim and often rectangular, cool and dry, with uneven finger lengths and many fine, branching lines. A Fire (Pitta) hand is warm, smooth and rosy, with medium fingers and clear lines that often fork at their ends. A Water (Kapha) hand is firm, rounded and strong, with fewer but deeper lines and thick, even nails.\n\nKnowing your element helps you understand how you spend and restore energy. Ayurveda offers simple daily habits to keep each one in balance: routine and warmth for Air, cooling and calm for Fire, and movement and lightness for Water.",
+        "hi": "वैदिक हस्तरेखा सबसे पहले हाथ को आयुर्वेद की दृष्टि से पढ़ती है। पाँच महाभूत (पंच महाभूत) तीन दोषों में बँटते हैं: वात यानी वायु और आकाश, पित्त यानी अग्नि, और कफ यानी जल और पृथ्वी। हाथ की बनावट जीवन भर बहुत कम बदलती है, इसलिए यह आपकी प्रकृति को समझने का भरोसेमंद पहला सूत्र है।\n\nवायु (वात) हस्त पतला और अक्सर आयताकार, ठंडा और सूखा होता है, उंगलियों की लंबाई असमान और रेखाएँ बहुत-सी महीन व शाखाओं वाली। अग्नि (पित्त) हस्त गरम, चिकना और लालिमा लिए होता है, उंगलियाँ मध्यम और रेखाएँ साफ़, जिनके सिरों पर अक्सर शाखाएँ बनती हैं। जल (कफ) हस्त मज़बूत, गोल और ठोस होता है, रेखाएँ कम पर गहरी और नाखून मोटे व एक जैसे।\n\nअपना तत्व जानने से आप समझ पाते हैं कि आप ऊर्जा कैसे खर्च करते और वापस पाते हैं। आयुर्वेद हर तत्व को संतुलित रखने के लिए सरल रोज़मर्रा की आदतें सुझाता है: वायु के लिए नियमितता और गर्माहट, अग्नि के लिए ठंडक और शांति, और जल के लिए गतिविधि और हल्कापन।"
+      }
+    },
+    {
+      "id": "learn.mixed_hands",
+      "chapter": 2,
+      "title": {"en": "Mixed hands: Prakriti and Vikriti", "hi": "मिश्रित हाथ: प्रकृति और विकृति"},
+      "body": {
+        "en": "Pure types are rare. Most hands blend two elements, with the third close behind, because the body needs all three doshas to function. Ayurveda calls your inborn blend Prakriti, your core nature for life. When one dosha builds up too far through habits, stress or season, that passing imbalance is called Vikriti.\n\nThe hand gives useful clues. Air with Water often looks medium-built, cool and slightly moist, pale in tone, with thicker nails. Air with Fire looks medium to long, warm and dry, with fingers narrowing a little at the base. Fire with Water looks medium to rounded, with soft fleshy fingers, square tips and a cool hand that may show reddish patches.\n\nRead your main element first and let the second one colour it. Balance tips work best when they suit whichever element is strongest in you right now.",
+        "hi": "शुद्ध प्रकार कम ही मिलते हैं। ज़्यादातर हाथों में दो तत्व मिले होते हैं और तीसरा भी पास ही रहता है, क्योंकि शरीर को चलने के लिए तीनों दोषों की ज़रूरत होती है। आयुर्वेद आपके जन्मजात मिश्रण को प्रकृति कहता है — यही जीवन भर आपका मूल स्वभाव है। जब आदतों, तनाव या मौसम के कारण कोई एक दोष ज़्यादा बढ़ जाए, तो उस अस्थायी असंतुलन को विकृति कहते हैं।\n\nहाथ इसके अच्छे संकेत देता है। वायु और जल का मेल अक्सर मध्यम बनावट वाला, ठंडा और हल्का नम, फीके रंग का और मोटे नाखूनों वाला होता है। वायु और अग्नि का मेल मध्यम से लंबा, गरम और सूखा होता है, जिसमें उंगलियाँ मूल पर थोड़ी पतली होती हैं। अग्नि और जल का मेल मध्यम से गोल होता है, उंगलियाँ नरम, मांसल और चौकोर सिरों वाली, और हाथ ठंडा पर कहीं-कहीं लालिमा लिए।\n\nपहले अपना मुख्य तत्व पढ़ें, फिर दूसरे तत्व को उसमें रंग भरने दें। संतुलन के उपाय तब सबसे अच्छे काम करते हैं जब वे उस तत्व के अनुसार हों जो इस समय आपमें सबसे प्रबल है।"
+      }
+    },
+    {
+      "id": "learn.maha_guna",
+      "chapter": 3,
+      "title": {"en": "The three gunas on your hand", "hi": "हाथ पर तीन गुण"},
+      "body": {
+        "en": "Samkhya philosophy describes nature (prakriti) as woven from three strands, the maha gunas. Sattva is light, clear and rising; Rajas is active, restless and reaching outward; Tamas is heavy, stable and still. Each has a gift: Sattva brings clarity and goodness, Rajas brings the courage to explore and compete, and Tamas brings endurance and the steadiness to get through hard times.\n\nOn the hand, the palm is split into three bands. The upper palm below the fingers is sattvic, the middle is rajasic, and the lower palm near the wrist is tamasic. The finger phalanges take the guna of the zodiac sign placed on each.\n\nThe mounds take the guna of their planet: Sun, Moon and Jupiter are sattvic; Mercury and Venus are rajasic; Mars, Saturn, Rahu and Ketu are tamasic. When a zone and a planet disagree, the planet comes first, so a mark on the Moon mound is read as sattvic even though it sits low on the palm. Gunas add depth, but planets, lines and symbols always lead.",
+        "hi": "सांख्य दर्शन के अनुसार प्रकृति तीन धागों से बुनी है, जिन्हें महागुण कहते हैं। सत्त्व हल्का, निर्मल और ऊपर उठने वाला है; रजस सक्रिय, चंचल और बाहर की ओर बढ़ने वाला; और तमस भारी, स्थिर और ठहरा हुआ। हर गुण की अपनी देन है: सत्त्व स्पष्टता और भलाई लाता है, रजस खोजने और आगे बढ़ने का साहस, और तमस सहनशक्ति व कठिन समय में टिके रहने की दृढ़ता।\n\nहाथ पर हथेली को तीन पट्टियों में बाँटा जाता है। उंगलियों के नीचे की ऊपरी हथेली सात्त्विक है, बीच का भाग राजसिक और कलाई के पास की निचली हथेली तामसिक। उंगलियों के पोर उन पर स्थित राशियों का गुण लेते हैं।\n\nपर्वत अपने ग्रह का गुण लेते हैं: सूर्य, चंद्र और गुरु सात्त्विक हैं; बुध और शुक्र राजसिक; मंगल, शनि, राहु और केतु तामसिक। जब क्षेत्र और ग्रह का गुण अलग हो, तो ग्रह को प्राथमिकता मिलती है — इसलिए चंद्र पर्वत पर बना चिह्न हथेली के निचले भाग में होने पर भी सात्त्विक माना जाता है। गुण पठन में गहराई जोड़ते हैं, पर ग्रह, रेखाएँ और चिह्न हमेशा पहले आते हैं।"
+      }
+    },
+    {
+      "id": "learn.fingers_elements",
+      "chapter": 2,
+      "title": {"en": "Your fingers and the elements", "hi": "आपकी उंगलियाँ और तत्व"},
+      "body": {
+        "en": "Each finger carries one of the five elements and, apart from the thumb, a ruling planet. The thumb is ether (ākāśa), the space that holds everything, and reflects willpower and endurance. The index finger is water and Jupiter: ethics, observance and keeping knowledge. The middle finger is air and Saturn: practicality, method and change. The ring finger is fire and the Sun: perception, discernment and personal power. The little finger is earth and Mercury: speech, communication and making things real.\n\nThe twelve zodiac signs sit on the finger phalanges, grouped by element: water signs on the index, air signs on the middle, fire signs on the ring and earth signs on the little finger. Active (chara) signs sit at the tips, fixed (sthira) signs in the middle, and dual (dvisvabhava) signs at the base, nearest the palm.\n\nThe arrangement also honours each planet's strengths. Libra, where Saturn is exalted, sits at the tip of Saturn's middle finger, and Cancer, where Jupiter is exalted, sits at the tip of Jupiter's index finger.",
+        "hi": "हर उंगली में पाँच तत्वों में से एक तत्व है और अंगूठे को छोड़कर हर उंगली का एक स्वामी ग्रह है। अंगूठा आकाश तत्व है — वह स्थान जो सबको धारण करता है — और इच्छाशक्ति व सहनशक्ति दिखाता है। तर्जनी जल और गुरु की है: नैतिकता, नियम-पालन और ज्ञान को सँजोना। मध्यमा वायु और शनि की है: व्यावहारिकता, कार्य-पद्धति और बदलाव। अनामिका अग्नि और सूर्य की है: समझ, विवेक और व्यक्तिगत शक्ति। कनिष्ठा पृथ्वी और बुध की है: वाणी, संवाद और योजनाओं को साकार करना।\n\nबारह राशियाँ उंगलियों के पोरों पर तत्व के अनुसार बैठी हैं: जल राशियाँ तर्जनी पर, वायु राशियाँ मध्यमा पर, अग्नि राशियाँ अनामिका पर और पृथ्वी राशियाँ कनिष्ठा पर। चर राशियाँ सिरों पर, स्थिर राशियाँ बीच के पोर पर, और द्विस्वभाव राशियाँ मूल पर, हथेली के सबसे पास होती हैं।\n\nयह क्रम हर ग्रह की ताक़त का भी ध्यान रखता है। शनि की उच्च राशि तुला शनि की उंगली मध्यमा के सिरे पर है, और गुरु की उच्च राशि कर्क गुरु की उंगली तर्जनी के सिरे पर।"
+      }
+    }
+  ]
+}

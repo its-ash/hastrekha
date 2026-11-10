@@ -1,0 +1,39 @@
+{
+  "timeline": [
+    {
+      "line": "life", "from": "start", "startAge": 0, "endAge": 60,
+      "about": {
+        "en": "Count from where the life line begins near the index finger (age 0) along its curve toward the wrist. The whole line stands for one 60-year cycle, however long or short it is, so a short line simply means a tighter scale. Each fifth of the line is roughly 12 years, a classic turning point. After 60, counting starts again from the beginning, and themes of early years may return in a new form.",
+        "hi": "तर्जनी के पास जीवन रेखा के आरंभ (आयु 0) से उसके घुमाव के साथ कलाई की ओर गिनें। पूरी रेखा 60 वर्ष के एक चक्र के बराबर है, चाहे वह लंबी हो या छोटी, इसलिए छोटी रेखा का अर्थ केवल छोटा पैमाना है। रेखा का हर पाँचवाँ भाग लगभग 12 वर्ष है, जो एक पारंपरिक मोड़ माना जाता है। 60 के बाद गिनती फिर शुरुआत से होती है, और शुरुआती वर्षों के विषय नए रूप में लौट सकते हैं।"
+      }
+    },
+    {
+      "line": "head", "from": "start", "startAge": 0, "endAge": 60,
+      "about": {
+        "en": "Count from the head line's start near the index finger (age 0) across the palm to its end, which marks 60. The point where the head line separates from the life line hints at the age when you began to think and act as your own person. Read 12-year steps as key stages of your thinking and confidence.",
+        "hi": "तर्जनी के पास मस्तिष्क रेखा के आरंभ (आयु 0) से हथेली के पार उसके अंत तक गिनें, जो 60 वर्ष है। जहाँ मस्तिष्क रेखा जीवन रेखा से अलग होती है, वह उस आयु का संकेत देता है जब आपने अपने ढंग से सोचना और चलना शुरू किया। 12-12 वर्ष के पड़ावों को अपनी सोच और आत्मविश्वास के मुख्य चरण मानें।"
+      }
+    },
+    {
+      "line": "heart", "from": "start", "startAge": 0, "endAge": 60,
+      "about": {
+        "en": "Count from the heart line's root below the little finger (age 0) toward the index finger, where the cycle reaches 60. Breaks, islands or healing squares along the way can be placed in time this way, as periods of emotional change or recovery. Treat 12-year steps as natural milestones.",
+        "hi": "छोटी उंगली के नीचे हृदय रेखा की जड़ (आयु 0) से तर्जनी की ओर गिनें, जहाँ चक्र 60 पर पहुँचता है। रास्ते के टूटन, द्वीप या उपचार करने वाले वर्ग को इस तरह समय में रखा जा सकता है, यानी भावनात्मक बदलाव या सुधार के दौर के रूप में। 12-12 वर्ष के पड़ावों को स्वाभाविक मील के पत्थर मानें।"
+      }
+    },
+    {
+      "line": "fate", "from": "start", "startAge": 0, "endAge": 60,
+      "about": {
+        "en": "Count upward from the base of the fate line near the wrist (age 0) toward the mound of Saturn (60). Not every palmist uses a fate line timeline, but it follows the same pattern as the other primary lines. Breaks, overlaps and squares can be read as times of career change, setback or protection, roughly in 12-year steps.",
+        "hi": "कलाई के पास भाग्य रेखा के आधार (आयु 0) से ऊपर शनि पर्वत (60) की ओर गिनें। हर हस्तरेखा विशेषज्ञ भाग्य रेखा पर समय नहीं पढ़ता, पर यह बाकी प्रमुख रेखाओं के ही ढंग पर चलती है। टूटन, एक-दूसरे पर चढ़ी रेखाएँ और वर्ग करियर में बदलाव, रुकावट या सुरक्षा के समय के रूप में, लगभग 12-12 वर्ष के पड़ावों में पढ़े जा सकते हैं।"
+      }
+    },
+    {
+      "line": "bracelets", "from": "start", "startAge": 0, "endAge": 60,
+      "about": {
+        "en": "Bracelets are counted upward, from the one nearest the elbow toward the palm. The first stands for wealth (dhana, ages 0 to 20), the second for knowledge (shastra, 20 to 40) and the third for devotion (bhakti, 40 to 60). The clearest bracelet points to the stage of life where you will pour most of your energy. Each band can be subdivided as needed.",
+        "hi": "मणिबंध नीचे से ऊपर गिने जाते हैं, कोहनी के सबसे पास वाले से हथेली की ओर। पहला धन (0 से 20 वर्ष), दूसरा शास्त्र यानी ज्ञान (20 से 40) और तीसरा भक्ति (40 से 60) का प्रतीक है। सबसे स्पष्ट मणिबंध जीवन के उस चरण की ओर इशारा करता है जिसमें आप सबसे अधिक ऊर्जा लगाएँगे। ज़रूरत हो तो हर पट्टी को छोटे भागों में बाँटा जा सकता है।"
+      }
+    }
+  ]
+}

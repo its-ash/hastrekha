@@ -1,0 +1,591 @@
+{
+  "remedies": [
+    {
+      "planet": "sun",
+      "gemstone": {
+        "name": {"en": "Ruby", "hi": "माणिक्य"},
+        "sanskrit": "Manikya",
+        "alternatives": [
+          {"en": "Sunstone, a gentler and more affordable substitute", "hi": "सनस्टोन, एक हल्का और सस्ता उपरत्न"}
+        ],
+        "finger": "ring",
+        "metal": {"en": "Gold or silver", "hi": "सोना या चांदी"},
+        "day": {"en": "Sunday", "hi": "रविवार"},
+        "how": {
+          "en": "Wear it on the ring finger of your right hand on a Sunday morning, set open-backed so the stone touches your skin. Ruby is traditionally believed to support heart strength, vigour and self-confidence. It is a strong stone, so ask a knowledgeable astrologer first, or begin with a sunstone.",
+          "hi": "इसे रविवार की सुबह दाहिने हाथ की अनामिका में पहनें, और अंगूठी नीचे से खुली हो ताकि नग त्वचा को छुए। परंपरा मानती है कि माणिक्य हृदय की शक्ति, ऊर्जा और आत्मविश्वास में सहायक है। यह तेज़ रत्न है, इसलिए पहले किसी जानकार ज्योतिषी से पूछें, या सनस्टोन से शुरुआत करें।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Gold (Swarna)", "hi": "सोना (स्वर्ण)"},
+        "about": {
+          "en": "Gold never tarnishes, so tradition ties it to the Sun's lasting strength, courage and clear sight. A small gold ring or chain is enough to keep the Sun close.",
+          "hi": "सोना कभी मैला नहीं होता, इसलिए परंपरा इसे सूर्य की स्थायी शक्ति, साहस और साफ़ दृष्टि से जोड़ती है। सोने की एक छोटी अंगूठी या चेन ही काफ़ी है।"
+        }
+      },
+      "yantra": {
+        "grid": [[6, 1, 8], [7, 5, 3], [2, 9, 4]],
+        "about": {
+          "en": "The Surya yantra: every row, column and diagonal adds up to 15. Draw or engrave it on copper on a Sunday morning, offer a flower while chanting the mantra, and keep it clean in your prayer place.",
+          "hi": "सूर्य यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 15 है। रविवार की सुबह इसे तांबे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए फूल चढ़ाएँ, और पूजा के स्थान पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Ghrinih Suryaya Namah",
+        "devanagari": "ॐ घृणिः सूर्याय नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Sundays, facing east if you can, counting on a mala. A calm, steady voice matters more than speed.",
+          "hi": "रविवार को सूर्योदय के समय, हो सके तो पूर्व की ओर मुख करके, माला पर 108 बार जप करें। जल्दी से ज़्यादा ज़रूरी है शांत और एकाग्र मन।"
+        }
+      },
+      "thread": {
+        "color": {"en": "Red", "hi": "लाल"},
+        "about": {
+          "en": "After chanting the mantra on a Sunday, tie a red cotton thread on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "रविवार को मंत्र जपकर दाहिनी कलाई पर लाल सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Shiva and Agni", "hi": "शिव और अग्नि देव"},
+        "about": {
+          "en": "Tradition links the Sun with Lord Shiva and with Agni, the god of fire. Light a lamp or say a short prayer to them on Sundays.",
+          "hi": "परंपरा सूर्य को भगवान शिव और अग्नि देव से जोड़ती है। रविवार को उनके लिए दीपक जलाएँ या छोटी-सी प्रार्थना करें।"
+        }
+      },
+      "day": {"en": "Sunday", "hi": "रविवार"},
+      "colors": [
+        {"en": "Red", "hi": "लाल"},
+        {"en": "Orange", "hi": "नारंगी"}
+      ],
+      "practices": [
+        {"en": "On Sunday mornings, offer water to the rising Sun from a copper pot and take a moment of gratitude.", "hi": "रविवार की सुबह तांबे के लोटे से उगते सूर्य को जल चढ़ाएँ और कुछ पल आभार प्रकट करें।"},
+        {"en": "Give wheat or jaggery to someone in need on a Sunday.", "hi": "रविवार को किसी ज़रूरतमंद को गेहूँ या गुड़ दान करें।"},
+        {"en": "Respect your father and elders, and keep your word.", "hi": "पिता और बड़ों का सम्मान करें, और अपनी बात के पक्के रहें।"},
+        {"en": "If your health allows, you may keep a light fast on Sundays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो रविवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "moon",
+      "gemstone": {
+        "name": {"en": "Pearl", "hi": "मोती"},
+        "sanskrit": "Mukta",
+        "alternatives": [
+          {"en": "Moonstone, a gentle and affordable substitute", "hi": "चंद्रकांत मणि (मूनस्टोन), एक सौम्य और सस्ता उपरत्न"}
+        ],
+        "finger": "index",
+        "metal": {"en": "Silver or gold", "hi": "चांदी या सोना"},
+        "day": {"en": "Monday", "hi": "सोमवार"},
+        "how": {
+          "en": "Choose a smooth, round, glowing pearl and wear it in silver on the index finger of your left hand on a Monday morning; many astrologers also use the little finger. Pearl is traditionally believed to support a cool, calm mind and restful feelings.",
+          "hi": "चिकना, गोल और चमकदार मोती चुनें और सोमवार की सुबह उसे चांदी में बाएँ हाथ की तर्जनी में पहनें; कई ज्योतिषी कनिष्ठा उंगली भी बताते हैं। परंपरा मानती है कि मोती मन को ठंडा और शांत रखने में सहायक है।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Silver (Rajata)", "hi": "चांदी (रजत)"},
+        "about": {
+          "en": "Silver is cool and bright like moonlight, and tradition links it with calm feelings and easy digestion. A silver ring, bangle or chain is a simple way to honour the Moon.",
+          "hi": "चांदी चाँदनी की तरह ठंडी और उजली है, और परंपरा इसे शांत भावनाओं और अच्छे पाचन से जोड़ती है। चांदी की अंगूठी, कड़ा या चेन चंद्र को मानने का आसान तरीका है।"
+        }
+      },
+      "yantra": {
+        "grid": [[7, 2, 9], [8, 6, 4], [3, 10, 5]],
+        "about": {
+          "en": "The Chandra yantra: every row, column and diagonal adds up to 18. Draw it on silver or copper on a Monday, offer milk or a white flower while chanting the mantra, and keep it in a clean place.",
+          "hi": "चंद्र यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 18 है। सोमवार को इसे चांदी या तांबे पर बनाएँ, मंत्र जपते हुए दूध या सफ़ेद फूल चढ़ाएँ, और साफ़ जगह पर रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Som Somaya Namah",
+        "devanagari": "ॐ सों सोमाय नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Mondays, counting on a mala. Let your breath slow down as you chant.",
+          "hi": "सोमवार को सूर्योदय के समय माला पर 108 बार जप करें। जप करते हुए साँस को धीमा और शांत होने दें।"
+        }
+      },
+      "thread": {
+        "color": {"en": "White", "hi": "सफ़ेद"},
+        "about": {
+          "en": "After chanting the mantra on a Monday, tie a white cotton thread on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "सोमवार को मंत्र जपकर दाहिनी कलाई पर सफ़ेद सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Parvati", "hi": "माता पार्वती"},
+        "about": {
+          "en": "The Moon is honoured through Goddess Parvati, the consort of Shiva. Pray to her on Mondays for a gentle and caring heart.",
+          "hi": "चंद्र की पूजा भगवान शिव की अर्धांगिनी माता पार्वती के रूप में की जाती है। कोमल और स्नेह भरे मन के लिए सोमवार को उनसे प्रार्थना करें।"
+        }
+      },
+      "day": {"en": "Monday", "hi": "सोमवार"},
+      "colors": [
+        {"en": "White", "hi": "सफ़ेद"},
+        {"en": "Pale blue", "hi": "हल्का नीला"}
+      ],
+      "practices": [
+        {"en": "Give rice, milk or white cloth to someone in need on a Monday.", "hi": "सोमवार को किसी ज़रूरतमंद को चावल, दूध या सफ़ेद कपड़ा दान करें।"},
+        {"en": "Spend time with your mother or an elder woman in the family and look after her.", "hi": "अपनी माँ या घर की किसी बुज़ुर्ग महिला के साथ समय बिताएँ और उनका ध्यान रखें।"},
+        {"en": "Sit quietly in moonlight or near water for a few minutes to settle your mind.", "hi": "मन को शांत करने के लिए कुछ देर चाँदनी में या पानी के पास चुपचाप बैठें।"},
+        {"en": "If your health allows, you may keep a light fast on Mondays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो सोमवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "mars",
+      "gemstone": {
+        "name": {"en": "Red Coral", "hi": "मूंगा"},
+        "sanskrit": "Pravala",
+        "alternatives": [
+          {"en": "Red spinel", "hi": "लाल स्पिनेल"},
+          {"en": "Carnelian or red agate", "hi": "कार्नेलियन या लाल अकीक"}
+        ],
+        "finger": "ring",
+        "metal": {"en": "Silver (some use gold or copper)", "hi": "चांदी (कुछ लोग सोना या तांबा भी लेते हैं)"},
+        "day": {"en": "Tuesday", "hi": "मंगलवार"},
+        "how": {
+          "en": "Wear it on the ring finger of your right hand on a Tuesday morning, with the stone touching your skin. Red coral is traditionally believed to support stamina, muscle strength and courage. Ask a knowledgeable astrologer first; carnelian is a milder start.",
+          "hi": "इसे मंगलवार की सुबह दाहिने हाथ की अनामिका में पहनें, और नग त्वचा को छूता रहे। परंपरा मानती है कि मूंगा सहनशक्ति, मांसपेशियों की ताकत और साहस में सहायक है। पहले किसी जानकार ज्योतिषी से पूछें; कार्नेलियन एक हल्की शुरुआत है।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Iron (Loha)", "hi": "लोहा"},
+        "about": {
+          "en": "Iron carries Mars's grit and drive, and tradition links it to healthy blood and the will to succeed. An iron or steel bangle (kada) is a common way to wear it.",
+          "hi": "लोहे में मंगल का जोश और दृढ़ता है, और परंपरा इसे स्वस्थ रक्त और जीतने की इच्छा से जोड़ती है। लोहे या स्टील का कड़ा पहनना इसका आम तरीका है।"
+        }
+      },
+      "yantra": {
+        "grid": [[8, 3, 10], [9, 7, 5], [4, 11, 6]],
+        "about": {
+          "en": "The Mangal yantra: every row, column and diagonal adds up to 21. Draw or engrave it on copper on a Tuesday, offer a red flower while chanting the mantra, and keep it clean in your prayer place.",
+          "hi": "मंगल यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 21 है। मंगलवार को इसे तांबे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए लाल फूल चढ़ाएँ, और पूजा के स्थान पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Kraam Kreem Kraum Sah Bhaumaya Namah",
+        "devanagari": "ॐ क्रां क्रीं क्रौं सः भौमाय नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Tuesdays, counting on a mala. A shorter form is Om Kujaya Namah.",
+          "hi": "मंगलवार को सूर्योदय के समय माला पर 108 बार जप करें। इसका छोटा रूप है ॐ कुजाय नमः।"
+        }
+      },
+      "thread": {
+        "color": {"en": "Red", "hi": "लाल"},
+        "about": {
+          "en": "After chanting the mantra on a Tuesday, tie a red cotton thread on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "मंगलवार को मंत्र जपकर दाहिनी कलाई पर लाल सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Kartikeya", "hi": "कार्तिकेय"},
+        "about": {
+          "en": "Mars is honoured through Kartikeya (also called Skanda or Murugan), the young warrior god. Pray to him on Tuesdays for courage used wisely.",
+          "hi": "मंगल की पूजा युवा योद्धा देव कार्तिकेय (स्कंद या मुरुगन) के रूप में होती है। साहस को सही दिशा देने के लिए मंगलवार को उनसे प्रार्थना करें।"
+        }
+      },
+      "day": {"en": "Tuesday", "hi": "मंगलवार"},
+      "colors": [
+        {"en": "Red", "hi": "लाल"},
+        {"en": "Vermilion", "hi": "सिंदूरी"}
+      ],
+      "practices": [
+        {"en": "Give red gram (toor dal) or red lentils (masoor) to someone in need on a Tuesday.", "hi": "मंगलवार को किसी ज़रूरतमंद को अरहर (तूर) या मसूर की दाल दान करें।"},
+        {"en": "Put your energy into regular exercise or hands-on service instead of arguments.", "hi": "अपनी ऊर्जा बहस के बजाय नियमित व्यायाम या मेहनत वाली सेवा में लगाएँ।"},
+        {"en": "Help your brothers and sisters and keep those bonds warm.", "hi": "अपने भाई-बहनों की मदद करें और उनसे रिश्ते मधुर रखें।"},
+        {"en": "If your health allows, you may keep a light fast on Tuesdays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो मंगलवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "mercury",
+      "gemstone": {
+        "name": {"en": "Emerald", "hi": "पन्ना"},
+        "sanskrit": "Marakata",
+        "alternatives": [
+          {"en": "Peridot, a lighter and affordable substitute", "hi": "पेरिडॉट, एक हल्का और सस्ता उपरत्न"}
+        ],
+        "finger": "little",
+        "metal": {"en": "Silver or platinum", "hi": "चांदी या प्लैटिनम"},
+        "day": {"en": "Wednesday", "hi": "बुधवार"},
+        "how": {
+          "en": "Wear it on the little finger of either hand on a Wednesday morning, with the stone touching your skin. Emerald is traditionally believed to support clear speech, focus and steady nerves. Check with a knowledgeable astrologer first, or start with peridot.",
+          "hi": "इसे बुधवार की सुबह किसी भी हाथ की कनिष्ठा उंगली में पहनें, और नग त्वचा को छूता रहे। परंपरा मानती है कि पन्ना साफ़ वाणी, एकाग्रता और स्थिर नसों में सहायक है। पहले किसी जानकार ज्योतिषी से पूछें, या पेरिडॉट से शुरुआत करें।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Mercury (Parada)", "hi": "पारा (पारद)"},
+        "about": {
+          "en": "In the old alchemy texts quicksilver belongs to Mercury, but it is poisonous: never touch, wear or swallow it. In practice the emerald is set in silver, and a silver ring serves as Mercury's metal.",
+          "hi": "पुराने रसशास्त्र में पारा बुध की धातु है, पर यह ज़हरीला है: इसे कभी न छुएँ, न पहनें, न खाएँ। व्यवहार में पन्ना चांदी में जड़ा जाता है, और चांदी की अंगूठी ही बुध की धातु का काम करती है।"
+        }
+      },
+      "yantra": {
+        "grid": [[9, 4, 11], [10, 8, 6], [5, 12, 7]],
+        "about": {
+          "en": "The Budha yantra: every row, column and diagonal adds up to 24. Draw or engrave it on copper on a Wednesday, offer green leaves or a flower while chanting the mantra, and keep it clean where you study or work.",
+          "hi": "बुध यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 24 है। बुधवार को इसे तांबे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए हरी पत्तियाँ या फूल चढ़ाएँ, और पढ़ाई या काम की जगह पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Braam Breem Braum Sah Budhaya Namah",
+        "devanagari": "ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Wednesdays, counting on a mala. A shorter form is Om Budhaya Namah.",
+          "hi": "बुधवार को सूर्योदय के समय माला पर 108 बार जप करें। इसका छोटा रूप है ॐ बुधाय नमः।"
+        }
+      },
+      "thread": {
+        "color": {"en": "Green", "hi": "हरा"},
+        "about": {
+          "en": "After chanting the mantra on a Wednesday, tie a green cotton thread on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "बुधवार को मंत्र जपकर दाहिनी कलाई पर हरा सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Vishnu", "hi": "भगवान विष्णु"},
+        "about": {
+          "en": "Mercury is honoured through Lord Vishnu, the preserver. Pray to him on Wednesdays for a clear mind and balanced judgement.",
+          "hi": "बुध की पूजा पालनहार भगवान विष्णु के रूप में होती है। साफ़ सोच और संतुलित निर्णय के लिए बुधवार को उनसे प्रार्थना करें।"
+        }
+      },
+      "day": {"en": "Wednesday", "hi": "बुधवार"},
+      "colors": [
+        {"en": "Green", "hi": "हरा"}
+      ],
+      "practices": [
+        {"en": "Give green gram (moong) to someone in need on a Wednesday.", "hi": "बुधवार को किसी ज़रूरतमंद को साबुत मूंग दान करें।"},
+        {"en": "Give books, pens or school supplies to a student.", "hi": "किसी विद्यार्थी को किताबें, कलम या पढ़ाई का सामान दें।"},
+        {"en": "Speak truthfully and kindly, and keep your dealings and accounts clear.", "hi": "सच और मीठा बोलें, और अपना लेन-देन और हिसाब साफ़ रखें।"},
+        {"en": "If your health allows, you may keep a light fast on Wednesdays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो बुधवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "jupiter",
+      "gemstone": {
+        "name": {"en": "Yellow Sapphire", "hi": "पुखराज"},
+        "sanskrit": "Pushparaga",
+        "alternatives": [
+          {"en": "Citrine", "hi": "सुनैला (सिट्रीन)"},
+          {"en": "Yellow topaz", "hi": "पीला टोपाज़"}
+        ],
+        "finger": "index",
+        "metal": {"en": "Gold", "hi": "सोना"},
+        "day": {"en": "Thursday", "hi": "गुरुवार"},
+        "how": {
+          "en": "Wear it in gold on the index finger of your right hand on a Thursday morning, with the stone touching your skin. Yellow sapphire is traditionally believed to support wisdom, optimism and good digestion. Check with a knowledgeable astrologer first, or start with citrine.",
+          "hi": "इसे गुरुवार की सुबह सोने में जड़वाकर दाहिने हाथ की तर्जनी में पहनें, और नग त्वचा को छूता रहे। परंपरा मानती है कि पुखराज ज्ञान, आशा और अच्छे पाचन में सहायक है। पहले किसी जानकार ज्योतिषी से पूछें, या सुनैला से शुरुआत करें।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Tin (Vanga)", "hi": "रांगा (वंग)"},
+        "about": {
+          "en": "The old texts give tin to Jupiter and link it with a sharp intellect. Tin is rarely worn as jewellery, so gold, the setting metal for Jupiter's stone, is the usual choice.",
+          "hi": "पुराने ग्रंथ रांगा को गुरु की धातु मानते हैं और इसे तेज़ बुद्धि से जोड़ते हैं। रांगा गहने के रूप में कम पहना जाता है, इसलिए गुरु के रत्न की तरह सोना ही आम तौर पर चुना जाता है।"
+        }
+      },
+      "yantra": {
+        "grid": [[10, 5, 12], [11, 9, 7], [6, 13, 8]],
+        "about": {
+          "en": "The Guru yantra: every row, column and diagonal adds up to 27. Draw or engrave it on copper on a Thursday, offer a yellow flower or a pinch of turmeric while chanting the mantra, and keep it clean in your prayer place.",
+          "hi": "गुरु यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 27 है। गुरुवार को इसे तांबे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए पीला फूल या चुटकी भर हल्दी चढ़ाएँ, और पूजा के स्थान पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Brim Brihaspataye Namah",
+        "devanagari": "ॐ बृं बृहस्पतये नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Thursdays, counting on a mala. Sitting quietly for a minute afterwards helps the practice settle.",
+          "hi": "गुरुवार को सूर्योदय के समय माला पर 108 बार जप करें। जप के बाद एक मिनट चुपचाप बैठना अभ्यास को गहरा करता है।"
+        }
+      },
+      "thread": {
+        "color": {"en": "Yellow (turmeric or saffron dyed)", "hi": "पीला (हल्दी या केसर से रंगा)"},
+        "about": {
+          "en": "After chanting the mantra on a Thursday, tie a yellow cotton thread, dyed with turmeric or saffron, on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "गुरुवार को मंत्र जपकर दाहिनी कलाई पर हल्दी या केसर से रंगा पीला सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Indra", "hi": "इंद्र देव"},
+        "about": {
+          "en": "Tradition links Jupiter with Indra, king of the gods; Jupiter himself is the gods' teacher. Pray on Thursdays for wisdom and good guidance.",
+          "hi": "परंपरा गुरु को देवताओं के राजा इंद्र से जोड़ती है; स्वयं बृहस्पति देवताओं के गुरु हैं। ज्ञान और अच्छे मार्गदर्शन के लिए गुरुवार को प्रार्थना करें।"
+        }
+      },
+      "day": {"en": "Thursday", "hi": "गुरुवार"},
+      "colors": [
+        {"en": "Yellow", "hi": "पीला"}
+      ],
+      "practices": [
+        {"en": "Give chickpeas (chana dal), turmeric or yellow sweets to someone in need on a Thursday.", "hi": "गुरुवार को किसी ज़रूरतमंद को चने की दाल, हल्दी या पीली मिठाई दान करें।"},
+        {"en": "Water a peepal tree on Thursday mornings.", "hi": "गुरुवार की सुबह पीपल के पेड़ को जल दें।"},
+        {"en": "Respect your teachers and elders, and share what you know freely.", "hi": "गुरुओं और बड़ों का आदर करें, और अपना ज्ञान खुले मन से बाँटें।"},
+        {"en": "If your health allows, you may keep a light fast on Thursdays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो गुरुवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "venus",
+      "gemstone": {
+        "name": {"en": "Diamond", "hi": "हीरा"},
+        "sanskrit": "Vajra",
+        "alternatives": [
+          {"en": "Clear quartz (sphatik)", "hi": "स्फटिक"},
+          {"en": "Herkimer diamond", "hi": "हर्किमर डायमंड"}
+        ],
+        "finger": "middle",
+        "metal": {"en": "Silver or platinum", "hi": "चांदी या प्लैटिनम"},
+        "day": {"en": "Friday", "hi": "शुक्रवार"},
+        "how": {
+          "en": "Wear it on the middle or little finger of your left hand on a Friday morning, with the stone touching your skin. Diamond is traditionally believed to support vitality, harmony and affection. Check with a knowledgeable astrologer first; clear quartz is a gentle, affordable option.",
+          "hi": "इसे शुक्रवार की सुबह बाएँ हाथ की मध्यमा या कनिष्ठा उंगली में पहनें, और नग त्वचा को छूता रहे। परंपरा मानती है कि हीरा ऊर्जा, सामंजस्य और स्नेह में सहायक है। पहले किसी जानकार ज्योतिषी से पूछें; स्फटिक एक सौम्य और सस्ता विकल्प है।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Copper (Tamra)", "hi": "तांबा (ताम्र)"},
+        "about": {
+          "en": "Copper is Venus's metal, and tradition links it with suppleness and ease of movement. A plain copper ring or bracelet is a simple way to honour Venus.",
+          "hi": "तांबा शुक्र की धातु है, और परंपरा इसे शरीर की लचक और सहज गति से जोड़ती है। तांबे की सादी अंगूठी या कड़ा शुक्र को मानने का आसान तरीका है।"
+        }
+      },
+      "yantra": {
+        "grid": [[11, 6, 13], [12, 10, 8], [7, 14, 9]],
+        "about": {
+          "en": "The Shukra yantra: every row, column and diagonal adds up to 30. Draw or engrave it on copper on a Friday, offer a white flower or some perfume while chanting the mantra, and keep it clean in your prayer place.",
+          "hi": "शुक्र यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 30 है। शुक्रवार को इसे तांबे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए सफ़ेद फूल या थोड़ा इत्र चढ़ाएँ, और पूजा के स्थान पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Shum Shukraya Namah",
+        "devanagari": "ॐ शुं शुक्राय नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Fridays, counting on a mala. A clean, fresh space makes the practice more pleasant.",
+          "hi": "शुक्रवार को सूर्योदय के समय माला पर 108 बार जप करें। साफ़ और सुगंधित जगह पर जप करना मन को अच्छा लगता है।"
+        }
+      },
+      "thread": {
+        "color": {"en": "White", "hi": "सफ़ेद"},
+        "about": {
+          "en": "After chanting the mantra on a Friday, tie a white cotton thread on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "शुक्रवार को मंत्र जपकर दाहिनी कलाई पर सफ़ेद सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Indrani", "hi": "इंद्राणी (शची)"},
+        "about": {
+          "en": "Venus is honoured through Indrani, also called Shachi, queen of the gods and consort of Indra. Pray to her on Fridays for love and grace in your life.",
+          "hi": "शुक्र की पूजा देवताओं की रानी और इंद्र की पत्नी इंद्राणी (शची) के रूप में होती है। जीवन में प्रेम और सौंदर्य के लिए शुक्रवार को उनसे प्रार्थना करें।"
+        }
+      },
+      "day": {"en": "Friday", "hi": "शुक्रवार"},
+      "colors": [
+        {"en": "White", "hi": "सफ़ेद"}
+      ],
+      "practices": [
+        {"en": "Give cowpeas (lobia), rice or white clothes to someone in need on a Friday.", "hi": "शुक्रवार को किसी ज़रूरतमंद को लोबिया, चावल या सफ़ेद कपड़े दान करें।"},
+        {"en": "Treat your partner and all women with respect and care.", "hi": "अपने जीवनसाथी और सभी महिलाओं के साथ सम्मान और प्यार से पेश आएँ।"},
+        {"en": "Keep your home clean and fresh, and make time for music or art.", "hi": "घर को साफ़-सुथरा और महकता रखें, और संगीत या कला के लिए समय निकालें।"},
+        {"en": "If your health allows, you may keep a light fast on Fridays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो शुक्रवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "saturn",
+      "gemstone": {
+        "name": {"en": "Blue Sapphire", "hi": "नीलम"},
+        "sanskrit": "Neelam",
+        "alternatives": [
+          {"en": "Amethyst (jamunia), a much gentler substitute", "hi": "जामुनिया (एमेथिस्ट), एक बहुत सौम्य उपरत्न"}
+        ],
+        "finger": "middle",
+        "metal": {"en": "Silver, iron or steel", "hi": "चांदी, लोहा या स्टील"},
+        "day": {"en": "Saturday", "hi": "शनिवार"},
+        "how": {
+          "en": "Blue sapphire is one of the strongest stones, so wear it only after a knowledgeable astrologer has studied your chart, and try it for a few days first, removing it if you feel unsettled. If advised, wear it on the middle finger on a Saturday; it is traditionally believed to support patience, discipline and steady joints. Amethyst is a much gentler choice.",
+          "hi": "नीलम सबसे तेज़ रत्नों में से है, इसलिए किसी जानकार ज्योतिषी से कुंडली दिखाकर ही पहनें, और पहले कुछ दिन आज़माएँ; बेचैनी लगे तो उतार दें। सलाह मिले तो इसे शनिवार को मध्यमा उंगली में पहनें; परंपरा मानती है कि यह धैर्य, अनुशासन और जोड़ों की स्थिरता में सहायक है। जामुनिया इससे कहीं ज़्यादा सौम्य विकल्प है।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Lead (Naga), worn as iron", "hi": "सीसा (नाग), जिसकी जगह लोहा पहनें"},
+        "about": {
+          "en": "Lead is Saturn's metal in the old texts, but it is toxic, so do not wear or handle it. An iron ring, often made from a horseshoe or boat nail, is the common safe substitute.",
+          "hi": "पुराने ग्रंथों में सीसा शनि की धातु है, पर यह ज़हरीला है, इसलिए इसे न पहनें और न छुएँ। लोहे का छल्ला, जो अक्सर घोड़े की नाल या नाव की कील से बनता है, इसका आम और सुरक्षित विकल्प है।"
+        }
+      },
+      "yantra": {
+        "grid": [[12, 7, 14], [13, 11, 9], [8, 15, 10]],
+        "about": {
+          "en": "The Shani yantra: every row, column and diagonal adds up to 33. Draw or engrave it on copper or iron on a Saturday, light a sesame oil lamp while chanting the mantra, and keep it clean in your prayer place.",
+          "hi": "शनि यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 33 है। शनिवार को इसे तांबे या लोहे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए तिल के तेल का दीपक जलाएँ, और पूजा के स्थान पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Sham Shanaishcharaya Namah",
+        "devanagari": "ॐ शं शनैश्चराय नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Saturdays, counting on a mala. Slow, patient repetition suits Saturn best.",
+          "hi": "शनिवार को सूर्योदय के समय माला पर 108 बार जप करें। धीमा और धैर्य भरा जप शनि को सबसे प्रिय है।"
+        }
+      },
+      "thread": {
+        "color": {"en": "Black", "hi": "काला"},
+        "about": {
+          "en": "After chanting the mantra on a Saturday, tie a black cotton thread on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "शनिवार को मंत्र जपकर दाहिनी कलाई पर काला सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Yama", "hi": "यमराज"},
+        "about": {
+          "en": "Saturn is honoured through Yama, Saturn's brother and the lord of dharma and justice. Pray on Saturdays for patience and fairness in all you do.",
+          "hi": "शनि की पूजा उनके भाई और धर्म व न्याय के स्वामी यमराज के रूप में होती है। हर काम में धैर्य और न्याय के लिए शनिवार को प्रार्थना करें।"
+        }
+      },
+      "day": {"en": "Saturday", "hi": "शनिवार"},
+      "colors": [
+        {"en": "Blue", "hi": "नीला"},
+        {"en": "Black", "hi": "काला"}
+      ],
+      "practices": [
+        {"en": "Give black sesame seeds (til) or mustard oil to someone in need on a Saturday.", "hi": "शनिवार को किसी ज़रूरतमंद को काले तिल या सरसों का तेल दान करें।"},
+        {"en": "Serve the elderly, labourers and people with disabilities, and be fair to anyone who works for you.", "hi": "बुज़ुर्गों, मज़दूरों और दिव्यांग लोगों की सेवा करें, और अपने लिए काम करने वालों के साथ न्याय करें।"},
+        {"en": "Water a shami plant on Saturdays.", "hi": "शनिवार को शमी के पौधे को जल दें।"},
+        {"en": "If your health allows, you may keep a light fast on Saturdays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो शनिवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "rahu",
+      "gemstone": {
+        "name": {"en": "Hessonite", "hi": "गोमेद"},
+        "sanskrit": "Gomeda",
+        "alternatives": [
+          {"en": "Red garnet, a milder stone", "hi": "लाल गार्नेट, एक हल्का रत्न"},
+          {"en": "No stone at all: the mantra, charity and yantra are gentle first steps", "hi": "रत्न के बिना भी: मंत्र, दान और यंत्र सौम्य पहले कदम हैं"}
+        ],
+        "finger": "middle",
+        "metal": {"en": "Silver", "hi": "चांदी"},
+        "day": {"en": "Saturday", "hi": "शनिवार"},
+        "how": {
+          "en": "Hessonite is a strong stone, so wear it only on the advice of a knowledgeable astrologer, and try it for a few days first. If advised, wear it in silver on the middle finger on a Saturday; it is traditionally believed to calm fears and steady a restless mind. Garnet, or simply the mantra and charity, are gentler options.",
+          "hi": "गोमेद तेज़ रत्न है, इसलिए किसी जानकार ज्योतिषी की सलाह पर ही पहनें, और पहले कुछ दिन आज़माएँ। सलाह मिले तो इसे शनिवार को चांदी में मध्यमा उंगली में पहनें; परंपरा मानती है कि यह डर को शांत करता है और बेचैन मन को स्थिर करता है। गार्नेट, या केवल मंत्र और दान, अधिक सौम्य विकल्प हैं।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Brass (Pittala)", "hi": "पीतल"},
+        "about": {
+          "en": "Brass, a blend of copper and zinc, is Rahu's metal. A brass ring, bangle or small brass lamp in your prayer place is a simple way to honour Rahu.",
+          "hi": "तांबे और जस्ते से बना पीतल राहु की धातु है। पीतल की अंगूठी, कड़ा, या पूजा के स्थान पर पीतल का छोटा दीपक राहु को मानने का आसान तरीका है।"
+        }
+      },
+      "yantra": {
+        "grid": [[13, 8, 15], [14, 12, 10], [9, 16, 11]],
+        "about": {
+          "en": "The Rahu yantra: every row, column and diagonal adds up to 36. Draw or engrave it on copper on a Saturday, light a lamp while chanting the mantra, and keep it clean in your prayer place.",
+          "hi": "राहु यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 36 है। शनिवार को इसे तांबे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए दीपक जलाएँ, और पूजा के स्थान पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Ram Rahave Namah",
+        "devanagari": "ॐ रां राहवे नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Saturdays, counting on a mala. Regular chanting is a safe and gentle remedy for Rahu.",
+          "hi": "शनिवार को सूर्योदय के समय माला पर 108 बार जप करें। नियमित जप राहु का सुरक्षित और सौम्य उपाय है।"
+        }
+      },
+      "thread": {
+        "color": {"en": "Black or dark blue", "hi": "काला या गहरा नीला"},
+        "about": {
+          "en": "After chanting the mantra on a Saturday, tie a black or dark blue cotton thread on your right wrist. Change it when it frays or falls, or after about a week.",
+          "hi": "शनिवार को मंत्र जपकर दाहिनी कलाई पर काला या गहरा नीला सूती धागा बाँधें। धागा घिस जाए, गिर जाए, या लगभग एक सप्ताह हो जाए, तो नया बाँधें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Sarpa, the serpent deity", "hi": "सर्प देवता (नाग देवता)"},
+        "about": {
+          "en": "Rahu is honoured through Sarpa, the serpent god. Offer a prayer or milk at a Naga shrine on Saturdays, and never harm snakes.",
+          "hi": "राहु की पूजा सर्प देवता के रूप में होती है। शनिवार को किसी नाग मंदिर में प्रार्थना करें या दूध चढ़ाएँ, और साँपों को कभी नुकसान न पहुँचाएँ।"
+        }
+      },
+      "day": {"en": "Saturday", "hi": "शनिवार"},
+      "colors": [
+        {"en": "Blue", "hi": "नीला"},
+        {"en": "Smoky grey", "hi": "धुएँ जैसा धूसर"}
+      ],
+      "practices": [
+        {"en": "Give black gram (urad) to someone in need on a Saturday.", "hi": "शनिवार को किसी ज़रूरतमंद को साबुत उड़द दान करें।"},
+        {"en": "Stay away from intoxicants and shortcuts, and choose the honest path.", "hi": "नशे और गलत शॉर्टकट से दूर रहें, और ईमानदारी का रास्ता चुनें।"},
+        {"en": "Meditate for a few minutes each day to calm a restless mind.", "hi": "बेचैन मन को शांत करने के लिए रोज़ कुछ मिनट ध्यान करें।"},
+        {"en": "If your health allows, you may keep a light fast on Saturdays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो शनिवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    },
+    {
+      "planet": "ketu",
+      "gemstone": {
+        "name": {"en": "Cat's Eye (Chrysoberyl)", "hi": "लहसुनिया"},
+        "sanskrit": "Vaidurya",
+        "alternatives": [
+          {"en": "Tiger's eye, a commonly suggested milder stone", "hi": "टाइगर आई, जिसे अक्सर हल्के विकल्प के रूप में बताया जाता है"},
+          {"en": "No stone at all: the mantra, charity and yantra are gentle first steps", "hi": "रत्न के बिना भी: मंत्र, दान और यंत्र सौम्य पहले कदम हैं"}
+        ],
+        "finger": "middle",
+        "metal": {"en": "Silver", "hi": "चांदी"},
+        "day": {"en": "Tuesday", "hi": "मंगलवार"},
+        "how": {
+          "en": "Cat's eye is a strong stone, so wear it only on the advice of a knowledgeable astrologer, and try it for a few days first. If advised, wear it in silver on the middle finger on a Tuesday; it is traditionally believed to protect against mishaps and support inner insight. Tiger's eye, or simply the mantra and charity, are gentler options.",
+          "hi": "लहसुनिया तेज़ रत्न है, इसलिए किसी जानकार ज्योतिषी की सलाह पर ही पहनें, और पहले कुछ दिन आज़माएँ। सलाह मिले तो इसे मंगलवार को चांदी में मध्यमा उंगली में पहनें; परंपरा मानती है कि यह दुर्घटनाओं से बचाता है और अंतर्ज्ञान में सहायक है। टाइगर आई, या केवल मंत्र और दान, अधिक सौम्य विकल्प हैं।"
+        }
+      },
+      "metal": {
+        "name": {"en": "Bronze (Kansya)", "hi": "कांसा (कांस्य)"},
+        "about": {
+          "en": "Bronze, a blend of copper and tin, is Ketu's metal; some traditions use panchaloha, a five-metal alloy, instead. A bronze ring or a bronze lamp in your prayer place honours Ketu.",
+          "hi": "तांबे और रांगे से बना कांसा केतु की धातु है; कुछ परंपराएँ इसकी जगह पंचधातु (पाँच धातुओं का मिश्रण) लेती हैं। कांसे की अंगूठी या पूजा के स्थान पर कांसे का दीपक केतु को मानने का तरीका है।"
+        }
+      },
+      "yantra": {
+        "grid": [[14, 9, 16], [15, 13, 11], [10, 17, 12]],
+        "about": {
+          "en": "The Ketu yantra: every row, column and diagonal adds up to 39. Draw or engrave it on copper on a Tuesday, offer a flower while chanting the mantra, and keep it clean in your prayer place.",
+          "hi": "केतु यंत्र: इसकी हर पंक्ति, हर स्तंभ और दोनों विकर्णों का योग 39 है। मंगलवार को इसे तांबे पर बनाएँ या खुदवाएँ, मंत्र जपते हुए फूल चढ़ाएँ, और पूजा के स्थान पर साफ़ रखें।"
+        }
+      },
+      "mantra": {
+        "sanskrit": "Om Kem Ketave Namah",
+        "devanagari": "ॐ कें केतवे नमः",
+        "count": 108,
+        "about": {
+          "en": "Chant it 108 times at sunrise on Tuesdays, counting on a mala. Quiet reflection after chanting suits Ketu's spiritual nature.",
+          "hi": "मंगलवार को सूर्योदय के समय माला पर 108 बार जप करें। जप के बाद कुछ देर मौन चिंतन केतु के आध्यात्मिक स्वभाव के अनुकूल है।"
+        }
+      },
+      "thread": {
+        "color": {"en": "Red, black and white twisted together", "hi": "लाल, काला और सफ़ेद, एक साथ बटा हुआ"},
+        "about": {
+          "en": "The traditional nine-knot thread twists red, black and white strands together with nine knots for the nine planets. Ask a trusted elder or priest to prepare it, tie it on your right wrist, and change it when it frays or falls.",
+          "hi": "पारंपरिक नौ गाँठ वाला धागा लाल, काले और सफ़ेद सूत को बटकर बनता है, जिसमें नौ ग्रहों के लिए नौ गाँठें होती हैं। इसे किसी भरोसेमंद बुज़ुर्ग या पुजारी से तैयार करवाएँ, दाहिनी कलाई पर बाँधें, और घिसने या गिरने पर बदल दें।"
+        }
+      },
+      "deity": {
+        "name": {"en": "Chitragupta", "hi": "चित्रगुप्त"},
+        "about": {
+          "en": "Ketu is honoured through Chitragupta, who keeps the record of every soul's deeds. Pray on Tuesdays and let it remind you that every good action counts.",
+          "hi": "केतु की पूजा चित्रगुप्त के रूप में होती है, जो हर जीव के कर्मों का लेखा रखते हैं। मंगलवार को प्रार्थना करें और याद रखें कि हर अच्छा कर्म गिना जाता है।"
+        }
+      },
+      "day": {"en": "Tuesday", "hi": "मंगलवार"},
+      "colors": [
+        {"en": "Multicoloured", "hi": "बहुरंगी"},
+        {"en": "Grey", "hi": "सलेटी"}
+      ],
+      "practices": [
+        {"en": "Give horse gram (kulthi) to someone in need on a Tuesday.", "hi": "मंगलवार को किसी ज़रूरतमंद को कुलथी दान करें।"},
+        {"en": "Feed street dogs and other animals with kindness.", "hi": "गली के कुत्तों और दूसरे जानवरों को प्यार से भोजन खिलाएँ।"},
+        {"en": "Spend quiet time in prayer, meditation or spiritual reading.", "hi": "प्रार्थना, ध्यान या आध्यात्मिक पठन में कुछ शांत समय बिताएँ।"},
+        {"en": "If your health allows, you may keep a light fast on Tuesdays; this is entirely optional.", "hi": "यदि आपका स्वास्थ्य अनुमति दे, तो मंगलवार को हल्का व्रत रख सकते हैं; यह पूरी तरह आपकी इच्छा पर है।"}
+      ]
+    }
+  ]
+}

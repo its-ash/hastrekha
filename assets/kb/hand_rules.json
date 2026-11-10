@@ -1,0 +1,372 @@
+{
+  "rules": [
+    {
+      "id": "hand.air.personality",
+      "when": {"hand.element": "air"},
+      "area": "personality", "tone": "positive", "weight": 3,
+      "title": {"en": "Quick and inventive spirit", "hi": "फुर्तीला और रचनात्मक स्वभाव"},
+      "text": {"en": "Your Air hand points to a lively, inventive nature. You adapt fast, express yourself well and often have a creative or artistic side that others notice.", "hi": "आपका वायु हस्त एक जीवंत और नए विचारों वाले स्वभाव की ओर इशारा करता है। आप जल्दी ढल जाते हैं, अपनी बात अच्छे से रखते हैं, और आपकी रचनात्मक या कलात्मक प्रतिभा अक्सर दूसरों को दिखती है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.air.mind",
+      "when": {"hand.element": "air"},
+      "area": "mind", "tone": "neutral", "weight": 2,
+      "title": {"en": "Many ideas, short bursts", "hi": "ढेरों विचार, छोटी उड़ानें"},
+      "text": {"en": "Your enthusiasm catches fire quickly but may fade before a long plan is complete. Breaking big goals into small, finishable steps helps your bright ideas reach the finish line.", "hi": "आपका उत्साह जल्दी जागता है, पर लंबी योजना पूरी होने से पहले ठंडा पड़ सकता है। बड़े लक्ष्यों को छोटे-छोटे, पूरे हो सकने वाले कदमों में बाँटें, तो आपके अच्छे विचार मंज़िल तक पहुँचेंगे।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.air.health",
+      "when": {"hand.element": "air"},
+      "area": "health", "tone": "caution", "weight": 2,
+      "title": {"en": "Keep Vāta grounded", "hi": "वात को स्थिर रखें"},
+      "text": {"en": "Air hands tend to spend energy in bursts and then feel worn out in mind or body. Regular meals, warm cooked food, enough sleep and a warm-oil massage help you stay grounded and steady.", "hi": "वायु हस्त वाले अक्सर ऊर्जा एक साथ खर्च कर देते हैं और फिर मन या शरीर से थका हुआ महसूस करते हैं। नियमित भोजन, गरम पका खाना, पूरी नींद और गुनगुने तेल की मालिश आपको स्थिर और संतुलित रखती है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.air.career",
+      "when": {"hand.element": "air"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Suited to varied, skilful work", "hi": "विविध और हुनर वाले काम"},
+      "text": {"en": "Work that uses your hands, words or imagination suits you, such as crafts, design, writing, teaching or anything with variety. Rigid hierarchies may chafe, so look for roles that give you some freedom in how you work.", "hi": "ऐसा काम आपको जँचता है जिसमें हाथ, शब्द या कल्पना का उपयोग हो — जैसे शिल्प, डिज़ाइन, लेखन, पढ़ाना या कोई भी विविधता वाला काम। सख़्त ऊँच-नीच वाला माहौल आपको खल सकता है, इसलिए ऐसी भूमिका चुनें जिसमें काम करने के तरीके में थोड़ी आज़ादी हो।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.air.love",
+      "when": {"hand.element": "air"},
+      "area": "love", "tone": "neutral", "weight": 1,
+      "title": {"en": "Lively, freedom-loving heart", "hi": "जीवंत, आज़ादी पसंद दिल"},
+      "text": {"en": "In love you bring conversation, fun and fresh ideas. You value your space, so a partner who gives you room while offering calm and stability can help you feel truly at home.", "hi": "प्रेम में आप बातचीत, मज़ा और नयापन लाते हैं। आपको अपनी जगह प्यारी है, इसलिए ऐसा साथी जो आपको खुलापन दे और साथ ही शांति व स्थिरता भी, आपको सच में अपनापन महसूस करा सकता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.personality",
+      "when": {"hand.element": "fire"},
+      "area": "personality", "tone": "positive", "weight": 3,
+      "title": {"en": "Sharp, driven and generous", "hi": "तेज़, लगनशील और उदार"},
+      "text": {"en": "Your Fire hand suggests a sharp, focused and competitive nature. You set high standards and pursue them hard, yet you also have a generous side and like to use your strength for others.", "hi": "आपका अग्नि हस्त एक तेज़, एकाग्र और प्रतिस्पर्धी स्वभाव दिखाता है। आप ऊँचे मानक रखते हैं और उन्हें पाने में पूरी ताक़त लगाते हैं, फिर भी आपका एक उदार पक्ष है और आप अपनी ताक़त दूसरों के काम में लगाना पसंद करते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.mind",
+      "when": {"hand.element": "fire"},
+      "area": "mind", "tone": "neutral", "weight": 2,
+      "title": {"en": "Analytical mind, strong opinions", "hi": "विश्लेषक मन, पक्की राय"},
+      "text": {"en": "You notice details and enjoy taking ideas apart. Your views can be firm and your temper quick; pausing for one breath before you respond keeps your sharpness working for you.", "hi": "आप बारीकियाँ जल्दी पकड़ते हैं और विचारों को गहराई से परखना आपको अच्छा लगता है। आपकी राय पक्की और गुस्सा जल्दी आने वाला हो सकता है; जवाब देने से पहले एक गहरी साँस लेना आपकी तीक्ष्णता को आपके पक्ष में रखता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.health",
+      "when": {"hand.element": "fire"},
+      "area": "health", "tone": "caution", "weight": 2,
+      "title": {"en": "Keep Pitta cool", "hi": "पित्त को शांत रखें"},
+      "text": {"en": "Fire hands tend to run hot and push hard. Cooling foods such as cucumber, coconut water and sweet fruits, regular meals, less fried or very spicy food, and calm time near water help keep Pitta balanced.", "hi": "अग्नि हस्त वालों में गर्मी और ज़्यादा मेहनत करने का झुकाव रहता है। खीरा, नारियल पानी और मीठे फल जैसे ठंडक देने वाले आहार, समय पर भोजन, कम तला और कम तीखा खाना, और पानी के पास शांत समय बिताना पित्त को संतुलित रखते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.career",
+      "when": {"hand.element": "fire"},
+      "area": "career", "tone": "positive", "weight": 3,
+      "title": {"en": "Made to lead and compete", "hi": "नेतृत्व और प्रतियोगिता के लिए बने"},
+      "text": {"en": "You thrive where there are goals to win and problems to solve: leadership, management, analysis, law, engineering or any field that rewards precision and drive.", "hi": "जहाँ जीतने के लक्ष्य और सुलझाने की समस्याएँ हों, वहाँ आप खिलते हैं — नेतृत्व, प्रबंधन, विश्लेषण, क़ानून, इंजीनियरिंग या कोई भी क्षेत्र जो सटीकता और लगन को महत्व देता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.love",
+      "when": {"hand.element": "fire"},
+      "area": "love", "tone": "neutral", "weight": 2,
+      "title": {"en": "Passionate and protective partner", "hi": "जोशीला और रक्षा करने वाला साथी"},
+      "text": {"en": "You love with intensity and loyalty and want to protect the people close to you. Letting go of the need to win every disagreement keeps that warmth flowing both ways.", "hi": "आप पूरी तीव्रता और वफ़ादारी से प्रेम करते हैं और अपनों की रक्षा करना चाहते हैं। हर बहस जीतने की ज़िद छोड़ दें, तो यह गर्माहट दोनों ओर बहती रहेगी।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.personality",
+      "when": {"hand.element": "water"},
+      "area": "personality", "tone": "positive", "weight": 3,
+      "title": {"en": "Steady, patient and dependable", "hi": "स्थिर, धैर्यवान और भरोसेमंद"},
+      "text": {"en": "Your Water hand shows a calm, steady and reliable nature. You are patient and methodical, your actions say more than your words, and people know they can count on you.", "hi": "आपका जल हस्त एक शांत, स्थिर और भरोसेमंद स्वभाव दिखाता है। आप धैर्यवान और व्यवस्थित हैं, आपके काम आपके शब्दों से ज़्यादा बोलते हैं, और लोग जानते हैं कि आप पर भरोसा किया जा सकता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.mind",
+      "when": {"hand.element": "water"},
+      "area": "mind", "tone": "neutral", "weight": 2,
+      "title": {"en": "Strong memory, careful with change", "hi": "अच्छी याददाश्त, बदलाव में सावधानी"},
+      "text": {"en": "You have a good long-term memory and a sentimental heart. New things may make you wary at first; trying one small change at a time keeps life fresh without unsettling you.", "hi": "आपकी याददाश्त लंबी और दिल भावुक है। नई चीज़ें शुरू में आपको शंकित कर सकती हैं; एक बार में एक छोटा बदलाव अपनाएँ, तो जीवन में ताज़गी भी रहेगी और मन भी स्थिर रहेगा।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.health",
+      "when": {"hand.element": "water"},
+      "area": "health", "tone": "caution", "weight": 2,
+      "title": {"en": "Keep Kapha light and moving", "hi": "कफ को हल्का और सक्रिय रखें"},
+      "text": {"en": "Water hands usually have good stamina but can slip into heaviness or sluggishness. Daily brisk exercise, rising early, lighter warm meals with spices like ginger and black pepper, and fewer heavy sweets help you stay light.", "hi": "जल हस्त वालों में आम तौर पर अच्छी सहनशक्ति होती है, पर भारीपन या सुस्ती आ सकती है। रोज़ तेज़ व्यायाम, सुबह जल्दी उठना, अदरक और काली मिर्च जैसे मसालों वाला हल्का गरम भोजन, और कम भारी मिठाइयाँ आपको हल्का रखती हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.career",
+      "when": {"hand.element": "water"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Productive and persevering worker", "hi": "लगनशील और उत्पादक"},
+      "text": {"en": "You rarely give up on a course you have chosen, and you tire less easily than most. Roles that reward consistency, such as finance, administration, farming, building, care work or long projects, suit you well.", "hi": "चुना हुआ रास्ता आप शायद ही कभी छोड़ते हैं, और आप ज़्यादातर लोगों से कम थकते हैं। जिन कामों में निरंतरता की क़द्र हो — जैसे वित्त, प्रशासन, खेती, निर्माण, सेवा या लंबी परियोजनाएँ — वे आपके लिए अच्छे हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.love",
+      "when": {"hand.element": "water"},
+      "area": "love", "tone": "positive", "weight": 2,
+      "title": {"en": "Loyal, nurturing and constant", "hi": "वफ़ादार, स्नेही और अटल"},
+      "text": {"en": "You are a devoted, sentimental partner who values long-term bonds. Saying your feelings out loud, not only showing them, helps the people you love feel how much they matter.", "hi": "आप एक समर्पित और भावुक साथी हैं जो लंबे रिश्तों को महत्व देते हैं। अपनी भावनाएँ सिर्फ़ जताने के बजाय शब्दों में भी कहें, ताकि आपके प्रियजन महसूस कर सकें कि वे आपके लिए कितने ख़ास हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.mix.air_water",
+      "when": {"hand.element": "air", "hand.secondary": "water"},
+      "area": "personality", "tone": "positive", "weight": 2,
+      "title": {"en": "Ideas with staying power", "hi": "विचार भी, ठहराव भी"},
+      "text": {"en": "Your Air nature is steadied by a touch of Water, so your imagination has more patience behind it. You may feel the cold easily; warmth, gentle movement and routine suit you best.", "hi": "आपके वायु स्वभाव को जल तत्व का साथ स्थिरता देता है, इसलिए आपकी कल्पना के पीछे धैर्य भी है। आपको ठंड जल्दी लग सकती है; गर्माहट, हल्की गतिविधि और नियमित दिनचर्या आपके लिए सबसे अच्छी है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.mix.air_fire",
+      "when": {"hand.element": "air", "hand.secondary": "fire"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Inspired ideas, quick action", "hi": "प्रेरित विचार, तुरंत अमल"},
+      "text": {"en": "Air gives you ideas and Fire gives you the push to act on them. You can turn inspiration into results quickly; balance the pace with real rest so tiredness never takes over.", "hi": "वायु आपको विचार देता है और अग्नि उन पर अमल करने का जोश। आप प्रेरणा को जल्दी नतीजों में बदल सकते हैं; बस इस रफ़्तार के साथ पूरा आराम भी लें ताकि थकान हावी न हो।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.mix.fire_air",
+      "when": {"hand.element": "fire", "hand.secondary": "air"},
+      "area": "health", "tone": "neutral", "weight": 2,
+      "title": {"en": "Warm, dry and driven", "hi": "गरम, रूखी और जोशीली ऊर्जा"},
+      "text": {"en": "Fire leads and Air adds speed, so your mind moves fast and aims high. This warm, dry energy benefits from cooling, moist foods, plenty of water and calm evenings.", "hi": "अग्नि आगे है और वायु उसमें गति जोड़ता है, इसलिए आपका मन तेज़ चलता है और ऊँचा लक्ष्य रखता है। इस गरम, रूखी ऊर्जा को ठंडक देने वाले नम आहार, भरपूर पानी और शांत शामों से लाभ होता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.mix.fire_water",
+      "when": {"hand.element": "fire", "hand.secondary": "water"},
+      "area": "career", "tone": "positive", "weight": 3,
+      "title": {"en": "Ambition with staying power", "hi": "महत्वाकांक्षा और टिके रहने की क्षमता"},
+      "text": {"en": "Fire's drive joined with Water's stamina gives you both ambition and endurance. You tend to finish what you start; staying open when plans need to change keeps this strength from turning stubborn.", "hi": "अग्नि का जोश और जल की सहनशक्ति मिलकर आपको महत्वाकांक्षा और टिके रहने की ताक़त दोनों देते हैं। आप जो शुरू करते हैं उसे पूरा करते हैं; ज़रूरत पड़ने पर योजना बदलने के लिए खुले रहें, ताकि यह ताक़त ज़िद न बन जाए।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.mix.water_fire",
+      "when": {"hand.element": "water", "hand.secondary": "fire"},
+      "area": "personality", "tone": "positive", "weight": 2,
+      "title": {"en": "Calm strength, inner fire", "hi": "शांत शक्ति, भीतर अग्नि"},
+      "text": {"en": "Your steady Water nature has a warm Fire core. You may appear calm, but when something matters you act with real determination and warmth.", "hi": "आपके स्थिर जल स्वभाव के भीतर अग्नि की गर्माहट है। आप बाहर से शांत दिखते हैं, पर जब कोई बात मायने रखती है तो पूरे संकल्प और अपनेपन से काम करते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.mix.water_air",
+      "when": {"hand.element": "water", "hand.secondary": "air"},
+      "area": "mind", "tone": "positive", "weight": 2,
+      "title": {"en": "Grounded mind, creative spark", "hi": "स्थिर मन, रचनात्मक चिंगारी"},
+      "text": {"en": "Water keeps you grounded while a breath of Air adds curiosity and flexibility. You can be dependable and still enjoy new ideas, which helps you adapt without losing your footing.", "hi": "जल आपको ज़मीन से जोड़े रखता है और वायु का स्पर्श जिज्ञासा और लचीलापन जोड़ता है। आप भरोसेमंद रहते हुए भी नए विचारों का आनंद ले सकते हैं, जिससे आप बिना डगमगाए बदलाव अपना पाते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.pure.air",
+      "when": {"hand.element": "air", "hand.secondary": "none"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "A rare pure Air hand", "hi": "दुर्लभ शुद्ध वायु हस्त"},
+      "text": {"en": "Pure types are uncommon, and your hand leans strongly toward Air. Its gifts and its restlessness may both show clearly, so a steady daily rhythm is especially helpful for you.", "hi": "शुद्ध प्रकार कम ही मिलते हैं, और आपका हाथ स्पष्ट रूप से वायु की ओर झुका है। इसकी खूबियाँ और इसकी बेचैनी दोनों साफ़ दिख सकती हैं, इसलिए रोज़ की स्थिर लय आपके लिए ख़ास तौर पर मददगार है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.pure.fire",
+      "when": {"hand.element": "fire", "hand.secondary": "none"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "A rare pure Fire hand", "hi": "दुर्लभ शुद्ध अग्नि हस्त"},
+      "text": {"en": "Your hand leans strongly toward Fire, which is uncommon. Your drive and focus can be remarkable; make room for cooling, rest and play so that intensity stays healthy.", "hi": "आपका हाथ स्पष्ट रूप से अग्नि की ओर झुका है, जो कम ही देखने को मिलता है। आपकी लगन और एकाग्रता अद्भुत हो सकती है; ठंडक, आराम और खेल के लिए भी समय रखें ताकि यह तीव्रता स्वस्थ बनी रहे।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.pure.water",
+      "when": {"hand.element": "water", "hand.secondary": "none"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "A rare pure Water hand", "hi": "दुर्लभ शुद्ध जल हस्त"},
+      "text": {"en": "Your hand leans strongly toward Water, which is uncommon. Your steadiness is a real strength; regular movement and small new experiences keep it from turning into heaviness.", "hi": "आपका हाथ स्पष्ट रूप से जल की ओर झुका है, जो कम ही देखने को मिलता है। आपकी स्थिरता आपकी असली ताक़त है; नियमित गतिविधि और छोटे-छोटे नए अनुभव इसे भारीपन बनने से रोकते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.palm.rectangular",
+      "when": {"hand.palm": "rectangular"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "Rectangular palm, airy leanings", "hi": "आयताकार हथेली, वायु का झुकाव"},
+      "text": {"en": "A longer, rectangular palm is typical of the Air hand. It adds curiosity, flexibility and a love of variety to your character.", "hi": "लंबी, आयताकार हथेली वायु हस्त की पहचान है। यह आपके स्वभाव में जिज्ञासा, लचीलापन और विविधता का प्रेम जोड़ती है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.palm.rounded",
+      "when": {"hand.palm": "rounded"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "Rounded palm, steady nature", "hi": "गोल हथेली, स्थिर स्वभाव"},
+      "text": {"en": "A full, rounded palm that hides the joints is typical of the Water hand. It adds patience, stamina and a calm, nurturing quality.", "hi": "भरी हुई, गोल हथेली जिसमें जोड़ कम दिखते हैं, जल हस्त की पहचान है। यह आपके स्वभाव में धैर्य, सहनशक्ति और शांत, स्नेह भरा गुण जोड़ती है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.palm.square",
+      "when": {"hand.palm": "square"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "Square palm, practical balance", "hi": "चौकोर हथेली, व्यावहारिक संतुलन"},
+      "text": {"en": "A firm, square, compact palm suggests a practical and well-organised approach. You like plans that work in real life, and you bring order to whatever you take on.", "hi": "मज़बूत, चौकोर और सुगठित हथेली व्यावहारिक और व्यवस्थित सोच दिखाती है। आपको वे योजनाएँ पसंद हैं जो असल ज़िंदगी में काम करें, और आप जो भी हाथ में लेते हैं उसमें व्यवस्था लाते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fingers.long",
+      "when": {"hand.fingers": "long"},
+      "area": "mind", "tone": "neutral", "weight": 1,
+      "title": {"en": "Long fingers, detailed thinker", "hi": "लंबी उंगलियाँ, बारीक सोच"},
+      "text": {"en": "Fingers that look long next to the palm are often seen on Air hands. They suggest dexterity, fine skill and a mind that enjoys detail and nuance.", "hi": "हथेली की तुलना में लंबी दिखने वाली उंगलियाँ अक्सर वायु हस्त में देखी जाती हैं। ये हाथ की सफ़ाई, बारीक हुनर और ऐसी सोच दिखाती हैं जिसे बारीकियों में आनंद आता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fingers.medium",
+      "when": {"hand.fingers": "medium"},
+      "area": "mind", "tone": "neutral", "weight": 1,
+      "title": {"en": "Medium fingers, balanced drive", "hi": "मध्यम उंगलियाँ, संतुलित जोश"},
+      "text": {"en": "Medium-length fingers of fairly even width are typical of the Fire hand. They point to a balance of thought and action: you weigh things up, then move.", "hi": "लगभग एक जैसी चौड़ाई वाली मध्यम लंबाई की उंगलियाँ अग्नि हस्त की पहचान हैं। ये सोच और कर्म के संतुलन की ओर इशारा करती हैं: आप पहले तौलते हैं, फिर आगे बढ़ते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fingers.short",
+      "when": {"hand.fingers": "short"},
+      "area": "mind", "tone": "neutral", "weight": 1,
+      "title": {"en": "Short fingers, practical action", "hi": "छोटी उंगलियाँ, व्यावहारिक कर्म"},
+      "text": {"en": "Fingers that look short against the palm are common on Water hands. They suggest someone who prefers doing to talking and grasps the big picture in a practical way.", "hi": "हथेली की तुलना में छोटी दिखने वाली उंगलियाँ जल हस्त में आम हैं। ये ऐसे व्यक्ति का संकेत हैं जो बोलने से ज़्यादा करने में विश्वास रखता है और बड़ी तस्वीर को व्यावहारिक ढंग से समझता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.shape.airy",
+      "when": {"hand.palm": "rectangular", "hand.fingers": "long"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Made for skill and expression", "hi": "हुनर और अभिव्यक्ति के लिए बना हाथ"},
+      "text": {"en": "A rectangular palm with long fingers is a clear Air signature. Crafts, music, writing, design or any work that needs nimble hands and a lively mind can bring out your best.", "hi": "आयताकार हथेली और लंबी उंगलियाँ वायु तत्व की स्पष्ट पहचान हैं। शिल्प, संगीत, लेखन, डिज़ाइन या कोई भी काम जिसमें फुर्तीले हाथ और चुस्त दिमाग़ चाहिए, आपकी सबसे अच्छी क्षमता को सामने ला सकता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.shape.solid",
+      "when": {"hand.palm": "rounded", "hand.fingers": "short"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Made for steady results", "hi": "स्थिर नतीजों के लिए बना हाथ"},
+      "text": {"en": "A rounded palm with shorter fingers is a clear Water signature. You build results patiently and reliably, and long-term work that grows over time suits you.", "hi": "गोल हथेली और छोटी उंगलियाँ जल तत्व की स्पष्ट पहचान हैं। आप धैर्य और भरोसे के साथ नतीजे बनाते हैं, और ऐसा लंबा काम जो समय के साथ बढ़ता है, आपके लिए उपयुक्त है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.lines.many",
+      "when": {"hand.line_density": "many"},
+      "area": "life_events", "tone": "neutral", "weight": 2,
+      "title": {"en": "A life of many paths", "hi": "कई राहों वाला जीवन"},
+      "text": {"en": "Your palm shows a fine web of many lines, as Air hands often do. Life may feel full of side roads and detours, yet these tend to bring you back to the themes that matter most, richer for the journey.", "hi": "आपकी हथेली में बहुत-सी महीन रेखाओं का जाल है, जैसा अक्सर वायु हस्त में होता है। जीवन कई मोड़ों और घुमावों से भरा लग सकता है, पर ये रास्ते आपको उन्हीं बातों पर लौटाते हैं जो आपके लिए सबसे ज़रूरी हैं — और यात्रा से आप और समृद्ध होकर लौटते हैं।"},
+      "source": "ch0"
+    },
+    {
+      "id": "hand.lines.many_mind",
+      "when": {"hand.line_density": "many"},
+      "area": "mind", "tone": "caution", "weight": 2,
+      "title": {"en": "A busy, sensitive mind", "hi": "व्यस्त और संवेदनशील मन"},
+      "text": {"en": "Many fine lines often reflect a mind that rarely switches off. Short breaks, time away from screens and a regular bedtime help you recharge before tiredness builds up.", "hi": "बहुत-सी महीन रेखाएँ अक्सर ऐसे मन को दर्शाती हैं जो शायद ही कभी रुकता है। छोटे विराम, स्क्रीन से दूरी और नियमित सोने का समय थकान जमा होने से पहले आपको फिर से ऊर्जा देते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.lines.moderate",
+      "when": {"hand.line_density": "moderate"},
+      "area": "personality", "tone": "positive", "weight": 2,
+      "title": {"en": "Clear, purposeful lines", "hi": "साफ़, उद्देश्यपूर्ण रेखाएँ"},
+      "text": {"en": "Your lines are clear and of medium depth, a pattern often linked with the Fire hand. It suggests purposeful energy that you direct well once you know your goal.", "hi": "आपकी रेखाएँ साफ़ और मध्यम गहराई की हैं, जो अक्सर अग्नि हस्त से जुड़ा पैटर्न है। यह उद्देश्यपूर्ण ऊर्जा का संकेत है, जिसे लक्ष्य साफ़ होते ही आप अच्छी दिशा दे पाते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.lines.few",
+      "when": {"hand.line_density": "few"},
+      "area": "life_events", "tone": "neutral", "weight": 2,
+      "title": {"en": "Few lines, a focused course", "hi": "कम रेखाएँ, एकाग्र राह"},
+      "text": {"en": "Your palm has fewer lines, typical of the Water hand, and they tend to be deeper and steadier. Life may feel like a strong current carrying you toward a clear point; choosing your direction consciously helps you steer it.", "hi": "आपकी हथेली में रेखाएँ कम हैं, जो जल हस्त की पहचान है, और ये आम तौर पर गहरी और स्थिर होती हैं। जीवन एक तेज़ धारा जैसा लग सकता है जो आपको एक तय दिशा में ले जाती है; अपनी दिशा सोच-समझकर चुनें, तो आप इस धारा को खुद मोड़ सकते हैं।"},
+      "source": "ch0"
+    },
+    {
+      "id": "hand.lines.few_strength",
+      "when": {"hand.line_density": "few"},
+      "area": "health", "tone": "positive", "weight": 1,
+      "title": {"en": "Deep-rooted stamina", "hi": "गहरी जड़ों वाली सहनशक्ति"},
+      "text": {"en": "Fewer, well-rooted lines with few breaks suggest steady reserves of energy. Keep them strong with regular exercise and light, warm meals.", "hi": "कम पर गहरी और कम टूटी रेखाएँ ऊर्जा के स्थिर भंडार का संकेत देती हैं। नियमित व्यायाम और हल्के, गरम भोजन से इस ताक़त को बनाए रखें।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.air.many_lines",
+      "when": {"hand.element": "air", "hand.line_density": "many"},
+      "area": "health", "tone": "caution", "weight": 2,
+      "title": {"en": "Settle the restless wind", "hi": "चंचल वायु को शांत करें"},
+      "text": {"en": "An Air hand with many fine, criss-crossing lines shows Vāta running strong. Slow your days down on purpose: warm drinks, fixed sleep times, gentle yoga and deep breathing help calm mind and body.", "hi": "बहुत-सी महीन, एक-दूसरे को काटती रेखाओं वाला वायु हस्त बताता है कि वात प्रबल है। जान-बूझकर दिन की गति धीमी करें: गरम पेय, तय समय पर नींद, हल्का योग और गहरी साँसें मन और शरीर को शांत करती हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.moderate_lines",
+      "when": {"hand.element": "fire", "hand.line_density": "moderate"},
+      "area": "mind", "tone": "positive", "weight": 2,
+      "title": {"en": "Decisive and clear-headed", "hi": "निर्णायक और स्पष्ट सोच"},
+      "text": {"en": "A Fire hand with clear, medium-depth lines shows a decisive, organised mind. You see what needs doing and act; listening first makes your decisions even stronger.", "hi": "साफ़, मध्यम गहरी रेखाओं वाला अग्नि हस्त एक निर्णायक और व्यवस्थित मन दिखाता है। आप समझ जाते हैं कि क्या करना है और कर देते हैं; पहले सुनने की आदत आपके फ़ैसलों को और मज़बूत बनाती है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.few_lines",
+      "when": {"hand.element": "water", "hand.line_density": "few"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Rooted and dependable", "hi": "जड़ से मज़बूत और भरोसेमंद"},
+      "text": {"en": "A Water hand with few, deep lines suggests strong roots and a steady path. Your persistence is a quiet asset that tends to pay off over time.", "hi": "कम पर गहरी रेखाओं वाला जल हस्त मज़बूत जड़ों और स्थिर राह का संकेत देता है। आपकी लगन एक शांत पूँजी है, जिसका फल समय के साथ मिलता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.sun_line",
+      "when": {"hand.element": "fire", "sun.present": true},
+      "area": "career", "tone": "positive", "weight": 2, "planet": "sun",
+      "title": {"en": "Fire hand with Keerthi Rekha", "hi": "अग्नि हस्त पर कीर्ति रेखा"},
+      "text": {"en": "A Sun line (Keerthi Rekha) on a Fire hand strengthens the fire of the ring finger. It points to talent that gets noticed and recognition that grows with your effort.", "hi": "अग्नि हस्त पर सूर्य रेखा (कीर्ति रेखा) अनामिका की अग्नि को और बल देती है। यह ऐसी प्रतिभा का संकेत है जो लोगों की नज़र में आती है, और ऐसी पहचान का भी जो मेहनत के साथ बढ़ती है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.fire.mars_mound",
+      "when": {"hand.element": "fire", "mound.mars": "raised"},
+      "area": "personality", "tone": "neutral", "weight": 2, "planet": "mars",
+      "title": {"en": "Fire hand, strong Mars", "hi": "अग्नि हस्त, प्रबल मंगल"},
+      "text": {"en": "A prominent Mars area on a Fire hand adds courage and fighting spirit. Sport, physical work or a demanding goal gives this energy a healthy outlet.", "hi": "अग्नि हस्त पर उभरा हुआ मंगल क्षेत्र साहस और जुझारूपन बढ़ाता है। खेल, शारीरिक मेहनत या कोई चुनौती भरा लक्ष्य इस ऊर्जा को अच्छी दिशा देता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.jupiter_line",
+      "when": {"hand.element": "water", "jupiter_line.present": true},
+      "area": "spirituality", "tone": "positive", "weight": 2, "planet": "jupiter",
+      "title": {"en": "Water hand with Dīksha Rekha", "hi": "जल हस्त पर दीक्षा रेखा"},
+      "text": {"en": "Jupiter's lines are often found near the index finger of Water hands. Together they suggest a love of learning, faith, and wise counsel that others value.", "hi": "जल हस्त में तर्जनी के पास अक्सर गुरु की रेखाएँ मिलती हैं। साथ मिलकर ये ज्ञान के प्रति प्रेम, आस्था और ऐसी समझदार सलाह का संकेत देती हैं जिसकी दूसरे क़द्र करते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.water.moon_mound",
+      "when": {"hand.element": "water", "mound.moon": "raised"},
+      "area": "mind", "tone": "neutral", "weight": 2, "planet": "moon",
+      "title": {"en": "Water hand, full Moon mound", "hi": "जल हस्त, उभरा चंद्र पर्वत"},
+      "text": {"en": "A full, elongated Moon mound deepens the watery side of your nature: imagination, feeling and sensitivity. Creative outlets and time with people who lift you keep your mood bright.", "hi": "भरा और लंबा चंद्र पर्वत आपके स्वभाव के जल पक्ष — कल्पना, भावना और संवेदनशीलता — को और गहरा करता है। रचनात्मक काम और उत्साह बढ़ाने वाले लोगों का साथ आपके मन को प्रसन्न रखता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.side.right",
+      "when": {"hand.side": "right"},
+      "area": "life_events", "tone": "neutral", "weight": 1,
+      "title": {"en": "Reading your right hand", "hi": "दाएँ हाथ का पठन"},
+      "text": {"en": "One tradition reads the right hand as what is unfolding now and ahead. If it is also your working hand, its lines reflect what your own efforts are shaping.", "hi": "एक परंपरा दाएँ हाथ को वर्तमान और आगे होने वाली बातों का हाथ मानती है। अगर यही आपका काम करने वाला हाथ है, तो इसकी रेखाएँ दिखाती हैं कि आपकी मेहनत क्या रच रही है।"},
+      "source": "ch1"
+    },
+    {
+      "id": "hand.side.left",
+      "when": {"hand.side": "left"},
+      "area": "spirituality", "tone": "neutral", "weight": 1,
+      "title": {"en": "Reading your left hand", "hi": "बाएँ हाथ का पठन"},
+      "text": {"en": "One tradition reads the left hand as what you bring from the past: inborn tendencies and earlier karma. If you are left-handed, it is also your active hand; comparing both hands shows how you are building on what you were given.", "hi": "एक परंपरा बाएँ हाथ को अतीत से लाई गई बातों — जन्मजात प्रवृत्तियों और पिछले कर्मों — का हाथ मानती है। अगर आप बाएँ हाथ से काम करते हैं, तो यही आपका सक्रिय हाथ है; दोनों हाथों की तुलना बताती है कि जो मिला है उस पर आप कैसे निर्माण कर रहे हैं।"},
+      "source": "ch1"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "lines": [
+    {
+      "key": "life", "category": "primary", "sanskrit": "Āyu Rekha", "devanagari": "आयु रेखा",
+      "name": {"en": "Life Line", "hi": "जीवन रेखा"},
+      "location": {"en": "Begins under or on the mound of Jupiter, near the index finger, and sweeps around the base of the thumb toward the wrist.", "hi": "तर्जनी के पास गुरु पर्वत के नीचे या उसी पर से शुरू होकर अंगूठे के आधार को घेरती हुई कलाई की ओर जाती है।"},
+      "about": {"en": "This line reflects your prana, the life force you carry, and your inheritance from your father's side. It also marks a border: inside its curve lie comfort and material needs (Venus and Mars), outside it the other planets. A clear, deep, unbroken line is the classical ideal, but it is always read together with the fate line, the mercury line and the bracelets.", "hi": "यह रेखा आपके प्राण, यानी भीतर की जीवन शक्ति, और पिता की ओर से मिली विरासत को दर्शाती है। यह एक सीमा भी बनाती है: इसके घेरे के भीतर सुख-सुविधा और भौतिक ज़रूरतें (शुक्र और मंगल) हैं, बाहर बाकी ग्रह। साफ़, गहरी और बिना टूटी रेखा आदर्श मानी जाती है, पर इसे हमेशा भाग्य रेखा, बुध रेखा और मणिबंध के साथ मिलाकर पढ़ा जाता है।"},
+      "planet": "venus"
+    },
+    {
+      "key": "head", "category": "primary", "sanskrit": "Mātru Rekha", "devanagari": "मातृ रेखा",
+      "name": {"en": "Head Line", "hi": "मस्तिष्क रेखा"},
+      "location": {"en": "Starts together with or close to the life line near the index finger and runs across the palm, usually sloping gently toward the mound of the Moon.", "hi": "तर्जनी के पास जीवन रेखा के साथ या उसके निकट से शुरू होकर हथेली के पार जाती है, और प्रायः धीरे-धीरे चंद्र पर्वत की ओर झुकती है।"},
+      "about": {"en": "The head line shows your inheritance from your mother's side and the way your mind works: confidence, self-awareness, memory and mental balance. Where it parts from the life line hints at when you began to stand on your own as an individual.", "hi": "मस्तिष्क रेखा माता की ओर से मिली विरासत और आपके सोचने के ढंग को दर्शाती है: आत्मविश्वास, आत्म-जागरूकता, स्मृति और मानसिक संतुलन। जहाँ यह जीवन रेखा से अलग होती है, वह संकेत देता है कि आपने कब अपनी अलग पहचान बनानी शुरू की।"}
+    },
+    {
+      "key": "heart", "category": "primary", "sanskrit": "Hṛdaya Rekha", "devanagari": "हृदय रेखा",
+      "name": {"en": "Heart Line", "hi": "हृदय रेखा"},
+      "location": {"en": "Rises below the little finger, under the mound of Mercury, and crosses the upper palm toward the mound of Jupiter and the index finger.", "hi": "छोटी उंगली के नीचे, बुध पर्वत से शुरू होकर हथेली के ऊपरी भाग को पार करती हुई गुरु पर्वत और तर्जनी की ओर जाती है।"},
+      "about": {"en": "The heart line speaks of your capacity to love and be loved, your courage, and your power to bounce back after hard times. It is at its best when well rooted under Mercury, even in width and unbroken. Because the fate line usually crosses it, the two are compared to see which one leads.", "hi": "हृदय रेखा प्रेम देने और पाने की क्षमता, साहस और कठिन समय के बाद फिर से उठ खड़े होने की शक्ति बताती है। बुध पर्वत के नीचे मज़बूती से शुरू होकर, एक-सी चौड़ाई में और बिना टूटे चलना इसका सबसे अच्छा रूप है। भाग्य रेखा प्रायः इसे काटती है, इसलिए दोनों की तुलना करके देखा जाता है कि कौन प्रबल है।"}
+    },
+    {
+      "key": "fate", "category": "primary", "sanskrit": "Karma Rekha", "devanagari": "कर्म रेखा",
+      "name": {"en": "Fate Line", "hi": "भाग्य रेखा"},
+      "location": {"en": "Runs up the middle of the palm from near the wrist (the home of Ketu) toward the mound of Saturn under the middle finger.", "hi": "हथेली के बीच से, कलाई के पास (केतु के स्थान) से उठकर मध्यमा के नीचे शनि पर्वत की ओर जाती है।"},
+      "about": {"en": "The fate line, also called Dhana Rekha, carries a strong Saturn flavour and shows how firmly you walk your chosen path in work and duty. A line climbing freely toward Saturn is welcomed. Weak spots are often eased by support lines or squares nearby.", "hi": "भाग्य रेखा, जिसे धन रेखा भी कहते हैं, पर शनि का गहरा प्रभाव होता है। यह बताती है कि आप अपने कर्म और कर्तव्य के मार्ग पर कितनी दृढ़ता से चलते हैं। शनि की ओर बेरोक ऊपर चढ़ती रेखा शुभ मानी जाती है। इसकी कमज़ोरियों को पास की सहायक रेखाएँ या वर्ग अक्सर संभाल लेते हैं।"},
+      "planet": "saturn"
+    },
+    {
+      "key": "sun", "category": "secondary", "sanskrit": "Kīrti Rekha", "devanagari": "कीर्ति रेखा",
+      "name": {"en": "Sun Line", "hi": "सूर्य रेखा"},
+      "location": {"en": "A vertical line rising toward the mound of the Sun under the ring finger.", "hi": "अनामिका के नीचे सूर्य पर्वत की ओर चढ़ती खड़ी रेखा।"},
+      "about": {"en": "Seen as a blessed line that helps you shine, win respect and find unexpected openings, often with the backing of a mentor or influential friends.", "hi": "इसे सौभाग्यशाली रेखा माना जाता है जो आपको चमकने, सम्मान पाने और अचानक अवसर पाने में मदद करती है, अक्सर किसी गुरु या प्रभावशाली मित्रों के सहारे।"},
+      "planet": "sun"
+    },
+    {
+      "key": "jupiter_line", "category": "secondary", "sanskrit": "Dīkṣā Rekha", "devanagari": "दीक्षा रेखा",
+      "name": {"en": "Jupiter Line", "hi": "गुरु रेखा"},
+      "location": {"en": "A rare line rising toward the mound of Jupiter under the index finger.", "hi": "तर्जनी के नीचे गुरु पर्वत की ओर जाती एक दुर्लभ रेखा।"},
+      "about": {"en": "Linked with wisdom, optimism, patience and the search for higher learning, often under a respected teacher. Its one shadow is a pull toward excess.", "hi": "यह ज्ञान, आशावाद, धैर्य और किसी सम्मानित गुरु के सान्निध्य में उच्च शिक्षा की खोज से जुड़ी है। इसकी एक कमज़ोरी अति की ओर खिंचाव है।"},
+      "planet": "jupiter"
+    },
+    {
+      "key": "jupiter_ring", "category": "secondary", "sanskrit": "Guru Chandrikā", "devanagari": "गुरु चन्द्रिका",
+      "name": {"en": "Jupiter Ring", "hi": "गुरु वलय"},
+      "location": {"en": "A curved line circling the mound of Jupiter at the base of the index finger (Solomon's ring in Western palmistry).", "hi": "तर्जनी के आधार पर गुरु पर्वत को घेरती घुमावदार रेखा (पश्चिमी हस्तरेखा में सोलोमन की मुद्रिका)।"},
+      "about": {"en": "Works like the Jupiter line but adds a love of deep study and research that serves society, as well as a liking for calm, quiet living.", "hi": "यह गुरु रेखा जैसा ही फल देती है, साथ ही समाज के काम आने वाले गहरे अध्ययन-शोध और शांत, एकांत जीवन की रुचि जोड़ती है।"},
+      "planet": "jupiter"
+    },
+    {
+      "key": "saturn_line", "category": "secondary", "sanskrit": "Śani Rekha", "devanagari": "शनि रेखा",
+      "name": {"en": "Saturn Line", "hi": "शनि रेखा"},
+      "location": {"en": "A line on the mound of Saturn under the middle finger, separate from the fate line (not just its continuation).", "hi": "मध्यमा के नीचे शनि पर्वत पर एक रेखा, जो भाग्य रेखा से अलग हो (केवल उसका आगे का हिस्सा न हो)।"},
+      "about": {"en": "Brings endurance, steady authority, loyal friends and slow, long-term growth of savings, with a tendency to carry too much responsibility.", "hi": "यह सहनशक्ति, स्थिर अधिकार, वफ़ादार मित्र और लंबी अवधि में धीरे-धीरे बढ़ने वाली बचत देती है, पर ज़रूरत से ज़्यादा ज़िम्मेदारी उठाने की प्रवृत्ति भी।"},
+      "planet": "saturn"
+    },
+    {
+      "key": "saturn_ring", "category": "secondary", "sanskrit": "Śani Chandrikā", "devanagari": "शनि चन्द्रिका",
+      "name": {"en": "Saturn Ring", "hi": "शनि वलय"},
+      "location": {"en": "A rare curved line circling the mound of Saturn at the base of the middle finger.", "hi": "मध्यमा के आधार पर शनि पर्वत को घेरती एक दुर्लभ घुमावदार रेखा।"},
+      "about": {"en": "Similar to the Saturn line, with a strong turn toward inner life, spiritual practice (sadhana), simplicity and time in nature or solitude.", "hi": "शनि रेखा जैसी ही, पर इसमें आंतरिक जीवन, साधना, सादगी और प्रकृति या एकांत की ओर गहरा झुकाव होता है।"},
+      "planet": "saturn"
+    },
+    {
+      "key": "mars_line", "category": "secondary", "sanskrit": "Maṅgala Rekha", "devanagari": "मंगल रेखा",
+      "name": {"en": "Mars Line", "hi": "मंगल रेखा"},
+      "location": {"en": "Runs inside the life line, alongside it, starting from the mound of Mars near the thumb. Also called Shatru Rekha, the line of rivals.", "hi": "अंगूठे के पास मंगल पर्वत से शुरू होकर जीवन रेखा के भीतर, उसके साथ-साथ चलती है। इसे शत्रु रेखा भी कहते हैं।"},
+      "about": {"en": "A fiery line: it adds courage, drive and stamina, but can also bring friction with others and extra body heat (Pitta) that needs cooling habits.", "hi": "यह अग्नि-प्रधान रेखा है: साहस, जोश और सहनशक्ति बढ़ाती है, पर दूसरों से टकराव और शरीर में अतिरिक्त गर्मी (पित्त) भी ला सकती है, जिसे ठंडक देने वाली आदतों से संतुलित करना होता है।"},
+      "planet": "mars"
+    },
+    {
+      "key": "venus_belt", "category": "secondary", "sanskrit": "Śukra Mekhalā", "devanagari": "शुक्र मेखला",
+      "name": {"en": "Venus Belt", "hi": "शुक्र मेखला"},
+      "location": {"en": "A curved line above the heart line that loops around the mounds of Saturn and the Sun, below the middle and ring fingers.", "hi": "हृदय रेखा के ऊपर, मध्यमा और अनामिका के नीचे शनि और सूर्य पर्वत को घेरती घुमावदार रेखा।"},
+      "about": {"en": "One of the most common secondary lines. Read mainly by how full it is and how far it sits from the fingers: nearer the heart line it favours affection and the arts; nearer the fingers or broken, it points to restlessness in love.", "hi": "यह सबसे आम सहायक रेखाओं में से एक है। इसे मुख्य रूप से इसकी पूर्णता और उंगलियों से दूरी से पढ़ा जाता है: हृदय रेखा के पास हो तो स्नेह और कला की ओर झुकाव, उंगलियों के पास या टूटी हो तो प्रेम में बेचैनी।"},
+      "planet": "venus"
+    },
+    {
+      "key": "contentment", "category": "secondary", "sanskrit": "Sukha Rekha", "devanagari": "सुख रेखा",
+      "name": {"en": "Contentment Line", "hi": "संतोष रेखा"},
+      "location": {"en": "A support line running independently beside the mercury line, usually about the same length.", "hi": "बुध रेखा के साथ-साथ स्वतंत्र रूप से चलने वाली सहायक रेखा, प्रायः उसी लंबाई की।"},
+      "about": {"en": "Sometimes treated as a second health line. Mostly gentle in effect, it draws you toward healing and wellbeing.", "hi": "इसे कभी-कभी दूसरी स्वास्थ्य रेखा माना जाता है। इसका प्रभाव प्रायः सौम्य होता है और यह आपको उपचार और स्वास्थ्य की ओर खींचती है।"}
+    },
+    {
+      "key": "mercury", "category": "secondary", "sanskrit": "Budha Rekha", "devanagari": "बुध रेखा",
+      "name": {"en": "Mercury Line", "hi": "बुध रेखा"},
+      "location": {"en": "Rises from the middle of the lower palm, at the edge of the mound of the Moon, and climbs toward the mound of Mercury below the little finger.", "hi": "हथेली के निचले बीच भाग से, चंद्र पर्वत के किनारे से उठकर छोटी उंगली के नीचे बुध पर्वत की ओर चढ़ती है।"},
+      "about": {"en": "Also called the health, intuition or business line. Mostly helpful: it sharpens business sense, intuition, communication and healing gifts, while asking you to guard your energy and digestion.", "hi": "इसे स्वास्थ्य, अंतर्ज्ञान या व्यापार रेखा भी कहते हैं। यह प्रायः शुभ है: व्यापारिक समझ, अंतर्ज्ञान, संवाद और उपचार की क्षमता बढ़ाती है, साथ ही ऊर्जा और पाचन का ध्यान रखने को कहती है।"},
+      "planet": "mercury"
+    },
+    {
+      "key": "union", "category": "secondary", "sanskrit": "Vivāha Rekha", "devanagari": "विवाह रेखा",
+      "name": {"en": "Union Line", "hi": "विवाह रेखा"},
+      "location": {"en": "Short horizontal line(s) on the outer edge of the hand, crossing the mound of Mercury below the little finger. Also called Lalana Rekha.", "hi": "हाथ के बाहरी किनारे पर, छोटी उंगली के नीचे बुध पर्वत को पार करती छोटी आड़ी रेखा या रेखाएँ। इसे ललना रेखा भी कहते हैं।"},
+      "about": {"en": "Shows a warm, caring and protective nature and the wish for lasting partnership. Since a partnership changes food, sleep and daily rhythm, it is also read for how relationships affect your wellbeing.", "hi": "यह गर्मजोशी, देखभाल करने वाले और रक्षक स्वभाव तथा स्थायी साथ की इच्छा दिखाती है। साथ रहने से खान-पान, नींद और दिनचर्या बदलती है, इसलिए इसे रिश्तों का आपकी सेहत पर असर देखने के लिए भी पढ़ा जाता है।"}
+    },
+    {
+      "key": "bracelets", "category": "secondary", "sanskrit": "Maṇibandha Rekha", "devanagari": "मणिबंध रेखा",
+      "name": {"en": "Bracelets", "hi": "मणिबंध रेखाएँ"},
+      "location": {"en": "Horizontal lines across the wrist where it meets the palm; usually three, sometimes up to six.", "hi": "कलाई पर, जहाँ वह हथेली से मिलती है, आड़ी रेखाएँ; प्रायः तीन, कभी-कभी छह तक।"},
+      "about": {"en": "Seen as the foundation of the palm. Counted upward from the elbow side, the three main bracelets stand for wealth (dhana), knowledge (shastra) and devotion (bhakti), and also serve as a timeline. The most prominent one shows where much of your energy will go.", "hi": "इन्हें हथेली की नींव माना जाता है। कोहनी की ओर से ऊपर गिनने पर तीन मुख्य मणिबंध धन, शास्त्र (ज्ञान) और भक्ति के प्रतीक हैं और समय-रेखा का काम भी करते हैं। सबसे स्पष्ट मणिबंध बताता है कि आपकी अधिक ऊर्जा कहाँ लगेगी।"},
+      "planet": "ketu"
+    },
+    {
+      "key": "moon_line", "category": "secondary", "sanskrit": "Chandra Rekha", "devanagari": "चंद्र रेखा",
+      "name": {"en": "Moon Line", "hi": "चंद्र रेखा"},
+      "location": {"en": "A line on the mound of the Moon, on the outer lower palm; its meaning shifts with whether it sits in the upper, middle or lower third of the mound.", "hi": "हथेली के बाहरी निचले भाग में चंद्र पर्वत पर एक रेखा; पर्वत के ऊपरी, मध्य या निचले तिहाई भाग में होने से इसका अर्थ बदलता है।"},
+      "about": {"en": "A mixed blessing: it can bring emotional tiredness at times, a love of travel and living far from home, and wealth that tends to come later through your own effort.", "hi": "यह मिली-जुली रेखा है: कभी-कभी भावनात्मक थकान, यात्रा और घर से दूर बसने का झुकाव, और अपनी मेहनत से देर से आने वाली समृद्धि दे सकती है।"},
+      "planet": "moon"
+    },
+    {
+      "key": "progeny", "category": "secondary", "sanskrit": "Santāna Rekha", "devanagari": "संतान रेखा",
+      "name": {"en": "Progeny Line", "hi": "संतान रेखा"},
+      "location": {"en": "One of three small vertical lines climbing the lower mound of Venus; this one sits closest to the outer edge of the hand.", "hi": "शुक्र पर्वत के निचले भाग पर चढ़ती तीन छोटी खड़ी रेखाओं में से एक; यह हाथ के बाहरी किनारे के सबसे पास होती है।"},
+      "about": {"en": "Read for children and the wish to raise a family. Clear, straight lines are the best sign; crossing lines suggest worries about caring for children.", "hi": "इसे संतान और परिवार बढ़ाने की इच्छा के लिए पढ़ा जाता है। साफ़, सीधी रेखा सबसे अच्छा संकेत है; काटती रेखाएँ बच्चों की देखभाल को लेकर चिंता दिखाती हैं।"},
+      "planet": "venus"
+    },
+    {
+      "key": "siblings", "category": "secondary", "sanskrit": "Bhrātṛ Rekha", "devanagari": "भ्रातृ रेखा",
+      "name": {"en": "Siblings Line", "hi": "भाई-बहन रेखा"},
+      "location": {"en": "The middle line of the trio on the lower mound of Venus, just above the progeny line toward the thumb.", "hi": "शुक्र पर्वत के निचले भाग की तीन रेखाओं में बीच वाली, संतान रेखा के ठीक ऊपर अंगूठे की ओर।"},
+      "about": {"en": "Shows your bond with younger siblings, or with younger friends who feel like family, and how much backing they give you.", "hi": "यह छोटे भाई-बहनों, या परिवार जैसे छोटे मित्रों, से आपके संबंध और उनसे मिलने वाले साथ को दिखाती है।"},
+      "planet": "venus"
+    },
+    {
+      "key": "kinship", "category": "secondary", "sanskrit": "Bandhu Rekha", "devanagari": "बंधु रेखा",
+      "name": {"en": "Kinship Line", "hi": "बंधु रेखा"},
+      "location": {"en": "The highest of the three lines on the lower mound of Venus, often running into the crease between Venus and the base of the thumb.", "hi": "शुक्र पर्वत के निचले भाग की तीन रेखाओं में सबसे ऊपर वाली, जो प्रायः शुक्र पर्वत और अंगूठे के आधार के बीच की रेखा में मिल जाती है।"},
+      "about": {"en": "Relates to elder siblings and close relatives, and to help or inheritance that may come from them.", "hi": "यह बड़े भाई-बहनों और नज़दीकी रिश्तेदारों से, और उनसे मिलने वाली मदद या विरासत से जुड़ी है।"},
+      "planet": "venus"
+    },
+    {
+      "key": "fortune", "category": "secondary", "sanskrit": "Puṇya Rekha", "devanagari": "पुण्य रेखा",
+      "name": {"en": "Fortune Line", "hi": "पुण्य रेखा"},
+      "location": {"en": "At the base of the ring finger, curving from the Saturn side into the mound of the Sun and joining the sun line if there is one. Also called the Sarasvati line.", "hi": "अनामिका के आधार पर, शनि की ओर से मुड़कर सूर्य पर्वत में आती है और सूर्य रेखा हो तो उससे मिल जाती है। इसे सरस्वती रेखा भी कहते हैं।"},
+      "about": {"en": "A highly favourable mark that strengthens the Sun mound: recognition for your skill, words that carry weight, and the grace of Sarasvati in learning and the arts.", "hi": "यह बहुत शुभ चिह्न है जो सूर्य पर्वत को बल देता है: आपके कौशल को पहचान, आपकी बात का वज़न, और विद्या व कला में सरस्वती की कृपा।"},
+      "planet": "sun"
+    },
+    {
+      "key": "thumb_barley", "category": "secondary", "sanskrit": "Aṅguṣṭha Mūla Yava", "devanagari": "अंगुष्ठ मूल यव",
+      "name": {"en": "Thumb Barley", "hi": "अंगूठे का यव"},
+      "location": {"en": "On the middle section of the thumb, a closed shape that looks like a grain of barley.", "hi": "अंगूठे के बीच वाले पोर पर जौ के दाने जैसी बंद आकृति।"},
+      "about": {"en": "An old sign of never lacking nourishment. Today it is read as a generous host who loves to feed others. It can appear on other finger joints, but the thumb is its finest place.", "hi": "यह पुराना संकेत है कि अन्न की कमी नहीं होगी। आज इसे ऐसे उदार मेज़बान के रूप में पढ़ा जाता है जिसे दूसरों को खिलाना अच्छा लगता है। यह दूसरी उंगलियों के जोड़ों पर भी दिख सकता है, पर अंगूठे पर सबसे शुभ है।"},
+      "planet": "jupiter"
+    }
+  ],
+  "learn": [
+    {
+      "id": "learn.which_hand", "chapter": 1,
+      "title": {"en": "Which hand should be read?", "hi": "कौन-सा हाथ देखें?"},
+      "body": {
+        "en": "Palmists do not all agree on this. Older texts read a man's right hand and a woman's left, treating the other hand as the starting lot from birth. Another view says the left hand holds what you bring from the past, and the right hand shows what is happening now and what is coming.\n\nThe approach this app follows is the one the source book prefers: read your dominant hand, the one you work and earn with, because its lines respond most to your efforts.\n\nIt still helps to look at both. Matching patterns on both hands confirm a reading. When they differ, the dominant hand has the final say. If you use both hands equally, read the one with more or deeper lines.",
+        "hi": "इस विषय पर सभी हस्तरेखा विशेषज्ञ एकमत नहीं हैं। पुराने ग्रंथ पुरुष का दायाँ और स्त्री का बायाँ हाथ पढ़ते हैं, और दूसरे हाथ को जन्म से मिला भाग्य मानते हैं। एक और मत कहता है कि बायाँ हाथ अतीत से लाई चीज़ें दिखाता है और दायाँ हाथ वर्तमान और आने वाला समय।\n\nयह ऐप वही तरीका अपनाता है जो मूल पुस्तक को पसंद है: अपना प्रमुख हाथ पढ़ें, जिससे आप काम करते और कमाते हैं, क्योंकि उसकी रेखाएँ आपके प्रयासों से सबसे अधिक बदलती हैं।\n\nफिर भी दोनों हाथ देखना उपयोगी है। दोनों में एक जैसे संकेत हों तो बात पक्की मानी जाती है। अलग हों तो प्रमुख हाथ की बात मानी जाती है। अगर आप दोनों हाथ बराबर इस्तेमाल करते हैं, तो उस हाथ को पढ़ें जिसमें रेखाएँ अधिक या गहरी हों।"
+      }
+    },
+    {
+      "id": "learn.primary_lines", "chapter": 4,
+      "title": {"en": "The four primary lines", "hi": "चार प्रमुख रेखाएँ"},
+      "body": {
+        "en": "Vedic palmistry sorts lines into three groups: primary (Pradhana), secondary (Amshamsha) and miscellaneous markings (Prakirna). Lines act like channels that carry the influence of the planetary mounds across the palm.\n\nThe four primary lines are the life line (vitality and your father's side), the head line (mind and your mother's side), the heart line (love, courage and recovery) and the fate line (your path of work and duty). Most people have all four, though some are stronger than others.\n\nSometimes the head and heart lines merge into one crease across the palm, the single palmar crease (Simian line). It is linked with a strong will and an all-or-nothing focus.\n\nDepth also has a flavour: deep, grooved lines lean toward Kapha, fine faint lines toward Vata, and medium pinkish lines toward Pitta.",
+        "hi": "वैदिक हस्तरेखा में रेखाओं के तीन वर्ग हैं: प्रधान, अंशांश (सहायक) और प्रकीर्ण (विविध चिह्न)। रेखाएँ ऐसी नालियों जैसी हैं जो ग्रह पर्वतों का प्रभाव हथेली में पहुँचाती हैं।\n\nचार प्रमुख रेखाएँ हैं: जीवन रेखा (जीवन शक्ति और पिता का पक्ष), मस्तिष्क रेखा (मन और माता का पक्ष), हृदय रेखा (प्रेम, साहस और स्वस्थ होने की क्षमता) और भाग्य रेखा (कर्म और कर्तव्य का मार्ग)। अधिकतर लोगों में चारों होती हैं, पर कुछ अधिक प्रबल होती हैं।\n\nकभी-कभी मस्तिष्क और हृदय रेखा मिलकर हथेली के पार एक ही रेखा बन जाती हैं, जिसे एकल हस्त रेखा (सिमियन रेखा) कहते हैं। यह दृढ़ इच्छाशक्ति और पूरी लगन से जुटने के स्वभाव से जुड़ी है।\n\nगहराई का भी अर्थ है: गहरी रेखाएँ कफ की ओर, बारीक हल्की रेखाएँ वात की ओर, और मध्यम गुलाबी रेखाएँ पित्त की ओर झुकाव दिखाती हैं।"
+      }
+    },
+    {
+      "id": "learn.secondary_lines", "chapter": 4,
+      "title": {"en": "Secondary lines", "hi": "सहायक रेखाएँ"},
+      "body": {
+        "en": "Secondary lines are not on every hand, but when present they add important detail. Vertical lines toward the fingers strengthen their planet: the sun line and fortune line for recognition, the Jupiter line and ring for learning, the Saturn line and ring for endurance and inner life, and the mercury line for business, intuition and health.\n\nOthers describe relationships and family: the union line on the edge of the hand, the venus belt above the heart line, and three small lines on the lower Venus mound for children, younger siblings and elder relatives.\n\nThe Mars line inside the life line adds fire and courage. The bracelets at the wrist form the foundation of the palm, and the barley mark on the thumb is an old sign of plenty.",
+        "hi": "सहायक रेखाएँ हर हाथ में नहीं होतीं, पर होने पर ज़रूरी बातें जोड़ती हैं। उंगलियों की ओर जाती खड़ी रेखाएँ अपने ग्रह को बल देती हैं: पहचान के लिए सूर्य और पुण्य रेखा, विद्या के लिए गुरु रेखा और गुरु वलय, धैर्य और आंतरिक जीवन के लिए शनि रेखा और शनि वलय, तथा व्यापार, अंतर्ज्ञान और सेहत के लिए बुध रेखा।\n\nकुछ रेखाएँ रिश्तों और परिवार की बात करती हैं: हाथ के किनारे पर विवाह रेखा, हृदय रेखा के ऊपर शुक्र मेखला, और शुक्र पर्वत के निचले भाग पर संतान, छोटे भाई-बहन और बड़े रिश्तेदारों की तीन छोटी रेखाएँ।\n\nजीवन रेखा के भीतर मंगल रेखा अग्नि और साहस जोड़ती है। कलाई के मणिबंध हथेली की नींव हैं, और अंगूठे पर यव का चिह्न समृद्धि का पुराना संकेत है।"
+      }
+    },
+    {
+      "id": "learn.markings", "chapter": 4,
+      "title": {"en": "Markings and sacred symbols", "hi": "चिह्न और शुभ प्रतीक"},
+      "body": {
+        "en": "Small shapes on or near the lines change how a line is read. Triangles and squares are mostly protective: triangles favour gains through your own ideas, squares guard and repair a weak stretch. Chains, islands, nets, loops and breaks suggest delays, low energy or a time of rethinking. Support lines running beside a line strengthen it, and branches add adaptability.\n\nThe palm may also hold Chinha, auspicious symbols such as the trident, fish, flag, lotus, conch, swastika, crescent moon and star. The clearer a symbol is, the more weight it carries, and the lines it touches show where and when it may act. Crossing lines are normal on every hand, so they are no reason to worry.",
+        "hi": "रेखाओं पर या उनके पास छोटी आकृतियाँ रेखा का अर्थ बदल देती हैं। त्रिकोण और वर्ग प्रायः रक्षक हैं: त्रिकोण अपने विचारों से लाभ दिलाते हैं, वर्ग कमज़ोर हिस्से की रक्षा और मरम्मत करते हैं। ज़ंजीर, द्वीप, जाल, फंदे और टूटन देरी, कम ऊर्जा या पुनर्विचार का समय दिखाते हैं। साथ चलती सहायक रेखाएँ बल देती हैं, और शाखाएँ लचीलापन जोड़ती हैं।\n\nहथेली पर चिह्न, यानी शुभ प्रतीक, भी हो सकते हैं, जैसे त्रिशूल, मत्स्य, ध्वज, कमल, शंख, स्वस्तिक, अर्धचंद्र और तारा। प्रतीक जितना साफ़ हो, उसका प्रभाव उतना पक्का माना जाता है, और जिन रेखाओं को वह छूता है उनसे पता चलता है कि वह कहाँ और कब फल देगा। काटती रेखाएँ हर हाथ में होती हैं, इसलिए उनसे घबराने की ज़रूरत नहीं।"
+      }
+    },
+    {
+      "id": "learn.fingerprints", "chapter": 4,
+      "title": {"en": "Fingerprints (Hasta Mudra)", "hi": "अंगुली छाप (हस्त मुद्रा)"},
+      "body": {
+        "en": "Modern science groups fingerprints into arches, loops, whorls and mixed patterns. Vedic palmistry uses three types linked to the Trimurti. The Pitcher (Kalasha, like arches) belongs to Brahma: grounded, practical, careful planners with a creative streak who adapt slowly to sudden change. The Conch (Shankha, like loops) belongs to Shiva: friendly, supportive, cautious and happiest in calm settings. The Disc (Chakra, like whorls) belongs to Vishnu: independent, driven, quick and inspiring, though sometimes seen as distant.\n\nA closed disc, the Peacock Feather (Mayurpiccha), is more dramatic, competitive and creative. A finger whose print differs from the rest deserves attention, because it highlights that finger's planet.",
+        "hi": "आधुनिक विज्ञान अंगुली छापों को आर्च, लूप, व्होर्ल और मिश्रित में बाँटता है। वैदिक हस्तरेखा त्रिमूर्ति से जुड़े तीन प्रकार मानती है। कलश (आर्च जैसा) ब्रह्मा का है: ज़मीन से जुड़े, व्यावहारिक, सोच-समझकर योजना बनाने वाले और रचनात्मक, पर अचानक बदलाव में धीरे ढलने वाले। शंख (लूप जैसा) शिव का है: मिलनसार, सहयोगी, सावधान और शांत माहौल में सबसे खुश। चक्र (व्होर्ल जैसा) विष्णु का है: स्वतंत्र, लगनशील, तेज़ और प्रेरणा देने वाले, हालाँकि कभी-कभी दूर-दूर से लगते हैं।\n\nबंद चक्र, यानी मयूरपिच्छ, अधिक नाटकीय, प्रतिस्पर्धी और रचनात्मक होता है। जिस उंगली की छाप बाकी से अलग हो, उस पर ध्यान दें, क्योंकि वह उस उंगली के ग्रह को उभारती है।"
+      }
+    },
+    {
+      "id": "learn.timelines", "chapter": 4,
+      "title": {"en": "Timelines (Kalamana Rekha)", "hi": "काल-मान रेखा"},
+      "body": {
+        "en": "Ages can be read along the four primary lines and the bracelets. Each primary line counts a 60-year cycle from its starting point, whatever its length. A short line does not mean a short life; it only sets the scale. After the end of the line, counting begins again at zero, and themes from earlier years may echo in new forms.\n\nThe bracelets are counted upward from the wrist: wealth (0 to 20), knowledge (20 to 40) and devotion (40 to 60). Twelve-year steps are key turning points, since Jupiter takes about twelve years to circle the zodiac and five such rounds make the 60-year Samvatsara cycle.\n\nTimelines are a guide for reflection, not a fixed calendar.",
+        "hi": "चारों प्रमुख रेखाओं और मणिबंधों पर आयु पढ़ी जा सकती है। हर प्रमुख रेखा अपने आरंभ से 60 वर्ष का एक चक्र गिनती है, चाहे उसकी लंबाई कुछ भी हो। छोटी रेखा का अर्थ छोटा जीवन नहीं है; वह केवल पैमाना तय करती है। रेखा के अंत के बाद गिनती फिर शून्य से शुरू होती है, और पहले के वर्षों के विषय नए रूप में लौट सकते हैं।\n\nमणिबंध कलाई से ऊपर की ओर गिने जाते हैं: धन (0 से 20), ज्ञान (20 से 40) और भक्ति (40 से 60)। बारह-बारह वर्ष के पड़ाव महत्वपूर्ण मोड़ माने जाते हैं, क्योंकि गुरु को राशिचक्र का एक चक्कर लगाने में लगभग बारह वर्ष लगते हैं और ऐसे पाँच चक्कर 60 वर्ष का संवत्सर चक्र बनाते हैं।\n\nसमय-रेखा चिंतन के लिए मार्गदर्शन है, कोई पक्का कैलेंडर नहीं।"
+      }
+    }
+  ]
+}

@@ -1,0 +1,629 @@
+{
+  "nakshatras": [
+    {
+      "index": 1,
+      "key": "ashwini",
+      "sanskrit": "Ashwini",
+      "devanagari": "अश्विनी",
+      "ruler": "ketu",
+      "deity": {"en": "Ashwini Kumaras, the healing twins", "hi": "अश्विनी कुमार, उपचार करने वाले जुड़वां देवता"},
+      "symbol": {"en": "Horse's head", "hi": "घोड़े का सिर"},
+      "rashi": "aries",
+      "palm": {"en": "The very centre of the palm, where the lunar spiral begins.", "hi": "हथेली का ठीक बीच का भाग, जहाँ से चंद्र सर्पिल शुरू होता है।"},
+      "qualities": {"en": "You tend to move quickly and love a fresh start. Ashwini belongs to the twin gods of healing, so you may feel a natural pull to help, cure and get things moving. Travel, learning and new beginnings suit you.", "hi": "आप तेज़ी से काम करते हैं और नई शुरुआत करना पसंद करते हैं। अश्विनी का संबंध उपचार के देवता अश्विनी कुमारों से है, इसलिए आपमें दूसरों की मदद करने, उन्हें ठीक करने और काम आगे बढ़ाने की स्वाभाविक इच्छा हो सकती है। यात्रा, पढ़ाई और नए काम आपको रास आते हैं।"},
+      "strengths": [
+        {"en": "Quick to start and full of energy", "hi": "जल्दी शुरुआत करने वाले और ऊर्जा से भरपूर"},
+        {"en": "A natural gift for healing and care", "hi": "सेवा और उपचार की स्वाभाविक क्षमता"},
+        {"en": "Eager to learn and respectful of teachers", "hi": "सीखने के उत्सुक और गुरु का आदर करने वाले"}
+      ],
+      "challenges": [
+        {"en": "You may rush ahead; a short pause before big decisions serves you well.", "hi": "आप जल्दबाज़ी कर सकते हैं; बड़े फ़ैसलों से पहले थोड़ा रुकना आपके लिए अच्छा है।"},
+        {"en": "Restlessness can scatter your energy; a steady daily routine keeps you grounded.", "hi": "बेचैनी आपकी ऊर्जा बिखेर सकती है; रोज़ की नियमित दिनचर्या आपको स्थिर रखती है।"}
+      ],
+      "health": {"en": "Give gentle care to your head, knees and the soles of your feet. Your Vata nature likes warmth, regular meals and plenty of rest, especially when you feel run-down or feverish.", "hi": "अपने सिर, घुटनों और पैरों के तलवों का ध्यान रखें। आपकी वात प्रकृति को गर्माहट, समय पर भोजन और भरपूर आराम पसंद है, ख़ासकर जब थकान या बुख़ार जैसा लगे।"},
+      "propitiation": {"en": "Honour the Ashwini Kumaras, the twin healers. Traditional offerings include white flowers, a lotus, sandalwood or guggulu incense, and milk or milk-rice pudding. In a fire ritual, milk-rice is offered 108 times with the Gayatri mantra.", "hi": "उपचार करने वाले जुड़वां देवता अश्विनी कुमारों की पूजा करें। पारंपरिक रूप से सफ़ेद फूल, कमल, चंदन या गुग्गुल की धूप और दूध या खीर अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार खीर की आहुति दी जाती है।"}
+    },
+    {
+      "index": 2,
+      "key": "bharani",
+      "sanskrit": "Bharani",
+      "devanagari": "भरणी",
+      "ruler": "venus",
+      "deity": {"en": "Yama, lord of dharma and of endings", "hi": "यमराज, धर्म और अंत के स्वामी"},
+      "symbol": {"en": "Yoni (the womb)", "hi": "योनि (गर्भ)"},
+      "rashi": "aries",
+      "palm": {"en": "Just beside the centre of the palm, on the spiral's first turn toward the Sun mound below the ring finger.", "hi": "हथेली के बीच के ठीक पास, सर्पिल के पहले मोड़ पर, अनामिका के नीचे सूर्य पर्वत की ओर।"},
+      "qualities": {"en": "You carry a strong, intense energy that knows when to hold on and when to let go. Bharani is ruled by Yama, keeper of dharma, so you are often drawn to clearing away the old to make space for the new. You can face hard truths and are not afraid of a challenge.", "hi": "आपमें गहरी और प्रबल ऊर्जा है, जो जानती है कि कब पकड़ना है और कब छोड़ना है। भरणी के देवता धर्म के रक्षक यमराज हैं, इसलिए आप पुरानी चीज़ों को हटाकर नए के लिए जगह बनाना पसंद करते हैं। आप कठिन सच्चाइयों और चुनौतियों का सामना करने से नहीं डरते।"},
+      "strengths": [
+        {"en": "Courage and staying power", "hi": "साहस और सहनशक्ति"},
+        {"en": "Able to let go of what no longer serves you", "hi": "जो काम का नहीं, उसे छोड़ देने की क्षमता"},
+        {"en": "A strong sense of duty and fairness", "hi": "कर्तव्य और न्याय की मज़बूत भावना"}
+      ],
+      "challenges": [
+        {"en": "Your intensity can swing to extremes; a balanced middle path brings you more peace.", "hi": "आपकी तीव्रता कभी-कभी अति में बदल सकती है; संतुलित मध्य मार्ग आपको अधिक शांति देता है।"},
+        {"en": "A love of risk and adventure needs sensible limits; plan before you leap.", "hi": "जोखिम और रोमांच का शौक़ समझदारी की सीमा में रहे; छलांग लगाने से पहले योजना बनाएँ।"}
+      ],
+      "health": {"en": "Take care of your head, face, eyes and toes. Your Pitta nature does best with cooling, simple food that keeps the gut healthy and balanced, and with care against knocks to the face and neck.", "hi": "अपने सिर, चेहरे, आँखों और पैरों की उंगलियों का ध्यान रखें। आपकी पित्त प्रकृति के लिए ठंडक देने वाला सादा भोजन अच्छा है जो पेट को स्वस्थ और संतुलित रखे; चेहरे और गर्दन को चोट से बचाएँ।"},
+      "propitiation": {"en": "Honour Yama, the keeper of dharma. Traditional offerings include blue cloth, a blue lotus, amla (Indian gooseberry), guggulu or agarwood incense, and rice cooked with jaggery. In a fire ritual, honey and ghee are offered 108 times with the Gayatri mantra.", "hi": "धर्म के रक्षक यमराज की पूजा करें। पारंपरिक रूप से नीला वस्त्र, नीला कमल, आंवला, गुग्गुल या अगर की धूप और गुड़ वाले चावल अर्पित किए जाते हैं। हवन में गायत्री मंत्र के साथ 108 बार शहद और घी की आहुति दी जाती है।"}
+    },
+    {
+      "index": 3,
+      "key": "krittika",
+      "sanskrit": "Krittika",
+      "devanagari": "कृत्तिका",
+      "ruler": "sun",
+      "deity": {"en": "Agni, the fire god", "hi": "अग्निदेव"},
+      "symbol": {"en": "Razor, blade or flying arrow", "hi": "उस्तरा, धारदार अस्त्र या उड़ता तीर"},
+      "rashi": "taurus",
+      "palm": {"en": "Upper palm below the middle finger, on the Saturn mound.", "hi": "हथेली के ऊपरी भाग में मध्यमा के नीचे, शनि पर्वत पर।"},
+      "qualities": {"en": "You have a sharp, clear mind that cuts straight to the truth. Ruled by Agni, the fire god, Krittika gives a purifying energy and a wish to refine yourself and others. Discipline, spiritual practice and honest speech come naturally when you set your mind to them.", "hi": "आपका मन तेज़ और स्पष्ट है, जो सीधे सच तक पहुँच जाता है। कृत्तिका के देवता अग्निदेव हैं, इसलिए आपमें शुद्ध करने वाली ऊर्जा और स्वयं को तथा दूसरों को निखारने की इच्छा रहती है। मन लगाने पर अनुशासन, साधना और सच्ची बात कहना आपको सहज लगता है।"},
+      "strengths": [
+        {"en": "Sharp intellect and clear speech", "hi": "तेज़ बुद्धि और स्पष्ट वाणी"},
+        {"en": "Discipline and a purifying influence", "hi": "अनुशासन और शुद्ध करने वाला प्रभाव"},
+        {"en": "Courage to protect what is right", "hi": "सही की रक्षा करने का साहस"}
+      ],
+      "challenges": [
+        {"en": "Your words can cut deeper than you intend; a softer tone keeps people close.", "hi": "आपके शब्द अनजाने में ज़्यादा चुभ सकते हैं; नरम लहजा लोगों को आपके क़रीब रखता है।"},
+        {"en": "Inner fire can flare into anger; slow breathing and quiet time cool it.", "hi": "भीतर की आग कभी गुस्से में भड़क सकती है; धीमी साँस और शांत समय उसे ठंडा करते हैं।"}
+      ],
+      "health": {"en": "Look after your throat, neck, eyes and lower back. Regular bowel habits, light warm food, gentle movement for the joints and a good sleep routine help keep you balanced.", "hi": "अपने गले, गर्दन, आँखों और कमर के निचले हिस्से का ध्यान रखें। नियमित पेट साफ़ होना, हल्का गर्म भोजन, जोड़ों के लिए हल्का व्यायाम और सोने की अच्छी आदत आपको संतुलित रखती है।"},
+      "propitiation": {"en": "Honour Agni, the sacred fire, and Lord Shiva. Traditional offerings include red flowers, honey, ghee and guggulu incense. In a fire ritual, yoghurt with cooked rice is offered 108 times with the Gayatri mantra, and feeding a learned person milk-rice on this day is considered meritorious.", "hi": "पवित्र अग्नि (अग्निदेव) और भगवान शिव की पूजा करें। पारंपरिक रूप से लाल फूल, शहद, घी और गुग्गुल की धूप अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार दही-चावल की आहुति दी जाती है, और इस दिन किसी विद्वान को खीर खिलाना पुण्य माना जाता है।"}
+    },
+    {
+      "index": 4,
+      "key": "rohini",
+      "sanskrit": "Rohini",
+      "devanagari": "रोहिणी",
+      "ruler": "moon",
+      "deity": {"en": "Prajapati (Brahma), the creator", "hi": "प्रजापति (ब्रह्मा), सृष्टिकर्ता"},
+      "symbol": {"en": "Cart, chariot or banyan tree", "hi": "गाड़ी, रथ या बरगद का पेड़"},
+      "rashi": "taurus",
+      "palm": {"en": "Upper palm toward the index finger, on the Jupiter mound.", "hi": "हथेली के ऊपरी भाग में तर्जनी की ओर, गुरु पर्वत पर।"},
+      "qualities": {"en": "You have a warm, attractive and creative nature, and things tend to grow well under your care. Rohini, the Moon's favourite wife in legend, is ruled by Prajapati the creator, so beauty, comfort, home and steady progress matter to you. You are well suited to building something that lasts.", "hi": "आपका स्वभाव गर्मजोशी भरा, आकर्षक और रचनात्मक है, और आपकी देखभाल में चीज़ें अच्छी तरह फलती-फूलती हैं। कथा में रोहिणी चंद्रमा की सबसे प्रिय पत्नी हैं और इसके देवता सृष्टिकर्ता प्रजापति हैं, इसलिए सुंदरता, सुख-सुविधा, घर और स्थिर प्रगति आपके लिए मायने रखते हैं। आप कोई टिकाऊ चीज़ बनाने में सक्षम हैं।"},
+      "strengths": [
+        {"en": "Creativity and good taste", "hi": "रचनात्मकता और अच्छी रुचि"},
+        {"en": "Patience to help things grow", "hi": "चीज़ों को बढ़ने देने का धैर्य"},
+        {"en": "Warm, steady leadership", "hi": "गर्मजोशी भरा, स्थिर नेतृत्व"},
+        {"en": "A gift for making a beautiful home", "hi": "सुंदर घर बनाने की कला"}
+      ],
+      "challenges": [
+        {"en": "You may hold on too tightly to people or comforts; sharing your time fairly brings more joy.", "hi": "आप लोगों या सुख-सुविधाओं को बहुत कसकर पकड़ सकते हैं; अपना समय सबमें बराबर बाँटना अधिक आनंद देता है।"},
+        {"en": "A love of comfort can slow you down; small daily goals keep you moving.", "hi": "आराम का शौक़ आपकी गति धीमी कर सकता है; रोज़ के छोटे लक्ष्य आपको आगे बढ़ाते रहते हैं।"}
+      ],
+      "health": {"en": "Care for your mouth, neck, legs and calves. Easy, regular digestion, keeping cool in strong sun, and looking after your heart and blood pressure through calm living and movement all support you.", "hi": "अपने मुँह, गर्दन, टाँगों और पिंडलियों का ध्यान रखें। सहज और नियमित पाचन, तेज़ धूप में ठंडक बनाए रखना, और शांत जीवनशैली व व्यायाम से हृदय और रक्तचाप की देखभाल आपके लिए अच्छी है।"},
+      "propitiation": {"en": "Honour Prajapati (Brahma), the creator, and Saraswati. Traditional offerings include sugarcane, jamun fruit, flowers, milk-rice and a moon symbol. In a fire ritual, mustard seeds with ghee are offered 108 times with the Gayatri mantra, and serving milk-rice made with ghee to the learned on this day is said to honour your ancestors.", "hi": "सृष्टिकर्ता प्रजापति (ब्रह्मा) और माँ सरस्वती की पूजा करें। पारंपरिक रूप से गन्ना, जामुन, फूल, खीर और चंद्रमा का प्रतीक अर्पित किया जाता है। हवन में गायत्री मंत्र के साथ 108 बार सरसों और घी की आहुति दी जाती है, और इस दिन विद्वानों को घी वाली खीर खिलाना पितरों का सम्मान माना जाता है।"}
+    },
+    {
+      "index": 5,
+      "key": "mrigashira",
+      "sanskrit": "Mrigashirsha",
+      "devanagari": "मृगशिरा",
+      "ruler": "mars",
+      "deity": {"en": "Soma, the Moon god and nectar of immortality", "hi": "सोम (चंद्रदेव), अमृत के स्वामी"},
+      "symbol": {"en": "Deer's head", "hi": "हिरण का सिर"},
+      "rashi": "taurus",
+      "palm": {"en": "Between the index finger and the thumb, on the mound of Mars.", "hi": "तर्जनी और अंगूठे के बीच, मंगल पर्वत पर।"},
+      "qualities": {"en": "You are curious and gentle, always searching for something new to learn or explore. Ruled by Soma, the Moon's nectar, Mrigashira gives a soft, sensitive side and a love of beauty, music and friendship. Yoga, healing and kindness to others suit you well.", "hi": "आप जिज्ञासु और कोमल स्वभाव के हैं, और हमेशा कुछ नया सीखने या खोजने में लगे रहते हैं। मृगशिरा के देवता अमृत रूपी सोम (चंद्र) हैं, इसलिए आपमें कोमलता, संवेदनशीलता और सुंदरता, संगीत व मित्रता के प्रति प्रेम रहता है। योग, उपचार और दूसरों के प्रति दया आपके स्वभाव के अनुकूल हैं।"},
+      "strengths": [
+        {"en": "Curiosity and a love of learning", "hi": "जिज्ञासा और सीखने का प्रेम"},
+        {"en": "Gentle, friendly manner", "hi": "कोमल और मिलनसार व्यवहार"},
+        {"en": "A generous, giving heart", "hi": "उदार और देने वाला मन"}
+      ],
+      "challenges": [
+        {"en": "Your search can turn into restlessness; finishing one thing before starting the next brings calm.", "hi": "आपकी खोज बेचैनी में बदल सकती है; अगला काम शुरू करने से पहले पहला पूरा करना शांति देता है।"},
+        {"en": "Other people's moods may unsettle you; quiet time on your own restores you.", "hi": "दूसरों का मूड आपको विचलित कर सकता है; अकेले में बिताया शांत समय आपको फिर से संतुलित करता है।"}
+      ],
+      "health": {"en": "Care for your eyes, ears, throat and voice. Cooling, simple food supports your digestion and helps you avoid acidity and bloating; gentle skin care and calm habits also help.", "hi": "अपनी आँखों, कानों, गले और आवाज़ का ध्यान रखें। ठंडक देने वाला सादा भोजन पाचन को सहारा देता है और एसिडिटी व पेट फूलने से बचाता है; त्वचा की कोमल देखभाल और शांत आदतें भी मदद करती हैं।"},
+      "propitiation": {"en": "Honour Soma, the Moon god. Traditional offerings include white cloth, white flowers, a lotus, six-herb incense (shadanga dhoop) and milk-rice. In a fire ritual, milk-rice and ghee are offered 108 times with the Gayatri mantra, and gifting a milk cow on this day is held to be especially meritorious.", "hi": "चंद्रदेव सोम की पूजा करें। पारंपरिक रूप से सफ़ेद वस्त्र, सफ़ेद फूल, कमल, षडंग धूप और खीर अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार खीर और घी की आहुति दी जाती है, और इस दिन गौदान को विशेष पुण्य माना जाता है।"}
+    },
+    {
+      "index": 6,
+      "key": "ardra",
+      "sanskrit": "Ardra",
+      "devanagari": "आर्द्रा",
+      "ruler": "rahu",
+      "deity": {"en": "Rudra, the storm form of Shiva", "hi": "रुद्र, शिव का तूफ़ानी रूप"},
+      "symbol": {"en": "Teardrop", "hi": "आँसू की बूँद"},
+      "rashi": "gemini",
+      "palm": {"en": "On the thumb side of the palm, where the thumb joins the hand, just above the ball of the thumb.", "hi": "हथेली के अंगूठे वाले किनारे पर, जहाँ अंगूठा हाथ से जुड़ता है, अंगूठे के उभार के ठीक ऊपर।"},
+      "qualities": {"en": "You feel deeply and can pass through storms that change you for the better. Ardra is ruled by Rudra, so you often grow through intense experiences and come out clearer, like the air after rain. In hard times you can be a strong support for others.", "hi": "आप गहराई से महसूस करते हैं और ऐसे तूफ़ानों से गुज़र सकते हैं जो आपको बेहतर बना देते हैं। आर्द्रा के देवता रुद्र हैं, इसलिए आप तीव्र अनुभवों से सीखते हैं और बारिश के बाद की हवा की तरह और साफ़ होकर निकलते हैं। कठिन समय में आप दूसरों का मज़बूत सहारा बन सकते हैं।"},
+      "strengths": [
+        {"en": "Emotional depth and honesty", "hi": "भावनात्मक गहराई और ईमानदारी"},
+        {"en": "Resilience after hardship", "hi": "कठिनाई के बाद फिर खड़े होने की क्षमता"},
+        {"en": "A sharp, searching mind", "hi": "तेज़ और खोजी मन"}
+      ],
+      "challenges": [
+        {"en": "Strong feelings can arrive like sudden storms; naming them early helps them pass gently.", "hi": "तेज़ भावनाएँ अचानक तूफ़ान की तरह आ सकती हैं; उन्हें जल्दी पहचानकर कह देना उन्हें धीरे से गुज़रने देता है।"},
+        {"en": "You may hold on to past hurts; forgiving and letting go lightens your path.", "hi": "आप पुरानी चोटों को पकड़े रह सकते हैं; माफ़ करना और छोड़ देना आपकी राह हल्की करता है।"}
+      ],
+      "health": {"en": "Take care of your throat, chest and breathing, as well as your shoulders, arms and hair. Warm, easily digested meals strengthen a delicate digestion, and a steady bedtime supports restful sleep.", "hi": "अपने गले, छाती और साँस के साथ-साथ कंधों, बाँहों और बालों का ध्यान रखें। गर्म और आसानी से पचने वाला भोजन नाज़ुक पाचन को मज़बूत करता है, और सोने का तय समय अच्छी नींद में मदद करता है।"},
+      "propitiation": {"en": "Honour Rudra, the storm form of Lord Shiva. Traditional offerings include white flowers, white sandalwood paste, white sesame paste, red rice and agarwood incense. In a fire ritual, honey and ghee are offered 108 times with the Gayatri mantra; feeding white cows, giving sesame oil or ghee, or fasting on this day are also traditional.", "hi": "भगवान शिव के रुद्र रूप की पूजा करें। पारंपरिक रूप से सफ़ेद फूल, सफ़ेद चंदन का लेप, सफ़ेद तिल का लेप, लाल चावल और अगर की धूप अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार शहद और घी की आहुति दी जाती है; इस दिन सफ़ेद गाय को खिलाना, तिल का तेल या घी दान करना, या उपवास रखना भी परंपरा है।"}
+    },
+    {
+      "index": 7,
+      "key": "punarvasu",
+      "sanskrit": "Punarvasu",
+      "devanagari": "पुनर्वसु",
+      "ruler": "jupiter",
+      "deity": {"en": "Aditi, the boundless mother of the gods", "hi": "अदिति, देवताओं की असीम माता"},
+      "symbol": {"en": "Bow or quiver of arrows", "hi": "धनुष या तीरों का तरकश"},
+      "rashi": "gemini",
+      "palm": {"en": "On the ball of the thumb, the mound of Venus.", "hi": "अंगूठे के उभार पर, यानी शुक्र पर्वत पर।"},
+      "qualities": {"en": "You have a hopeful, generous spirit and a gift for bouncing back. Ruled by Aditi, mother of the gods, Punarvasu brings renewal: after a setback you tend to come home to yourself and begin again. Learning, teaching and caring for others come naturally to you.", "hi": "आपका मन आशावादी और उदार है, और आप गिरकर फिर उठना जानते हैं। पुनर्वसु की देवी देवताओं की माता अदिति हैं, इसलिए यह नक्षत्र नवीनीकरण देता है: हर रुकावट के बाद आप फिर अपने आप में लौटकर नई शुरुआत करते हैं। सीखना, सिखाना और दूसरों की देखभाल करना आपको सहज लगता है।"},
+      "strengths": [
+        {"en": "Resilience and the power to renew", "hi": "लचीलापन और फिर से नया होने की शक्ति"},
+        {"en": "Generous and nurturing", "hi": "उदार और पालन-पोषण करने वाले"},
+        {"en": "A love of learning and wisdom", "hi": "ज्ञान और सीखने का प्रेम"}
+      ],
+      "challenges": [
+        {"en": "You may trust too easily or give too much; gentle boundaries protect your kindness.", "hi": "आप जल्दी भरोसा कर सकते हैं या बहुत ज़्यादा दे सकते हैं; कोमल सीमाएँ आपकी दयालुता की रक्षा करती हैं।"},
+        {"en": "Starting over often can leave things unfinished; steady follow-through brings results.", "hi": "बार-बार नई शुरुआत से काम अधूरे रह सकते हैं; लगातार काम पूरा करना परिणाम देता है।"}
+      ],
+      "health": {"en": "Pay attention to digestion and to absorbing good nourishment, with mineral-rich, freshly cooked food. Care for your lungs, liver, ears and sense of balance, and rest your shoulders and throat when they feel strained.", "hi": "पाचन और पोषण के अच्छे अवशोषण पर ध्यान दें; खनिजों से भरपूर, ताज़ा पका भोजन लें। अपने फेफड़ों, लिवर, कानों और शरीर के संतुलन का ध्यान रखें, और कंधों या गले में खिंचाव हो तो उन्हें आराम दें।"},
+      "propitiation": {"en": "Honour Aditi, mother of the gods. Traditional offerings include boiled milk, saffron, white sandalwood paste, jasmine and jaggery, along with mantra recitation. In a fire ritual, sesame rice and ghee are offered 108 times with the Gayatri mantra, and giving bread or food on this day is held to bring prosperity.", "hi": "देवताओं की माता अदिति की पूजा करें। पारंपरिक रूप से उबला दूध, केसर, सफ़ेद चंदन का लेप, चमेली और गुड़ अर्पित किया जाता है, साथ में मंत्र जप किया जाता है। हवन में गायत्री मंत्र के साथ 108 बार तिल-चावल और घी की आहुति दी जाती है, और इस दिन रोटी या भोजन दान करना समृद्धि देने वाला माना जाता है।"}
+    },
+    {
+      "index": 8,
+      "key": "pushya",
+      "sanskrit": "Pushya",
+      "devanagari": "पुष्य",
+      "ruler": "saturn",
+      "deity": {"en": "Brihaspati, teacher of the gods", "hi": "बृहस्पति, देवगुरु"},
+      "symbol": {"en": "Cow's udder, flower or arrowhead", "hi": "गाय का थन, फूल या तीर का फल"},
+      "rashi": "cancer",
+      "palm": {"en": "Lower part of the Venus mound, near the wrist on the thumb side.", "hi": "शुक्र पर्वत का निचला भाग, अंगूठे की ओर कलाई के पास।"},
+      "qualities": {"en": "You are nurturing, dependable and drawn to wisdom. Pushya is guided by Brihaspati, teacher of the gods, so learning, teaching and spiritual practice bring out your best. People often find comfort and steady support in you.", "hi": "आप पोषण करने वाले, भरोसेमंद और ज्ञान की ओर आकर्षित रहने वाले हैं। पुष्य के देवता देवगुरु बृहस्पति हैं, इसलिए पढ़ना, पढ़ाना और साधना आपकी सबसे अच्छी बातें सामने लाते हैं। लोग अक्सर आपमें सुकून और स्थिर सहारा पाते हैं।"},
+      "strengths": [
+        {"en": "Caring and nourishing to others", "hi": "दूसरों की देखभाल और पोषण करने वाले"},
+        {"en": "Wisdom and a gift for teaching", "hi": "ज्ञान और सिखाने की कला"},
+        {"en": "Dependable and disciplined", "hi": "भरोसेमंद और अनुशासित"}
+      ],
+      "challenges": [
+        {"en": "You may take on others' burdens and neglect yourself; caring for your own needs keeps you strong.", "hi": "आप दूसरों का बोझ उठाकर ख़ुद को भूल सकते हैं; अपनी ज़रूरतों का ध्यान रखना आपको मज़बूत रखता है।"},
+        {"en": "You can become rigid about how things should be done; staying open keeps you growing.", "hi": "काम कैसे हो, इस पर आप कठोर हो सकते हैं; खुला मन आपको आगे बढ़ाता रहता है।"}
+      ],
+      "health": {"en": "Look after your stomach, lungs, chest and mouth. Light, regular meals that do not overload the stomach, fresh air and breathing exercises support you well.", "hi": "अपने पेट, फेफड़ों, छाती और मुँह का ध्यान रखें। हल्का और समय पर भोजन जो पेट पर भारी न पड़े, ताज़ी हवा और प्राणायाम आपके लिए अच्छे हैं।"},
+      "propitiation": {"en": "Honour Brihaspati, teacher of the gods. Traditional offerings include white and yellow cloth, white flowers and lotus, saffron, sandalwood, the peepal tree and rice with yoghurt. In a fire ritual, milk and ghee are offered 108 times with the Gayatri mantra; a gift of gold on this day is said to please all the planets.", "hi": "देवगुरु बृहस्पति की पूजा करें। पारंपरिक रूप से सफ़ेद और पीला वस्त्र, सफ़ेद फूल और कमल, केसर, चंदन, पीपल और दही-चावल अर्पित किए जाते हैं। हवन में गायत्री मंत्र के साथ 108 बार दूध और घी की आहुति दी जाती है; इस दिन सोने का दान सभी ग्रहों को प्रसन्न करने वाला माना जाता है।"}
+    },
+    {
+      "index": 9,
+      "key": "ashlesha",
+      "sanskrit": "Ashlesha",
+      "devanagari": "आश्लेषा",
+      "ruler": "mercury",
+      "deity": {"en": "The Sarpas (serpent deities)", "hi": "सर्प (नाग देवता)"},
+      "symbol": {"en": "Serpent", "hi": "सर्प"},
+      "rashi": "cancer",
+      "palm": {"en": "Bottom centre of the palm, just above the wrist.", "hi": "हथेली के निचले बीच के भाग में, कलाई के ठीक ऊपर।"},
+      "qualities": {"en": "You are perceptive and quick to sense what lies beneath the surface. Ashlesha belongs to the serpent deities, giving you a penetrating mind, strong intuition and an interest in hidden knowledge and healing. Used well, this power can turn difficulties into wisdom.", "hi": "आप बहुत समझदार हैं और सतह के नीचे छिपी बातों को जल्दी भाँप लेते हैं। आश्लेषा का संबंध नाग देवताओं से है, जो आपको गहरी सोच, तेज़ अंतर्ज्ञान और गूढ़ ज्ञान व उपचार में रुचि देते हैं। सही दिशा में लगाने पर यह शक्ति कठिनाइयों को ज्ञान में बदल सकती है।"},
+      "strengths": [
+        {"en": "Deep insight and intuition", "hi": "गहरी समझ और अंतर्ज्ञान"},
+        {"en": "Clever and persuasive with words", "hi": "बातों में चतुर और प्रभावशाली"},
+        {"en": "Interest in healing and deep study", "hi": "उपचार और गहन अध्ययन में रुचि"}
+      ],
+      "challenges": [
+        {"en": "You may hold on to hurt or blame yourself and others; talking things through and forgiving set you free.", "hi": "आप दुख को पकड़े रह सकते हैं या ख़ुद को और दूसरों को दोष दे सकते हैं; खुलकर बात करना और माफ़ करना आपको मुक्त करता है।"},
+        {"en": "Low moods can coil around you; good company, sunlight and a steady routine lift them.", "hi": "उदासी कभी आपको घेर सकती है; अच्छी संगत, धूप और नियमित दिनचर्या उसे दूर करती है।"}
+      ],
+      "health": {"en": "Care for your digestion, from the food pipe to the stomach, and for your circulation and energy. Warm, nourishing food, movement that keeps the blood flowing and care for your hands and feet help; if something feels off, a patient check-up is wiser than guesswork.", "hi": "भोजन नली से पेट तक अपने पाचन का, और रक्त संचार व ऊर्जा का ध्यान रखें। गर्म और पौष्टिक भोजन, रक्त संचार बनाए रखने वाला व्यायाम और हाथों-पैरों की देखभाल मदद करती है; कुछ ठीक न लगे तो अंदाज़ा लगाने के बजाय धैर्य से जाँच करवाना बेहतर है।"},
+      "propitiation": {"en": "Honour the serpent deities (Nagas). Traditional offerings include nagakesar flowers, turmeric root, red or brown flowers and cloth, sandalwood paste, honey, rice pudding and sweetened milk, often placed before a serpent image. In a fire ritual, ghee and guggulu are offered 108 times with the Gayatri mantra.", "hi": "नाग देवताओं की पूजा करें। पारंपरिक रूप से नागकेसर, हल्दी की गाँठ, लाल या भूरे फूल और वस्त्र, चंदन का लेप, शहद, खीर और मीठा दूध अर्पित किया जाता है, अक्सर नाग प्रतिमा के सामने। हवन में गायत्री मंत्र के साथ 108 बार घी और गुग्गुल की आहुति दी जाती है।"}
+    },
+    {
+      "index": 10,
+      "key": "magha",
+      "sanskrit": "Magha",
+      "devanagari": "मघा",
+      "ruler": "ketu",
+      "deity": {"en": "The Pitris (ancestors)", "hi": "पितर (पूर्वज)"},
+      "symbol": {"en": "Throne or crown", "hi": "सिंहासन या मुकुट"},
+      "rashi": "leo",
+      "palm": {"en": "Lower palm toward the outer edge, at the foot of the Moon mound.", "hi": "हथेली के निचले भाग में बाहरी किनारे की ओर, चंद्र पर्वत के निचले छोर पर।"},
+      "qualities": {"en": "You carry a natural dignity and a strong sense of where you come from. Magha is ruled by the Pitris, the ancestors, so heritage, tradition and honour mean a great deal to you. You can lead with authority and make bold, decisive choices.", "hi": "आपमें स्वाभाविक गरिमा है और अपनी जड़ों का गहरा एहसास है। मघा के देवता पितर (पूर्वज) हैं, इसलिए विरासत, परंपरा और सम्मान आपके लिए बहुत मायने रखते हैं। आप अधिकार के साथ नेतृत्व कर सकते हैं और साहसी फ़ैसले ले सकते हैं।"},
+      "strengths": [
+        {"en": "Natural leadership and dignity", "hi": "स्वाभाविक नेतृत्व और गरिमा"},
+        {"en": "Respect for elders and tradition", "hi": "बड़ों और परंपरा का सम्मान"},
+        {"en": "Decisive and good at strategy", "hi": "निर्णायक और रणनीति में कुशल"}
+      ],
+      "challenges": [
+        {"en": "Pride can make it hard to accept advice; listening to wise people strengthens your position.", "hi": "अभिमान सलाह मानना कठिन बना सकता है; ज्ञानी लोगों की बात सुनना आपकी स्थिति को मज़बूत करता है।"},
+        {"en": "A taste for risk can lead to gambles; weigh the odds before you commit.", "hi": "जोखिम का शौक़ आपको दाँव लगाने की ओर ले जा सकता है; पक्का करने से पहले नफ़ा-नुकसान तौलें।"}
+      ],
+      "health": {"en": "Look after your breathing, nose and sinuses, your spine and your heart. Good posture, steady exercise, gentle food that suits your digestion and rest when headaches build all help you stay well.", "hi": "अपनी साँस, नाक और साइनस, रीढ़ और हृदय का ध्यान रखें। सही मुद्रा, नियमित व्यायाम, पाचन के अनुकूल हल्का भोजन और सिरदर्द बढ़ने पर आराम आपको स्वस्थ रखते हैं।"},
+      "propitiation": {"en": "Honour your ancestors (the Pitris), for example with tarpan offerings, especially during Pitru Paksha. Traditional offerings include banyan leaves, champak flowers, black cloth, agarwood, ghee and guggulu incense, and food for crows. In a fire ritual, ghee, wheat flour and jaggery are offered 108 times with the Gayatri mantra, and giving alms on this day is considered fruitful.", "hi": "अपने पितरों का सम्मान करें, जैसे तर्पण द्वारा, विशेषकर पितृ पक्ष में। पारंपरिक रूप से बरगद के पत्ते, चंपा के फूल, काला वस्त्र, अगर, घी और गुग्गुल की धूप अर्पित की जाती है और कौओं को भोजन दिया जाता है। हवन में गायत्री मंत्र के साथ 108 बार घी, गेहूँ का आटा और गुड़ की आहुति दी जाती है, और इस दिन दान देना फलदायी माना जाता है।"}
+    },
+    {
+      "index": 11,
+      "key": "purva_phalguni",
+      "sanskrit": "Purva Phalguni",
+      "devanagari": "पूर्वा फाल्गुनी",
+      "ruler": "venus",
+      "deity": {"en": "Bhaga, god of good fortune and delight", "hi": "भग, सौभाग्य और आनंद के देवता"},
+      "symbol": {"en": "Hearth, couch or hammock", "hi": "चूल्हा, पलंग या झूला"},
+      "rashi": "leo",
+      "palm": {"en": "On the Moon mound, the lower outer part of the palm.", "hi": "चंद्र पर्वत पर, यानी हथेली के निचले बाहरी भाग में।"},
+      "qualities": {"en": "You enjoy life and bring warmth, charm and creativity wherever you go. Ruled by Bhaga, the god of good fortune, Purva Phalguni favours the arts, performance, romance and relaxation. You know how to make others feel welcome and at ease.", "hi": "आप जीवन का आनंद लेते हैं और जहाँ भी जाते हैं, गर्मजोशी, आकर्षण और रचनात्मकता ले आते हैं। पूर्वा फाल्गुनी के देवता सौभाग्य के देवता भग हैं, इसलिए कला, प्रदर्शन, प्रेम और विश्राम इसके अनुकूल हैं। आप दूसरों को अपनापन और सहजता महसूस कराना जानते हैं।"},
+      "strengths": [
+        {"en": "Artistic and performing talent", "hi": "कला और प्रदर्शन की प्रतिभा"},
+        {"en": "Charm, warmth and generosity", "hi": "आकर्षण, गर्मजोशी और उदारता"},
+        {"en": "Good at presenting ideas to the world", "hi": "अपने विचार दुनिया के सामने रखने में कुशल"}
+      ],
+      "challenges": [
+        {"en": "A love of pleasure can slip into indulgence; balancing enjoyment with steady effort keeps you thriving.", "hi": "सुख का प्रेम कभी अति में बदल सकता है; आनंद और लगातार मेहनत का संतुलन आपको फलता-फूलता रखता है।"},
+        {"en": "Wanting to be seen can make you sensitive to praise; valuing yourself from within keeps you steady.", "hi": "सराहना पाने की चाह आपको प्रशंसा के प्रति संवेदनशील बना सकती है; भीतर से ख़ुद को महत्व देना आपको स्थिर रखता है।"}
+      ],
+      "health": {"en": "Care for your hips, lower back and reproductive health, as well as your heart, chest and breathing. Moderation in pleasures, cooling food, regular exercise and a calm pace help keep your energy and blood pressure balanced.", "hi": "अपने कूल्हों, कमर के निचले हिस्से और प्रजनन स्वास्थ्य के साथ-साथ हृदय, छाती और साँस का ध्यान रखें। सुखों में संयम, ठंडक देने वाला भोजन, नियमित व्यायाम और शांत गति आपकी ऊर्जा और रक्तचाप को संतुलित रखते हैं।"},
+      "propitiation": {"en": "Honour Bhaga, the giver of good fortune. Traditional offerings include white and red flowers, palash (flame-of-the-forest) flowers, red sandalwood and bael-wood incense. In a fire ritual, cooked chickpeas, mustard seeds and priyangu are offered 108 times with the Gayatri mantra, and offering rice with ghee on this day is said to bring happiness and prosperity.", "hi": "सौभाग्य देने वाले भग देव की पूजा करें। पारंपरिक रूप से सफ़ेद और लाल फूल, पलाश के फूल, लाल चंदन और बेल की लकड़ी की धूप अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार उबले चने, सरसों और प्रियंगु की आहुति दी जाती है, और इस दिन घी-चावल अर्पित करना सुख और समृद्धि देने वाला माना जाता है।"}
+    },
+    {
+      "index": 12,
+      "key": "uttara_phalguni",
+      "sanskrit": "Uttara Phalguni",
+      "devanagari": "उत्तरा फाल्गुनी",
+      "ruler": "sun",
+      "deity": {"en": "Aryaman, god of friendship and kind patronage", "hi": "अर्यमा, मित्रता और संरक्षण के देवता"},
+      "symbol": {"en": "Bed or hammock", "hi": "पलंग या झूला"},
+      "rashi": "virgo",
+      "palm": {"en": "On the outer edge of the palm (the percussion), above the Moon mound.", "hi": "हथेली के बाहरी किनारे पर, चंद्र पर्वत के ऊपर।"},
+      "qualities": {"en": "You are generous, reliable and loyal, someone others can lean on. Ruled by Aryaman, the god of friendship and patronage, Uttara Phalguni gives you a gift for partnership, leadership and helping people through steady support. Marriage, learning and service are areas where you shine.", "hi": "आप उदार, भरोसेमंद और वफ़ादार हैं, ऐसे व्यक्ति जिन पर दूसरे टिक सकते हैं। उत्तरा फाल्गुनी के देवता मित्रता और संरक्षण के देवता अर्यमा हैं, जो आपको साझेदारी, नेतृत्व और स्थिर सहारे से लोगों की मदद करने की क्षमता देते हैं। विवाह, शिक्षा और सेवा में आप चमकते हैं।"},
+      "strengths": [
+        {"en": "Generous support for others", "hi": "दूसरों को उदार सहारा देने वाले"},
+        {"en": "Loyal in friendship and partnership", "hi": "मित्रता और साझेदारी में वफ़ादार"},
+        {"en": "Organised, practical leadership", "hi": "व्यवस्थित और व्यावहारिक नेतृत्व"}
+      ],
+      "challenges": [
+        {"en": "You may take on too much responsibility; sharing the work keeps you from burning out.", "hi": "आप बहुत ज़्यादा ज़िम्मेदारी ले सकते हैं; काम बाँटना आपको थकान से बचाता है।"},
+        {"en": "Expecting others to be as dependable as you can bring disappointment; patience smooths the way.", "hi": "दूसरों से अपने जितनी भरोसेमंदी की उम्मीद निराशा दे सकती है; धैर्य राह आसान करता है।"}
+      ],
+      "health": {"en": "Give care to your bowels, liver and digestion, to bone strength and to sensitive skin. Regular meals, calcium-rich nourishment, gentle skin care and movement that keeps the blood flowing help keep you steady.", "hi": "अपनी आँतों, लिवर और पाचन, हड्डियों की मज़बूती और संवेदनशील त्वचा का ध्यान रखें। समय पर भोजन, कैल्शियम से भरपूर पोषण, त्वचा की कोमल देखभाल और रक्त संचार बनाए रखने वाला व्यायाम आपको संतुलित रखते हैं।"},
+      "propitiation": {"en": "Honour Aryaman, patron of friendship and devotee of the Sun. Traditional offerings include red cloth, sindoor, blue lotus, red rice, and guggulu or mustard seeds. In a fire ritual, jujube (ber) or priyangu is offered 108 times with the Gayatri mantra, and giving rice and ghee on this day is especially honoured.", "hi": "मित्रता के संरक्षक और सूर्य के भक्त अर्यमा देव की पूजा करें। पारंपरिक रूप से लाल वस्त्र, सिंदूर, नीला कमल, लाल चावल और गुग्गुल या सरसों अर्पित किए जाते हैं। हवन में गायत्री मंत्र के साथ 108 बार बेर या प्रियंगु की आहुति दी जाती है, और इस दिन चावल और घी का दान विशेष सम्मानित माना जाता है।"}
+    },
+    {
+      "index": 13,
+      "key": "hasta",
+      "sanskrit": "Hasta",
+      "devanagari": "हस्त",
+      "ruler": "moon",
+      "deity": {"en": "Savitar, the inspiring form of the Sun", "hi": "सविता, सूर्य का प्रेरक रूप"},
+      "symbol": {"en": "Hand", "hi": "हाथ"},
+      "rashi": "virgo",
+      "palm": {"en": "Upper outer edge of the palm, rising toward the Mercury mound below the little finger.", "hi": "हथेली के बाहरी किनारे का ऊपरी भाग, छोटी उंगली के नीचे बुध पर्वत की ओर चढ़ता हुआ।"},
+      "qualities": {"en": "You are skilful, clever and good with your hands. Ruled by Savitar, the inspiring Sun, Hasta brings resourcefulness, a knack for crafts and a healing touch, and often an interest in palmistry and astrology. You can turn ideas into practical results.", "hi": "आप कुशल, चतुर और हाथ के काम में निपुण हैं। हस्त के देवता सूर्य के प्रेरक रूप सविता हैं, इसलिए यह नक्षत्र सूझबूझ, हस्तकला, उपचार करने वाला स्पर्श और अक्सर हस्तरेखा व ज्योतिष में रुचि देता है। आप विचारों को व्यावहारिक परिणामों में बदल सकते हैं।"},
+      "strengths": [
+        {"en": "Skilled, capable hands", "hi": "कुशल और सक्षम हाथ"},
+        {"en": "Inventive and resourceful", "hi": "आविष्कारशील और सूझबूझ वाले"},
+        {"en": "A healing, soothing touch", "hi": "उपचार और सुकून देने वाला स्पर्श"}
+      ],
+      "challenges": [
+        {"en": "A busy mind can make you restless or anxious; steady breathing and rest calm you.", "hi": "व्यस्त मन आपको बेचैन या चिंतित कर सकता है; गहरी साँस और आराम आपको शांत करते हैं।"},
+        {"en": "You may try to control every detail; trusting others with some tasks eases the load.", "hi": "आप हर बारीकी पर नियंत्रण रखना चाह सकते हैं; कुछ काम दूसरों को सौंपना बोझ हल्का करता है।"}
+      ],
+      "health": {"en": "Care for your hands and your digestion, especially your gut and how your body handles sugar and fluids. Regular, balanced meals that are not too sweet, good hydration, protecting your hands at work and good skin hygiene support you.", "hi": "अपने हाथों और पाचन का ध्यान रखें, ख़ासकर आँतों का और शरीर में शक्कर व पानी के संतुलन का। समय पर संतुलित भोजन जो बहुत मीठा न हो, पर्याप्त पानी, काम करते समय हाथों की सुरक्षा और त्वचा की स्वच्छता आपके लिए अच्छी है।"},
+      "propitiation": {"en": "Honour Savitar and Surya, the Sun. Traditional offerings include red cloth, red flowers, red sandalwood and dashanga (ten-resin) incense, often before an image of Surya. In a fire ritual, a pudding of wheat flour and jaggery is offered 108 times with the Gayatri mantra, which is itself addressed to Savitar.", "hi": "सविता और सूर्यदेव की पूजा करें। पारंपरिक रूप से लाल वस्त्र, लाल फूल, लाल चंदन और दशांग धूप अर्पित की जाती है, अक्सर सूर्य की प्रतिमा के सामने। हवन में गायत्री मंत्र के साथ 108 बार गेहूँ के आटे और गुड़ के हलवे की आहुति दी जाती है; गायत्री मंत्र स्वयं सविता देव को समर्पित है।"}
+    },
+    {
+      "index": 14,
+      "key": "chitra",
+      "sanskrit": "Chitra",
+      "devanagari": "चित्रा",
+      "ruler": "mars",
+      "deity": {"en": "Tvashtar, the divine craftsman", "hi": "त्वष्टा, दिव्य शिल्पी"},
+      "symbol": {"en": "Jewel or pearl", "hi": "मणि या मोती"},
+      "rashi": "virgo",
+      "palm": {"en": "The lowest (base) phalange of the little finger.", "hi": "छोटी उंगली (कनिष्ठा) का सबसे निचला पोर।"},
+      "qualities": {"en": "You have an eye for beauty and design and love to create something bright and lasting. Ruled by Tvashtar, the craftsman of the gods, Chitra favours art, architecture, jewellery and any work that shapes raw material into form. Your style and creativity often make you stand out.", "hi": "आपकी नज़र सुंदरता और डिज़ाइन को पहचानती है, और आपको कुछ चमकदार और टिकाऊ रचना पसंद है। चित्रा के देवता देवताओं के शिल्पी त्वष्टा हैं, इसलिए कला, वास्तुकला, आभूषण और कच्चे माल को सुंदर रूप देने वाले हर काम इसके अनुकूल हैं। अपनी शैली और रचनात्मकता से आप अक्सर अलग दिखते हैं।"},
+      "strengths": [
+        {"en": "Artistic and design talent", "hi": "कला और डिज़ाइन की प्रतिभा"},
+        {"en": "Skill in building and making things", "hi": "निर्माण और चीज़ें बनाने का हुनर"},
+        {"en": "Charisma and personal style", "hi": "आकर्षक व्यक्तित्व और अपनी शैली"}
+      ],
+      "challenges": [
+        {"en": "You may judge by appearances; looking deeper builds lasting bonds.", "hi": "आप दिखावे से परख सकते हैं; गहराई से देखना स्थायी रिश्ते बनाता है।"},
+        {"en": "Perfectionism can delay your work; remember that finishing is part of the craft.", "hi": "पूर्णता की चाह काम में देरी कर सकती है; याद रखें कि काम पूरा करना भी कला का हिस्सा है।"}
+      ],
+      "health": {"en": "Look after your kidneys and lower back, your ears and sense of balance, and your neck. Drinking enough water, lifting with care, good posture and cooling food help keep these areas comfortable.", "hi": "अपने गुर्दों और कमर के निचले हिस्से, कानों और संतुलन, और गर्दन का ध्यान रखें। पर्याप्त पानी पीना, सावधानी से भारी चीज़ें उठाना, सही मुद्रा और ठंडक देने वाला भोजन इन हिस्सों को आराम में रखते हैं।"},
+      "propitiation": {"en": "Honour Tvashtar, craftsman of the gods (often linked with Vishwakarma). Traditional offerings include multicoloured cloth and flowers, ornaments, saffron, sandalwood, bael and a wheat-and-jaggery pudding, with sal resin as incense. In a fire ritual, flavoured rice (chitranna) is offered 108 times with the Gayatri mantra, and giving perfume on this day is also praised.", "hi": "देवताओं के शिल्पी त्वष्टा (जिन्हें विश्वकर्मा से भी जोड़ा जाता है) की पूजा करें। पारंपरिक रूप से रंग-बिरंगे वस्त्र और फूल, आभूषण, केसर, चंदन, बेल और गेहूँ-गुड़ का हलवा अर्पित किया जाता है, और साल की राल की धूप दी जाती है। हवन में गायत्री मंत्र के साथ 108 बार चित्रान्न (मसालेदार चावल) की आहुति दी जाती है, और इस दिन इत्र का दान भी सराहा गया है।"}
+    },
+    {
+      "index": 15,
+      "key": "swati",
+      "sanskrit": "Swati",
+      "devanagari": "स्वाति",
+      "ruler": "rahu",
+      "deity": {"en": "Vayu, the wind god", "hi": "वायु, पवनदेव"},
+      "symbol": {"en": "Coral or sword", "hi": "मूँगा या तलवार"},
+      "rashi": "libra",
+      "palm": {"en": "The middle phalange of the little finger.", "hi": "छोटी उंगली (कनिष्ठा) का बीच का पोर।"},
+      "qualities": {"en": "You are independent, flexible and like to move freely, much like the wind. Ruled by Vayu, the wind god, Swati gives you adaptability, a gift for precise work and a love of learning and travel. You do best when you have room to find your own way.", "hi": "आप स्वतंत्र और लचीले स्वभाव के हैं और हवा की तरह खुलकर चलना पसंद करते हैं। स्वाति के देवता पवनदेव वायु हैं, जो आपको परिस्थिति के अनुसार ढलने की क्षमता, बारीक काम की कुशलता और पढ़ाई व यात्रा का प्रेम देते हैं। जब आपको अपना रास्ता ख़ुद चुनने की जगह मिलती है, तब आप सबसे अच्छा करते हैं।"},
+      "strengths": [
+        {"en": "Self-reliant and independent", "hi": "आत्मनिर्भर और स्वतंत्र"},
+        {"en": "Adaptable in changing situations", "hi": "बदलती परिस्थितियों में ढल जाने वाले"},
+        {"en": "Careful, precise work and study", "hi": "सावधान और बारीक काम व पढ़ाई"}
+      ],
+      "challenges": [
+        {"en": "You may scatter in many directions; a clear goal anchors your energy.", "hi": "आप कई दिशाओं में बिखर सकते हैं; एक साफ़ लक्ष्य आपकी ऊर्जा को टिकाता है।"},
+        {"en": "Prizing independence can make it hard to ask for help; accepting support is a strength too.", "hi": "स्वतंत्रता को बहुत महत्व देने से मदद माँगना कठिन लग सकता है; सहारा स्वीकार करना भी एक ताक़त है।"}
+      ],
+      "health": {"en": "Care for your eyes, teeth, skin and urinary system. Regular eye and dental check-ups, plenty of water and gentle skin care are good habits for you.", "hi": "अपनी आँखों, दाँतों, त्वचा और मूत्र तंत्र का ध्यान रखें। आँखों और दाँतों की नियमित जाँच, भरपूर पानी और त्वचा की कोमल देखभाल आपके लिए अच्छी आदतें हैं।"},
+      "propitiation": {"en": "Honour Vayu, the wind god. Traditional offerings include ornaments, ruby-red cloth, the arjuna tree, and agarwood or sandalwood incense. In a fire ritual, puffed rice (laaja) is offered 108 times with the Gayatri mantra, and any kind of charity on this day is said to bring benefit.", "hi": "पवनदेव वायु की पूजा करें। पारंपरिक रूप से आभूषण, माणिक जैसा लाल वस्त्र, अर्जुन वृक्ष, और अगर या चंदन की धूप अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार लाजा (खील) की आहुति दी जाती है, और इस दिन किसी भी तरह का दान लाभदायक माना जाता है।"}
+    },
+    {
+      "index": 16,
+      "key": "vishakha",
+      "sanskrit": "Vishakha",
+      "devanagari": "विशाखा",
+      "ruler": "jupiter",
+      "deity": {"en": "Indra and Agni together (Indragni)", "hi": "इंद्र और अग्नि (इंद्राग्नि)"},
+      "symbol": {"en": "Potter's wheel or archway", "hi": "कुम्हार का चाक या तोरण द्वार"},
+      "rashi": "libra",
+      "palm": {"en": "The top (tip) phalange of the little finger.", "hi": "छोटी उंगली (कनिष्ठा) का ऊपरी (सिरे वाला) पोर।"},
+      "qualities": {"en": "You are purposeful and determined, with the drive to reach the goals you set. Ruled by Indra and Agni together, Vishakha joins ambition with inner fire and devotion. Once you commit, you keep going until you see results.", "hi": "आप उद्देश्यपूर्ण और दृढ़ निश्चयी हैं, और तय किए गए लक्ष्य तक पहुँचने का जोश रखते हैं। विशाखा के देवता इंद्र और अग्नि की जोड़ी हैं, जो महत्वाकांक्षा के साथ भीतर की आग और भक्ति को जोड़ते हैं। एक बार ठान लेने पर आप परिणाम मिलने तक लगे रहते हैं।"},
+      "strengths": [
+        {"en": "Focus and determination", "hi": "एकाग्रता और दृढ़ संकल्प"},
+        {"en": "Patience to wait for the harvest", "hi": "फल मिलने तक इंतज़ार करने का धैर्य"},
+        {"en": "Sincere devotion and spiritual effort", "hi": "सच्ची भक्ति और साधना"}
+      ],
+      "challenges": [
+        {"en": "Single-minded drive can turn into impatience or envy; celebrating others' wins frees your own energy.", "hi": "एक ही लक्ष्य की धुन अधीरता या ईर्ष्या में बदल सकती है; दूसरों की जीत की ख़ुशी मनाना आपकी अपनी ऊर्जा को मुक्त करता है।"},
+        {"en": "You may push yourself too hard; rest is part of reaching the goal.", "hi": "आप ख़ुद पर बहुत ज़ोर डाल सकते हैं; आराम भी लक्ष्य तक पहुँचने का हिस्सा है।"}
+      ],
+      "health": {"en": "Pay attention to your ears and balance, your lower abdomen, and your bladder and kidneys. Plenty of water, good bathroom habits without straining, and regular check-ups as the years go by are good care for you.", "hi": "अपने कानों और संतुलन, पेट के निचले हिस्से, और मूत्राशय व गुर्दों पर ध्यान दें। भरपूर पानी, बिना ज़ोर लगाए शौच की अच्छी आदतें और समय के साथ नियमित जाँच आपके लिए अच्छी देखभाल है।"},
+      "propitiation": {"en": "Honour Indra and Agni together. Traditional offerings include wood apple (kaith), rose petals, red saffron, deodar oil as incense and a wheat-and-jaggery pudding. In a fire ritual, milk-rice sweetened with jaggery is offered 108 times with the Gayatri mantra, and giving milk or ghee on this day is especially praised.", "hi": "इंद्र और अग्नि देव की एक साथ पूजा करें। पारंपरिक रूप से कैथ, गुलाब की पंखुड़ियाँ, लाल केसर, धूप के लिए देवदार का तेल और गेहूँ-गुड़ का हलवा अर्पित किया जाता है। हवन में गायत्री मंत्र के साथ 108 बार गुड़ वाली खीर की आहुति दी जाती है, और इस दिन दूध या घी का दान विशेष सराहनीय है।"}
+    },
+    {
+      "index": 17,
+      "key": "anuradha",
+      "sanskrit": "Anuradha",
+      "devanagari": "अनुराधा",
+      "ruler": "saturn",
+      "deity": {"en": "Mitra, god of friendship and harmony", "hi": "मित्र, मित्रता और सामंजस्य के देवता"},
+      "symbol": {"en": "Lotus", "hi": "कमल"},
+      "rashi": "scorpio",
+      "palm": {"en": "The lowest (base) phalange of the ring finger.", "hi": "अनामिका का सबसे निचला पोर।"},
+      "qualities": {"en": "You are devoted, friendly and good at building lasting bonds. Ruled by Mitra, the god of friendship, Anuradha helps you succeed through cooperation, patience and loyalty. Like a lotus rising out of mud, you can flourish even in difficult surroundings.", "hi": "आप समर्पित, मिलनसार और स्थायी रिश्ते बनाने में कुशल हैं। अनुराधा के देवता मित्रता के देवता मित्र हैं, जो सहयोग, धैर्य और वफ़ादारी से सफलता दिलाते हैं। कीचड़ से उगने वाले कमल की तरह आप कठिन परिस्थितियों में भी खिल सकते हैं।"},
+      "strengths": [
+        {"en": "Loyal, lasting friendships", "hi": "वफ़ादार और लंबी दोस्ती"},
+        {"en": "Patience and discipline", "hi": "धैर्य और अनुशासन"},
+        {"en": "A knack for finding root causes", "hi": "समस्या की जड़ तक पहुँचने का हुनर"},
+        {"en": "Steady spiritual practice", "hi": "नियमित साधना"}
+      ],
+      "challenges": [
+        {"en": "You can carry hurt quietly; expressing your feelings keeps friendships healthy.", "hi": "आप चुपचाप दुख सह सकते हैं; अपनी भावनाएँ कहना दोस्ती को स्वस्थ रखता है।"},
+        {"en": "Strong attachments may make change hard; a little flexibility opens new doors.", "hi": "गहरा लगाव बदलाव को कठिन बना सकता है; थोड़ा लचीलापन नए रास्ते खोलता है।"}
+      ],
+      "health": {"en": "Care for your nose and sinuses, your chest and heart, and your pelvic area. Fibre-rich food and plenty of water for regular digestion, keeping warm in damp weather and cooling food when you feel overheated support you.", "hi": "अपनी नाक और साइनस, छाती और हृदय, और श्रोणि (पेड़ू) के भाग का ध्यान रखें। नियमित पाचन के लिए रेशेदार भोजन और भरपूर पानी, नम मौसम में गर्म रहना और ज़्यादा गर्मी लगे तो ठंडक देने वाला भोजन आपके लिए अच्छा है।"},
+      "propitiation": {"en": "Honour Mitra, the god of friendship. Traditional offerings include red cloth, jackfruit, lotus flowers, red banana flowers and bael-wood incense. In a fire ritual, red milk-rice sweetened with jaggery is offered 108 times with the Gayatri mantra, and giving clothes or rice on this day is highly praised.", "hi": "मित्रता के देवता मित्र की पूजा करें। पारंपरिक रूप से लाल वस्त्र, कटहल, कमल के फूल, केले के लाल फूल और बेल की लकड़ी की धूप अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार गुड़ से मीठी लाल खीर की आहुति दी जाती है, और इस दिन वस्त्र या चावल का दान बहुत पुण्यदायी माना जाता है।"}
+    },
+    {
+      "index": 18,
+      "key": "jyeshtha",
+      "sanskrit": "Jyeshtha",
+      "devanagari": "ज्येष्ठा",
+      "ruler": "mercury",
+      "deity": {"en": "Indra, king of the gods", "hi": "इंद्र, देवराज"},
+      "symbol": {"en": "Talisman, umbrella or earring", "hi": "ताबीज़, छत्र या कुंडल"},
+      "rashi": "scorpio",
+      "palm": {"en": "The middle phalange of the ring finger.", "hi": "अनामिका का बीच का पोर।"},
+      "qualities": {"en": "You are courageous and protective, ready to stand up for those who cannot defend themselves. Ruled by Indra, king of the gods, Jyeshtha gives a strong sense of responsibility, leadership and the will to overcome obstacles. People often turn to you in a crisis.", "hi": "आप साहसी और रक्षा करने वाले हैं, और उन लोगों के लिए खड़े होते हैं जो अपनी रक्षा ख़ुद नहीं कर सकते। ज्येष्ठा के देवता देवराज इंद्र हैं, जो ज़िम्मेदारी, नेतृत्व और बाधाओं को पार करने की प्रबल इच्छा देते हैं। संकट में लोग अक्सर आपकी ओर देखते हैं।"},
+      "strengths": [
+        {"en": "Courage and faith", "hi": "साहस और आस्था"},
+        {"en": "Protective of the weak", "hi": "कमज़ोरों की रक्षा करने वाले"},
+        {"en": "Able to win over opposition", "hi": "विरोध पर जीत पाने की क्षमता"}
+      ],
+      "challenges": [
+        {"en": "You may feel you must carry everything alone; sharing the load is not weakness.", "hi": "आपको लग सकता है कि सब कुछ अकेले उठाना है; बोझ बाँटना कमज़ोरी नहीं है।"},
+        {"en": "A competitive streak can turn into control; leading by example earns deeper respect.", "hi": "प्रतिस्पर्धा की भावना नियंत्रण में बदल सकती है; उदाहरण बनकर नेतृत्व करना गहरा सम्मान दिलाता है।"}
+      ],
+      "health": {"en": "Care for your mouth, teeth and gums, your throat and neck, and your bowels and reproductive health. Good oral hygiene, warm and regular meals that keep the colon comfortable, and calm routines suit your Vata nature.", "hi": "अपने मुँह, दाँतों और मसूड़ों, गले और गर्दन, तथा आँतों और प्रजनन स्वास्थ्य का ध्यान रखें। मुँह की अच्छी सफ़ाई, गर्म और समय पर भोजन जो आँतों को आराम दे, और शांत दिनचर्या आपकी वात प्रकृति के अनुकूल है।"},
+      "propitiation": {"en": "Honour Indra, king of the gods. Traditional offerings include betel leaves, yellow flowers, sandalwood, rice cooked with sesame seeds, and patala or agarwood incense. In a fire ritual, flavoured rice (chitranna) with ghee is offered 108 times with the Gayatri mantra, and giving yams or green vegetables to a learned person on this day is said to fulfil wishes.", "hi": "देवराज इंद्र की पूजा करें। पारंपरिक रूप से पान, पीले फूल, चंदन, तिल के साथ पका चावल, और पाटल या अगर की धूप अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार घी मिले चित्रान्न की आहुति दी जाती है, और इस दिन किसी विद्वान को ज़मीकंद या हरी सब्ज़ियाँ देना मनोकामना पूरी करने वाला माना जाता है।"}
+    },
+    {
+      "index": 19,
+      "key": "mula",
+      "sanskrit": "Mula",
+      "devanagari": "मूल",
+      "ruler": "ketu",
+      "deity": {"en": "Nirriti, goddess of dissolution", "hi": "निऋति, विलय की देवी"},
+      "symbol": {"en": "Bundle of roots, elephant goad or lion's tail", "hi": "जड़ों का गुच्छा, अंकुश या सिंह की पूँछ"},
+      "rashi": "sagittarius",
+      "palm": {"en": "The top (tip) phalange of the ring finger.", "hi": "अनामिका का ऊपरी (सिरे वाला) पोर।"},
+      "qualities": {"en": "You like to get to the root of things and are not satisfied with surface answers. Mula is ruled by Nirriti, the goddess of dissolution, so you can let go of what is false or worn out and rebuild on firmer ground. Research, healing, herbs and spiritual seeking often draw you.", "hi": "आप हर बात की जड़ तक पहुँचना चाहते हैं और ऊपरी जवाबों से संतुष्ट नहीं होते। मूल की देवी विलय की देवी निऋति हैं, इसलिए आप झूठी या पुरानी चीज़ों को छोड़कर मज़बूत आधार पर फिर से निर्माण कर सकते हैं। शोध, उपचार, जड़ी-बूटियाँ और आध्यात्मिक खोज अक्सर आपको आकर्षित करती हैं।"},
+      "strengths": [
+        {"en": "Depth in research and inquiry", "hi": "शोध और खोज में गहराई"},
+        {"en": "Courage to start again from the roots", "hi": "जड़ से फिर शुरू करने का साहस"},
+        {"en": "Interest in healing and herbs", "hi": "उपचार और जड़ी-बूटियों में रुचि"}
+      ],
+      "challenges": [
+        {"en": "Sudden upheavals may visit your life; treating them as a chance to clear space helps you grow.", "hi": "जीवन में अचानक उथल-पुथल आ सकती है; उसे जगह साफ़ करने का मौक़ा मानना आपको आगे बढ़ाता है।"},
+        {"en": "You can be blunt or tear things down too quickly; rebuilding with care brings lasting results.", "hi": "आप रूखे हो सकते हैं या चीज़ों को बहुत जल्दी तोड़ सकते हैं; सावधानी से फिर बनाना टिकाऊ परिणाम देता है।"}
+      ],
+      "health": {"en": "Look after your feet, legs, hips and lower back, and your breathing and chest. Warmth, gentle stretching, supportive footwear and keeping your chest covered in cold weather are good care for you.", "hi": "अपने पैरों, टाँगों, कूल्हों और कमर के निचले हिस्से, तथा साँस और छाती का ध्यान रखें। गर्माहट, हल्की स्ट्रेचिंग, आरामदायक जूते और ठंड में छाती को ढककर रखना आपके लिए अच्छी देखभाल है।"},
+      "propitiation": {"en": "Honour Nirriti, goddess of the south-west and of dissolution. Traditional offerings include red cloth, black ornaments, creepers or root vegetables, blue lotus, sandalwood, black gram cooked with saffron and ghee, and guggulu or sal resin as incense. In a fire ritual, black gram, fruits, sandalwood and flowers are offered 108 times with the Gayatri mantra, and giving roots or nuts to a learned person on this day is said to bring peace to the ancestors.", "hi": "दक्षिण-पश्चिम दिशा और विलय की देवी निऋति की पूजा करें। पारंपरिक रूप से लाल वस्त्र, काले आभूषण, लताएँ या कंद, नीला कमल, चंदन, केसर और घी में पकी उड़द, और गुग्गुल या साल की राल की धूप अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार उड़द, फल, चंदन और फूलों की आहुति दी जाती है, और इस दिन किसी विद्वान को कंद-मूल या मेवे देना पितरों को शांति देने वाला माना जाता है।"}
+    },
+    {
+      "index": 20,
+      "key": "purva_ashadha",
+      "sanskrit": "Purva Ashadha",
+      "devanagari": "पूर्वाषाढ़ा",
+      "ruler": "venus",
+      "deity": {"en": "Apas, goddess of the waters", "hi": "आपः, जल की देवी"},
+      "symbol": {"en": "Elephant tusk", "hi": "हाथी दाँत"},
+      "rashi": "sagittarius",
+      "palm": {"en": "The lowest (base) phalange of the middle finger.", "hi": "मध्यमा का सबसे निचला पोर।"},
+      "qualities": {"en": "You have a spirited, confident nature that does not give up easily. Ruled by Apas, the goddess of the waters, Purva Ashadha gives you the power to refresh, purify and inspire others. You hold firmly to your beliefs and can win people over with enthusiasm.", "hi": "आपका स्वभाव जोशीला और आत्मविश्वासी है जो आसानी से हार नहीं मानता। पूर्वाषाढ़ा की देवी जल की देवी आपः हैं, जो आपको दूसरों को ताज़गी देने, शुद्ध करने और प्रेरित करने की शक्ति देती हैं। आप अपने विश्वासों पर दृढ़ रहते हैं और उत्साह से लोगों का मन जीत सकते हैं।"},
+      "strengths": [
+        {"en": "An unshakeable spirit", "hi": "अडिग हौसला"},
+        {"en": "Inspiring enthusiasm", "hi": "प्रेरणा देने वाला उत्साह"},
+        {"en": "A refreshing, cleansing presence", "hi": "ताज़गी और शुद्धता लाने वाली उपस्थिति"}
+      ],
+      "challenges": [
+        {"en": "Strong convictions can make you stubborn; listening fully before you reply builds trust.", "hi": "पक्के विश्वास आपको ज़िद्दी बना सकते हैं; जवाब देने से पहले पूरी बात सुनना भरोसा बनाता है।"},
+        {"en": "Overconfidence may lead you to overreach; checking the details keeps success within reach.", "hi": "ज़्यादा आत्मविश्वास आपको सीमा से आगे ले जा सकता है; बारीकियाँ जाँचना सफलता को पास रखता है।"}
+      ],
+      "health": {"en": "Care for your kidneys and fluid balance, your hips and thighs, and your heart and circulation. Drinking enough water, going easy on very rich or salty food, and regular walking support you well.", "hi": "अपने गुर्दों और शरीर में पानी के संतुलन, कूल्हों और जाँघों, तथा हृदय और रक्त संचार का ध्यान रखें। पर्याप्त पानी पीना, बहुत गरिष्ठ या नमकीन भोजन कम करना और नियमित पैदल चलना आपके लिए अच्छा है।"},
+      "propitiation": {"en": "Honour Apas, the goddess of the waters. Traditional offerings include white cloth, white sandalwood, lotus, tamarind, and a pudding of rice, milk and brown sugar. In a fire ritual, puffed rice and flowers are offered 108 times with the Gayatri mantra, and giving pots of curd after a fast on this day is a traditional act of merit.", "hi": "जल की देवी आपः की पूजा करें। पारंपरिक रूप से सफ़ेद वस्त्र, सफ़ेद चंदन, कमल, इमली और चावल, दूध व गुड़ की खीर अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार लाजा (खील) और फूलों की आहुति दी जाती है, और इस दिन उपवास के बाद दही के घड़े दान करना पारंपरिक पुण्य कर्म है।"}
+    },
+    {
+      "index": 21,
+      "key": "uttara_ashadha",
+      "sanskrit": "Uttara Ashadha",
+      "devanagari": "उत्तराषाढ़ा",
+      "ruler": "sun",
+      "deity": {"en": "The Vishvadevas, the universal gods", "hi": "विश्वेदेव, सभी देवताओं का समूह"},
+      "symbol": {"en": "Wooden bed", "hi": "लकड़ी का पलंग"},
+      "rashi": "capricorn",
+      "palm": {"en": "The middle phalange of the middle finger.", "hi": "मध्यमा का बीच का पोर।"},
+      "qualities": {"en": "You are principled and patient, aiming for victories that last. Ruled by the Vishvadevas, the universal gods, Uttara Ashadha gives integrity, a strong sense of duty and the steady effort that leads to lasting success. Others tend to trust your leadership because you act fairly.", "hi": "आप सिद्धांतवादी और धैर्यवान हैं, और ऐसी जीत चाहते हैं जो टिके। उत्तराषाढ़ा के देवता विश्वेदेव हैं, जो ईमानदारी, कर्तव्य की गहरी भावना और लगातार प्रयास देते हैं जिससे स्थायी सफलता मिलती है। आप निष्पक्ष रहते हैं, इसलिए लोग आपके नेतृत्व पर भरोसा करते हैं।"},
+      "strengths": [
+        {"en": "Integrity and fairness", "hi": "ईमानदारी और निष्पक्षता"},
+        {"en": "Lasting success through steady effort", "hi": "लगातार प्रयास से स्थायी सफलता"},
+        {"en": "Trusted leadership", "hi": "भरोसेमंद नेतृत्व"}
+      ],
+      "challenges": [
+        {"en": "High standards can make you serious or rigid; making room for fun keeps you balanced.", "hi": "ऊँचे मानक आपको गंभीर या कठोर बना सकते हैं; मौज-मस्ती के लिए जगह रखना संतुलन देता है।"},
+        {"en": "You may follow duty to the point of exhaustion; rest renews your strength.", "hi": "आप कर्तव्य निभाते-निभाते थक सकते हैं; आराम आपकी शक्ति को फिर से भरता है।"}
+      ],
+      "health": {"en": "Look after your knees, your digestion and your skin. Light, warm food that does not build up mucus, clean water and careful food hygiene, and gentle exercise for the knees help you stay well.", "hi": "अपने घुटनों, पाचन और त्वचा का ध्यान रखें। हल्का और गर्म भोजन जो कफ़ न बढ़ाए, साफ़ पानी और भोजन की स्वच्छता, और घुटनों के लिए हल्का व्यायाम आपको स्वस्थ रखते हैं।"},
+      "propitiation": {"en": "Honour the Vishvadevas, the gathering of all the gods. Traditional offerings include white cloth, white sandalwood, flowers of five colours, amla wood and sweet stuffed bread. In a fire ritual, rice and ghee are offered 108 times with the Gayatri mantra, and giving milk and ghee sweetened with honey to a wise person on this day is held in high honour.", "hi": "सभी देवताओं के समूह विश्वेदेवों की पूजा करें। पारंपरिक रूप से सफ़ेद वस्त्र, सफ़ेद चंदन, पाँच रंगों के फूल, आंवले की लकड़ी और मीठी भरवाँ रोटी अर्पित की जाती है। हवन में गायत्री मंत्र के साथ 108 बार चावल और घी की आहुति दी जाती है, और इस दिन किसी ज्ञानी को शहद से मीठा किया दूध और घी देना बहुत सम्मानजनक माना जाता है।"}
+    },
+    {
+      "index": 22,
+      "key": "shravana",
+      "sanskrit": "Shravana",
+      "devanagari": "श्रवण",
+      "ruler": "moon",
+      "deity": {"en": "Vishnu, the preserver", "hi": "विष्णु, पालनहार"},
+      "symbol": {"en": "Ear or three footsteps", "hi": "कान या तीन पदचिह्न"},
+      "rashi": "capricorn",
+      "palm": {"en": "The top (tip) phalange of the middle finger.", "hi": "मध्यमा का ऊपरी (सिरे वाला) पोर।"},
+      "qualities": {"en": "You are a good listener who learns deeply by hearing and reflecting. Ruled by Vishnu, the preserver, Shravana favours devotion, study, music and passing on knowledge. Your patience and willingness to listen help you connect with people and gain wisdom.", "hi": "आप अच्छे श्रोता हैं और सुनकर व मनन करके गहराई से सीखते हैं। श्रवण के देवता पालनहार भगवान विष्णु हैं, इसलिए भक्ति, अध्ययन, संगीत और ज्ञान आगे बढ़ाना इसके अनुकूल हैं। आपका धैर्य और सुनने की तत्परता आपको लोगों से जोड़ती है और ज्ञान देती है।"},
+      "strengths": [
+        {"en": "A patient, attentive listener", "hi": "धैर्यवान और ध्यान से सुनने वाले"},
+        {"en": "Devotion and self-discipline", "hi": "भक्ति और आत्म-अनुशासन"},
+        {"en": "Gift for learning and teaching", "hi": "सीखने और सिखाने की प्रतिभा"},
+        {"en": "Feeling for music", "hi": "संगीत की समझ"}
+      ],
+      "challenges": [
+        {"en": "You may be sensitive to criticism or gossip; checking the facts before reacting keeps you calm.", "hi": "आप आलोचना या अफ़वाहों के प्रति संवेदनशील हो सकते हैं; प्रतिक्रिया से पहले तथ्य जाँचना आपको शांत रखता है।"},
+        {"en": "Taking in too much from others can tire you; quiet time helps you hear yourself.", "hi": "दूसरों की बहुत ज़्यादा बातें सुनना आपको थका सकता है; शांत समय आपको अपनी आवाज़ सुनने देता है।"}
+      ],
+      "health": {"en": "Care for your ears, your gums and mouth, your skin, and your lymphatic and reproductive health. Regular meals that keep your appetite steady, clean food and water, good oral care and gentle skin care support you.", "hi": "अपने कानों, मसूड़ों और मुँह, त्वचा, और लसीका व प्रजनन स्वास्थ्य का ध्यान रखें। भूख को स्थिर रखने वाला समय पर भोजन, साफ़ भोजन और पानी, मुँह की अच्छी देखभाल और त्वचा की कोमल देखभाल आपके लिए अच्छी है।"},
+      "propitiation": {"en": "Honour Lord Vishnu, for example with the mantra Om Namo Narayanaya. Traditional offerings include tulsi leaves, the peepal tree, saffron, sandalwood, red flowers, dashanga incense and rice cooked and offered to Vishnu. In a fire ritual, peepal wood and puffed rice are offered 108 times with the Gayatri mantra, and giving rugs or cloth on this day is considered meritorious.", "hi": "भगवान विष्णु की पूजा करें, जैसे ॐ नमो नारायणाय मंत्र के साथ। पारंपरिक रूप से तुलसी, पीपल, केसर, चंदन, लाल फूल, दशांग धूप और विष्णु को अर्पित पका चावल चढ़ाया जाता है। हवन में गायत्री मंत्र के साथ 108 बार पीपल की लकड़ी और लाजा की आहुति दी जाती है, और इस दिन दरी या वस्त्र का दान पुण्यदायी माना जाता है।"}
+    },
+    {
+      "index": 23,
+      "key": "dhanishta",
+      "sanskrit": "Dhanishta",
+      "devanagari": "धनिष्ठा",
+      "ruler": "mars",
+      "deity": {"en": "The eight Vasus, gods of the natural elements", "hi": "अष्ट वसु, प्रकृति के तत्वों के देवता"},
+      "symbol": {"en": "Two-headed drum", "hi": "दो मुँह वाला ढोल"},
+      "rashi": "capricorn",
+      "palm": {"en": "The lowest (base) phalange of the index finger.", "hi": "तर्जनी का सबसे निचला पोर।"},
+      "qualities": {"en": "You have rhythm, energy and a talent for making your mark in the world. Ruled by the eight Vasus, gods of the natural elements, Dhanishta brings renown, prosperity and a love of music and movement. You work well in groups and can rise to positions of recognition.", "hi": "आपमें लय, ऊर्जा और दुनिया में अपनी पहचान बनाने की प्रतिभा है। धनिष्ठा के देवता प्रकृति के तत्वों के आठ देवता अष्ट वसु हैं, जो यश, समृद्धि और संगीत व गति के प्रति प्रेम देते हैं। आप समूह में अच्छा काम करते हैं और मान-सम्मान के पदों तक पहुँच सकते हैं।"},
+      "strengths": [
+        {"en": "Musical and rhythmic talent", "hi": "संगीत और लय की प्रतिभा"},
+        {"en": "Able to earn recognition and wealth", "hi": "यश और धन कमाने की क्षमता"},
+        {"en": "Practical, hands-on skill", "hi": "व्यावहारिक और हाथ का हुनर"}
+      ],
+      "challenges": [
+        {"en": "Ambition may leave little time for close relationships; making space for loved ones keeps you grounded.", "hi": "महत्वाकांक्षा क़रीबी रिश्तों के लिए कम समय छोड़ सकती है; अपनों के लिए समय निकालना आपको ज़मीन से जोड़े रखता है।"},
+        {"en": "You can be impatient with slower people; a little patience earns lasting loyalty.", "hi": "आप धीमे लोगों से अधीर हो सकते हैं; थोड़ा धैर्य लंबी वफ़ादारी दिलाता है।"}
+      ],
+      "health": {"en": "Care for your spine and lower back, your ankles, shins and calves, and your joints and tendons. Warming up before exercise, careful footing, a calm pace that eases nervous strain and liver-friendly food support you.", "hi": "अपनी रीढ़ और कमर के निचले हिस्से, टखनों, पिंडलियों और जोड़ों व नसों का ध्यान रखें। व्यायाम से पहले वार्म-अप, सावधानी से चलना, मानसिक तनाव कम करने वाली शांत गति और लिवर के अनुकूल भोजन आपके लिए अच्छे हैं।"},
+      "propitiation": {"en": "Honour the eight Vasus. Traditional offerings include white cloth, white and jasmine flowers, sandalwood, guggulu, a Surya mandala, fig wood, mung beans and red rice. In a fire ritual, milk and jaggery are offered 108 times with the Gayatri mantra, and giving clothes or cloth on this day is considered very meritorious.", "hi": "अष्ट वसुओं की पूजा करें। पारंपरिक रूप से सफ़ेद वस्त्र, सफ़ेद और चमेली के फूल, चंदन, गुग्गुल, सूर्य मंडल, गूलर की लकड़ी, मूँग और लाल चावल अर्पित किए जाते हैं। हवन में गायत्री मंत्र के साथ 108 बार दूध और गुड़ की आहुति दी जाती है, और इस दिन वस्त्र दान करना बहुत पुण्यदायी माना जाता है।"}
+    },
+    {
+      "index": 24,
+      "key": "shatabhisha",
+      "sanskrit": "Shatabhisha",
+      "devanagari": "शतभिषा",
+      "ruler": "rahu",
+      "deity": {"en": "Varuna, lord of the cosmic waters", "hi": "वरुण, ब्रह्मांडीय जल के स्वामी"},
+      "symbol": {"en": "Wheel, lotus or basket of herbs", "hi": "चक्र, कमल या जड़ी-बूटियों की टोकरी"},
+      "rashi": "aquarius",
+      "palm": {"en": "The middle phalange of the index finger.", "hi": "तर्जनी का बीच का पोर।"},
+      "qualities": {"en": "You are independent, thoughtful and drawn to healing and hidden knowledge. Ruled by Varuna, lord of the waters, Shatabhisha, the 'hundred healers', gives you a gift for research, medicine and finding remedies others miss. You often value privacy and think for yourself.", "hi": "आप स्वतंत्र, विचारशील और उपचार व गूढ़ ज्ञान की ओर आकर्षित हैं। 'सौ वैद्यों' वाले इस नक्षत्र के देवता जल के स्वामी वरुण हैं, जो आपको शोध, चिकित्सा और ऐसे उपाय खोजने की क्षमता देते हैं जो दूसरों से छूट जाते हैं। आप अक्सर एकांत को महत्व देते हैं और अपने ढंग से सोचते हैं।"},
+      "strengths": [
+        {"en": "A talent for healing", "hi": "उपचार की प्रतिभा"},
+        {"en": "Patient research and analysis", "hi": "धैर्यपूर्ण शोध और विश्लेषण"},
+        {"en": "Independent thinking", "hi": "स्वतंत्र सोच"},
+        {"en": "Quietly charitable", "hi": "चुपचाप दान-सेवा करने वाले"}
+      ],
+      "challenges": [
+        {"en": "You may withdraw or keep feelings hidden; opening up to a trusted few eases the load.", "hi": "आप अपने में सिमट सकते हैं या भावनाएँ छिपा सकते हैं; कुछ भरोसेमंद लोगों से खुलना बोझ हल्का करता है।"},
+        {"en": "Scepticism can make you seem distant; balancing reason with warmth draws people closer.", "hi": "हर बात पर शंका आपको दूर का बना सकती है; तर्क के साथ अपनापन लोगों को क़रीब लाता है।"}
+      ],
+      "health": {"en": "Care for your teeth and jaw and for your knees, calves and ankles, and keep acidity and blood sugar in balance. Regular dental care, simple food that is not too spicy, and calm routines that keep blood pressure steady are good habits for you.", "hi": "अपने दाँतों और जबड़े, घुटनों, पिंडलियों और टखनों का ध्यान रखें, और एसिडिटी व रक्त शर्करा को संतुलित रखें। दाँतों की नियमित देखभाल, सादा और कम मसालेदार भोजन, और रक्तचाप को स्थिर रखने वाली शांत दिनचर्या आपके लिए अच्छी आदतें हैं।"},
+      "propitiation": {"en": "Honour Varuna, lord of the waters. Traditional offerings include red cloth, sandalwood, blue lotus, ghee and guggulu incense, and honey and ghee in puja. In a fire ritual, rice-milk pudding and white flowers are offered 108 times with the Gayatri mantra, and offering agarwood or sandalwood on this day is also praised.", "hi": "जल के स्वामी वरुण देव की पूजा करें। पारंपरिक रूप से लाल वस्त्र, चंदन, नीला कमल, घी और गुग्गुल की धूप, और पूजा में शहद व घी अर्पित किया जाता है। हवन में गायत्री मंत्र के साथ 108 बार खीर और सफ़ेद फूलों की आहुति दी जाती है, और इस दिन अगर या चंदन अर्पित करना भी सराहा गया है।"}
+    },
+    {
+      "index": 25,
+      "key": "purva_bhadrapada",
+      "sanskrit": "Purva Bhadrapada",
+      "devanagari": "पूर्वा भाद्रपद",
+      "ruler": "jupiter",
+      "deity": {"en": "Aja Ekapada, the one-footed goat", "hi": "अज एकपाद, एक पैर वाले देव"},
+      "symbol": {"en": "Two-faced man", "hi": "दो मुख वाला पुरुष"},
+      "rashi": "aquarius",
+      "palm": {"en": "The top (tip) phalange of the index finger.", "hi": "तर्जनी का ऊपरी (सिरे वाला) पोर।"},
+      "qualities": {"en": "You have an intense, idealistic nature and can be passionate about causes you believe in. Ruled by Aja Ekapada, a deity linked with fiery, stormy powers, Purva Bhadrapada can lift you toward a higher purpose through discipline and spiritual effort. You often see both sides of life very clearly.", "hi": "आपका स्वभाव तीव्र और आदर्शवादी है, और जिन बातों में आप विश्वास करते हैं उनके लिए जोश से काम करते हैं। पूर्वा भाद्रपद के देवता अज एकपाद हैं, जिनका संबंध अग्नि और तूफ़ान जैसी शक्तियों से है; अनुशासन और साधना से यह नक्षत्र आपको ऊँचे उद्देश्य की ओर उठा सकता है। आप अक्सर जीवन के दोनों पहलू साफ़ देख लेते हैं।"},
+      "strengths": [
+        {"en": "Idealism and passion", "hi": "आदर्शवाद और जोश"},
+        {"en": "Spiritual discipline", "hi": "आध्यात्मिक अनुशासन"},
+        {"en": "Power to transform and purify", "hi": "बदलने और शुद्ध करने की शक्ति"}
+      ],
+      "challenges": [
+        {"en": "You may swing between extremes; a middle path brings peace.", "hi": "आप एक अति से दूसरी अति पर जा सकते हैं; मध्य मार्ग शांति देता है।"},
+        {"en": "Strong passions can turn into worry; grounding habits such as walking or prayer steady you.", "hi": "तेज़ भावनाएँ चिंता में बदल सकती हैं; टहलना या प्रार्थना जैसी आदतें आपको स्थिर करती हैं।"}
+      ],
+      "health": {"en": "Care for your lungs and chest, your liver and digestion, and your ankles and feet. Warm food that keeps the chest clear and the bowels regular, resting with your feet raised when they feel swollen, and calming practices for the mind help you.", "hi": "अपने फेफड़ों और छाती, लिवर और पाचन, तथा टखनों और पैरों का ध्यान रखें। गर्म भोजन जो छाती को साफ़ और पेट को नियमित रखे, सूजन लगे तो पैर ऊपर रखकर आराम, और मन को शांत करने वाले अभ्यास आपकी मदद करते हैं।"},
+      "propitiation": {"en": "Honour Aja Ekapada. Traditional offerings include black cloth, red saffron, arka flowers, guggulu incense, cooked rice, yoghurt and flowers. In a fire ritual, ash gourd (kushmanda) with ghee is offered 108 times with the Gayatri mantra, and giving coins on this day is said to bring joy.", "hi": "अज एकपाद देव की पूजा करें। पारंपरिक रूप से काला वस्त्र, लाल केसर, आक (अर्क) के फूल, गुग्गुल की धूप, पका चावल, दही और फूल अर्पित किए जाते हैं। हवन में गायत्री मंत्र के साथ 108 बार पेठा (कुष्मांड) और घी की आहुति दी जाती है, और इस दिन सिक्कों का दान आनंद देने वाला माना जाता है।"}
+    },
+    {
+      "index": 26,
+      "key": "uttara_bhadrapada",
+      "sanskrit": "Uttara Bhadrapada",
+      "devanagari": "उत्तरा भाद्रपद",
+      "ruler": "saturn",
+      "deity": {"en": "Ahirbudhnya, the serpent of the deep", "hi": "अहिर्बुध्न्य, गहराइयों के नाग"},
+      "symbol": {"en": "Sword or sea creature", "hi": "तलवार या समुद्री जीव"},
+      "rashi": "pisces",
+      "palm": {"en": "The lower phalange of the thumb.", "hi": "अंगूठे का निचला पोर।"},
+      "qualities": {"en": "You are calm, deep and self-controlled, with great inner strength. Ruled by Ahirbudhnya, the serpent of the depths, Uttara Bhadrapada gives you patience, wisdom and the steadiness to keep going when others give up. Spiritual practice and meaningful, lasting work suit you.", "hi": "आप शांत, गहरे और आत्मसंयमी हैं, और आपमें बड़ी आंतरिक शक्ति है। उत्तरा भाद्रपद के देवता गहराइयों के नाग अहिर्बुध्न्य हैं, जो आपको धैर्य, ज्ञान और वह स्थिरता देते हैं जिससे आप तब भी डटे रहते हैं जब दूसरे हार मान लेते हैं। साधना और सार्थक, टिकाऊ काम आपके अनुकूल हैं।"},
+      "strengths": [
+        {"en": "Inner strength and self-control", "hi": "आंतरिक शक्ति और आत्मसंयम"},
+        {"en": "Patience and wisdom", "hi": "धैर्य और ज्ञान"},
+        {"en": "Devotion and fine craftsmanship", "hi": "भक्ति और बारीक शिल्प"}
+      ],
+      "challenges": [
+        {"en": "You may keep too much inside; sharing your thoughts brings relief.", "hi": "आप बहुत कुछ मन में रख सकते हैं; अपने विचार बाँटना राहत देता है।"},
+        {"en": "A slow, careful pace can turn into inertia; small steps each day keep you moving.", "hi": "धीमी और सावधान गति कभी सुस्ती बन सकती है; रोज़ के छोटे क़दम आपको आगे बढ़ाते रहते हैं।"}
+      ],
+      "health": {"en": "Care for your feet and toes, your lungs and teeth, and your digestion. Iron-rich, nourishing food, regular bowel habits, warmth for tired muscles and good foot care help keep your energy steady.", "hi": "अपने पैरों और उंगलियों, फेफड़ों और दाँतों, और पाचन का ध्यान रखें। आयरन से भरपूर पौष्टिक भोजन, शौच की नियमित आदत, थकी मांसपेशियों को गर्माहट और पैरों की अच्छी देखभाल आपकी ऊर्जा को स्थिर रखती है।"},
+      "propitiation": {"en": "Honour Ahirbudhnya, the serpent of the deep. Traditional offerings include white cloth, white flowers and roses, neem wood, wild basil, and guggulu with ghee as incense. In a fire ritual, rice cooked with jaggery and milk is offered 108 times with the Gayatri mantra.", "hi": "गहराइयों के नाग देवता अहिर्बुध्न्य की पूजा करें। पारंपरिक रूप से सफ़ेद वस्त्र, सफ़ेद फूल और गुलाब, नीम की लकड़ी, वन तुलसी, और धूप के रूप में घी के साथ गुग्गुल अर्पित किया जाता है। हवन में गायत्री मंत्र के साथ 108 बार गुड़ और दूध में पके चावल की आहुति दी जाती है।"}
+    },
+    {
+      "index": 27,
+      "key": "revati",
+      "sanskrit": "Revati",
+      "devanagari": "रेवती",
+      "ruler": "mercury",
+      "deity": {"en": "Pushan, protector of travellers and herds", "hi": "पूषा, यात्रियों और पशुओं के रक्षक"},
+      "symbol": {"en": "Fish or drum", "hi": "मछली या ढोल"},
+      "rashi": "pisces",
+      "palm": {"en": "The top phalange (tip) of the thumb, where the spiral ends.", "hi": "अंगूठे का ऊपरी पोर (सिरा), जहाँ सर्पिल समाप्त होता है।"},
+      "qualities": {"en": "You are gentle, kind and caring, with a wish to guide and protect others. Ruled by Pushan, protector of travellers, Revati brings nourishment, safe journeys and quiet prosperity. Your compassion and imagination make you a natural guide and friend.", "hi": "आप कोमल, दयालु और देखभाल करने वाले हैं, और दूसरों का मार्गदर्शन व रक्षा करना चाहते हैं। रेवती के देवता यात्रियों के रक्षक पूषा हैं, जो पोषण, सुरक्षित यात्रा और शांत समृद्धि देते हैं। आपकी करुणा और कल्पनाशक्ति आपको स्वाभाविक मार्गदर्शक और मित्र बनाती है।"},
+      "strengths": [
+        {"en": "Deep compassion", "hi": "गहरी करुणा"},
+        {"en": "A guiding, protective nature", "hi": "मार्गदर्शन और रक्षा करने वाला स्वभाव"},
+        {"en": "Sincere devotion", "hi": "सच्ची भक्ति"}
+      ],
+      "challenges": [
+        {"en": "You may trust too easily or absorb others' troubles; healthy boundaries keep your kindness strong.", "hi": "आप जल्दी भरोसा कर सकते हैं या दूसरों की परेशानियाँ अपने ऊपर ले सकते हैं; स्वस्थ सीमाएँ आपकी दयालुता को मज़बूत रखती हैं।"},
+        {"en": "Dreaminess can delay practical tasks; a simple daily plan keeps you on track.", "hi": "सपनों में खोए रहना व्यावहारिक कामों में देरी कर सकता है; रोज़ की एक सरल योजना आपको सही राह पर रखती है।"}
+      ],
+      "health": {"en": "Care for your feet, your skin, and your lymph glands and chest. Keeping skin clean and cool, staying active so you do not feel sluggish, moderation in food and pleasures, and quiet time for the mind support your wellbeing.", "hi": "अपने पैरों, त्वचा, और लसीका ग्रंथियों व छाती का ध्यान रखें। त्वचा को साफ़ और ठंडा रखना, सुस्ती से बचने के लिए सक्रिय रहना, खान-पान और सुखों में संयम, और मन के लिए शांत समय आपके स्वास्थ्य को सहारा देते हैं।"},
+      "propitiation": {"en": "Honour Pushan, guardian of travellers. Traditional offerings include red cloth, red saffron, red flowers, arka flowers, guggulu incense, nine kinds of grain (navadhanya) and cooked rice. In a fire ritual, sesame, rice and fruits are offered 108 times with the Gayatri mantra, and giving pots of milk on this day is said to bring safe passage wherever you go.", "hi": "यात्रियों के रक्षक पूषा देव की पूजा करें। पारंपरिक रूप से लाल वस्त्र, लाल केसर, लाल फूल, आक के फूल, गुग्गुल की धूप, नवधान्य (नौ प्रकार के अनाज) और पका चावल अर्पित किया जाता है। हवन में गायत्री मंत्र के साथ 108 बार तिल, चावल और फलों की आहुति दी जाती है, और इस दिन दूध के घड़े दान करना हर जगह सुरक्षित यात्रा देने वाला माना जाता है।"}
+    }
+  ]
+}
