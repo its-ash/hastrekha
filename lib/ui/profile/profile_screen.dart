@@ -133,9 +133,11 @@ class ProfileScreen extends StatelessWidget {
                       'your birth are worked out on the phone and read together with your palm.',
                 ),
               ),
-              const UiListTile('Version', icon: Icons.tag_rounded, value: '1.0.0'),
             ],
           ),
+          const UiGap(UiSpace.xl),
+          // No INTERNET permission: the row opens the latest APK download in the browser.
+          const UiUpdateSection(storeId: 'hastrekha', checkForUpdates: false),
           const UiGap(UiSpace.xl),
           UiHoldButton(
             'Hold to erase all data',
@@ -146,6 +148,8 @@ class ProfileScreen extends StatelessWidget {
               if (context.mounted) context.showToast('All readings and settings erased.', status: UiStatus.success);
             },
           ),
+          const UiGap(UiSpace.xl),
+          const UiDeveloperSection(),
         ],
       ),
     );

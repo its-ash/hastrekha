@@ -52,7 +52,7 @@ class AreasTab extends StatelessWidget {
   static String _summary(List<KbRule> rules, Lang lang) {
     final p = rules.where((r) => r.tone == 'positive').length;
     final c = rules.where((r) => r.tone == 'caution').length;
-    if (lang == Lang.hi) return '${rules.length} संकेत · $p शुभ · $c ध्यान योग्य';
+    if (lang == Lang.hi) return '${rules.length} संकेत · $p शुभ · $c पर ध्यान दें';
     return '${rules.length} insights · $p bright · $c to work on';
   }
 }

@@ -24,6 +24,10 @@ Uint8List syntheticPalm({
   double shiftX = 0,
   double shiftY = 0,
   double zoom = 1,
+  double lightGradient = 0,
+  double extraBlur = 0,
+  int motionBlur = 0,
+  bool glare = false,
 }) {
   var im = img.Image(width: w, height: h);
   img.fill(im, color: img.ColorRgb8(40, 46, 60));
@@ -82,6 +86,47 @@ Uint8List syntheticPalm({
   if (withSun) stroke('sun', [(0.67, 0.62), (0.655, 0.38), (0.64, 0.16)], width: 3);
 
   im = img.gaussianBlur(im, radius: 2);
+  if (extraBlur > 0) im = img.gaussianBlur(im, radius: extraBlur.round());
+  if (motionBlur > 1) {
+    // Hand shake: a horizontal streak of [motionBlur] pixels.
+    final src = im.clone();
+    for (final p in im) {
+      var r = 0.0, g = 0.0, b = 0.0;
+      for (var k = 0; k < motionBlur; k++) {
+        final q = src.getPixel((p.x + k - motionBlur ~/ 2).clamp(0, w - 1), p.y);
+        r += q.r;
+        g += q.g;
+        b += q.b;
+      }
+      p
+        ..r = r / motionBlur
+        ..g = g / motionBlur
+        ..b = b / motionBlur;
+    }
+  }
+  if (glare) {
+    // A specular highlight (torch reflection) over the head line.
+    final (gx, gy) = xy(0.42, 0.44);
+    for (final p in im) {
+      final d2 = (p.x - gx) * (p.x - gx) + (p.y - gy) * (p.y - gy);
+      final k = 140 * math.exp(-d2 / (2 * 38 * 38));
+      if (k < 1) continue;
+      p
+        ..r = (p.r + k).clamp(0, 255)
+        ..g = (p.g + k).clamp(0, 255)
+        ..b = (p.b + k * 0.9).clamp(0, 255);
+    }
+  }
+  if (lightGradient != 0) {
+    // Uneven light: brighter on one side (a window or an off-axis torch).
+    for (final p in im) {
+      final k = 1 + lightGradient * (p.x / w - 0.5) * 2;
+      p
+        ..r = (p.r * k).clamp(0, 255)
+        ..g = (p.g * k).clamp(0, 255)
+        ..b = (p.b * k).clamp(0, 255);
+    }
+  }
   if (noise > 0) {
     // Skin texture and sensor noise, so faint lines are not trivially clean.
     // Coarse blobs (pores, folds) plus fine grain.

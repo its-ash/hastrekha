@@ -142,9 +142,23 @@ class ViewWarp {
   return (warp: best, score: bestScore);
 }
 
-/// One extra photo, aligned to the primary.
+/// One extra photo (of up to five), aligned to the primary.
 class AlignedView {
-  AlignedView(this.response, this.mask, this.warp);
+  AlignedView(this.response, this.mask, this.warp, [this.gray, this.weight = 1]);
+  final FloatImage? gray;
+
+  /// How much this photo counts in the stack (0..1), from how well it
+  /// registered and how sharp it is. A blurred or badly aligned photo
+  /// gets a low weight, so it cannot wash out a line the others show.
+  final double weight;
+
+  /// Weight for a photo from its registration score (NCC with the
+  /// primary), and its sharpness relative to the primary's.
+  static double weightOf(double score, double sharpness, double primarySharpness) {
+    final reg = ((score - 0.3) / 0.3).clamp(0.0, 1.0);
+    final sharp = primarySharpness <= 0 ? 1.0 : (sharpness / primarySharpness).clamp(0.0, 1.0);
+    return reg * sharp * sharp;
+  }
   final CreaseResponse response;
   final Uint8List mask;
   final ViewWarp warp;
@@ -198,6 +212,57 @@ CreaseResponse fuseResponses(CreaseResponse primary, Uint8List mask, List<Aligne
     }
   }
   return CreaseResponse(response: fused, normal: normal, background: primary.background);
+}
+
+/// Stacks the aligned photos' brightness onto the primary photo's pixels.
+///
+/// Each photo is first flattened by its own local mean (so exposure and
+/// torch on/off differences cancel), then the flat images are averaged.
+/// Sensor noise and skin texture that differ per shot shrink by about
+/// 1/sqrt(n) while a real crease, present in every shot, keeps its depth;
+/// the crease detector then runs on the stack. This beats averaging the
+/// responses, because the Hessian response of noise is always positive
+/// and does not average away.
+FloatImage stackGray(FloatImage primary, FloatImage primaryBg, Uint8List mask, List<AlignedView> others) {
+  final w = primary.width, h = primary.height;
+  final out = FloatImage(w, h);
+  final flatOthers = [
+    for (final o in others)
+      if (o.gray != null && o.weight > 0.1) (o, o.gray!, o.response.background),
+  ];
+  // A pixel much brighter than its surroundings is a specular highlight
+  // (glare, torch reflection): it hides creases, so that photo does not
+  // vote there.
+  bool glare(double v, double bg) => v > 238 || v > bg * 1.35 + 12;
+  for (var y = 0; y < h; y++) {
+    for (var x = 0; x < w; x++) {
+      final i = y * w + x;
+      if (mask[i] == 0) {
+        out.data[i] = primary.data[i];
+        continue;
+      }
+      final pb = primaryBg.data[i] + 1.0;
+      final pv = primary.data[i];
+      var sum = 0.0, wsum = 0.0;
+      if (!glare(pv, primaryBg.data[i])) {
+        sum = pv / pb;
+        wsum = 1;
+      }
+      for (final (o, g, bg) in flatOthers) {
+        final (mx, my) = o.warp.map(x.toDouble(), y.toDouble());
+        if (mx < 1 || my < 1 || mx > g.width - 2 || my > g.height - 2) continue;
+        if (o.mask[my.round() * g.width + mx.round()] == 0) continue;
+        final v = g.sample(mx, my), b = bg.sample(mx, my);
+        if (glare(v, b)) continue;
+        sum += o.weight * v / (b + 1.0);
+        wsum += o.weight;
+      }
+      // Scale back to a brightness-like range so the detector sees the
+      // same flattened values as for one photo.
+      out.data[i] = wsum > 0 ? sum / wsum * pb : pv;
+    }
+  }
+  return out;
 }
 
 /// 3×3 maximum filter.

@@ -100,7 +100,7 @@ class RemedyCard extends StatelessWidget {
                         if (gem.texts('alternatives').isNotEmpty) ...[
                           const UiGap(UiSpace.sm),
                           Text(
-                            '${hi ? 'विकल्प' : 'Gentler alternatives'}: ${gem.texts('alternatives').map((e) => e.of(lang)).join(', ')}',
+                            '${hi ? 'सौम्य विकल्प' : 'Gentler alternatives'}: ${gem.texts('alternatives').map((e) => e.of(lang)).join(', ')}',
                             style: context.text.bodySmall,
                           ),
                         ],
@@ -270,7 +270,7 @@ class RemedyNote extends StatelessWidget {
     final hi = context.app.lang == Lang.hi;
     return UiAlert(
       hi
-          ? 'उपाय पारंपरिक आध्यात्मिक अभ्यास हैं, इलाज नहीं। कोई भी तेज़ रत्न पहनने से पहले किसी जानकार ज्योतिषी से सलाह लें, और स्वास्थ्य संबंधी चिंता के लिए डॉक्टर से मिलें।'
+          ? 'उपाय पारंपरिक आध्यात्मिक साधनाएँ हैं, इलाज नहीं। कोई भी प्रभावशाली रत्न पहनने से पहले किसी जानकार ज्योतिषी से सलाह लें, और सेहत से जुड़ी किसी भी चिंता के लिए डॉक्टर से मिलें।'
           : 'Upayas are traditional spiritual practices, not treatments. Ask a knowledgeable astrologer before '
               'wearing a strong gemstone, and see a doctor for any health concern.',
       status: UiStatus.warning,

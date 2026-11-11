@@ -185,6 +185,26 @@ class PalmFeatures {
 
   LineFeature line(String key) => lines.putIfAbsent(key, LineFeature.new);
 
+  /// A line the camera saw only weakly counts as present only above this.
+  static const unclearBelow = 0.5;
+
+  /// True when the camera could not settle a main line: it found it with
+  /// confidence below [unclearBelow], or did not find heart, head or life
+  /// at all (nearly every hand has them; with a simian crease heart and
+  /// head are one line, so that case is exempt). A missing fate line is a
+  /// normal finding, not unclear. Lines the user set by hand are never
+  /// unclear, and neither are lines the camera never looked at.
+  bool isUnclear(String key) {
+    final l = lines[key];
+    if (l == null || l.edited || !Vocab.primaryLines.contains(key)) return false;
+    if (l.present) return l.confidence < unclearBelow;
+    if (key == 'fate') return false;
+    return !(simian && (key == 'heart' || key == 'head'));
+  }
+
+  /// Main lines that are not clear (see [isUnclear]).
+  List<String> get unclearLines => [for (final k in Vocab.primaryLines) if (isUnclear(k)) k];
+
   /// Flat feature map for rule matching. Keys follow the knowledge-base
   /// schema (`life.length`, `mound.sun`, `hand.element`, ...).
   Map<String, String> toFacts() {
@@ -200,6 +220,9 @@ class PalmFeatures {
     };
     for (final key in [...Vocab.primaryLines, ...Vocab.secondaryLines]) {
       final l = lines[key];
+      // A line that is not clear gives no facts, so no rule fires for it
+      // (neither "has the line" nor "lacks the line").
+      if (isUnclear(key)) continue;
       final present = l?.present ?? false;
       f['$key.present'] = '$present';
       if (!present) continue;

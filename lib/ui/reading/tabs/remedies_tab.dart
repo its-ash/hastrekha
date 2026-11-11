@@ -36,7 +36,7 @@ class RemediesTab extends StatelessWidget {
       children: [
         Text(
           hi
-              ? 'उपाय (उपाय) उन ग्रहों को संतुलित करने के पारंपरिक तरीके हैं जिन पर आपकी हथेली ध्यान देने को कहती है।'
+              ? 'उपाय वे पारंपरिक तरीके हैं जिनसे उन ग्रहों को संतुलित किया जाता है, जिन पर आपकी हथेली ध्यान देने को कहती है।'
               : 'Upayas are traditional ways to steady the planets your palm asks you to look after.',
           style: context.text.bodyMedium,
         ),
@@ -47,7 +47,7 @@ class RemediesTab extends StatelessWidget {
             icon: Icons.verified_outlined,
             title: hi ? 'कोई ग्रह कमज़ोर नहीं दिखा' : 'No planet stands out as weak',
             message: hi
-                ? 'आपकी हथेली संतुलित दिखती है। चाहें तो आज के ग्रह का उपाय करें।'
+                ? 'आपकी हथेली संतुलित दिखती है। चाहें तो आज के दिन के ग्रह का उपाय कर सकते हैं।'
                 : 'Your palm looks balanced. You can still follow the remedy for today’s planet.',
           )
         else ...[
@@ -62,7 +62,7 @@ class RemediesTab extends StatelessWidget {
           RemedyCard(planet: starRuler),
         ],
         if (!planets.contains(today) && today != starRuler) ...[
-          UiSectionHeader(hi ? 'आज का ग्रह' : 'Today’s planet'),
+          UiSectionHeader(hi ? 'आज के दिन का ग्रह' : 'Today’s planet'),
           RemedyCard(planet: today),
         ],
       ],

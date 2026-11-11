@@ -44,7 +44,7 @@ class CompareScreen extends StatelessWidget {
         children: [
           UiAlert(
             hi
-                ? 'आप ${Labels.value(dominant, lang)} से लिखते हैं। परंपरा में दूसरा हाथ जन्म से मिली प्रवृत्तियाँ दिखाता है, और लिखने वाला हाथ बताता है कि आप उनसे क्या बना रहे हैं।'
+                ? 'आप ${dominant == 'left' ? 'बाएँ' : 'दाएँ'} हाथ से लिखते हैं। परंपरा के अनुसार दूसरा हाथ जन्म से मिले गुण दिखाता है, और लिखने वाला हाथ बताता है कि आपने उन्हें कैसे निखारा है।'
                 : 'You write with your $dominant hand. Traditionally the other hand shows what you were born with, '
                     'and your writing hand shows what you are making of it.',
             status: UiStatus.info,
@@ -103,18 +103,18 @@ class CompareScreen extends StatelessWidget {
     UiStatus status = UiStatus.info;
     int rank(String v, List<String> order) => order.indexOf(v);
     if (!pa && pb) {
-      msg = hi ? '$name अब बनी है: यह गुण आप स्वयं विकसित कर रहे हैं।' : '$name appears only on your active hand: a quality you are building yourself.';
+      msg = hi ? '$name केवल लिखने वाले हाथ में है: यह गुण आप ख़ुद विकसित कर रहे हैं।' : '$name appears only on your active hand: a quality you are building yourself.';
       status = UiStatus.success;
     } else if (pa && !pb) {
-      msg = hi ? '$name जन्म से है पर अभी कम उपयोग में है।' : '$name is a gift from birth that you are not drawing on much right now.';
+      msg = hi ? '$name जन्म से मिली है, पर अभी आप इस गुण का कम उपयोग कर रहे हैं।' : '$name is a gift from birth that you are not drawing on much right now.';
     } else if (pa && pb) {
       final dl = rank(b!.length, Vocab.lengths) - rank(a!.length, Vocab.lengths);
       final dd = rank(b.depth, Vocab.depths) - rank(a.depth, Vocab.depths);
       if (dl + dd > 0) {
-        msg = hi ? '$name मज़बूत हुई है: आप इस क्षेत्र को आगे बढ़ा रहे हैं।' : '$name is stronger on your active hand: you are growing in this area.';
+        msg = hi ? 'लिखने वाले हाथ में $name ज़्यादा मज़बूत है: इस क्षेत्र में आप आगे बढ़ रहे हैं।' : '$name is stronger on your active hand: you are growing in this area.';
         status = UiStatus.success;
       } else if (dl + dd < 0) {
-        msg = hi ? '$name कमज़ोर दिखती है: इस क्षेत्र पर थोड़ा ध्यान दें।' : '$name is lighter on your active hand: this area could use some attention.';
+        msg = hi ? 'लिखने वाले हाथ में $name हल्की है: इस क्षेत्र पर थोड़ा ध्यान दें।' : '$name is lighter on your active hand: this area could use some attention.';
         status = UiStatus.warning;
       }
     }

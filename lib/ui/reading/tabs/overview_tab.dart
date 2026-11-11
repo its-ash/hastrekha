@@ -80,11 +80,11 @@ class OverviewTab extends StatelessWidget {
           for (final r in reading.highlights) InsightCard(r),
         ],
         if (reading.patternInsights.isNotEmpty) ...[
-          UiSectionHeader(hi ? 'विशेष रेखा संयोग' : 'Line patterns'),
+          UiSectionHeader(hi ? 'रेखाओं के विशेष योग' : 'Line patterns'),
           for (final r in reading.patternInsights) InsightCard(r),
         ],
         if (reading.moundInsights.isNotEmpty) ...[
-          UiSectionHeader(hi ? 'पर्वत (माउंट)' : 'Mounds', subtitle: hi ? 'ग्रहों के पर्वत' : 'The planets on your palm'),
+          UiSectionHeader(hi ? 'पर्वत' : 'Mounds', subtitle: hi ? 'ग्रहों के पर्वत' : 'The planets on your palm'),
           for (final r in reading.moundInsights) InsightCard(r),
         ],
         if (reading.symbolInsights.isNotEmpty) ...[
@@ -133,7 +133,7 @@ class _UnifiedSection extends StatelessWidget {
       children: [
         UiSectionHeader(
           hi ? 'हथेली + कुंडली' : 'Palm + birth chart',
-          subtitle: hi ? 'दोनों को मिलाकर पढ़ा गया' : 'Your palm and your planets, read together',
+          subtitle: hi ? 'हथेली और ग्रहों को साथ मिलाकर' : 'Your palm and your planets, read together',
         ),
         const UiGap(UiSpace.md),
         UiColumn(

@@ -107,10 +107,10 @@ class UnifiedReading {
         tone: 'caution',
         weight: 2,
         planet: worst.planet,
-        title: _t('Planet to nurture: ${pName(worst.planet).en}', 'संभालने योग्य ग्रह: ${pName(worst.planet).hi}'),
+        title: _t('Planet to nurture: ${pName(worst.planet).en}', 'ध्यान देने योग्य ग्रह: ${pName(worst.planet).hi}'),
         text: _withReasons(
           _t('${worstTheme.en} The Remedies tab has more for ${pName(worst.planet).en}.',
-              '${worstTheme.hi} ${pName(worst.planet).hi} के और उपाय \'उपाय\' टैब में हैं।'),
+              '${worstTheme.hi} ${pName(worst.planet).hi} के लिए और उपाय \'उपाय\' टैब में देखें।'),
           worst,
         ),
       ));
@@ -144,8 +144,8 @@ class UnifiedReading {
               '${ad.hi} की अंतर्दशा। यह ${dt?.hi ?? 'इस ग्रह से प्रभावित समय है।'} '
               '${switch (level) {
             'strong' => '${md.hi} हथेली और कुंडली दोनों में प्रबल है, इसलिए यह दशा अपना अच्छा फल दे सकती है।',
-            'weak' => '${md.hi} हथेली और कुंडली दोनों में कमज़ोर है; इन वर्षों में इसके उपाय सबसे ज़्यादा मदद करते हैं।',
-            _ => 'हथेली और कुंडली में ${md.hi} संतुलित है, इसलिए आपका प्रयास तय करेगा कि यह दशा क्या लौटाती है।',
+            'weak' => '${md.hi} हथेली और कुंडली दोनों में कमज़ोर है; इन वर्षों में इसके उपाय सबसे अधिक लाभ देंगे।',
+            _ => 'हथेली और कुंडली में ${md.hi} संतुलित है, इसलिए यह दशा कितना फल देगी, यह आपकी मेहनत पर निर्भर है।',
           }}',
         ),
       ));
@@ -166,10 +166,10 @@ class UnifiedReading {
         text: same
             ? _t(
                 'The first sound of your name ("${nameSign.syllable}") falls in ${sName(nameSign.rashi).en}, the same sign as your birth Moon. How people know you and how you feel inside are in tune.',
-                'आपके नाम का पहला अक्षर ("${nameSign.syllable}") ${sName(nameSign.rashi).hi} राशि में आता है, जो आपकी जन्म चंद्र राशि भी है। लोग आपको जैसे जानते हैं और आप भीतर जैसा महसूस करते हैं, दोनों में तालमेल है।')
+                'आपके नाम का पहला अक्षर ("${nameSign.syllable}") ${sName(nameSign.rashi).hi} राशि में आता है, जो आपकी जन्म चंद्र राशि भी है। लोग आपको जैसा जानते हैं और आप भीतर से जैसे हैं, दोनों में अच्छा तालमेल है।')
             : _t(
                 'The first sound of your name ("${nameSign.syllable}") falls in ${sName(nameSign.rashi).en}, ruled by ${ruler.en}, while your birth Moon is in ${sName(moonSign).en}. Your name adds a touch of ${ruler.en} to how others see you.',
-                'आपके नाम का पहला अक्षर ("${nameSign.syllable}") ${sName(nameSign.rashi).hi} राशि में आता है, जिसका स्वामी ${ruler.hi} है, जबकि आपकी जन्म चंद्र राशि ${sName(moonSign).hi} है। आपका नाम दूसरों की नज़र में आपको ${ruler.hi} का रंग देता है।'),
+                'आपके नाम का पहला अक्षर ("${nameSign.syllable}") ${sName(nameSign.rashi).hi} राशि में आता है, जिसका स्वामी ${ruler.hi} है, जबकि आपकी जन्म चंद्र राशि ${sName(moonSign).hi} है। इसलिए दूसरों की नज़र में आपके व्यक्तित्व पर ${ruler.hi} की भी छाप दिखती है।'),
       ));
     }
 
@@ -190,18 +190,18 @@ class UnifiedReading {
             title: _t('${name.en}: give it care', '${name.hi}: इसका ध्यान रखें'), text: _withReasons(weak, v));
       } else if (p == Strength.strong && c != Strength.strong) {
         r = _rule('unified.${v.planet}', area: 'personality', tone: 'positive', weight: 2, planet: v.planet,
-            title: _t('${name.en}: built by your own effort', '${name.hi}: आपके प्रयास से बना'),
+            title: _t('${name.en}: built by your own effort', '${name.hi}: आपकी अपनी मेहनत से निखरा'),
             text: _withReasons(
               _t('Your palm shows ${name.en} better developed than your chart alone would suggest. Lines and mounds change with how you live, so you have grown these qualities yourself: ${strong.en}',
-                  'आपकी हथेली में ${name.hi} कुंडली की तुलना में अधिक विकसित दिखता है। रेखाएँ और पर्वत जीवन जीने के ढंग से बदलते हैं, इसलिए ये गुण आपने स्वयं विकसित किए हैं: ${strong.hi}'),
+                  'आपकी हथेली में ${name.hi} कुंडली की तुलना में अधिक विकसित दिखता है। रेखाएँ और पर्वत आपके जीने के ढंग के साथ बदलते हैं, इसलिए ये गुण आपने ख़ुद विकसित किए हैं: ${strong.hi}'),
               v,
             ));
       } else if (c == Strength.strong && p != Strength.strong) {
         r = _rule('unified.${v.planet}', area: 'personality', tone: 'neutral', weight: 2, planet: v.planet,
-            title: _t('${name.en}: a gift still to unfold', '${name.hi}: अभी खिलने वाली प्रतिभा'),
+            title: _t('${name.en}: a gift still to unfold', '${name.hi}: प्रतिभा जो अभी निखरनी है'),
             text: _withReasons(
               _t('Your chart gives ${name.en} real strength, while your palm shows it quieter for now. The promise is there to draw on: ${strong.en}',
-                  'आपकी कुंडली में ${name.hi} बलवान है, जबकि हथेली में यह अभी शांत दिखता है। यह क्षमता आपके भीतर है, बस उसे अपनाना है: ${strong.hi}'),
+                  'आपकी कुंडली में ${name.hi} बलवान है, जबकि हथेली में यह अभी शांत दिखता है। यह क्षमता आपके भीतर है, बस उसे काम में लाना है: ${strong.hi}'),
               v,
             ));
       } else if (p == Strength.weak || c == Strength.weak) {
@@ -253,7 +253,7 @@ class UnifiedReading {
         final l = line('sun');
         if (l != null) {
           s += l.depth == 'faint' ? 0.5 : 1;
-          why.add(_t('you have a ${ln('sun').en}', 'आपकी ${ln('sun').hi} है'));
+          why.add(_t('you have a ${ln('sun').en}', 'आपके हाथ में ${ln('sun').hi} है'));
         }
       case 'saturn':
         final l = line('fate');
@@ -264,7 +264,7 @@ class UnifiedReading {
       case 'jupiter':
         if (has('jupiter_ring')) {
           s += 0.5;
-          why.add(_t('you have a ${ln('jupiter_ring').en}', 'आपका ${ln('jupiter_ring').hi} है'));
+          why.add(_t('you have a ${ln('jupiter_ring').en}', 'आपके हाथ में ${ln('jupiter_ring').hi} है'));
         }
         if (line('heart')?.end == 'jupiter' || line('head')?.start == 'jupiter') {
           s += 0.5;
@@ -274,18 +274,18 @@ class UnifiedReading {
         final l = line('mercury');
         if (l != null && l.breaks == 'none') {
           s += 0.5;
-          why.add(_t('your ${ln('mercury').en} is unbroken', 'आपकी ${ln('mercury').hi} अखंड है'));
+          why.add(_t('your ${ln('mercury').en} is unbroken', 'आपकी ${ln('mercury').hi} कहीं टूटी नहीं है'));
         }
       case 'venus':
         final l = line('life');
         if (l != null && l.length == 'long' && l.depth != 'faint') {
           s += 0.5;
-          why.add(_t('a long, clear ${ln('life').en} circles the Venus mound', 'लंबी, स्पष्ट ${ln('life').hi} शुक्र पर्वत को घेरती है'));
+          why.add(_t('a long, clear ${ln('life').en} circles the Venus mound', 'लंबी, साफ़ ${ln('life').hi} शुक्र पर्वत को घेरे हुए है'));
         }
       case 'mars':
         if (has('mars_line')) {
           s += 0.5;
-          why.add(_t('you have a ${ln('mars_line').en}', 'आपकी ${ln('mars_line').hi} है'));
+          why.add(_t('you have a ${ln('mars_line').en}', 'आपके हाथ में ${ln('mars_line').hi} है'));
         }
       case 'moon':
         if (line('head')?.end == 'moon') {

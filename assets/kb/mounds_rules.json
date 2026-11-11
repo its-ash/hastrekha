@@ -20,7 +20,7 @@
       "id": "mound.sun.flat",
       "when": {"mound.sun": "flat"},
       "area": "career", "tone": "caution", "weight": 2, "planet": "sun",
-      "title": {"en": "A quiet light, ready to shine", "hi": "शांत रोशनी, चमकने को तैयार"},
+      "title": {"en": "A quiet light, ready to shine", "hi": "छिपी प्रतिभा, सामने आने को तैयार"},
       "text": {"en": "A flat Sun mound can mean you hold back or doubt your own worth. Owning your achievements and taking small, visible steps builds the confidence the Sun rewards.", "hi": "सपाट सूर्य पर्वत बताता है कि आप खुद को रोक सकते हैं या अपनी क़ीमत पर शक कर सकते हैं। अपनी उपलब्धियों को अपनाएँ और छोटे, दिखने वाले कदम उठाएँ — इससे वह आत्मविश्वास बढ़ता है जिसका सूर्य फल देता है।"},
       "source": "ch6"
     },
@@ -60,7 +60,7 @@
       "id": "mound.moon.flat",
       "when": {"mound.moon": "flat"},
       "area": "mind", "tone": "caution", "weight": 2, "planet": "moon",
-      "title": {"en": "Nourish your inner world", "hi": "अपने मन को पोषण दें"},
+      "title": {"en": "Nourish your inner world", "hi": "अपने मन का ख़याल रखें"},
       "text": {"en": "A flat Moon mound may mean you set feelings aside or find it hard to rest and receive care. Time for music, nature, water and nourishing food helps refill your reserves.", "hi": "सपाट चंद्र पर्वत बताता है कि आप भावनाओं को किनारे रख सकते हैं या आराम करना और देखभाल स्वीकारना कठिन लग सकता है। संगीत, प्रकृति, पानी और पौष्टिक भोजन के लिए समय निकालना आपकी ऊर्जा फिर से भरता है।"},
       "source": "ch6"
     },
@@ -140,7 +140,7 @@
       "id": "mound.mercury.flat",
       "when": {"mound.mercury": "flat"},
       "area": "career", "tone": "caution", "weight": 2, "planet": "mercury",
-      "title": {"en": "Find your voice", "hi": "अपनी आवाज़ पहचानें"},
+      "title": {"en": "Find your voice", "hi": "अपनी बात खुलकर कहें"},
       "text": {"en": "A flat Mercury mound may mean you hold back your ideas or feel unsure in business matters. Practising speaking up and learning one practical skill at a time builds your confidence.", "hi": "सपाट बुध पर्वत बताता है कि आप अपने विचार रोक सकते हैं या व्यापारिक मामलों में अनिश्चित महसूस कर सकते हैं। खुलकर बोलने का अभ्यास और एक-एक करके व्यावहारिक कौशल सीखना आपका आत्मविश्वास बढ़ाता है।"},
       "source": "ch6"
     },
@@ -340,7 +340,7 @@
       "id": "mound.ketu.flat",
       "when": {"mound.ketu": "flat"},
       "area": "personality", "tone": "neutral", "weight": 1, "planet": "ketu",
-      "title": {"en": "Grounded in the present", "hi": "वर्तमान में जड़ें"},
+      "title": {"en": "Grounded in the present", "hi": "आज में जीने वाला मन"},
       "text": {"en": "Ketu's influence appears mild, which tends to keep you focused on the here and now. A small spiritual practice can add depth whenever you want it.", "hi": "केतु का प्रभाव हल्का दिखता है, जो आपको अक्सर यहीं और अभी पर केंद्रित रखता है। जब चाहें, एक छोटी आध्यात्मिक साधना जीवन में गहराई जोड़ सकती है।"},
       "source": "ch6"
     },

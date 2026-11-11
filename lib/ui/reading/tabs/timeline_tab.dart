@@ -67,7 +67,7 @@ class TimelineTab extends StatelessWidget {
             icon: Icons.timeline_rounded,
             title: hi ? 'कोई बड़ा मोड़ नहीं दिखा' : 'No turning points found',
             message: hi
-                ? 'मुख्य रेखाओं पर कोई टूटन या शाखा नहीं मिली। यह एक स्थिर मार्ग का संकेत है।'
+                ? 'मुख्य रेखाओं पर कोई टूटन या शाखा नहीं मिली। यह जीवन के स्थिर और सहज प्रवाह का संकेत है।'
                 : 'The camera saw no breaks or branches on the main lines, a sign of a steady path.',
           )
         else
@@ -115,16 +115,16 @@ class TimelineTab extends StatelessWidget {
     final hi = lang == Lang.hi;
     return switch (e.type) {
       'break' => hi
-          ? '${d.$2} में बदलाव या नई शुरुआत का समय। धैर्य रखें और नई दिशा को अपनाएँ।'
+          ? '${d.$2} में बदलाव या नई शुरुआत का समय। धीरज रखें और नई दिशा को खुले मन से अपनाएँ।'
           : 'A change or fresh start in ${d.$1}. Give yourself time to settle into the new direction.',
       'branch_up' => hi
-          ? '${d.$2} में उन्नति, नया अवसर या बढ़ता प्रयास।'
+          ? '${d.$2} में तरक्की, नए अवसर या बढ़ती मेहनत का समय।'
           : 'A rise: a new opportunity or extra effort that lifts ${d.$1}.',
       'branch_down' => hi
-          ? '${d.$2} में ऐसा समय जो धैर्य और देखभाल माँगता है।'
+          ? '${d.$2} में ऐसा समय, जब धीरज और देखभाल की ज़रूरत होगी।'
           : 'A period in ${d.$1} that asks for patience and care.',
       'fork' => hi
-          ? 'आगे चलकर ${d.$2} में कई रास्ते और बहुमुखी प्रतिभा।'
+          ? 'आगे चलकर ${d.$2} में कई नए रास्ते खुलते हैं और आपकी बहुमुखी प्रतिभा सामने आती है।'
           : 'Later on, more than one path opens in ${d.$1}; you can combine them.',
       _ => '',
     };

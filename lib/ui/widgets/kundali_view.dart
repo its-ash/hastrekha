@@ -122,7 +122,7 @@ class KundaliView extends StatelessWidget {
                         style: context.text.titleSmall,
                       ),
                       Text(
-                        hi ? 'राशि चक्र (लाहिड़ी)' : 'Sidereal · Lahiri',
+                        hi ? 'निरयण · लाहिड़ी' : 'Sidereal · Lahiri',
                         textAlign: TextAlign.center,
                         style: context.text.labelSmall?.copyWith(color: colors.textMuted),
                       ),

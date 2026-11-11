@@ -11,7 +11,10 @@ import 'hand_segmenter.dart';
 import 'line_classifier.dart';
 import 'multi_view.dart';
 import 'palm_geometry.dart';
+import 'photo_quality.dart';
 import 'skeleton_graph.dart';
+
+export 'photo_quality.dart' show PhotoQuality, QualityProblem;
 
 /// Why a photo may give a weak reading. Shown as tips on the review screen.
 enum PhotoIssue { handNotFound, blurry, dark, bright, fewLines }
@@ -77,6 +80,11 @@ Future<PalmAnalysis> analyzePalmInBackground(
 }) =>
     Isolate.run(() => const PalmAnalyzer().analyzeAll(photos, rightHand: rightHand, guideScales: guideScales));
 
+/// Checks one photo (light, focus, hand, line contrast) on a background
+/// isolate, before it counts towards a reading.
+Future<PhotoQuality> checkPhotoInBackground(Uint8List photo, {required bool rightHand, double guideScale = 1}) =>
+    Isolate.run(() => const PalmAnalyzer().assess(photo, rightHand: rightHand, guideScale: guideScale));
+
 /// One photo, decoded, straightened, cropped and scaled to the working
 /// palm width.
 class _View {
@@ -120,6 +128,28 @@ class PalmAnalyzer {
 
   PalmAnalysis analyze(Uint8List bytes, {required bool rightHand}) => analyzeAll([bytes], rightHand: rightHand);
 
+  /// Measures whether one photo is good enough to read (see [PhotoQuality]).
+  /// Uses the same decoding, hand finding and palm scaling as the reading,
+  /// so the numbers match what the line detector will see.
+  PhotoQuality assess(Uint8List bytes, {required bool rightHand, double guideScale = 1}) {
+    final _View view;
+    try {
+      view = _prepare(bytes, rightHand: rightHand, guideScale: guideScale);
+    } on FormatException {
+      return const PhotoQuality.unreadable();
+    } on img.ImageException {
+      return const PhotoQuality.unreadable();
+    }
+    final (brightness, clipped) = exposureOf(view.gray, view.palmMask);
+    return PhotoQuality(
+      handFound: view.found,
+      brightness: brightness,
+      clipped: clipped,
+      sharpness: view.sharpness,
+      lineContrast: lineContrastOf(view.gray, view.palmMask, brightness),
+    );
+  }
+
   /// Reads one palm from one or more photos. The sharpest photo with the
   /// hand found is the primary: its picture and coordinates are used.
   /// The others are aligned to it and their crease responses averaged in
@@ -159,9 +189,17 @@ class PalmAnalyzer {
           moving: r.response,
           movingFrame: v.frame,
         );
-        if (reg != null) aligned.add(AlignedView(r, v.palmMask, reg.warp));
+        if (reg != null) {
+          final wt = AlignedView.weightOf(reg.score, v.sharpness, p.sharpness);
+          // A badly aligned or very soft photo is left out, not averaged in.
+          if (wt > 0.1) aligned.add(AlignedView(r, v.palmMask, reg.warp, v.gray, wt));
+        }
       }
-      response = fuseResponses(response, p.palmMask, aligned);
+      if (aligned.isNotEmpty) {
+        // Stack the flattened photos, then find creases on the stack.
+        final stack = stackGray(p.gray, response.background, p.palmMask, aligned);
+        response = detector.respond(stack, p.palmMask, palmWidth: workPalmWidth);
+      }
       used += aligned.length;
     }
     return _read(p, detector.extract(response, p.palmMask, palmWidth: workPalmWidth),

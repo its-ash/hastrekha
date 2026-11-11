@@ -78,7 +78,7 @@ class NakshatraView extends StatelessWidget {
                 if (n.text('deity') != null) UiKeyValue(hi ? 'देवता' : 'Deity', n.text('deity')!.of(lang)),
                 if (n.text('symbol') != null) UiKeyValue(hi ? 'प्रतीक' : 'Symbol', n.text('symbol')!.of(lang)),
                 if (p != null) UiKeyValue(hi ? 'चंद्र राशि' : 'Moon sign', kb.placeName(p.rashi).of(lang)),
-                if (p != null) UiKeyValue(hi ? 'पद' : 'Pada', '${p.pada} / 4'),
+                if (p != null) UiKeyValue(hi ? 'चरण' : 'Pada', '${p.pada} / 4'),
               ], dividers: false),
             ],
           ),
@@ -87,10 +87,10 @@ class NakshatraView extends StatelessWidget {
           UiAlert(
             !timeKnown
                 ? (hi
-                    ? 'जन्म समय न होने पर दोपहर 12 बजे माना गया है। चंद्रमा एक दिन में लगभग एक नक्षत्र चलता है, इसलिए परिणाम बदल सकता है।'
+                    ? 'जन्म का समय न होने से दोपहर 12 बजे का समय माना गया है। चंद्रमा लगभग एक दिन में एक नक्षत्र पार करता है, इसलिए सही समय से नक्षत्र बदल भी सकता है।'
                     : 'Without a birth time, noon is used. The Moon moves about one nakshatra a day, so the result may differ.')
                 : (hi
-                    ? 'आपका चंद्रमा नक्षत्र की सीमा के पास है; सटीक समय से परिणाम बदल सकता है।'
+                    ? 'आपका चंद्रमा दो नक्षत्रों की सीमा के पास है; जन्म का सही समय डालने पर नक्षत्र बदल सकता है।'
                     : 'Your Moon is close to the edge of this nakshatra; an exact birth time matters here.'),
             status: UiStatus.warning,
           ),
@@ -99,7 +99,7 @@ class NakshatraView extends StatelessWidget {
         list(hi ? 'चुनौतियाँ' : 'Challenges', n.texts('challenges'), Icons.lightbulb_outline_rounded),
         section(hi ? 'हथेली पर स्थान' : 'On the palm', n.text('palm')),
         section(hi ? 'स्वास्थ्य और देखभाल' : 'Health and care', n.text('health')),
-        section(hi ? 'नक्षत्र को प्रसन्न करने के उपाय' : 'Honouring this star', n.text('propitiation')),
+        section(hi ? 'नक्षत्र की शांति के उपाय' : 'Honouring this star', n.text('propitiation')),
         const Disclaimer(),
       ],
     );

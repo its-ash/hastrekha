@@ -5,6 +5,9 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:theme/theme.dart';
 
+import '../../vision/auto_capture.dart';
+import '../../vision/palm_analyzer.dart';
+
 /// Photos taken on the capture screen, and the hand they show.
 class CaptureResult {
   const CaptureResult(this.photos, this.hand, this.guideScales);
@@ -26,9 +29,10 @@ class CaptureStep {
   final IconData icon;
 }
 
-/// The three shots. Far shows the whole hand and its shape; close shows
-/// the fine lines in detail; the middle one ties them together. The
-/// analyzer lines all three up and combines them.
+/// The shots. Far shows the whole hand and its shape; close shows the
+/// fine lines in detail; the middle one ties them together. The first
+/// [minPhotos] are required; the extra ones are optional and bring out
+/// faint lines further. The analyzer lines them all up and combines them.
 const captureSteps = [
   CaptureStep('Far', 'Hold the phone farther away so the whole hand and wrist fit the small outline.', 0.78,
       Icons.zoom_out_rounded),
@@ -36,15 +40,35 @@ const captureSteps = [
       Icons.zoom_in_rounded),
   CaptureStep('Middle', 'Now a normal distance: fit the palm in the outline and hold still.', 1.0,
       Icons.crop_free_rounded),
+  CaptureStep('Extra', 'Optional: one more, a little farther away. Each extra clear photo brings out faint lines.', 0.9,
+      Icons.add_a_photo_rounded),
+  CaptureStep('Extra', 'Optional: one more, a little closer. Hold still until it looks sharp.', 1.08,
+      Icons.add_a_photo_rounded),
+  CaptureStep('Extra', 'Optional: a last one at a normal distance.', 1.0, Icons.add_a_photo_rounded),
 ];
 
+/// Good photos needed before the palm is read. One photo often misses
+/// faint lines; three aligned and combined give a steady reading.
+const minPhotos = 3;
+
 /// Most photos combined into one reading (gallery picks too).
-const maxPhotos = 3;
+const maxPhotos = 9;
+
+/// Frames taken in one guided shot: ambient light, torch (or a second
+/// ambient frame when the phone has no torch), ambient again. Creases
+/// show differently under each, and the analyzer stacks them.
+const burstSize = 3;
 
 /// Full-screen camera with a hand outline to line the palm up with.
+///
+/// With [existing] (a finished capture of the same palm) it only adds
+/// optional extra shots to it, to bring out lines that were not clear;
+/// [focusLines] names them in the guidance.
 class CaptureScreen extends StatefulWidget {
-  const CaptureScreen({super.key, required this.hand});
+  const CaptureScreen({super.key, required this.hand, this.existing, this.focusLines = const []});
   final String hand;
+  final CaptureResult? existing;
+  final List<String> focusLines;
 
   @override
   State<CaptureScreen> createState() => _CaptureScreenState();
@@ -54,15 +78,43 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
   CameraController? _controller;
   Object? _error;
   bool _busy = false;
-  final _photos = <Uint8List>[];
-  bool _torch = false;
 
-  int get _step => _photos.length;
+  /// Frames that passed the quality check. Only these count.
+  final _photos = <Uint8List>[];
+  final _scales = <double>[];
+
+  /// Frames kept from each finished shot (for Retake).
+  final _perStep = <int>[];
+  bool _torch = false;
+  bool _hasTorch = true;
+
+  /// Guided shots finished. In retake mode the three required ones were
+  /// taken before, so it starts at the extras.
+  int _stepsDone = 0;
+  int get _step => _stepsDone;
   late String _hand = widget.hand;
+
+  final _gate = AutoCaptureGate();
+  AutoState _auto = AutoState.noHand;
+  DateTime _lastFrame = DateTime.fromMillisecondsSinceEpoch(0);
+
+  /// After a shot the next one waits until the hand has moved to the new
+  /// distance, so the same pose is not captured twice.
+  bool _armed = true;
+  bool _sawChange = false;
 
   @override
   void initState() {
     super.initState();
+    final e = widget.existing;
+    if (e != null) {
+      _hand = e.hand;
+      // Keep room for one more burst.
+      final keep = math.min(e.photos.length, maxPhotos - burstSize);
+      _photos.addAll(e.photos.take(keep));
+      _scales.addAll(e.guideScales.take(keep));
+      _stepsDone = minPhotos;
+    }
     WidgetsBinding.instance.addObserver(this);
     _init();
   }
@@ -72,9 +124,13 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
       final cams = await availableCameras();
       if (cams.isEmpty) throw CameraException('NoCamera', 'This phone has no camera.');
       final cam = cams.firstWhere((c) => c.lensDirection == CameraLensDirection.back, orElse: () => cams.first);
-      final c = CameraController(cam, ResolutionPreset.veryHigh, enableAudio: false, imageFormatGroup: ImageFormatGroup.jpeg);
+      final c = CameraController(cam, ResolutionPreset.veryHigh, enableAudio: false, imageFormatGroup: ImageFormatGroup.yuv420);
       await c.initialize();
       await c.setFlashMode(FlashMode.off);
+      try {
+        await c.setFocusMode(FocusMode.auto);
+        await c.setExposureMode(ExposureMode.auto);
+      } catch (_) {}
       if (!mounted) {
         await c.dispose();
         return;
@@ -83,6 +139,7 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
         _controller = c;
         _error = null;
       });
+      _startStream(c);
     } catch (e) {
       if (mounted) setState(() => _error = e);
     }
@@ -107,38 +164,190 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     super.dispose();
   }
 
-  Future<void> _shoot() async {
-    final c = _controller;
-    if (c == null || _busy || _step >= captureSteps.length) return;
-    setState(() => _busy = true);
+  /// Reads the camera's image stream to take each shot by itself when the
+  /// palm is steady, in focus and fills the outline. The shutter button
+  /// stays as the manual fallback.
+  void _startStream(CameraController c) {
+    if (c.value.isStreamingImages) return;
     try {
-      final file = await c.takePicture();
-      final bytes = await file.readAsBytes();
-      if (!mounted) return;
-      setState(() {
-        _photos.add(bytes);
-        _busy = false;
+      c.startImageStream((image) {
+        final now = DateTime.now();
+        if (_busy || !mounted || now.difference(_lastFrame).inMilliseconds < 120) return;
+        _lastFrame = now;
+        final planes = image.planes;
+        if (planes.length < 3) return;
+        final state = _gate.add(PreviewFrame(
+          width: image.width,
+          height: image.height,
+          y: planes[0].bytes,
+          yRowStride: planes[0].bytesPerRow,
+          u: planes[1].bytes,
+          v: planes[2].bytes,
+          uvRowStride: planes[1].bytesPerRow,
+          uvPixelStride: planes[1].bytesPerPixel ?? 1,
+        ));
+        if (!_armed) {
+          // Wait for the hand to move (new distance) before arming again.
+          if (state == AutoState.moving || state == AutoState.noHand) _sawChange = true;
+          if (_sawChange && state != AutoState.moving && state != AutoState.noHand) {
+            _armed = true;
+            _sawChange = false;
+          }
+        }
+        if (state != _auto || state == AutoState.ready) {
+          setState(() => _auto = state);
+        }
+        if (state == AutoState.ready && _armed && _stepsDone < captureSteps.length && _photos.length < maxPhotos) {
+          _shoot(auto: true);
+        }
       });
-      if (_step >= captureSteps.length) _finish();
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _busy = false);
-      context.showToast('Could not take the photo. Try again.', status: UiStatus.danger);
+    } catch (_) {
+      // No image stream on this phone: the shutter button still works.
     }
   }
 
-  /// Reads the palm from the photos taken so far.
-  void _finish() {
-    if (_photos.isEmpty) return;
-    Navigator.of(context).pop(CaptureResult(
-      List.of(_photos),
-      _hand,
-      [for (var i = 0; i < _photos.length; i++) captureSteps[i].scale],
-    ));
+  /// One frame at the current flash setting.
+  Future<Uint8List?> _grab(CameraController c) async {
+    try {
+      final file = await c.takePicture();
+      return await file.readAsBytes();
+    } catch (_) {
+      return null;
+    }
   }
 
+  /// Takes a short burst for this step (ambient, torch, ambient), keeps
+  /// the frames that pass the quality check, and moves on when at least
+  /// one is good.
+  Future<void> _shoot({bool auto = false}) async {
+    final c = _controller;
+    if (c == null || _busy || _step >= captureSteps.length || _photos.length >= maxPhotos) return;
+    setState(() => _busy = true);
+    final scale = captureSteps[_step].scale;
+    final startTorch = _torch;
+    final frames = <Uint8List>[];
+    final n = math.min(burstSize, maxPhotos - _photos.length);
+    for (var i = 0; i < n; i++) {
+      // Middle frame under the opposite light, when the phone has a torch.
+      final flip = i == 1 && _hasTorch;
+      if (flip) {
+        try {
+          await c.setFlashMode(startTorch ? FlashMode.off : FlashMode.torch);
+          await Future<void>.delayed(const Duration(milliseconds: 350));
+        } catch (_) {
+          _hasTorch = false;
+        }
+      }
+      final b = await _grab(c);
+      if (flip && _hasTorch) {
+        try {
+          await c.setFlashMode(startTorch ? FlashMode.torch : FlashMode.off);
+          await Future<void>.delayed(const Duration(milliseconds: 250));
+        } catch (_) {}
+      }
+      if (b != null) frames.add(b);
+    }
+    if (frames.isEmpty) {
+      if (!mounted) return;
+      setState(() => _busy = false);
+      context.showToast('Could not take the photo. Try again.', status: UiStatus.danger);
+      return;
+    }
+    // Check light, focus and the hand before each frame counts.
+    final checks = await Future.wait([
+      for (final b in frames) checkPhotoInBackground(b, rightHand: _hand == 'right', guideScale: scale),
+    ]);
+    if (!mounted) return;
+    var kept = 0;
+    for (var i = 0; i < frames.length; i++) {
+      if (checks[i].main == null) {
+        _photos.add(frames[i]);
+        _scales.add(scale);
+        kept++;
+      }
+    }
+    _gate.reset();
+    _armed = false;
+    _sawChange = false;
+    if (kept == 0) {
+      setState(() => _busy = false);
+      await _explain(checks.first.main!);
+      _armed = true;
+      return;
+    }
+    _perStep.add(kept);
+    setState(() {
+      _stepsDone++;
+      _busy = false;
+    });
+    if (_stepsDone >= captureSteps.length || _photos.length >= maxPhotos) {
+      _finish();
+    } else {
+      context.showToast(
+        _stepsDone < minPhotos
+            ? 'Good${auto ? ', taken automatically' : ''}. ${minPhotos - _stepsDone} more to go.'
+            : 'Good photo.',
+        status: UiStatus.success,
+        duration: const Duration(milliseconds: 1400),
+      );
+    }
+  }
+
+  /// Tells the user why the photo was not kept and how to take a better one.
+  Future<void> _explain(QualityProblem problem) {
+    final torchTip = problem == QualityProblem.tooDark && !_torch
+        ? ' You can also turn on the flashlight at the top right.'
+        : '';
+    return UiDialog.alert(
+      context,
+      title: problem.title,
+      message: '${problem.advice}$torchTip\n\nThis photo was not used. Please take it again.',
+      okLabel: 'Retake',
+      status: UiStatus.warning,
+      icon: switch (problem) {
+        QualityProblem.tooDark => Icons.wb_sunny_outlined,
+        QualityProblem.tooBright => Icons.wb_shade_rounded,
+        QualityProblem.blurry => Icons.blur_on_rounded,
+        QualityProblem.noHand => Icons.back_hand_outlined,
+        QualityProblem.lowContrast => Icons.contrast_rounded,
+        QualityProblem.unreadable => Icons.broken_image_outlined,
+      },
+    );
+  }
+
+  /// Reads the palm from the good photos taken so far.
+  void _finish() {
+    if (!_canRead) return;
+    Navigator.of(context).pop(CaptureResult(List.of(_photos), _hand, List.of(_scales)));
+  }
+
+  /// A reading needs the three required shots; in retake mode, one new one.
+  bool get _canRead => widget.existing == null ? _stepsDone >= minPhotos : _perStep.isNotEmpty;
+
+  /// Drops the frames of the last guided shot so it can be taken again.
   void _retakeLast() {
-    if (_photos.isNotEmpty) setState(() => _photos.removeLast());
+    if (_perStep.isEmpty) return;
+    final n = _perStep.removeLast();
+    setState(() {
+      _photos.removeRange(_photos.length - n, _photos.length);
+      _scales.removeRange(_scales.length - n, _scales.length);
+      _stepsDone--;
+      _armed = true;
+    });
+  }
+
+  /// Live guidance from the auto-capture gate.
+  String _autoHint() {
+    if (_busy || _controller == null) return '';
+    if (_stepsDone >= captureSteps.length) return '';
+    return switch (_auto) {
+      AutoState.noHand => 'Put your palm inside the outline',
+      AutoState.tooDark => 'Too dark. Move to brighter light or use the flashlight',
+      AutoState.tooBright => 'Too bright. Step out of direct light',
+      AutoState.moving => 'Hold steady',
+      AutoState.soft => 'Focusing. Keep still, the photo is taken automatically',
+      AutoState.ready => 'Taking the photo',
+    };
   }
 
   Future<void> _toggleTorch() async {
@@ -148,6 +357,7 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
       await c.setFlashMode(_torch ? FlashMode.off : FlashMode.torch);
       setState(() => _torch = !_torch);
     } catch (_) {
+      _hasTorch = false;
       if (mounted) context.showToast('No flashlight on this camera.');
     }
   }
@@ -221,12 +431,34 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
                   _StepTrack(done: _step),
                   const UiGap(UiSpace.md),
                   Text(
-                    'Photo ${_step + 1} of ${captureSteps.length} · ${step.label}',
+                    _step < minPhotos
+                        ? 'Photo ${_step + 1} of $minPhotos · ${step.label}'
+                        : widget.existing != null
+                            ? 'Extra photo (to bring out unclear lines)'
+                            : 'Extra photo ${_step + 1} of ${captureSteps.length} (optional)',
                     style: context.text.titleSmall?.copyWith(color: colors.onSurfaceInverse),
                   ),
                   const UiGap(UiSpace.xs),
                   Text(
-                    '${step.hint} Spread your fingers a little and use soft light from one side.',
+                    _busy
+                        ? 'Hold still. Taking a few quick frames, with and without the light.'
+                        : _canRead
+                            ? '${_photos.length} clear frames. Tap Read now, or add more to bring out faint lines.'
+                            : '$_stepsDone of $minPhotos shots done. Only clear, well-lit frames count.',
+                    textAlign: TextAlign.center,
+                    style: context.text.labelMedium?.copyWith(color: colors.onSurfaceInverse),
+                  ),
+                  const UiGap(UiSpace.xs),
+                  Text(
+                    _autoHint(),
+                    textAlign: TextAlign.center,
+                    style: context.text.labelMedium?.copyWith(color: colors.accent, fontWeight: FontWeight.w600),
+                  ),
+                  const UiGap(UiSpace.xs),
+                  Text(
+                    widget.focusLines.isNotEmpty && widget.existing != null
+                        ? 'To read the ${widget.focusLines.join(', ')} line, use soft light from one side and let the lines show as small shadows. ${step.hint}'
+                        : '${step.hint} Spread your fingers a little and use soft light from one side.',
                     textAlign: TextAlign.center,
                     style: context.text.bodySmall?.copyWith(color: colors.onSurfaceInverse),
                   ),
@@ -234,14 +466,16 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
                   Row(
                     children: [
                       Expanded(
-                        child: _photos.isEmpty
+                        child: widget.existing == null && _photos.isEmpty
                             ? UiSegmentedControl<String>(
                                 const [UiSegment('left', label: 'Left'), UiSegment('right', label: 'Right')],
                                 value: _hand,
                                 size: UiSize.sm,
                                 onChanged: (v) => setState(() => _hand = v),
                               )
-                            : Align(
+                            : _perStep.isEmpty
+                                ? const SizedBox()
+                                : Align(
                                 alignment: Alignment.centerLeft,
                                 child: TextButton.icon(
                                   onPressed: _busy ? null : _retakeLast,
@@ -256,12 +490,12 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
                       Expanded(
                         child: Align(
                           alignment: Alignment.centerRight,
-                          child: _photos.isEmpty
+                          child: !_canRead
                               ? const SizedBox()
                               : TextButton(
                                   onPressed: _busy ? null : _finish,
                                   child: Text(
-                                    'Use ${_photos.length}',
+                                    'Read (${_photos.length})',
                                     style: TextStyle(color: colors.onSurfaceInverse, fontWeight: FontWeight.w600),
                                   ),
                                 ),
@@ -279,7 +513,8 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
   }
 }
 
-/// Far · Close · Middle, with the shots already taken ticked.
+/// The required shots (Far · Close · Middle) as labelled chips, then the
+/// optional extras as small circles; shots already taken are ticked.
 class _StepTrack extends StatelessWidget {
   const _StepTrack({required this.done});
   final int done;
@@ -287,40 +522,42 @@ class _StepTrack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    Widget chip(int i) {
+      final current = i == done;
+      final required = i < minPhotos;
+      final fg = current ? colors.onAccent : colors.onSurfaceInverse;
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: required ? UiSpace.sm : 6, vertical: 4),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(UiRadius.full),
+          color: current ? colors.accent : Colors.transparent,
+          border: Border.all(
+            color: colors.onSurfaceInverse.withValues(alpha: i <= done ? 0.9 : (required ? 0.35 : 0.2)),
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(i < done ? Icons.check_rounded : captureSteps[i].icon, size: 14, color: fg),
+            if (required) ...[
+              const SizedBox(width: 4),
+              Text(captureSteps[i].label, style: context.text.labelSmall?.copyWith(color: fg)),
+            ],
+          ],
+        ),
+      );
+    }
+
+    return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: UiSpace.xs,
+      runSpacing: UiSpace.xs,
       children: [
         for (var i = 0; i < captureSteps.length; i++) ...[
-          if (i > 0)
-            Container(
-              width: 24,
-              height: 2,
-              margin: const EdgeInsets.symmetric(horizontal: UiSpace.xs),
-              color: colors.onSurfaceInverse.withValues(alpha: i <= done ? 0.9 : 0.3),
-            ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: UiSpace.sm, vertical: 4),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(UiRadius.full),
-              color: i == done ? colors.accent : Colors.transparent,
-              border: Border.all(color: colors.onSurfaceInverse.withValues(alpha: i <= done ? 0.9 : 0.35)),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  i < done ? Icons.check_rounded : captureSteps[i].icon,
-                  size: 14,
-                  color: i == done ? colors.onAccent : colors.onSurfaceInverse,
-                ),
-                const SizedBox(width: 4),
-                Text(
-                  captureSteps[i].label,
-                  style: context.text.labelSmall?.copyWith(color: i == done ? colors.onAccent : colors.onSurfaceInverse),
-                ),
-              ],
-            ),
-          ),
+          if (i == minPhotos)
+            Text('+', style: context.text.labelMedium?.copyWith(color: colors.onSurfaceInverse.withValues(alpha: 0.6))),
+          chip(i),
         ],
       ],
     );

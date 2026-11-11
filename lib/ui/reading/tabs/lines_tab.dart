@@ -38,6 +38,7 @@ class _LinesTabState extends State<LinesTab> {
     final entry = kb.lines[_selected];
     final insights = widget.reading.forLine(_selected);
     final hi = lang == Lang.hi;
+    final unclear = f.isUnclear(_selected);
 
     return TabBody(
       children: [
@@ -78,7 +79,9 @@ class _LinesTabState extends State<LinesTab> {
                   ],
                 ),
               ),
-              if (!line.present)
+              if (unclear)
+                UiStatusPill(hi ? 'स्पष्ट नहीं' : 'Not clear', status: UiStatus.warning)
+              else if (!line.present)
                 UiStatusPill(hi ? 'नहीं मिली' : 'Not found', status: UiStatus.neutral)
               else if (entry?.str('category') == 'primary')
                 UiStatusPill(hi ? 'मुख्य रेखा' : 'Primary line', status: UiStatus.accent),
@@ -87,7 +90,7 @@ class _LinesTabState extends State<LinesTab> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (line.present)
+              if (line.present && !unclear)
                 Wrap(
                   spacing: UiSpace.xs,
                   runSpacing: UiSpace.xs,
@@ -98,11 +101,11 @@ class _LinesTabState extends State<LinesTab> {
                     if (line.breaks != 'none')
                       UiTag('${hi ? 'टूटन' : 'Breaks'}: ${Labels.value(line.breaks, lang)}', status: UiStatus.warning),
                     if (line.chained) UiTag(hi ? 'जंजीरदार' : 'Chained', status: UiStatus.warning),
-                    if (line.fork) UiTag(hi ? 'अंत में शाखा' : 'Forked end', status: UiStatus.info),
+                    if (line.fork) UiTag(hi ? 'सिरे पर दो शाखाएँ' : 'Forked end', status: UiStatus.info),
                     if (line.branches != 'none')
                       UiTag('${hi ? 'शाखाएँ' : 'Branches'}: ${Labels.value(line.branches, lang)}', status: UiStatus.info),
-                    if (line.start != null) UiTag('${hi ? 'आरंभ' : 'From'}: ${kb.placeName(line.start!).of(lang)}'),
-                    if (line.end != null) UiTag('${hi ? 'अंत' : 'To'}: ${kb.placeName(line.end!).of(lang)}'),
+                    if (line.start != null) UiTag('${hi ? 'शुरुआत' : 'From'}: ${kb.placeName(line.start!).of(lang)}'),
+                    if (line.end != null) UiTag('${hi ? 'समाप्ति' : 'To'}: ${kb.placeName(line.end!).of(lang)}'),
                   ],
                 ),
               if (entry?.text('about') != null) ...[
@@ -124,12 +127,22 @@ class _LinesTabState extends State<LinesTab> {
             ],
           ),
         ),
-        if (insights.isEmpty)
+        if (unclear)
+          UiAlert(
+            hi
+                ? 'आपकी तस्वीरों में यह रेखा साफ़ नहीं दिखी, इसलिए इसका फल नहीं दिया गया। '
+                    'नरम, बग़ल की रोशनी में नई रीडिंग शुरू करें और इस रेखा के लिए कुछ और फ़ोटो लें।'
+                : 'This line was not clear in your photos, so no reading is given for it. '
+                    'Start a new reading in soft side light and take a few extra photos for this line.',
+            title: hi ? 'स्पष्ट नहीं, दोबारा फ़ोटो लें' : 'Not clear, retake for this line',
+            status: UiStatus.warning,
+          )
+        else if (insights.isEmpty)
           UiEmptyState(
             compact: true,
             icon: Icons.blur_on_rounded,
-            title: hi ? 'इस रेखा के लिए कोई विशेष संकेत नहीं' : 'Nothing special to note',
-            message: hi ? 'यह रेखा सामान्य रूप में है।' : 'This line looks ordinary, which is fine.',
+            title: hi ? 'इस रेखा में कुछ ख़ास नहीं' : 'Nothing special to note',
+            message: hi ? 'यह रेखा सामान्य दिखती है, और यह अच्छी बात है।' : 'This line looks ordinary, which is fine.',
           )
         else
           for (final r in insights) InsightCard(r),

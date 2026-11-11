@@ -105,7 +105,7 @@ void main() {
   test('a typical palm gets insights in several life areas', () {
     final f = PalmFeatures(side: 'right', element: 'fire', secondary: 'air');
     for (final k in Vocab.primaryLines) {
-      f.lines[k] = LineFeature(present: true, length: 'long', depth: 'deep');
+      f.lines[k] = LineFeature(present: true, length: 'long', depth: 'deep', confidence: 1);
     }
     f.lines['sun'] = LineFeature(present: true);
     f.mounds['jupiter'] = 'raised';

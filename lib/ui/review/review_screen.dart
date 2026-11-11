@@ -8,6 +8,8 @@ import '../../data/overlay.dart';
 import '../../kb/knowledge_base.dart';
 import '../../reading/palm_features.dart';
 import '../../vision/palm_analyzer.dart';
+import '../capture/capture_screen.dart';
+import '../capture/start_reading.dart';
 import '../profile/birth_editor.dart';
 import '../reading/reading_screen.dart';
 import '../widgets/common.dart';
@@ -25,7 +27,13 @@ class ReviewScreen extends StatefulWidget {
     required this.photo,
     this.savedId,
     this.savedAt,
+    this.source,
   });
+
+  /// The photos this reading was made from, so lines that are not clear
+  /// can be retaken with a few extra shots. Null when editing a saved
+  /// reading.
+  final CaptureResult? source;
 
   final PalmFeatures features;
   final PalmOverlay overlay;
@@ -54,6 +62,27 @@ class _ReviewScreenState extends State<ReviewScreen> {
         _f.secondary = ranked[1].value >= ranked.first.value * 0.75 ? ranked[1].key : 'none';
       }
     });
+  }
+
+  /// Opens the camera for a few extra shots (the optional extras flow),
+  /// then reads everything again.
+  Future<void> _retakeUnclear() async {
+    final src = widget.source;
+    if (src == null) return;
+    final kb = context.app.kb;
+    final names = [for (final k in _f.unclearLines) kb.lineName(k).en.toLowerCase()];
+    final shot = await Navigator.of(context).push<CaptureResult>(
+      MaterialPageRoute(
+        builder: (_) => CaptureScreen(hand: src.hand, existing: src, focusLines: names),
+        fullscreenDialog: true,
+      ),
+    );
+    if (shot == null || !mounted) return;
+    await Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (_) => AnalyzingScreen(photos: shot.photos, hand: shot.hand, guideScales: shot.guideScales),
+      ),
+    );
   }
 
   Future<void> _continue() async {
@@ -127,6 +156,20 @@ class _ReviewScreenState extends State<ReviewScreen> {
             const UiGap(UiSpace.md),
             _IssueAlert(i),
           ],
+          if (_f.unclearLines.isNotEmpty) ...[
+            const UiGap(UiSpace.md),
+            UiAlert(
+              'Not clear: ${[for (final k in _f.unclearLines) kb.lineName(k).en].join(', ')}. '
+              'No reading is given for these until they are clear. '
+              '${widget.source != null ? 'Take a few extra photos in soft side light, or draw the line yourself below.' : 'Draw the line yourself below if you can see it.'}',
+              title: 'Some lines are not clear',
+              status: UiStatus.warning,
+              action: widget.source == null
+                  ? null
+                  : UiButton('Retake for these lines',
+                      icon: Icons.add_a_photo_rounded, size: UiSize.sm, onPressed: _retakeUnclear),
+            ),
+          ],
           const UiGap(UiSpace.xl),
           UiListGroup(
             header: 'Lines',
@@ -136,8 +179,10 @@ class _ReviewScreenState extends State<ReviewScreen> {
                 UiListTile(
                   kb.lineName(k).en,
                   leading: LineDot(k, size: 14),
-                  subtitle: _summary(_f.line(k)),
-                  trailing: _ConfidencePill(_f.line(k)),
+                  subtitle: _f.isUnclear(k) ? 'Not clear, retake for this line' : _summary(_f.line(k)),
+                  trailing: _f.isUnclear(k)
+                      ? const UiStatusPill('Not clear', status: UiStatus.warning)
+                      : _ConfidencePill(_f.line(k)),
                   selected: _highlight == k,
                   onTap: () async {
                     setState(() => _highlight = k);

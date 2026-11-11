@@ -39,7 +39,7 @@ abstract final class Labels {
     'down': ('Downward', 'नीचे की ओर'),
     'both': ('Both ways', 'दोनों ओर'),
     'straight': ('Straight', 'सीधी'),
-    'gentle': ('Gently curved', 'हल्की घुमावदार'),
+    'gentle': ('Gently curved', 'हल्की-सी घुमावदार'),
     'steep': ('Strongly curved', 'बहुत घुमावदार'),
     'square': ('Square', 'चौकोर'),
     'rectangular': ('Long (rectangular)', 'लंबी (आयताकार)'),
@@ -182,7 +182,7 @@ class Disclaimer extends StatelessWidget {
     final hi = context.app.lang == Lang.hi;
     return Text(
       hi
-          ? 'हस्तरेखा परंपरा पर आधारित यह पठन आत्म-चिंतन और मनोरंजन के लिए है। यह चिकित्सा, कानूनी या आर्थिक सलाह नहीं है।'
+          ? 'हस्तरेखा शास्त्र की परंपरा पर आधारित यह फलादेश आत्म-चिंतन और मनोरंजन के लिए है। इसे चिकित्सा, कानूनी या आर्थिक सलाह न मानें।'
           : 'This reading follows the tradition of Vedic palmistry. It is for reflection and enjoyment, '
               'not medical, legal or financial advice.',
       style: context.text.bodySmall,
