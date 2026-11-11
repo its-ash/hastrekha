@@ -116,12 +116,6 @@ class SettingsStore {
   Lang get lang => _prefs.getString('lang') == 'hi' ? Lang.hi : Lang.en;
   set lang(Lang v) => _prefs.setString('lang', v.name);
 
-  ThemeMode get themeMode => ThemeMode.values.firstWhere(
-        (m) => m.name == _prefs.getString('themeMode'),
-        orElse: () => ThemeMode.system,
-      );
-  set themeMode(ThemeMode v) => _prefs.setString('themeMode', v.name);
-
   /// The hand the user writes with: 'right' or 'left'.
   String get dominantHand => _prefs.getString('dominantHand') ?? 'right';
   set dominantHand(String v) => _prefs.setString('dominantHand', v);

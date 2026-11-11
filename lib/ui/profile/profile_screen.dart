@@ -17,7 +17,6 @@ class ProfileScreen extends StatelessWidget {
     final p = app.profile;
     final moon = p.moon;
     final chart = p.chart;
-    final theme = UiThemeController.of(context);
     return Scaffold(
       appBar: const UiAppBar(title: 'Profile'),
       body: ListView(
@@ -78,23 +77,6 @@ class ProfileScreen extends StatelessWidget {
                   onChanged: (v) => context.appRead.lang = v,
                 ),
               ),
-              UiListTile(
-                'Appearance',
-                icon: Icons.dark_mode_outlined,
-                trailing: UiSegmentedControl<ThemeMode>(
-                  const [
-                    UiSegment(ThemeMode.system, icon: Icons.brightness_auto_rounded, tooltip: 'System'),
-                    UiSegment(ThemeMode.light, icon: Icons.light_mode_outlined, tooltip: 'Light'),
-                    UiSegment(ThemeMode.dark, icon: Icons.dark_mode_outlined, tooltip: 'Dark'),
-                  ],
-                  value: app.settings.themeMode,
-                  size: UiSize.sm,
-                  onChanged: (v) {
-                    app.settings.themeMode = v;
-                    theme?.mode = v;
-                  },
-                ),
-              ),
             ],
           ),
           const UiGap(UiSpace.xl),
@@ -135,6 +117,8 @@ class ProfileScreen extends StatelessWidget {
               ),
             ],
           ),
+          const UiGap(UiSpace.xl),
+          const UiAppearanceSection(),
           const UiGap(UiSpace.xl),
           // No INTERNET permission: the row opens the latest APK download in the browser.
           const UiUpdateSection(storeId: 'hastrekha', checkForUpdates: false),

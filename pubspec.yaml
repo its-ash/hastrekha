@@ -1,7 +1,7 @@
 name: hastrekha
 description: "Hastrekha: offline Vedic palm reading from a photo."
 publish_to: 'none'
-version: 1.0.3+4
+version: 1.0.4+5
 
 environment:
   sdk: ^3.12.2

@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theme/theme.dart';
 
 import 'app/app_state.dart';
 import 'app/home_shell.dart';
 
+/// One-time: carry the old app-local `themeMode` choice over to the shared
+/// appearance setting.
+Future<void> _migrateThemeMode() async {
+  final prefs = await SharedPreferences.getInstance();
+  final old = prefs.getString('themeMode');
+  if (old == null) return;
+  if (await UiAppearance.load() == null) {
+    for (final m in ThemeMode.values) {
+      if (m.name == old) await UiAppearance.save(m);
+    }
+  }
+  await prefs.remove('themeMode');
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await _migrateThemeMode();
   // Fully offline: use the bundled platform font, never download fonts.
   UiTypography.useGoogleFonts = false;
   runApp(const HastrekhaApp());
@@ -24,10 +40,7 @@ class HastrekhaApp extends StatefulWidget {
 
 class _HastrekhaAppState extends State<HastrekhaApp> {
   final _theme = UiThemeController(accent: brandAccent);
-  late final Future<AppState> _load = AppState.load().then((s) {
-    _theme.mode = s.settings.themeMode;
-    return s;
-  });
+  late final Future<AppState> _load = AppState.load();
 
   @override
   void dispose() {
