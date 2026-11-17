@@ -8,7 +8,9 @@ enum QualityProblem {
   unreadable('This photo could not be opened', 'Take the photo again.'),
   tooDark('The photo is too dark', 'Move to a brighter place, near a window or under a lamp, and try again.'),
   tooBright('The palm is washed out', 'Move out of direct sun or away from the lamp, so the light is soft.'),
-  noHand('No open palm was found', 'Fill the outline with your open palm, fingers slightly apart, and try again.'),
+  noHand('No open palm was found',
+      'Fill the outline with your open palm, fingers slightly apart, over a plain background that is not skin-coloured (not a wooden table or a beige wall).'),
+  tooSmall('The hand is too far away', 'Move the phone closer, so the palm fills the outline and the fine lines show.'),
   blurry('The photo is blurry', 'Hold the phone steady and wait a moment for the camera to focus.'),
   lowContrast('The palm lines are too faint in this light', 'Use light from one side, not from straight above, so the lines show.');
 
@@ -28,6 +30,7 @@ class PhotoQuality {
     required this.clipped,
     required this.sharpness,
     required this.lineContrast,
+    this.palmPixels = double.infinity,
   }) : unreadable = false;
 
   const PhotoQuality.unreadable()
@@ -36,7 +39,8 @@ class PhotoQuality {
         brightness = 0,
         clipped = 0,
         sharpness = 0,
-        lineContrast = 0;
+        lineContrast = 0,
+        palmPixels = 0;
 
   // Thresholds, measured with test/photo_quality_test.dart on the synthetic
   // palms of test/vision_test.dart and edited copies of them:
@@ -79,12 +83,21 @@ class PhotoQuality {
   /// exposure). Flat, frontal light or glare gives low values.
   static const minLineContrast = 0.03;
 
+  /// Palm width in photo pixels below which the fine lines are not there
+  /// to find: the working image (400 px palm) would be blown up nearly two
+  /// times. A 1080-pixel-wide camera frame gives 430 (far shot) to 660
+  /// (close-up); this catches gallery photos of a hand across the room.
+  static const minPalmPixels = 220.0;
+
   final bool unreadable;
   final bool handFound;
   final double brightness;
   final double clipped;
   final double sharpness;
   final double lineContrast;
+
+  /// Palm width in pixels of the photo (after the analyzer's size limit).
+  final double palmPixels;
 
   /// Problems in priority order: light first (it also hides the hand), then
   /// the hand, then focus, then line contrast.
@@ -94,6 +107,7 @@ class PhotoQuality {
       if (brightness < minBrightness) QualityProblem.tooDark,
       if (brightness > maxBrightness || clipped > maxClipped) QualityProblem.tooBright,
       if (!handFound) QualityProblem.noHand,
+      if (handFound && palmPixels < minPalmPixels) QualityProblem.tooSmall,
       if (sharpness < minSharpness) QualityProblem.blurry,
       if (lineContrast < minLineContrast) QualityProblem.lowContrast,
     ];
@@ -107,7 +121,7 @@ class PhotoQuality {
   @override
   String toString() => 'PhotoQuality(hand: $handFound, brightness: ${brightness.toStringAsFixed(1)}, '
       'clipped: ${clipped.toStringAsFixed(3)}, sharpness: ${sharpness.toStringAsFixed(2)}, '
-      'lineContrast: ${lineContrast.toStringAsFixed(3)}, problems: ${problems.map((p) => p.name).toList()})';
+      'lineContrast: ${lineContrast.toStringAsFixed(3)}, palmPixels: ${palmPixels.toStringAsFixed(0)}, problems: ${problems.map((p) => p.name).toList()})';
 }
 
 /// Mean gray level and the share of clipped (>= 245) pixels inside [mask].

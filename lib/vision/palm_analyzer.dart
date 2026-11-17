@@ -8,6 +8,7 @@ import '../reading/palm_features.dart';
 import 'crease_detector.dart';
 import 'float_image.dart';
 import 'hand_segmenter.dart';
+import 'hand_shape.dart';
 import 'line_classifier.dart';
 import 'multi_view.dart';
 import 'palm_geometry.dart';
@@ -34,7 +35,13 @@ class PalmAnalysis {
     required this.issues,
     required this.elementScores,
     this.photosUsed = 1,
+    this.handShape,
   });
+
+  /// Fingers and thumb as measured (working-image pixels of the primary
+  /// photo, which is [photo] scaled), or null when they could not be told
+  /// apart.
+  final HandShape? handShape;
 
   final PalmFeatures features;
 
@@ -98,7 +105,11 @@ class _View {
     required this.pwPx,
     required this.phPx,
     required this.sharpness,
+    required this.rgb,
   });
+
+  /// Working image as RGB bytes (for the fine hand mask).
+  final Uint8List rgb;
 
   final img.Image crop;
   final FloatImage gray;
@@ -147,6 +158,7 @@ class PalmAnalyzer {
       clipped: clipped,
       sharpness: view.sharpness,
       lineContrast: lineContrastOf(view.gray, view.palmMask, brightness),
+      palmPixels: view.pwPx,
     );
   }
 
@@ -192,7 +204,11 @@ class PalmAnalyzer {
         if (reg != null) {
           final wt = AlignedView.weightOf(reg.score, v.sharpness, p.sharpness);
           // A badly aligned or very soft photo is left out, not averaged in.
-          if (wt > 0.1) aligned.add(AlignedView(r, v.palmMask, reg.warp, v.gray, wt));
+          if (wt > 0.1) {
+            // Line up each part of the palm, not just the whole photo.
+            final warp = refineWarp(ref: response.response, refMask: p.palmMask, moving: r.response, warp: reg.warp);
+            aligned.add(AlignedView(r, v.palmMask, warp, v.gray, wt));
+          }
         }
       }
       if (aligned.isNotEmpty) {
@@ -229,15 +245,16 @@ class PalmAnalyzer {
     final found = hand != null && hand.plausible;
     final geo = found
         ? PalmGeometry.fromMask(hand, rightHand: rightHand)
-        : PalmGeometry.guide(thumbOnLeft: !rightHand, scale: guideScale);
+        : PalmGeometry.guide(thumbOnLeft: !rightHand, scale: guideScale, aspect: image.height / image.width);
 
     // Crop around the hand: fingers above, a little wrist below.
     final iw = image.width.toDouble(), ih = image.height.toDouble();
     final pl = geo.left * iw, pr = geo.right * iw, pt = geo.top * ih, pb = geo.bottom * ih;
     final pwPx = pr - pl, phPx = pb - pt;
     final topY = geo.fingerTop != null ? geo.fingerTop! * ih - phPx * 0.06 : pt - phPx * 1.0;
-    final cx0 = math.max(0.0, pl - pwPx * 0.45).floorToDouble();
-    final cx1 = math.min(iw, pr + pwPx * 0.45).ceilToDouble();
+    // Wide enough for a spread thumb and the little finger.
+    final cx0 = math.max(0.0, pl - pwPx * 0.65).floorToDouble();
+    final cx1 = math.min(iw, pr + pwPx * 0.65).ceilToDouble();
     final cy0 = math.max(0.0, topY).floorToDouble();
     final cy1 = math.min(ih, pb + phPx * 0.22).ceilToDouble();
     final crop = img.copyCrop(image,
@@ -290,6 +307,7 @@ class PalmAnalyzer {
       pwPx: pwPx,
       phPx: phPx,
       sharpness: _sharpness(gray, palmMask),
+      rgb: rgb,
     );
   }
 
@@ -327,6 +345,24 @@ class PalmAnalyzer {
     final fr = geo.fingerRatio;
     f.fingers = fr == null ? 'medium' : (fr < 0.74 ? 'short' : (fr > 0.9 ? 'long' : 'medium'));
     f.lineDensity = palm.lineDensity < 4.5 ? 'few' : (palm.lineDensity > 8.5 ? 'many' : 'moderate');
+
+    // Fingers and thumb, from a fine skin mask of the working image.
+    final shape = found ? measureHandShape(view.rgb, ww, wh, frame, gray) : null;
+    if (shape != null) {
+      f.fingerDev.addAll(shape.development);
+      f.tips = shape.tips;
+      f.fingerBase = shape.fingerBase;
+      f.thumbLength = shape.thumbLength;
+      f.thumbBuild = shape.thumbBuild;
+      f.phalanx = shape.phalanx;
+      // The middle finger against the palm, measured, is better than the
+      // rough estimate from the coarse mask.
+      final m = shape.fingers['middle'];
+      if (m != null && frame.height > 0) {
+        final r = m.length / frame.height;
+        f.fingers = r < 0.74 ? 'short' : (r > 0.92 ? 'long' : 'medium');
+      }
+    }
 
     final scores = elementScores(f);
     final ranked = scores.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
@@ -383,7 +419,21 @@ class PalmAnalyzer {
       issues: issues,
       elementScores: scores,
       photosUsed: photosUsed,
+      handShape: shape,
     );
+  }
+
+  /// Measures the fingers and thumb on the working image: a skin mask at
+  /// full working resolution (fine enough for fingertips), learned from
+  /// the palm centre.
+  static HandShape? measureHandShape(Uint8List rgb, int ww, int wh, PalmFrame frame, FloatImage gray) {
+    final seg = const HandSegmenter().segment(
+      YCrCb.fromRgb(rgb, ww, wh),
+      sampleX: (frame.x0 + frame.x1) / 2 / ww,
+      sampleY: (frame.y0 + frame.y1) / 2 / wh,
+    );
+    if (seg == null) return null;
+    return HandShape.measure(mask: seg.mask, gray: gray, frame: frame);
   }
 
   /// Ayurvedic hand element from shape and lines. Air (Vāta): long,
@@ -430,6 +480,36 @@ class PalmAnalyzer {
     air += faint * 0.8 + broken * 0.6;
     fire += medium * 0.6 + math.min(2, forks) * 0.4;
     water += deep * 0.8 + (1 - broken) * 0.3;
+
+    // Fingers and thumb, when measured (book, ch. 2): Air hands have oval
+    // tips, fingers narrowing at the base and long wiry thumbs; Fire hands
+    // fingers of even width; Water hands squared or spatulate tips,
+    // fingers widening at the base and fleshy, stocky thumbs.
+    switch (f.tips) {
+      case 'conic' || 'pointed':
+        air += 0.6;
+      case 'square':
+        water += 0.5;
+        fire += 0.2;
+      case 'spatulate':
+        water += 0.5;
+    }
+    switch (f.fingerBase) {
+      case 'narrowing':
+        air += 0.5;
+      case 'even':
+        fire += 0.5;
+      case 'widening':
+        water += 0.5;
+    }
+    switch (f.thumbBuild) {
+      case 'slim':
+        air += 0.4;
+      case 'medium':
+        fire += 0.2;
+      case 'thick':
+        water += 0.4;
+    }
     return {'air': air, 'fire': fire, 'water': water};
   }
 

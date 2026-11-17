@@ -78,9 +78,19 @@ entries must match. A list matches if any value matches.
 | `hand.fingers` | `short`, `medium`, `long` |
 | `hand.line_density` | `few`, `moderate`, `many` |
 | `hand.side` | `left`, `right` |
+| `hand.tips` | `pointed`, `conic` (oval, rounded), `square`, `spatulate` (wider at the tip): the commonest fingertip shape |
+| `hand.finger_base` | `narrowing`, `even`, `widening`: finger width where it meets the palm, against its middle |
+| `hand.phalanx` | `base`, `middle`, `tip`, `even`: which phalanges (finger joints) are longest |
+| `finger.<index\|middle\|ring\|little>.length` | `short`, `medium`, `long` (long = well-developed): the finger against the typical length for its kind |
+| `thumb.length` | `short`, `medium`, `long`: from the web to the tip, against the palm width |
+| `thumb.build` | `slim`, `medium`, `thick` |
 | `mound.<planet>` | `flat`, `normal`, `raised` |
 | `mound.<planet>.crossed` | `true`, `false` (many lines cutting the mound) |
 | `symbol.<symbol key>` | a location key where the symbol is seen (`any` = anywhere) |
+
+The finger, fingertip, phalanx and thumb facts exist only when the camera
+could measure them (fingers told apart, thumb in view) or the user set
+them; otherwise no rule reads them.
 
 Values are compared as strings, so `true` and `"true"` are the same.
 A line that is not present only matches `<line>.present: false`.

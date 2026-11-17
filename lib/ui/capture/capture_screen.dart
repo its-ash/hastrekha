@@ -1,12 +1,17 @@
 import 'dart:math' as math;
-import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:theme/theme.dart';
 
+import '../../data/capture_log.dart';
 import '../../vision/auto_capture.dart';
 import '../../vision/palm_analyzer.dart';
+import '../../vision/palm_geometry.dart';
+import 'palm_frame.dart';
+
+export 'palm_frame.dart' show PalmFramePainter;
 
 /// Photos taken on the capture screen, and the hand they show.
 class CaptureResult {
@@ -20,7 +25,7 @@ class CaptureResult {
   final List<double> guideScales;
 }
 
-/// One guided shot: how far to hold the phone, and how big the outline is.
+/// One guided shot: how far to hold the phone, and how big the palm box is.
 class CaptureStep {
   const CaptureStep(this.label, this.hint, this.scale, this.icon);
   final String label;
@@ -34,16 +39,13 @@ class CaptureStep {
 /// [minPhotos] are required; the extra ones are optional and bring out
 /// faint lines further. The analyzer lines them all up and combines them.
 const captureSteps = [
-  CaptureStep('Far', 'Hold the phone farther away so the whole hand and wrist fit the small outline.', 0.78,
+  CaptureStep('Far', 'A little farther away: the palm fits the small box, the whole hand in view.', 0.78,
       Icons.zoom_out_rounded),
-  CaptureStep('Close', 'Move closer so the palm fills the large outline. Wait for it to look sharp.', 1.18,
-      Icons.zoom_in_rounded),
-  CaptureStep('Middle', 'Now a normal distance: fit the palm in the outline and hold still.', 1.0,
-      Icons.crop_free_rounded),
-  CaptureStep('Extra', 'Optional: one more, a little farther away. Each extra clear photo brings out faint lines.', 0.9,
+  CaptureStep('Close', 'Closer: the palm fills the large box.', 1.18, Icons.zoom_in_rounded),
+  CaptureStep('Middle', 'Normal distance: the palm fits the box.', 1.0, Icons.crop_free_rounded),
+  CaptureStep('Extra', 'Optional: a little farther away. Each extra clear photo brings out faint lines.', 0.9,
       Icons.add_a_photo_rounded),
-  CaptureStep('Extra', 'Optional: one more, a little closer. Hold still until it looks sharp.', 1.08,
-      Icons.add_a_photo_rounded),
+  CaptureStep('Extra', 'Optional: a little closer.', 1.08, Icons.add_a_photo_rounded),
   CaptureStep('Extra', 'Optional: a last one at a normal distance.', 1.0, Icons.add_a_photo_rounded),
 ];
 
@@ -103,6 +105,18 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
   bool _armed = true;
   bool _sawChange = false;
 
+  /// Debug and profile builds: every frame is kept for replay in tests.
+  CaptureLog? _log;
+  bool _loggedStream = false;
+  int _gateFrames = 0;
+
+  /// When focus and exposure were last pointed at the palm.
+  DateTime _lastAim = DateTime.fromMillisecondsSinceEpoch(0);
+
+  /// Most frames this capture may hold. A retake keeps every earlier
+  /// frame and has room for one more shot.
+  int get _cap => widget.existing == null ? maxPhotos : maxPhotos + burstSize;
+
   @override
   void initState() {
     super.initState();
@@ -110,13 +124,30 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     if (e != null) {
       _hand = e.hand;
       // Keep room for one more burst.
-      final keep = math.min(e.photos.length, maxPhotos - burstSize);
+      final keep = math.min(e.photos.length, _cap - burstSize);
       _photos.addAll(e.photos.take(keep));
       _scales.addAll(e.guideScales.take(keep));
       _stepsDone = minPhotos;
     }
     WidgetsBinding.instance.addObserver(this);
+    // The outline and the auto capture are laid out for an upright phone.
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     _init();
+  }
+
+  /// Points focus and exposure at the palm, not the whole frame: a dark
+  /// or bright background must not set the exposure of the skin. The
+  /// camera drops the point after a few seconds, so this is called again
+  /// each time a palm arrives in the outline.
+  Future<void> _aimAtPalm(CameraController c) async {
+    _lastAim = DateTime.now();
+    const palm = Offset(PalmGeometry.guideCenterU, PalmGeometry.guideCenterV);
+    try {
+      await c.setExposurePoint(palm);
+      await c.setFocusPoint(palm);
+    } catch (_) {
+      // Not supported on this camera: it keeps metering the whole frame.
+    }
   }
 
   Future<void> _init() async {
@@ -139,7 +170,20 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
         _controller = c;
         _error = null;
       });
+      _aimAtPalm(c);
       _startStream(c);
+      if (CaptureLog.enabled && _log == null) {
+        final size = MediaQuery.sizeOf(context);
+        _log = await CaptureLog.start({
+          'hand': _hand,
+          'camera': cam.name,
+          'sensorOrientation': cam.sensorOrientation,
+          'previewSize': [c.value.previewSize?.width, c.value.previewSize?.height],
+          'screen': [size.width, size.height],
+          'steps': [for (final s in captureSteps) s.scale],
+          'retake': widget.existing != null,
+        });
+      }
     } catch (e) {
       if (mounted) setState(() => _error = e);
     }
@@ -160,15 +204,18 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    SystemChrome.setPreferredOrientations(const []);
     _controller?.dispose();
     super.dispose();
   }
 
   /// Reads the camera's image stream to take each shot by itself when the
-  /// palm is steady, in focus and fills the outline. The shutter button
-  /// stays as the manual fallback.
+  /// palm fits the outline of the current shot, is steady and in focus.
+  /// The shutter button stays as the manual fallback.
   void _startStream(CameraController c) {
     if (c.value.isStreamingImages) return;
+    // Stream frames come as the sensor sees them; the gate turns them upright.
+    final rotation = c.description.sensorOrientation ~/ 90;
     try {
       c.startImageStream((image) {
         final now = DateTime.now();
@@ -176,28 +223,47 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
         _lastFrame = now;
         final planes = image.planes;
         if (planes.length < 3) return;
-        final state = _gate.add(PreviewFrame(
-          width: image.width,
-          height: image.height,
-          y: planes[0].bytes,
-          yRowStride: planes[0].bytesPerRow,
-          u: planes[1].bytes,
-          v: planes[2].bytes,
-          uvRowStride: planes[1].bytesPerRow,
-          uvPixelStride: planes[1].bytesPerPixel ?? 1,
-        ));
+        if (!_loggedStream && _log != null) {
+          _loggedStream = true;
+          _log!.note('stream ${image.width}x${image.height} rowStride ${planes[0].bytesPerRow} '
+              'uvPixelStride ${planes[1].bytesPerPixel}');
+        }
+        final state = _gate.add(
+          PreviewFrame(
+            width: image.width,
+            height: image.height,
+            y: planes[0].bytes,
+            yRowStride: planes[0].bytesPerRow,
+            u: planes[1].bytes,
+            v: planes[2].bytes,
+            uvRowStride: planes[1].bytesPerRow,
+            uvPixelStride: planes[1].bytesPerPixel ?? 1,
+            rotation: rotation,
+          ),
+          scale: captureSteps[math.min(_step, captureSteps.length - 1)].scale,
+        );
+        if (_log != null && ++_gateFrames % 8 == 0) {
+          final g = _gate;
+          _log!.note('gate ${state.name} fill ${g.fill.toStringAsFixed(2)} size ${g.size.toStringAsFixed(2)} '
+              'offset ${g.offset.toStringAsFixed(2)} bright ${g.brightness.toStringAsFixed(0)} '
+              'glare ${g.glare.toStringAsFixed(3)} motion ${g.motion.toStringAsFixed(3)} '
+              'sharp ${g.sharpness.toStringAsFixed(4)} skinBg ${g.skinLikeBackground}');
+        }
+        final still = state.aligned && state != AutoState.moving;
         if (!_armed) {
           // Wait for the hand to move (new distance) before arming again.
-          if (state == AutoState.moving || state == AutoState.noHand) _sawChange = true;
-          if (_sawChange && state != AutoState.moving && state != AutoState.noHand) {
+          if (!still) _sawChange = true;
+          if (_sawChange && still) {
             _armed = true;
             _sawChange = false;
           }
         }
+        // A palm has just arrived in the outline: focus and meter on it.
+        if (state.aligned && !_auto.aligned && now.difference(_lastAim).inSeconds >= 3) _aimAtPalm(c);
         if (state != _auto || state == AutoState.ready) {
           setState(() => _auto = state);
         }
-        if (state == AutoState.ready && _armed && _stepsDone < captureSteps.length && _photos.length < maxPhotos) {
+        if (state == AutoState.ready && _armed && _stepsDone < captureSteps.length && _photos.length < _cap) {
           _shoot(auto: true);
         }
       });
@@ -221,12 +287,12 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
   /// one is good.
   Future<void> _shoot({bool auto = false}) async {
     final c = _controller;
-    if (c == null || _busy || _step >= captureSteps.length || _photos.length >= maxPhotos) return;
+    if (c == null || _busy || _step >= captureSteps.length || _photos.length >= _cap) return;
     setState(() => _busy = true);
     final scale = captureSteps[_step].scale;
     final startTorch = _torch;
     final frames = <Uint8List>[];
-    final n = math.min(burstSize, maxPhotos - _photos.length);
+    final n = math.min(burstSize, _cap - _photos.length);
     for (var i = 0; i < n; i++) {
       // Middle frame under the opposite light, when the phone has a torch.
       final flip = i == 1 && _hasTorch;
@@ -257,6 +323,13 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     final checks = await Future.wait([
       for (final b in frames) checkPhotoInBackground(b, rightHand: _hand == 'right', guideScale: scale),
     ]);
+    final log = _log;
+    if (log != null) {
+      for (var i = 0; i < frames.length; i++) {
+        log.frame('s${_step}_${DateTime.now().millisecondsSinceEpoch}_$i.jpg', frames[i],
+            'scale $scale hand $_hand auto $auto state ${_auto.name} gate ${_gate.size.toStringAsFixed(2)}/${_gate.offset.toStringAsFixed(2)} ${checks[i]}');
+      }
+    }
     if (!mounted) return;
     var kept = 0;
     for (var i = 0; i < frames.length; i++) {
@@ -280,7 +353,7 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
       _stepsDone++;
       _busy = false;
     });
-    if (_stepsDone >= captureSteps.length || _photos.length >= maxPhotos) {
+    if (_stepsDone >= captureSteps.length || _photos.length >= _cap) {
       _finish();
     } else {
       context.showToast(
@@ -309,6 +382,7 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
         QualityProblem.tooBright => Icons.wb_shade_rounded,
         QualityProblem.blurry => Icons.blur_on_rounded,
         QualityProblem.noHand => Icons.back_hand_outlined,
+        QualityProblem.tooSmall => Icons.zoom_in_rounded,
         QualityProblem.lowContrast => Icons.contrast_rounded,
         QualityProblem.unreadable => Icons.broken_image_outlined,
       },
@@ -336,17 +410,26 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     });
   }
 
-  /// Live guidance from the auto-capture gate.
-  String _autoHint() {
-    if (_busy || _controller == null) return '';
-    if (_stepsDone >= captureSteps.length) return '';
+  /// Live guidance on the camera view, from the auto-capture gate: what
+  /// to do next, in a word or two, and why.
+  _Guide? _guide() {
+    if (_controller == null || _stepsDone >= captureSteps.length) return null;
+    if (_busy) return const _Guide(Icons.photo_camera_rounded, 'Hold still', 'Taking the photo', good: true);
     return switch (_auto) {
-      AutoState.noHand => 'Put your palm inside the outline',
-      AutoState.tooDark => 'Too dark. Move to brighter light or use the flashlight',
-      AutoState.tooBright => 'Too bright. Step out of direct light',
-      AutoState.moving => 'Hold steady',
-      AutoState.soft => 'Focusing. Keep still, the photo is taken automatically',
-      AutoState.ready => 'Taking the photo',
+      AutoState.noHand => const _Guide(Icons.back_hand_outlined, 'Put your palm in the box', 'Fingers up, palm facing the camera'),
+      // The view shows the picture upright, so the gate's offset is a
+      // direction on screen.
+      AutoState.offCentre => _gate.offset > 0
+          ? const _Guide(Icons.arrow_back_rounded, 'Move your hand left', 'Centre the palm in the box')
+          : const _Guide(Icons.arrow_forward_rounded, 'Move your hand right', 'Centre the palm in the box'),
+      AutoState.tooFar => const _Guide(Icons.zoom_in_rounded, 'Move closer', 'The palm should fill the box'),
+      AutoState.tooClose => const _Guide(Icons.zoom_out_rounded, 'Move back', 'The palm should fit inside the box'),
+      AutoState.tooDark => const _Guide(Icons.wb_sunny_outlined, 'Too dark', 'Find more light or turn on the flashlight'),
+      AutoState.tooBright => const _Guide(Icons.wb_shade_rounded, 'Too bright', 'Move out of direct light'),
+      AutoState.glare => const _Guide(Icons.flare_rounded, 'Shiny patch on the palm', 'Tilt your hand a little'),
+      AutoState.moving => const _Guide(Icons.pan_tool_rounded, 'Hold steady', 'Keep the phone and hand still', good: true),
+      AutoState.soft => const _Guide(Icons.center_focus_weak_rounded, 'Focusing', 'Keep still, the photo is taken by itself', good: true),
+      AutoState.ready => const _Guide(Icons.check_circle_rounded, 'Good, hold still', 'Taking the photo', good: true),
     };
   }
 
@@ -367,147 +450,255 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     final c = _controller;
     final colors = context.colors;
     final step = captureSteps[math.min(_step, captureSteps.length - 1)];
+    final guide = _guide();
+    final good = _busy || _auto.aligned;
+    final onCamera = colors.onSurfaceInverse;
+
+    // Shade behind text on the camera picture, fading out towards the middle.
+    BoxDecoration scrim(Alignment from) => BoxDecoration(
+          gradient: LinearGradient(
+            begin: from,
+            end: -from,
+            colors: [colors.surfaceInverse.withValues(alpha: 0.72), colors.surfaceInverse.withValues(alpha: 0)],
+          ),
+        );
+
+    final title = _step < minPhotos
+        ? '${_hand == 'right' ? 'Right' : 'Left'} palm · photo ${_step + 1} of $minPhotos · ${step.label}'
+        : widget.existing != null
+            ? 'Extra photo for unclear lines'
+            : 'Extra photo ${_step + 1} of ${captureSteps.length} (optional)';
+    final hint = widget.focusLines.isNotEmpty && widget.existing != null
+        ? 'To read the ${widget.focusLines.join(', ')} line, use soft light from one side. ${step.hint}'
+        : '${step.hint} Soft light from one side, plain background.';
+    final status = _canRead
+        ? '${_photos.length} clear frames. Tap Read, or add more for faint lines.'
+        : '$_stepsDone of $minPhotos photos done';
+
+    final camera = _error != null
+        ? Center(child: _CameraError(error: _error!, onRetry: _init))
+        : c == null || !c.value.isInitialized
+            ? const Center(child: UiSpinner(size: 28))
+            : Align(
+                alignment: Alignment.topCenter,
+                child: AspectRatio(
+                  // Preview size is reported in landscape.
+                  aspectRatio: 1 / c.value.aspectRatio,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      CameraPreview(c),
+                      // The palm box: green when the palm sits right in it.
+                      IgnorePointer(
+                        child: CustomPaint(
+                          painter: PalmFramePainter(
+                            color: good ? colors.success : onCamera,
+                            good: good,
+                            scale: step.scale,
+                          ),
+                        ),
+                      ),
+                      // What to do now, big, below the top bar.
+                      Positioned(
+                        left: UiSpace.lg,
+                        right: UiSpace.lg,
+                        top: 96,
+                        child: Center(
+                          child: AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 180),
+                            child: guide == null
+                                ? const SizedBox.shrink()
+                                : _GuidePill(key: ValueKey(guide.title), guide: guide),
+                          ),
+                        ),
+                      ),
+                      // How to take this shot, and progress.
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        child: IgnorePointer(
+                          child: DecoratedBox(
+                            decoration: scrim(Alignment.bottomCenter),
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(UiSpace.xl, UiSpace.xxl, UiSpace.xl, UiSpace.md),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    hint,
+                                    textAlign: TextAlign.center,
+                                    style: context.text.bodyMedium?.copyWith(color: onCamera),
+                                  ),
+                                  const UiGap(UiSpace.xs),
+                                  Text(
+                                    status,
+                                    textAlign: TextAlign.center,
+                                    style: context.text.labelMedium?.copyWith(
+                                      color: onCamera.withValues(alpha: 0.8),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+
     return Scaffold(
       backgroundColor: colors.surfaceInverse,
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: UiSpace.sm, vertical: UiSpace.xs),
-              child: Row(
+            Expanded(
+              child: Stack(
                 children: [
-                  IconButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    icon: Icon(Icons.close_rounded, color: colors.onSurfaceInverse),
-                    tooltip: 'Close',
-                  ),
-                  Expanded(
-                    child: Text(
-                      _hand == 'right' ? 'Right palm' : 'Left palm',
-                      textAlign: TextAlign.center,
-                      style: context.text.titleMedium?.copyWith(color: colors.onSurfaceInverse),
+                  Positioned.fill(child: camera),
+                  // Top bar over the camera: close, title and steps, flashlight.
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    child: DecoratedBox(
+                      decoration: scrim(Alignment.topCenter),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(UiSpace.xs, UiSpace.xs, UiSpace.xs, UiSpace.lg),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            IconButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              icon: Icon(Icons.close_rounded, color: onCamera),
+                              tooltip: 'Close',
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: UiSpace.sm),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      title,
+                                      textAlign: TextAlign.center,
+                                      style: context.text.titleSmall?.copyWith(color: onCamera),
+                                    ),
+                                    const UiGap(UiSpace.xs),
+                                    _StepTrack(done: _step),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: c == null ? null : _toggleTorch,
+                              icon: Icon(_torch ? Icons.flash_on_rounded : Icons.flash_off_rounded, color: onCamera),
+                              tooltip: 'Flashlight',
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                  IconButton(
-                    onPressed: c == null ? null : _toggleTorch,
-                    icon: Icon(_torch ? Icons.flash_on_rounded : Icons.flash_off_rounded, color: colors.onSurfaceInverse),
-                    tooltip: 'Flashlight',
                   ),
                 ],
               ),
             ),
-            Expanded(
-              child: Center(
-                child: _error != null
-                    ? _CameraError(error: _error!, onRetry: _init)
-                    : c == null || !c.value.isInitialized
-                        ? const UiSpinner(size: 28)
-                        : AspectRatio(
-                            // Preview size is reported in landscape.
-                            aspectRatio: 1 / c.value.aspectRatio,
-                            child: Stack(
-                              fit: StackFit.expand,
-                              children: [
-                                CameraPreview(c),
-                                IgnorePointer(
-                                  child: CustomPaint(
-                                    painter: HandGuidePainter(
-                                      thumbOnLeft: _hand == 'left',
-                                      line: colors.onSurfaceInverse,
-                                      shade: colors.scrim,
-                                      scale: step.scale,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-              ),
-            ),
+            // Only the controls below the camera.
             Padding(
-              padding: const EdgeInsets.fromLTRB(UiSpace.xl, UiSpace.md, UiSpace.xl, UiSpace.lg),
-              child: Column(
+              padding: const EdgeInsets.fromLTRB(UiSpace.xl, UiSpace.md, UiSpace.xl, UiSpace.md),
+              child: Row(
                 children: [
-                  _StepTrack(done: _step),
-                  const UiGap(UiSpace.md),
-                  Text(
-                    _step < minPhotos
-                        ? 'Photo ${_step + 1} of $minPhotos · ${step.label}'
-                        : widget.existing != null
-                            ? 'Extra photo (to bring out unclear lines)'
-                            : 'Extra photo ${_step + 1} of ${captureSteps.length} (optional)',
-                    style: context.text.titleSmall?.copyWith(color: colors.onSurfaceInverse),
-                  ),
-                  const UiGap(UiSpace.xs),
-                  Text(
-                    _busy
-                        ? 'Hold still. Taking a few quick frames, with and without the light.'
-                        : _canRead
-                            ? '${_photos.length} clear frames. Tap Read now, or add more to bring out faint lines.'
-                            : '$_stepsDone of $minPhotos shots done. Only clear, well-lit frames count.',
-                    textAlign: TextAlign.center,
-                    style: context.text.labelMedium?.copyWith(color: colors.onSurfaceInverse),
-                  ),
-                  const UiGap(UiSpace.xs),
-                  Text(
-                    _autoHint(),
-                    textAlign: TextAlign.center,
-                    style: context.text.labelMedium?.copyWith(color: colors.accent, fontWeight: FontWeight.w600),
-                  ),
-                  const UiGap(UiSpace.xs),
-                  Text(
-                    widget.focusLines.isNotEmpty && widget.existing != null
-                        ? 'To read the ${widget.focusLines.join(', ')} line, use soft light from one side and let the lines show as small shadows. ${step.hint}'
-                        : '${step.hint} Spread your fingers a little and use soft light from one side.',
-                    textAlign: TextAlign.center,
-                    style: context.text.bodySmall?.copyWith(color: colors.onSurfaceInverse),
-                  ),
-                  const UiGap(UiSpace.lg),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: widget.existing == null && _photos.isEmpty
-                            ? UiSegmentedControl<String>(
-                                const [UiSegment('left', label: 'Left'), UiSegment('right', label: 'Right')],
-                                value: _hand,
-                                size: UiSize.sm,
-                                onChanged: (v) => setState(() => _hand = v),
-                              )
-                            : _perStep.isEmpty
-                                ? const SizedBox()
-                                : Align(
+                  Expanded(
+                    child: widget.existing == null && _photos.isEmpty
+                        ? UiSegmentedControl<String>(
+                            const [UiSegment('left', label: 'Left'), UiSegment('right', label: 'Right')],
+                            value: _hand,
+                            size: UiSize.sm,
+                            onChanged: (v) => setState(() => _hand = v),
+                          )
+                        : _perStep.isEmpty
+                            ? const SizedBox()
+                            : Align(
                                 alignment: Alignment.centerLeft,
                                 child: TextButton.icon(
                                   onPressed: _busy ? null : _retakeLast,
-                                  icon: Icon(Icons.undo_rounded, color: colors.onSurfaceInverse),
-                                  label: Text('Retake', style: TextStyle(color: colors.onSurfaceInverse)),
+                                  icon: Icon(Icons.undo_rounded, color: onCamera),
+                                  label: Text('Retake', style: TextStyle(color: onCamera)),
                                 ),
                               ),
-                      ),
-                      const UiGap(UiSpace.xl),
-                      _ShutterButton(busy: _busy, onPressed: c == null ? null : _shoot),
-                      const UiGap(UiSpace.xl),
-                      Expanded(
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: !_canRead
-                              ? const SizedBox()
-                              : TextButton(
-                                  onPressed: _busy ? null : _finish,
-                                  child: Text(
-                                    'Read (${_photos.length})',
-                                    style: TextStyle(color: colors.onSurfaceInverse, fontWeight: FontWeight.w600),
-                                  ),
-                                ),
-                        ),
-                      ),
-                    ],
+                  ),
+                  const UiGap(UiSpace.xl),
+                  _ShutterButton(busy: _busy, onPressed: c == null ? null : _shoot),
+                  const UiGap(UiSpace.xl),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: !_canRead
+                          ? const SizedBox()
+                          : TextButton(
+                              onPressed: _busy ? null : _finish,
+                              child: Text(
+                                'Read (${_photos.length})',
+                                style: TextStyle(color: onCamera, fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                    ),
                   ),
                 ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// One piece of live guidance: an icon, what to do, and why. [good]
+/// means the palm is in place and the shot is about to be taken.
+class _Guide {
+  const _Guide(this.icon, this.title, this.detail, {this.good = false});
+  final IconData icon;
+  final String title;
+  final String detail;
+  final bool good;
+}
+
+/// The guidance shown large on the camera view: green when the palm is
+/// in place, amber when something needs to change.
+class _GuidePill extends StatelessWidget {
+  const _GuidePill({super.key, required this.guide});
+  final _Guide guide;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.colors;
+    final tone = guide.good ? colors.success : colors.warning;
+    final fg = colors.onSurfaceInverse;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: UiSpace.lg, vertical: UiSpace.sm),
+      decoration: BoxDecoration(
+        color: colors.surfaceInverse.withValues(alpha: 0.78),
+        borderRadius: BorderRadius.circular(UiRadius.lg),
+        border: Border.all(color: tone, width: 2),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(guide.icon, color: tone, size: 32),
+          const UiGap(UiSpace.md),
+          Flexible(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(guide.title, style: context.text.titleLarge?.copyWith(color: fg, fontWeight: FontWeight.w700)),
+                Text(guide.detail, style: context.text.bodySmall?.copyWith(color: fg.withValues(alpha: 0.85))),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -617,193 +808,4 @@ class _CameraError extends StatelessWidget {
       ),
     );
   }
-}
-
-/// Outline of an open palm, drawn as one smooth silhouette: tapered
-/// fingers with round tips and webbing between them, a two-jointed thumb,
-/// the fleshy mounds at the palm's sides and the wrist. Faint knuckle
-/// creases and the three main lines help the user line the hand up.
-///
-/// The palm (finger base to wrist, 0.24–0.76 across, about 0.40–0.84 down)
-/// sits where the analyzer expects it when it cannot find the hand by
-/// itself: keep it in step with `PalmGeometry.guide` and
-/// `HandSegmenter.guideCenterX/Y`.
-class HandGuidePainter extends CustomPainter {
-  HandGuidePainter({required this.thumbOnLeft, required this.line, required this.shade, this.scale = 1});
-  final bool thumbOnLeft;
-  final Color line;
-  final Color shade;
-
-  /// Size of the outline around the palm centre: below 1 for a photo from
-  /// farther away, above 1 for a close-up. Matches
-  /// `PalmGeometry.guide(scale:)`.
-  final double scale;
-
-  /// Palm centre the outline is scaled around.
-  static const centerU = 0.5, centerV = 0.61;
-
-  /// Fingers from the index (next to the thumb) to the little finger:
-  /// base centre u, tip centre u, half width at the base and at the tip,
-  /// tip top v, and the v of the web on the little-finger side.
-  static const _fingers = [
-    (0.322, 0.298, 0.061, 0.052, 0.190, 0.432),
-    (0.460, 0.456, 0.063, 0.055, 0.135, 0.425),
-    (0.596, 0.618, 0.060, 0.051, 0.160, 0.440),
-    (0.718, 0.762, 0.050, 0.043, 0.250, 0.0),
-  ];
-
-  /// Path of the hand, in the thumb-on-left frame mapped by [p].
-  /// [aspect] is the guide's height / width, so finger tips stay round.
-  static Path handPath(Offset Function(double u, double v) p, {required double aspect}) {
-    const k = 0.5523; // cubic Bézier circle factor
-    final path = Path();
-    void moveTo(double u, double v) => path.moveTo(p(u, v).dx, p(u, v).dy);
-    void lineTo(double u, double v) => path.lineTo(p(u, v).dx, p(u, v).dy);
-    void quad(double cu, double cv, double u, double v) {
-      final c = p(cu, cv), e = p(u, v);
-      path.quadraticBezierTo(c.dx, c.dy, e.dx, e.dy);
-    }
-
-    void cubic(double u1, double v1, double u2, double v2, double u, double v) {
-      final a = p(u1, v1), b = p(u2, v2), e = p(u, v);
-      path.cubicTo(a.dx, a.dy, b.dx, b.dy, e.dx, e.dy);
-    }
-
-    // Wrist, thumb side, then the ball of the thumb.
-    moveTo(0.31, 1.04);
-    cubic(0.305, 0.95, 0.27, 0.90, 0.255, 0.84);
-    // Thumb: outer edge out and up, round tip, inner edge back to the web.
-    cubic(0.225, 0.78, 0.15, 0.72, 0.105, 0.64);
-    cubic(0.085, 0.60, 0.06, 0.56, 0.058, 0.525);
-    cubic(0.056, 0.49, 0.085, 0.468, 0.112, 0.476);
-    cubic(0.135, 0.483, 0.15, 0.50, 0.165, 0.525);
-    cubic(0.19, 0.565, 0.22, 0.60, 0.248, 0.598);
-    // Palm edge up to the index finger.
-    cubic(0.262, 0.585, 0.262, 0.52, 0.262, 0.47);
-
-    for (var i = 0; i < _fingers.length; i++) {
-      final (baseU, tipU, baseHw, tipHw, tipV, webV) = _fingers[i];
-      final r = tipHw;
-      // Round tip: the radius is in u units; the same length in v units.
-      final rv = r / aspect;
-      final l0 = baseU - baseHw, r0 = baseU + baseHw;
-      final l1 = tipU - tipHw, r1 = tipU + tipHw;
-      final topV = tipV + rv;
-      if (i > 0) {
-        // Webbing: a soft U from the previous finger's base.
-        final (_, _, _, _, _, prevWeb) = _fingers[i - 1];
-        quad(l0 - 0.004, prevWeb + 0.012, l0, prevWeb - 0.01);
-      }
-      // Thumb-side edge of the finger, tapering slightly.
-      final startV = i == 0 ? 0.47 : _fingers[i - 1].$6 - 0.01;
-      quad(l0 + (l1 - l0) * 0.3, (startV + topV) / 2, l1, topV);
-      // Round tip.
-      cubic(l1, topV - rv * k, tipU - r * k, tipV, tipU, tipV);
-      cubic(tipU + r * k, tipV, r1, topV - rv * k, r1, topV);
-      // Little-finger side down to the web (or the palm edge).
-      final endV = i == _fingers.length - 1 ? 0.47 : webV - 0.01;
-      quad(r0 + (r1 - r0) * 0.3, (topV + endV) / 2, r0, endV);
-    }
-
-    // Little-finger edge of the palm, with the soft Moon mound, then wrist.
-    cubic(0.772, 0.55, 0.785, 0.66, 0.772, 0.76);
-    cubic(0.762, 0.82, 0.71, 0.88, 0.695, 0.93);
-    lineTo(0.69, 1.04);
-    path.close();
-    return path;
-  }
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final w = size.width, h = size.height;
-    Offset p(double u, double v) {
-      final su = centerU + (u - centerU) * scale, sv = centerV + (v - centerV) * scale;
-      return Offset(thumbOnLeft ? su * w : (1 - su) * w, sv * h);
-    }
-
-    final hand = handPath(p, aspect: h / w);
-
-    // Dim everything outside the hand.
-    final outside = Path.combine(PathOperation.difference, Path()..addRect(Offset.zero & size), hand);
-    canvas.drawPath(outside, Paint()..color = shade.withValues(alpha: 0.42));
-
-    // A soft glow inside the edge, then a crisp outline.
-    canvas.save();
-    canvas.clipPath(hand);
-    canvas.drawPath(
-      hand,
-      Paint()
-        ..color = line.withValues(alpha: 0.18)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 14
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6),
-    );
-    canvas.restore();
-    canvas.drawPath(
-      hand,
-      Paint()
-        ..color = line.withValues(alpha: 0.92)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 2.2
-        ..strokeJoin = StrokeJoin.round,
-    );
-
-    final faint = Paint()
-      ..color = line.withValues(alpha: 0.38)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.4
-      ..strokeCap = StrokeCap.round;
-
-    // Knuckle creases: two short curves across each finger.
-    for (final (baseU, tipU, baseHw, tipHw, tipV, _) in _fingers) {
-      for (final t in const [0.36, 0.64]) {
-        final v = 0.44 + (tipV - 0.44) * t;
-        final cu = baseU + (tipU - baseU) * t;
-        final hw = (baseHw + (tipHw - baseHw) * t) * 0.62;
-        final a = p(cu - hw, v), b = p(cu + hw, v), c = p(cu, v + 0.006);
-        canvas.drawPath(Path()
-          ..moveTo(a.dx, a.dy)
-          ..quadraticBezierTo(c.dx, c.dy, b.dx, b.dy), faint);
-      }
-    }
-    // Thumb joint crease.
-    final t0 = p(0.10, 0.585), t1 = p(0.165, 0.565), tc = p(0.135, 0.59);
-    canvas.drawPath(Path()
-      ..moveTo(t0.dx, t0.dy)
-      ..quadraticBezierTo(tc.dx, tc.dy, t1.dx, t1.dy), faint);
-
-    // The main palm lines, dashed, in palm coordinates (u from the thumb
-    // side, v from the finger base), as a hint of where they will be read.
-    Offset palm(double u, double v) => p(0.24 + u * 0.52, 0.42 + v * 0.42);
-    const lines = [
-      [(0.97, 0.22), (0.75, 0.19), (0.52, 0.15), (0.30, 0.10), (0.16, 0.06)], // heart
-      [(0.06, 0.34), (0.30, 0.40), (0.55, 0.46), (0.78, 0.53)], // head
-      [(0.07, 0.33), (0.18, 0.47), (0.25, 0.62), (0.29, 0.78), (0.31, 0.95)], // life
-    ];
-    final dash = Paint()
-      ..color = line.withValues(alpha: 0.32)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.6
-      ..strokeCap = StrokeCap.round;
-    for (final pts in lines) {
-      final path = Path();
-      final first = palm(pts.first.$1, pts.first.$2);
-      path.moveTo(first.dx, first.dy);
-      for (var i = 1; i < pts.length; i++) {
-        final a = palm(pts[i - 1].$1, pts[i - 1].$2), b = palm(pts[i].$1, pts[i].$2);
-        final mid = Offset((a.dx + b.dx) / 2, (a.dy + b.dy) / 2);
-        path.quadraticBezierTo(a.dx, a.dy, mid.dx, mid.dy);
-        if (i == pts.length - 1) path.lineTo(b.dx, b.dy);
-      }
-      for (final m in path.computeMetrics()) {
-        for (var d = 0.0; d < m.length; d += 9) {
-          canvas.drawPath(m.extractPath(d, d + 5), dash);
-        }
-      }
-    }
-  }
-
-  @override
-  bool shouldRepaint(HandGuidePainter old) =>
-      old.thumbOnLeft != thumbOnLeft || old.line != line || old.shade != shade || old.scale != scale;
 }

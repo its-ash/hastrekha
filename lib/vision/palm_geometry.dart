@@ -44,18 +44,37 @@ class PalmGeometry {
   double get width => right - left;
   double get height => bottom - top;
 
+  /// The palm box on the capture screen (`PalmFramePainter`), in palm
+  /// units: one length unit = the palm width, so the box keeps real-palm
+  /// proportions on any screen shape. At scale 1 the palm is
+  /// [guidePalmWidth] of the frame width wide, centred at
+  /// ([guideCenterU], [guideCenterV]) of the frame, and [guidePalmHeight]
+  /// palm widths tall (finger base to wrist crease; measured on real hands
+  /// at 1.05 to 1.2).
+  static const guidePalmWidth = 0.48;
+  static const guideCenterU = 0.5, guideCenterV = 0.61;
+  static const guidePalmHeight = 1.12;
+
+  /// Frame position of the outline point ([x], [y]) in palm units (x from
+  /// the palm centre towards the little finger, y downwards), for a frame
+  /// of [aspect] = height / width, in the thumb-on-left layout.
+  static (double, double) guidePoint(double x, double y, {double scale = 1, required double aspect}) {
+    final pw = guidePalmWidth * scale;
+    return (guideCenterU + x * pw, guideCenterV + y * pw / aspect);
+  }
+
   /// Default palm placement used when the hand cannot be found: where the
   /// capture guide asks the user to put the palm. [scale] is the size the
   /// outline was drawn at (far shot < 1 < close-up), around the palm
-  /// centre (0.5, 0.61) as in `HandGuidePainter`.
-  factory PalmGeometry.guide({required bool thumbOnLeft, double scale = 1}) {
-    double sx(double u) => 0.5 + (u - 0.5) * scale;
-    double sy(double v) => 0.61 + (v - 0.61) * scale;
+  /// centre; [aspect] is the photo's height / width.
+  factory PalmGeometry.guide({required bool thumbOnLeft, double scale = 1, double aspect = 16 / 9}) {
+    final (l, t) = guidePoint(-0.5, -guidePalmHeight / 2, scale: scale, aspect: aspect);
+    final (r, b) = guidePoint(0.5, guidePalmHeight / 2, scale: scale, aspect: aspect);
     return PalmGeometry(
-      left: sx(0.24),
-      right: sx(0.76),
-      top: sy(0.40),
-      bottom: sy(0.82),
+      left: l,
+      right: r,
+      top: t,
+      bottom: b,
       thumbOnLeft: thumbOnLeft,
       thumbDetected: false,
     );

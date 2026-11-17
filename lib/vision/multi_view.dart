@@ -10,7 +10,9 @@ import 'palm_geometry.dart';
 ///
 /// The palm frames give the first guess (same palm coordinates in both
 /// photos); a small rotation, per-axis scale and shift about the palm
-/// centre, found by [registerView], corrects it.
+/// centre, found by [registerView], corrects it. A hand is not rigid and
+/// photos from different distances differ in perspective, so
+/// [refineWarp] then adds a smooth local [field] of small shifts.
 class ViewWarp {
   ViewWarp({
     required this.from,
@@ -20,6 +22,7 @@ class ViewWarp {
     this.angle = 0,
     this.sx = 1,
     this.sy = 1,
+    this.field,
   })  : _cx = (from.x0 + from.x1) / 2,
         _cy = (from.y0 + from.y1) / 2,
         _cos = math.cos(angle),
@@ -30,7 +33,16 @@ class ViewWarp {
   final double tx, ty, angle, sx, sy;
   final double _cx, _cy, _cos, _sin;
 
+  /// Local correction applied before the global warp (primary pixels).
+  final LocalField? field;
+
   (double, double) map(double x, double y) {
+    final f = field;
+    if (f != null) {
+      final (ox, oy) = f.offset(x, y);
+      x += ox;
+      y += oy;
+    }
     final dx = x - _cx, dy = y - _cy;
     final qx = _cx + sx * (_cos * dx - _sin * dy) + tx;
     final qy = _cy + sy * (_sin * dx + _cos * dy) + ty;
@@ -38,7 +50,7 @@ class ViewWarp {
     return to.toXY(u, v);
   }
 
-  ViewWarp copyWith({double? tx, double? ty, double? angle, double? sx, double? sy}) => ViewWarp(
+  ViewWarp copyWith({double? tx, double? ty, double? angle, double? sx, double? sy, LocalField? field}) => ViewWarp(
         from: from,
         to: to,
         tx: tx ?? this.tx,
@@ -46,7 +58,230 @@ class ViewWarp {
         angle: angle ?? this.angle,
         sx: sx ?? this.sx,
         sy: sy ?? this.sy,
+        field: field ?? this.field,
       );
+
+  /// How well this photo lines up at a primary pixel (0..1); 1 without a
+  /// local field.
+  double confidenceAt(double x, double y) => field?.confidenceAt(x, y) ?? 1;
+}
+
+/// Smooth field of small shifts on a coarse grid of primary pixels, with
+/// how well each cell lined up. Values between grid points are bilinear.
+class LocalField {
+  LocalField(this.cols, this.rows, this.cell, this.dx, this.dy, this.conf);
+  final int cols, rows;
+  final double cell;
+  final Float32List dx, dy, conf;
+
+  (int, int, double, double) _at(double x, double y) {
+    final gx = (x / cell - 0.5).clamp(0.0, cols - 1.0);
+    final gy = (y / cell - 0.5).clamp(0.0, rows - 1.0);
+    final x0 = math.min(gx.floor(), cols - 2 < 0 ? 0 : cols - 2);
+    final y0 = math.min(gy.floor(), rows - 2 < 0 ? 0 : rows - 2);
+    return (x0, y0, gx - x0, gy - y0);
+  }
+
+  double _lerp(Float32List g, int x0, int y0, double fx, double fy) {
+    final x1 = math.min(x0 + 1, cols - 1), y1 = math.min(y0 + 1, rows - 1);
+    final a = g[y0 * cols + x0], b = g[y0 * cols + x1];
+    final c = g[y1 * cols + x0], d = g[y1 * cols + x1];
+    return (a * (1 - fx) + b * fx) * (1 - fy) + (c * (1 - fx) + d * fx) * fy;
+  }
+
+  (double, double) offset(double x, double y) {
+    final (x0, y0, fx, fy) = _at(x, y);
+    return (_lerp(dx, x0, y0, fx, fy), _lerp(dy, x0, y0, fx, fy));
+  }
+
+  double confidenceAt(double x, double y) {
+    final (x0, y0, fx, fy) = _at(x, y);
+    return _lerp(conf, x0, y0, fx, fy);
+  }
+}
+
+/// Refines a global [warp] with local shifts.
+///
+/// The moving response is first resampled into the primary's pixels with
+/// the global warp. The primary palm is then cut into overlapping tiles
+/// (about an eighth of the palm wide); each tile finds the shift (up to
+/// [maxShift] pixels, sub-pixel from a parabola fit) that best matches
+/// the primary there. Tiles without enough crease structure, with a weak
+/// match or a shift far from their neighbours take their neighbours'
+/// shift. Without this, a hand photographed from three distances lines
+/// up to within a few pixels only, and averaging smears thin lines.
+ViewWarp refineWarp({
+  required FloatImage ref,
+  required Uint8List refMask,
+  required FloatImage moving,
+  required ViewWarp warp,
+  int maxShift = 7,
+}) {
+  final w = ref.width, h = ref.height;
+  final a = ref.blur(1.2);
+  final mb = moving.blur(1.2);
+  final b = FloatImage(w, h);
+  for (var y = 0; y < h; y++) {
+    for (var x = 0; x < w; x++) {
+      final (mx, my) = warp.map(x.toDouble(), y.toDouble());
+      b.data[y * w + x] =
+          (mx < 0 || my < 0 || mx > mb.width - 1 || my > mb.height - 1) ? double.nan : mb.sample(mx, my);
+    }
+  }
+
+  final cell = math.max(16.0, warp.from.width / 8);
+  final cols = math.max(1, (w / cell).ceil()), rows = math.max(1, (h / cell).ceil());
+  final half = (cell * 0.8).round();
+  final dx = Float32List(cols * rows), dy = Float32List(cols * rows), conf = Float32List(cols * rows);
+  final valid = List<bool>.filled(cols * rows, false);
+  final span = 2 * maxShift + 1;
+  final scores = Float64List(span * span);
+
+  for (var gy = 0; gy < rows; gy++) {
+    for (var gx = 0; gx < cols; gx++) {
+      final g = gy * cols + gx;
+      final cx = ((gx + 0.5) * cell).round(), cy = ((gy + 0.5) * cell).round();
+      // Sample points of this tile inside the palm, every second pixel.
+      final pts = <int>[];
+      for (var y = cy - half; y <= cy + half; y += 2) {
+        if (y < maxShift || y >= h - maxShift) continue;
+        for (var x = cx - half; x <= cx + half; x += 2) {
+          if (x < maxShift || x >= w - maxShift) continue;
+          if (refMask[y * w + x] != 0) pts.add(y * w + x);
+        }
+      }
+      if (pts.length < half * half * 0.25) continue;
+      var sa = 0.0, saa = 0.0;
+      for (final i in pts) {
+        sa += a.data[i];
+        saa += a.data[i] * a.data[i];
+      }
+      final n0 = pts.length;
+      final da = saa - sa * sa / n0;
+      // Too little structure (no creases) to align on.
+      if (da / n0 < 1e-4) continue;
+      var best = -2.0;
+      var bi = -1;
+      for (var sy = -maxShift; sy <= maxShift; sy++) {
+        for (var sx = -maxShift; sx <= maxShift; sx++) {
+          final off = sy * w + sx;
+          var n = 0;
+          var sb = 0.0, sab = 0.0, sbb = 0.0, sa2 = 0.0, saa2 = 0.0;
+          for (final i in pts) {
+            final vb = b.data[i + off];
+            if (vb.isNaN) continue;
+            final va = a.data[i];
+            n++;
+            sa2 += va;
+            saa2 += va * va;
+            sb += vb;
+            sab += va * vb;
+            sbb += vb * vb;
+          }
+          var s = -1.0;
+          if (n > n0 * 0.8) {
+            final cov = sab - sa2 * sb / n;
+            final va = saa2 - sa2 * sa2 / n, vb = sbb - sb * sb / n;
+            if (va > 0 && vb > 0) s = cov / math.sqrt(va * vb);
+          }
+          final k = (sy + maxShift) * span + sx + maxShift;
+          scores[k] = s;
+          if (s > best) {
+            best = s;
+            bi = k;
+          }
+        }
+      }
+      if (bi < 0 || best < 0.25) continue;
+      final bx = bi % span, by = bi ~/ span;
+      // A peak on the edge of the search is not a real match.
+      if (bx == 0 || by == 0 || bx == span - 1 || by == span - 1) continue;
+      double sub(double l, double c, double r) {
+        final d = l - 2 * c + r;
+        return d >= 0 ? 0 : (0.5 * (l - r) / d).clamp(-0.5, 0.5);
+      }
+
+      dx[g] = bx - maxShift + sub(scores[bi - 1], best, scores[bi + 1]);
+      dy[g] = by - maxShift + sub(scores[bi - span], best, scores[bi + span]);
+      conf[g] = best;
+      valid[g] = true;
+    }
+  }
+  if (!valid.contains(true)) return warp;
+
+  // Drop shifts far from their neighbours' median (a tile that locked on
+  // the wrong crease), then fill and smooth.
+  double median(List<double> v) => (v..sort())[v.length ~/ 2];
+  final keep = List<bool>.from(valid);
+  for (var g = 0; g < cols * rows; g++) {
+    if (!valid[g]) continue;
+    final gx = g % cols, gy = g ~/ cols;
+    final nx = <double>[], ny = <double>[];
+    for (var yy = gy - 1; yy <= gy + 1; yy++) {
+      for (var xx = gx - 1; xx <= gx + 1; xx++) {
+        if (xx < 0 || yy < 0 || xx >= cols || yy >= rows || (xx == gx && yy == gy)) continue;
+        final k = yy * cols + xx;
+        if (valid[k]) {
+          nx.add(dx[k]);
+          ny.add(dy[k]);
+        }
+      }
+    }
+    if (nx.length >= 2) {
+      final ex = dx[g] - median(nx), ey = dy[g] - median(ny);
+      if (ex * ex + ey * ey > 2.5 * 2.5) keep[g] = false;
+    }
+  }
+  // Fill cells without a shift from their neighbours, ring by ring; the
+  // filled cells carry a low confidence.
+  var have = List<bool>.from(keep);
+  for (var pass = 0; pass < cols + rows; pass++) {
+    final next = List<bool>.from(have);
+    var changed = false;
+    for (var g = 0; g < cols * rows; g++) {
+      if (have[g]) continue;
+      final gx = g % cols, gy = g ~/ cols;
+      var sx = 0.0, sy = 0.0, sc = 0.0;
+      var n = 0;
+      for (var yy = gy - 1; yy <= gy + 1; yy++) {
+        for (var xx = gx - 1; xx <= gx + 1; xx++) {
+          if (xx < 0 || yy < 0 || xx >= cols || yy >= rows) continue;
+          final k = yy * cols + xx;
+          if (!have[k]) continue;
+          sx += dx[k];
+          sy += dy[k];
+          sc += conf[k];
+          n++;
+        }
+      }
+      if (n == 0) continue;
+      dx[g] = sx / n;
+      dy[g] = sy / n;
+      conf[g] = math.min(sc / n, 0.4) * (valid[g] ? 0.6 : 1);
+      next[g] = true;
+      changed = true;
+    }
+    have = next;
+    if (!changed) break;
+  }
+  // Light smoothing so the field bends, not jumps, between tiles.
+  Float32List smooth(Float32List f) {
+    final out = Float32List(f.length);
+    for (var g = 0; g < f.length; g++) {
+      final gx = g % cols, gy = g ~/ cols;
+      var s = f[g] * 2;
+      var n = 2.0;
+      for (final (xx, yy) in [(gx - 1, gy), (gx + 1, gy), (gx, gy - 1), (gx, gy + 1)]) {
+        if (xx < 0 || yy < 0 || xx >= cols || yy >= rows) continue;
+        s += f[yy * cols + xx];
+        n++;
+      }
+      out[g] = s / n;
+    }
+    return out;
+  }
+
+  return warp.copyWith(field: LocalField(cols, rows, cell, smooth(dx), smooth(dy), conf));
 }
 
 /// Aligns another photo's crease response ([moving]) to the primary
@@ -254,8 +489,12 @@ FloatImage stackGray(FloatImage primary, FloatImage primaryBg, Uint8List mask, L
         if (o.mask[my.round() * g.width + mx.round()] == 0) continue;
         final v = g.sample(mx, my), b = bg.sample(mx, my);
         if (glare(v, b)) continue;
-        sum += o.weight * v / (b + 1.0);
-        wsum += o.weight;
+        // Where this photo does not line up well, it counts less.
+        final c = o.warp.field == null ? 1.0 : ((o.warp.confidenceAt(x.toDouble(), y.toDouble()) - 0.2) / 0.3).clamp(0.0, 1.0);
+        final wt = o.weight * c;
+        if (wt <= 0) continue;
+        sum += wt * v / (b + 1.0);
+        wsum += wt;
       }
       // Scale back to a brightness-like range so the detector sees the
       // same flattened values as for one photo.

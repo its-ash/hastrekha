@@ -58,10 +58,37 @@ abstract final class PalmMap {
 /// Typical path of a palm line in palm coordinates, from its start to
 /// its end as palmistry reads it.
 class LineTemplate {
-  const LineTemplate(this.key, this.points, {required this.tolerance, required this.minLength, this.multiple = false, this.boost = 1});
+  const LineTemplate(
+    this.key,
+    this.points, {
+    required this.tolerance,
+    required this.minLength,
+    this.multiple = false,
+    this.boost = 1,
+    this.alternates = const [],
+    this.prior = 1,
+  });
 
   final String key;
   final List<(double, double)> points;
+
+  /// Other common paths of the same line on real hands (a lower heart
+  /// line, a head line that starts higher or slopes, a life line that
+  /// sweeps wide into the palm). Each curve is matched against every
+  /// shape and takes the best fit, so the reading does not depend on one
+  /// fixed path.
+  final List<List<(double, double)>> alternates;
+
+  /// How much a match with this shape counts: the standard path 1,
+  /// alternates a little less, so a curve that fits both reads as usual.
+  final double prior;
+
+  /// The standard path, then its alternates.
+  List<LineTemplate> get shapes => [
+        this,
+        for (final a in alternates)
+          LineTemplate(key, a, tolerance: tolerance, minLength: minLength, multiple: multiple, boost: boost, prior: 0.9),
+      ];
 
   /// Typical distance (palm units) a real line wanders from the template.
   final double tolerance;
@@ -108,15 +135,34 @@ class LineTemplate {
   }
 }
 
+// The alternates were measured on real palms: the heart line sat up to
+// 0.12 lower than the standard path, the head and life lines started up
+// to 0.13 higher (where the thumb web is high) and the life line swept
+// out to u 0.43.
 const lineTemplates = <LineTemplate>[
   LineTemplate('heart', [(0.99, 0.25), (0.75, 0.21), (0.52, 0.17), (0.32, 0.12), (0.17, 0.05)],
-      tolerance: 0.085, minLength: 0.18, boost: 1.35),
+      tolerance: 0.085, minLength: 0.18, boost: 1.35, alternates: [
+        [(0.99, 0.36), (0.75, 0.32), (0.52, 0.28), (0.32, 0.22), (0.17, 0.15)], // low
+        [(0.99, 0.32), (0.75, 0.31), (0.52, 0.28), (0.32, 0.25), (0.17, 0.22)], // low, straight
+        [(0.99, 0.18), (0.75, 0.14), (0.52, 0.10), (0.32, 0.06), (0.20, 0.0)], // high
+      ]),
   LineTemplate('head', [(0.07, 0.34), (0.30, 0.39), (0.55, 0.45), (0.78, 0.52), (0.95, 0.57)],
-      tolerance: 0.095, minLength: 0.18, boost: 1.35),
+      tolerance: 0.095, minLength: 0.18, boost: 1.35, alternates: [
+        [(0.12, 0.21), (0.30, 0.30), (0.55, 0.42), (0.78, 0.52), (0.95, 0.58)], // starts high
+        [(0.08, 0.28), (0.30, 0.38), (0.52, 0.50), (0.72, 0.64), (0.86, 0.76)], // sloping
+        [(0.08, 0.28), (0.30, 0.31), (0.55, 0.35), (0.78, 0.40), (0.95, 0.44)], // straight, high
+      ]),
   LineTemplate('life', [(0.09, 0.32), (0.19, 0.45), (0.26, 0.60), (0.30, 0.75), (0.31, 0.90), (0.32, 1.02)],
-      tolerance: 0.095, minLength: 0.2, boost: 1.35),
+      tolerance: 0.095, minLength: 0.2, boost: 1.35, alternates: [
+        [(0.18, 0.19), (0.30, 0.34), (0.38, 0.50), (0.42, 0.66), (0.42, 0.82), (0.40, 1.0)], // high start, wide
+        [(0.10, 0.22), (0.21, 0.37), (0.29, 0.54), (0.33, 0.71), (0.34, 0.88), (0.34, 1.02)], // high start
+        [(0.09, 0.32), (0.24, 0.46), (0.35, 0.62), (0.40, 0.78), (0.41, 0.92), (0.40, 1.02)], // wide
+      ]),
   LineTemplate('fate', [(0.50, 1.02), (0.48, 0.72), (0.45, 0.42), (0.42, 0.12), (0.40, 0.0)],
-      tolerance: 0.1, minLength: 0.15, boost: 1.25),
+      tolerance: 0.1, minLength: 0.15, boost: 1.25, alternates: [
+        [(0.58, 1.02), (0.56, 0.72), (0.53, 0.42), (0.50, 0.12), (0.48, 0.0)],
+        [(0.42, 1.02), (0.40, 0.72), (0.38, 0.42), (0.35, 0.12), (0.33, 0.0)],
+      ]),
   LineTemplate('sun', [(0.68, 0.72), (0.66, 0.40), (0.64, 0.08)], tolerance: 0.07, minLength: 0.12),
   LineTemplate('mercury', [(0.45, 0.92), (0.66, 0.58), (0.86, 0.24)], tolerance: 0.075, minLength: 0.15),
   LineTemplate('venus_belt', [(0.30, 0.04), (0.44, 0.12), (0.60, 0.12), (0.76, 0.04)],
@@ -189,11 +235,17 @@ class LineClassifier {
     for (var ci = 0; ci < curves.length; ci++) {
       final uv = uvCurves[ci];
       final len = _uvLength(uv);
-      for (final t in lineTemplates) {
-        if (len < t.minLength) continue;
-        final m = _match(uv, t);
-        if (m == null || m.score < 0.1) continue;
-        cands.add(_Cand(ci, t, m.score * t.boost, m.tMin, m.tMax));
+      for (final base in lineTemplates) {
+        if (len < base.minLength) continue;
+        // Best fitting shape of this line for this curve.
+        _Cand? best;
+        for (final t in base.shapes) {
+          final m = _match(uv, t);
+          if (m == null || m.score < 0.1) continue;
+          final s = m.score * t.boost * t.prior;
+          if (best == null || s > best.score) best = _Cand(ci, t, s, m.tMin, m.tMax);
+        }
+        if (best != null) cands.add(best);
       }
     }
     cands.sort((a, b) => b.score.compareTo(a.score));
@@ -210,6 +262,11 @@ class LineClassifier {
           return hi - lo > 0.25 * (c.tMax - c.tMin);
         });
         if (overlaps) continue;
+        // ...and only if it continues the line: the jump from the nearest
+        // existing piece runs along the line, not sideways onto another
+        // crease (a heart line split where a crease crosses it must not
+        // lend its other half to the head line).
+        if (list.any((o) => _sideJump(uvCurves[o.curve], uvCurves[c.curve], c.template) > maxSideJump)) continue;
       }
       list.add(c);
       assigned[c.template.key] = list;
@@ -230,6 +287,8 @@ class LineClassifier {
       assigned: assigned,
       usedCurve: usedCurve,
     );
+
+    _venusLines(curves: curves, uvCurves: uvCurves, assigned: assigned, usedCurve: usedCurve);
 
     // Segment ids that belong to any recognized line.
     final lineSegs = <int>{};
@@ -384,9 +443,22 @@ class LineClassifier {
 
     final base = _noiseLevel(creases, palmMask);
     for (final key in guidedLines) {
-      final t = lineTemplates.firstWhere((e) => e.key == key);
       final ki = keyIndex[key]!;
-      final trace = _traceCorridor(t, ki, creases, frame, palmMask, owner, base);
+      // The line is searched along each of its shapes; the strongest,
+      // longest trace wins.
+      _Trace? trace;
+      var t = lineTemplates[ki];
+      var bestScore = 0.0;
+      for (final shape in lineTemplates[ki].shapes) {
+        final tr = _traceCorridor(shape, ki, creases, frame, palmMask, owner, base);
+        if (tr == null) continue;
+        final s = tr.strength * (tr.tMax - tr.tMin) * shape.prior;
+        if (s > bestScore) {
+          bestScore = s;
+          trace = tr;
+          t = shape;
+        }
+      }
       if (trace == null) continue;
 
       // Pixels on and next to the trace.
@@ -448,6 +520,61 @@ class LineClassifier {
       for (var ci = 0; ci < curves.length; ci++) {
         if (!usedCurve.contains(ci) && onTrace(curves[ci].pts) >= 0.5) usedCurve.add(ci);
       }
+    }
+  }
+
+  /// Lines on the mound of Venus, inside the life line: short creases
+  /// climbing it more or less vertically. Palmistry reads them in a trine,
+  /// from the wrist up towards the base of the thumb: the progeny line
+  /// lowest, then the sibling line, then the kinship line, which often
+  /// runs into the line between the mound and the thumb. Each band takes
+  /// its longest crease.
+  void _venusLines({
+    required List<Curve> curves,
+    required List<List<(double, double)>> uvCurves,
+    required Map<String, List<_Cand>> assigned,
+    required Set<int> usedCurve,
+  }) {
+    // How far in the life line is at each height; inside it is the mound.
+    final lifePts = [
+      for (final c in assigned['life'] ?? const <_Cand>[]) ...uvCurves[c.curve],
+    ];
+    double lifeU(double v) {
+      var u = -1.0;
+      for (final p in lifePts) {
+        if ((p.$2 - v).abs() < 0.04) u = math.max(u, p.$1);
+      }
+      // Without a life line, its usual path.
+      return u >= 0 ? u : 0.12 + 0.2 * ((v - 0.3) / 0.7).clamp(0.0, 1.0);
+    }
+
+    bool onMound((double, double) p) => p.$2 > 0.42 && p.$2 < 1.02 && p.$1 > -0.08 && p.$1 < lifeU(p.$2) - 0.03;
+
+    const bands = {'progeny': (0.78, 1.02), 'siblings': (0.62, 0.78), 'kinship': (0.42, 0.62)};
+    final best = <String, (int, double)>{};
+    for (var ci = 0; ci < curves.length; ci++) {
+      if (usedCurve.contains(ci)) continue;
+      final uv = uvCurves[ci];
+      if (uv.length < 4) continue;
+      final len = _uvLength(uv);
+      if (len < 0.06 || len > 0.35) continue;
+      if (uv.where(onMound).length < uv.length * 0.75) continue;
+      // Climbing: mostly up and down the palm.
+      final du = (uv.last.$1 - uv.first.$1).abs(), dv = (uv.last.$2 - uv.first.$2).abs();
+      if (dv < du * 1.3) continue;
+      final meanV = uv.map((p) => p.$2).reduce((a, b) => a + b) / uv.length;
+      for (final e in bands.entries) {
+        if (meanV < e.value.$1 || meanV >= e.value.$2) continue;
+        if (len > (best[e.key]?.$2 ?? 0)) best[e.key] = (ci, len);
+      }
+    }
+    for (final e in best.entries) {
+      final uv = uvCurves[e.value.$1];
+      // Read from the lower end up.
+      final pts = uv.first.$2 > uv.last.$2 ? [uv.first, uv.last] : [uv.last, uv.first];
+      final t = LineTemplate(e.key, pts, tolerance: 0.05, minLength: 0.06);
+      assigned[e.key] = [_Cand(e.value.$1, t, 0.5, 0, 1)];
+      usedCurve.add(e.value.$1);
     }
   }
 
@@ -671,7 +798,8 @@ class LineClassifier {
     PalmFrame frame,
     Set<int> lineSegs,
   ) {
-    final t = lineTemplates.firstWhere((e) => e.key == key);
+    // The shape the strongest piece matched.
+    final t = pieces.reduce((a, b) => a.score >= b.score ? a : b).template;
     final pw = frame.width;
 
     // Orient each piece from the line's start to its end.
@@ -866,6 +994,32 @@ class LineClassifier {
         meanCos *
         inlierFrac;
     return (score: score.toDouble(), tMin: tMin, tMax: tMax);
+  }
+
+  /// Largest sideways step (palm units) allowed between two pieces of one
+  /// line.
+  static const maxSideJump = 0.06;
+
+  /// Sideways part of the jump between the nearest ends of two pieces,
+  /// across the direction of [t] there.
+  static double _sideJump(List<(double, double)> a, List<(double, double)> b, LineTemplate t) {
+    if (a.isEmpty || b.isEmpty) return 0;
+    var best = double.infinity;
+    (double, double)? pa, pb;
+    for (final x in [a.first, a.last]) {
+      for (final y in [b.first, b.last]) {
+        final du = x.$1 - y.$1, dv = x.$2 - y.$2;
+        final d = du * du + dv * dv;
+        if (d < best) {
+          best = d;
+          pa = x;
+          pb = y;
+        }
+      }
+    }
+    final pr = t.project((pa!.$1 + pb!.$1) / 2, (pa.$2 + pb.$2) / 2);
+    final du = pb.$1 - pa.$1, dv = pb.$2 - pa.$2;
+    return (du * pr.ty - dv * pr.tx).abs();
   }
 
   static double _uvLength(List<(double, double)> uv) {

@@ -367,6 +367,187 @@
       "title": {"en": "Reading your left hand", "hi": "बाएँ हाथ का पठन"},
       "text": {"en": "One tradition reads the left hand as what you bring from the past: inborn tendencies and earlier karma. If you are left-handed, it is also your active hand; comparing both hands shows how you are building on what you were given.", "hi": "एक परंपरा बाएँ हाथ को अतीत से लाई गई बातों — जन्मजात प्रवृत्तियों और पिछले कर्मों — का हाथ मानती है। अगर आप बाएँ हाथ से काम करते हैं, तो यही आपका सक्रिय हाथ है; दोनों हाथों की तुलना बताती है कि जो मिला है उस पर आप कैसे निर्माण कर रहे हैं।"},
       "source": "ch1"
+    },
+
+    {
+      "id": "finger.index.long",
+      "when": {"finger.index.length": "long"},
+      "area": "personality", "tone": "positive", "weight": 2, "planet": "jupiter",
+      "title": {"en": "A strong Jupiter finger", "hi": "प्रबल गुरु की उंगली"},
+      "text": {"en": "Your index finger is well developed for its kind. Vedic palmistry gives this finger to Jupiter and reads in it your principles and the way you keep your word, so a strong one is a favourable Jupiter sign: a clear sense of right, a wish to guide others and respect earned through fairness.", "hi": "आपकी तर्जनी अपनी तरह की उंगलियों में अच्छी विकसित है। वैदिक हस्तरेखा में यह उंगली गुरु की है और इसमें आपके सिद्धांत और वचन निभाने का ढंग देखा जाता है, इसलिए इसका प्रबल होना गुरु का शुभ संकेत है: सही-गलत की साफ़ समझ, दूसरों को राह दिखाने की इच्छा और निष्पक्षता से मिला सम्मान।"},
+      "source": "ch5"
+    },
+    {
+      "id": "finger.index.short",
+      "when": {"finger.index.length": "short"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "jupiter",
+      "title": {"en": "Trust your own judgement", "hi": "अपने निर्णय पर भरोसा"},
+      "text": {"en": "Your index finger, Jupiter's finger, is on the short side for its kind. You may hold back and let others lead even when you know the way. Giving your own judgement more weight lets your principles guide more of your life.", "hi": "आपकी तर्जनी, यानी गुरु की उंगली, अपनी तरह में थोड़ी छोटी है। रास्ता पता होने पर भी आप पीछे रहकर दूसरों को आगे कर सकते हैं। अपने निर्णय को ज़्यादा महत्व दें, ताकि आपके सिद्धांत जीवन में ज़्यादा राह दिखाएँ।"},
+      "source": "ch5"
+    },
+    {
+      "id": "finger.middle.long",
+      "when": {"finger.middle.length": "long"},
+      "area": "career", "tone": "caution", "weight": 2, "planet": "saturn",
+      "title": {"en": "Saturn's serious streak", "hi": "शनि की गंभीरता"},
+      "text": {"en": "Your middle finger stands out against its neighbours. It belongs to Saturn and speaks of practicality and method: you are thorough, responsible and take duties seriously. The book counts a strong Saturn finger among Saturn's challenging signs, so make room for rest and lightness so that duty does not turn into worry.", "hi": "आपकी मध्यमा अपनी पड़ोसी उंगलियों से अलग दिखती है। यह शनि की उंगली है और व्यावहारिकता व व्यवस्थित ढंग की बात करती है: आप पूरी लगन से, ज़िम्मेदारी से काम करते हैं और कर्तव्य को गंभीरता से लेते हैं। ग्रंथ प्रबल शनि उंगली को शनि के चुनौती वाले संकेतों में गिनता है, इसलिए आराम और हल्केपन के लिए भी जगह रखें, ताकि कर्तव्य चिंता न बन जाए।"},
+      "source": "ch5"
+    },
+    {
+      "id": "finger.middle.short",
+      "when": {"finger.middle.length": "short"},
+      "area": "career", "tone": "neutral", "weight": 1, "planet": "saturn",
+      "title": {"en": "Freedom over routine", "hi": "नियम से ज़्यादा आज़ादी"},
+      "text": {"en": "Your middle finger, Saturn's finger, is short next to its neighbours. You may prefer freedom and spontaneity to strict routine. A little structure, chosen by you, helps long efforts reach their end.", "hi": "आपकी मध्यमा, यानी शनि की उंगली, पड़ोसी उंगलियों से छोटी है। आपको सख़्त दिनचर्या से ज़्यादा आज़ादी और सहजता पसंद हो सकती है। अपनी पसंद का थोड़ा-सा अनुशासन लंबे प्रयासों को मंज़िल तक पहुँचाता है।"},
+      "source": "ch5"
+    },
+    {
+      "id": "finger.ring.long",
+      "when": {"finger.ring.length": "long"},
+      "area": "career", "tone": "positive", "weight": 2, "planet": "sun",
+      "title": {"en": "A bright Sun finger", "hi": "तेजस्वी सूर्य की उंगली"},
+      "text": {"en": "Your ring finger is well developed for its kind. It is the Sun's finger, and the book names a well-developed one as a favourable Sun sign. It points to good perception and discernment, creative confidence and a talent that tends to be seen and recognised.", "hi": "आपकी अनामिका अपनी तरह में अच्छी विकसित है। यह सूर्य की उंगली है और ग्रंथ इसके अच्छे विकास को सूर्य का शुभ संकेत बताता है। यह अच्छी परख और विवेक, रचनात्मक आत्मविश्वास और ऐसी प्रतिभा की ओर इशारा करती है जो अक्सर दिखती और सराही जाती है।"},
+      "source": "ch5"
+    },
+    {
+      "id": "finger.ring.short",
+      "when": {"finger.ring.length": "short"},
+      "area": "career", "tone": "neutral", "weight": 1, "planet": "sun",
+      "title": {"en": "Let your talents be seen", "hi": "अपनी प्रतिभा को सामने लाएँ"},
+      "text": {"en": "Your ring finger, the Sun's finger, is on the short side for its kind. You may do good work quietly and let others take the credit. Showing your work and trusting your own taste brings it the recognition it deserves.", "hi": "आपकी अनामिका, यानी सूर्य की उंगली, अपनी तरह में थोड़ी छोटी है। आप चुपचाप अच्छा काम करके श्रेय दूसरों को ले जाने दे सकते हैं। अपना काम सामने रखें और अपनी पसंद पर भरोसा करें, तो उसे वह पहचान मिलेगी जिसका वह हक़दार है।"},
+      "source": "ch5"
+    },
+    {
+      "id": "finger.little.long",
+      "when": {"finger.little.length": "long"},
+      "area": "career", "tone": "positive", "weight": 2, "planet": "mercury",
+      "title": {"en": "Mercury's gift of words", "hi": "बुध की वाणी का वरदान"},
+      "text": {"en": "Your little finger is well developed for its kind. It belongs to Mercury, ruler of communication and speech, and the book lists a well-developed one among Mercury's favourable signs. It suggests a way with words, quick wit and skill in trade, teaching or any work that runs on communication.", "hi": "आपकी कनिष्ठा अपनी तरह में अच्छी विकसित है। यह संवाद और वाणी के स्वामी बुध की उंगली है, और ग्रंथ इसके अच्छे विकास को बुध के शुभ संकेतों में गिनता है। यह बातों में कुशलता, तेज़ बुद्धि और व्यापार, शिक्षण या संवाद पर चलने वाले किसी भी काम में हुनर दिखाती है।"},
+      "source": "ch5"
+    },
+    {
+      "id": "finger.little.short",
+      "when": {"finger.little.length": "short"},
+      "area": "personality", "tone": "neutral", "weight": 1, "planet": "mercury",
+      "title": {"en": "Say what you mean", "hi": "मन की बात कहें"},
+      "text": {"en": "Your little finger, Mercury's finger, is on the short side for its kind. You may find it easier to act than to explain. Saying plainly what you think and need, a little at a time, makes your relationships and work flow more easily.", "hi": "आपकी कनिष्ठा, यानी बुध की उंगली, अपनी तरह में थोड़ी छोटी है। आपको समझाने से ज़्यादा करना आसान लग सकता है। जो सोचते और चाहते हैं, उसे थोड़ा-थोड़ा करके साफ़ कहने से रिश्ते और काम दोनों सहज चलते हैं।"},
+      "source": "ch5"
+    },
+
+    {
+      "id": "hand.tips.conic",
+      "when": {"hand.tips": "conic"},
+      "area": "mind", "tone": "positive", "weight": 2,
+      "title": {"en": "Oval fingertips, intuitive mind", "hi": "अंडाकार पोर, सहज बुद्धि"},
+      "text": {"en": "Your fingertips are rounded and oval, which the book describes on Air hands. They suggest someone who takes in impressions quickly, trusts a first feeling and has an eye for beauty and art.", "hi": "आपकी उंगलियों के सिरे गोल और अंडाकार हैं, जिन्हें ग्रंथ वायु हस्त में बताता है। ये ऐसे व्यक्ति का संकेत हैं जो बातों को जल्दी भाँप लेता है, पहले एहसास पर भरोसा करता है और सुंदरता व कला की अच्छी परख रखता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.tips.pointed",
+      "when": {"hand.tips": "pointed"},
+      "area": "mind", "tone": "neutral", "weight": 2,
+      "title": {"en": "Tapering tips, idealist at heart", "hi": "नुकीले पोर, आदर्शवादी मन"},
+      "text": {"en": "Your fingertips taper to a fine point, an even airier form of the oval Air fingertip. They suggest a sensitive, idealistic and imaginative nature. Pairing your vision with simple practical steps helps your ideals take shape.", "hi": "आपकी उंगलियों के सिरे पतले होकर नुकीले हो जाते हैं, जो वायु हस्त के अंडाकार पोर का और भी हल्का रूप है। ये संवेदनशील, आदर्शवादी और कल्पनाशील स्वभाव दिखाते हैं। अपनी सोच के साथ सरल व्यावहारिक कदम जोड़ें, तो आपके आदर्श आकार लेते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.tips.square",
+      "when": {"hand.tips": "square"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Square tips, orderly mind", "hi": "चौकोर पोर, व्यवस्थित मन"},
+      "text": {"en": "Your fingertips are squared, which the book describes on Water hands. They point to a methodical, orderly and reliable way of working: you like a plan, keep to it and finish what you start.", "hi": "आपकी उंगलियों के सिरे चौकोर हैं, जिन्हें ग्रंथ जल हस्त में बताता है। ये काम करने के व्यवस्थित, अनुशासित और भरोसेमंद ढंग की ओर इशारा करते हैं: आपको योजना पसंद है, आप उस पर टिके रहते हैं और जो शुरू करते हैं उसे पूरा करते हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.tips.spatulate",
+      "when": {"hand.tips": "spatulate"},
+      "area": "career", "tone": "positive", "weight": 2,
+      "title": {"en": "Spatulate tips, hands-on energy", "hi": "चपटे फैले पोर, कर्मठ ऊर्जा"},
+      "text": {"en": "Your fingertips spread out wider at the ends, the spatulate tip the book mentions on Water hands. They suggest an active, practical and independent person who learns by doing and enjoys work with the hands or on the move.", "hi": "आपकी उंगलियों के सिरे आगे जाकर चौड़े फैल जाते हैं, जिन्हें ग्रंथ जल हस्त में चपटे फैले पोर के रूप में बताता है। ये ऐसे सक्रिय, व्यावहारिक और स्वतंत्र व्यक्ति का संकेत हैं जो करके सीखता है और हाथ के काम या चलते-फिरते काम में आनंद लेता है।"},
+      "source": "ch2"
+    },
+
+    {
+      "id": "hand.finger_base.narrowing",
+      "when": {"hand.finger_base": "narrowing"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "Fingers narrow at the base", "hi": "जड़ से पतली उंगलियाँ"},
+      "text": {"en": "Your fingers narrow slightly where they meet the palm, a mark the book gives to Air hands. It suggests that ideas and interests matter more to you than comfort or possessions.", "hi": "आपकी उंगलियाँ हथेली से मिलने वाली जगह पर थोड़ी पतली हो जाती हैं, जिसे ग्रंथ वायु हस्त का लक्षण बताता है। यह दिखाता है कि आपके लिए आराम या चीज़ों से ज़्यादा विचार और रुचियाँ मायने रखती हैं।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.finger_base.even",
+      "when": {"hand.finger_base": "even"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "Even fingers, focused drive", "hi": "एक-सी उंगलियाँ, केंद्रित लगन"},
+      "text": {"en": "Your fingers keep much the same width from base to tip, as the book describes on Fire hands. It points to focus and drive, with energy that goes straight to the goal.", "hi": "आपकी उंगलियाँ जड़ से सिरे तक लगभग एक-सी चौड़ी रहती हैं, जैसा ग्रंथ अग्नि हस्त में बताता है। यह एकाग्रता और लगन दिखाता है, जिसमें ऊर्जा सीधे लक्ष्य की ओर जाती है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "hand.finger_base.widening",
+      "when": {"hand.finger_base": "widening"},
+      "area": "wealth", "tone": "neutral", "weight": 1,
+      "title": {"en": "Full finger bases, love of comfort", "hi": "भरी जड़ें, सुख-सुविधा का प्रेम"},
+      "text": {"en": "Your fingers widen where they meet the palm, which the book notes on Water hands. It suggests you enjoy comfort, good food and a secure home, and work steadily to keep them.", "hi": "आपकी उंगलियाँ हथेली से मिलने वाली जगह पर चौड़ी हो जाती हैं, जिसे ग्रंथ जल हस्त में बताता है। यह दिखाता है कि आपको आराम, अच्छा भोजन और सुरक्षित घर प्रिय है, और आप इन्हें बनाए रखने के लिए लगातार मेहनत करते हैं।"},
+      "source": "ch2"
+    },
+
+    {
+      "id": "thumb.long",
+      "when": {"thumb.length": "long"},
+      "area": "personality", "tone": "positive", "weight": 2,
+      "title": {"en": "A strong-willed thumb", "hi": "दृढ़ इच्छा वाला अंगूठा"},
+      "text": {"en": "Your thumb is long against your palm. The thumb carries the element of ether and speaks of endurance and will, so a long one suggests determination: once you decide, you keep going.", "hi": "आपका अंगूठा हथेली की तुलना में लंबा है। अंगूठा आकाश तत्व का है और सहनशक्ति व इच्छाशक्ति की बात करता है, इसलिए लंबा अंगूठा दृढ़ता दिखाता है: एक बार ठान लें, तो आप डटे रहते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "thumb.short",
+      "when": {"thumb.length": "short"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "Guided by feeling", "hi": "भावना से चलने वाले"},
+      "text": {"en": "Your thumb is short against your palm. The thumb shows endurance and will, and a short one suggests you are adaptable and guided more by feeling than by fixed resolve. Small daily commitments kept build steady willpower.", "hi": "आपका अंगूठा हथेली की तुलना में छोटा है। अंगूठा सहनशक्ति और इच्छाशक्ति दिखाता है, और छोटा अंगूठा बताता है कि आप लचीले हैं और पक्के संकल्प से ज़्यादा भावना से चलते हैं। रोज़ के छोटे वादे निभाने से इच्छाशक्ति स्थिर होती है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "thumb.slim",
+      "when": {"thumb.build": "slim"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "A slim, nimble thumb", "hi": "पतला, फुर्तीला अंगूठा"},
+      "text": {"en": "Your thumb is slim. The book describes thumbs on Air hands as long, wiry and dexterous, which suggests a flexible mind and skilled hands that adapt quickly.", "hi": "आपका अंगूठा पतला है। ग्रंथ वायु हस्त के अंगूठे को लंबा, पतला-मज़बूत और कुशल बताता है, जो लचीली सोच और जल्दी ढलने वाले हुनरमंद हाथ दिखाता है।"},
+      "source": "ch2"
+    },
+    {
+      "id": "thumb.thick",
+      "when": {"thumb.build": "thick"},
+      "area": "personality", "tone": "neutral", "weight": 1,
+      "title": {"en": "A sturdy, steady thumb", "hi": "मज़बूत, स्थिर अंगूठा"},
+      "text": {"en": "Your thumb is full and sturdy, as the book describes on Water hands: strong and steady, though it can be slow to bend. You hold your ground well; staying open to other views keeps that strength from turning into stubbornness.", "hi": "आपका अंगूठा भरा हुआ और मज़बूत है, जैसा ग्रंथ जल हस्त में बताता है: मज़बूत और स्थिर, पर कभी-कभी कम लचीला। आप अपनी बात पर अच्छे से टिके रहते हैं; दूसरों की राय के लिए खुले रहें, ताकि यह ताकत ज़िद न बन जाए।"},
+      "source": "ch2"
+    },
+
+    {
+      "id": "hand.phalanx.tip",
+      "when": {"hand.phalanx": "tip"},
+      "area": "mind", "tone": "neutral", "weight": 1,
+      "title": {"en": "Long top joints, ready to begin", "hi": "लंबे ऊपरी पोर, शुरुआत को तैयार"},
+      "text": {"en": "The top joints of your fingers are the longest. In Vedic palmistry each joint holds a zodiac sign, and the tips hold the movable signs, the most active and dynamic. It suggests initiative and a liking for new starts and change.", "hi": "आपकी उंगलियों के ऊपरी पोर सबसे लंबे हैं। वैदिक हस्तरेखा में हर पोर पर एक राशि होती है, और सिरों पर चर राशियाँ होती हैं, जो सबसे सक्रिय और गतिशील हैं। यह पहल करने और नई शुरुआत व बदलाव की पसंद दिखाता है।"},
+      "source": "ch6"
+    },
+    {
+      "id": "hand.phalanx.middle",
+      "when": {"hand.phalanx": "middle"},
+      "area": "mind", "tone": "neutral", "weight": 1,
+      "title": {"en": "Long middle joints, steady hold", "hi": "लंबे बीच के पोर, स्थिर पकड़"},
+      "text": {"en": "The middle joints of your fingers are the longest. They hold the fixed signs, which keep things steady. It suggests persistence and staying power: you hold on to what you build.", "hi": "आपकी उंगलियों के बीच के पोर सबसे लंबे हैं। इन पर स्थिर राशियाँ होती हैं, जो चीज़ों को टिकाए रखती हैं। यह लगन और टिके रहने की शक्ति दिखाता है: जो बनाते हैं, उसे सँभालकर रखते हैं।"},
+      "source": "ch6"
+    },
+    {
+      "id": "hand.phalanx.base",
+      "when": {"hand.phalanx": "base"},
+      "area": "mind", "tone": "neutral", "weight": 1,
+      "title": {"en": "Long base joints, two-sided nature", "hi": "लंबे निचले पोर, दोहरा स्वभाव"},
+      "text": {"en": "The joints nearest your palm are the longest. They hold the dual signs, which share the qualities of the movable and the fixed. It suggests you can both start and sustain, and adjust your pace to what the moment needs.", "hi": "हथेली के सबसे पास वाले पोर सबसे लंबे हैं। इन पर द्विस्वभाव राशियाँ होती हैं, जिनमें चर और स्थिर दोनों के गुण होते हैं। यह दिखाता है कि आप शुरुआत भी कर सकते हैं और निभा भी सकते हैं, और समय की ज़रूरत के हिसाब से अपनी गति बदल लेते हैं।"},
+      "source": "ch6"
     }
   ]
 }

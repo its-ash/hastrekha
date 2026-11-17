@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'float_image.dart';
+import 'palm_geometry.dart';
 
 /// Planar YCrCb copy of an RGB image.
 class YCrCb {
@@ -81,12 +82,14 @@ class HandSegmenter {
 
   /// Where the capture guide places the palm center, as a fraction of the
   /// frame.
-  static const guideCenterX = 0.5;
-  static const guideCenterY = 0.6;
+  static const guideCenterX = PalmGeometry.guideCenterU;
+  static const guideCenterY = PalmGeometry.guideCenterV;
 
-  HandMask? segment(YCrCb img) {
+  /// [sampleX] and [sampleY] (fractions of the frame) say where the palm
+  /// centre is; by default where the capture box puts it.
+  HandMask? segment(YCrCb img, {double sampleX = guideCenterX, double sampleY = guideCenterY}) {
     final w = img.width, h = img.height;
-    final stats = _sampleSkin(img);
+    final stats = _sampleSkin(img, sampleX, sampleY);
     if (stats == null) return null;
 
     final raw = Uint8List(w * h);
@@ -108,7 +111,7 @@ class HandSegmenter {
 
     // Keep the component under the sample point (or the largest one).
     final cc = Masks.components(m, w, h);
-    final sx = (w * guideCenterX).round(), sy = (h * guideCenterY).round();
+    final sx = (w * sampleX).round().clamp(0, w - 1), sy = (h * sampleY).round().clamp(0, h - 1);
     var label = cc.labels[sy * w + sx];
     if (label == 0) {
       var best = 0;
@@ -159,9 +162,9 @@ class HandSegmenter {
   }
 
   /// Mean and spread of Cr/Cb in a patch around the guide's palm center.
-  ({double cr, double cb, double sdCr, double sdCb})? _sampleSkin(YCrCb img) {
+  ({double cr, double cb, double sdCr, double sdCb})? _sampleSkin(YCrCb img, double sampleX, double sampleY) {
     final w = img.width, h = img.height;
-    final cx = (w * guideCenterX).round(), cy = (h * guideCenterY).round();
+    final cx = (w * sampleX).round(), cy = (h * sampleY).round();
     final r = math.max(2, (w * 0.06).round());
     final crs = <double>[], cbs = <double>[];
     for (var y = cy - r; y <= cy + r; y++) {

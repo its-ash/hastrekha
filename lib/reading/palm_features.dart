@@ -20,6 +20,8 @@ abstract final class Vocab {
   static const detectableSecondary = [
     'sun', 'mercury', 'union', 'venus_belt', 'bracelets', 'mars_line',
     'jupiter_ring', 'saturn_ring', 'moon_line',
+    // Short climbing creases on the mound of Venus, inside the life line.
+    'progeny', 'siblings', 'kinship',
   ];
 
   static const planets = ['sun', 'moon', 'mars', 'mercury', 'jupiter', 'venus', 'saturn', 'rahu', 'ketu'];
@@ -35,6 +37,17 @@ abstract final class Vocab {
   static const elements = ['air', 'fire', 'water'];
   static const palmShapes = ['square', 'rectangular', 'rounded'];
   static const fingerLengths = ['short', 'medium', 'long'];
+
+  /// The four fingers, from the index (next to the thumb).
+  static const fingerNames = ['index', 'middle', 'ring', 'little'];
+  static const tipShapes = ['pointed', 'conic', 'square', 'spatulate'];
+  static const fingerBases = ['narrowing', 'even', 'widening'];
+  static const thumbLengths = ['short', 'medium', 'long'];
+  static const thumbBuilds = ['slim', 'medium', 'thick'];
+
+  /// Which phalanges (finger joints) are longest: the base ones, the
+  /// middle ones, the tips, or none stands out.
+  static const phalanges = ['base', 'middle', 'tip', 'even'];
   static const densities = ['few', 'moderate', 'many'];
   static const moundLevels = ['flat', 'normal', 'raised'];
   static const areas = [
@@ -165,7 +178,14 @@ class PalmFeatures {
     List<SymbolMark>? symbols,
     this.simian = false,
     this.headLifeJoined = true,
-  })  : lines = lines ?? {},
+    Map<String, String>? fingerDev,
+    this.tips,
+    this.fingerBase,
+    this.thumbLength,
+    this.thumbBuild,
+    this.phalanx,
+  })  : fingerDev = fingerDev ?? {},
+        lines = lines ?? {},
         mounds = mounds ?? {for (final p in Vocab.planets) p: 'normal'},
         crossedMounds = crossedMounds ?? {},
         symbols = symbols ?? [];
@@ -182,6 +202,24 @@ class PalmFeatures {
   final List<SymbolMark> symbols;
   bool simian;
   bool headLifeJoined;
+
+  // Fingers and thumb. Null (or missing) when the camera could not measure
+  // them; then no rule reads them.
+
+  /// Each finger's length for its kind (see [Vocab.fingerNames]):
+  /// `short`, `medium` or `long` (well-developed).
+  final Map<String, String> fingerDev;
+
+  /// Fingertip shape ([Vocab.tipShapes]).
+  String? tips;
+
+  /// How the fingers meet the palm ([Vocab.fingerBases]).
+  String? fingerBase;
+  String? thumbLength;
+  String? thumbBuild;
+
+  /// Longest phalanges ([Vocab.phalanges]).
+  String? phalanx;
 
   LineFeature line(String key) => lines.putIfAbsent(key, LineFeature.new);
 
@@ -217,6 +255,12 @@ class PalmFeatures {
       'hand.side': side,
       'pattern.simian': '$simian',
       'pattern.head_life_joined': '$headLifeJoined',
+      for (final e in fingerDev.entries) 'finger.${e.key}.length': e.value,
+      'hand.tips': ?tips,
+      'hand.finger_base': ?fingerBase,
+      'hand.phalanx': ?phalanx,
+      'thumb.length': ?thumbLength,
+      'thumb.build': ?thumbBuild,
     };
     for (final key in [...Vocab.primaryLines, ...Vocab.secondaryLines]) {
       final l = lines[key];
@@ -258,6 +302,12 @@ class PalmFeatures {
         'symbols': [for (final s in symbols) s.toJson()],
         'simian': simian,
         'headLifeJoined': headLifeJoined,
+        'fingerDev': fingerDev,
+        if (tips != null) 'tips': tips,
+        if (fingerBase != null) 'fingerBase': fingerBase,
+        if (thumbLength != null) 'thumbLength': thumbLength,
+        if (thumbBuild != null) 'thumbBuild': thumbBuild,
+        if (phalanx != null) 'phalanx': phalanx,
       };
 
   factory PalmFeatures.fromJson(Map<String, Object?> j) => PalmFeatures(
@@ -279,5 +329,11 @@ class PalmFeatures {
         ],
         simian: j['simian'] as bool? ?? false,
         headLifeJoined: j['headLifeJoined'] as bool? ?? true,
+        fingerDev: ((j['fingerDev'] as Map?) ?? {}).map((k, v) => MapEntry(k as String, v as String)),
+        tips: j['tips'] as String?,
+        fingerBase: j['fingerBase'] as String?,
+        thumbLength: j['thumbLength'] as String?,
+        thumbBuild: j['thumbBuild'] as String?,
+        phalanx: j['phalanx'] as String?,
       );
 }

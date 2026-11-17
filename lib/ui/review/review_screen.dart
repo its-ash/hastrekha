@@ -228,6 +228,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
             },
           ),
           const UiGap(UiSpace.xl),
+          _FingersSection(f: _f, onChanged: _edit),
+          const UiGap(UiSpace.xl),
           _MoundsSection(f: _f, onChanged: _edit),
           const UiGap(UiSpace.xl),
           _SymbolsSection(f: _f, onChanged: _edit),
@@ -398,6 +400,73 @@ class _HandSection extends StatelessWidget {
               label: 'Head and life lines start together',
               onChanged: (v) => onChanged(() => f.headLifeJoined = v),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Fingers and thumb as measured from the photo, each one a row of chips
+/// to correct it. Empty means the camera could not measure it; then the
+/// reading leaves it out.
+class _FingersSection extends StatelessWidget {
+  const _FingersSection({required this.f, required this.onChanged});
+  final PalmFeatures f;
+  final void Function(void Function() change) onChanged;
+
+  static const _tips = {
+    'pointed': 'Pointed',
+    'conic': 'Oval',
+    'square': 'Square',
+    'spatulate': 'Spatulate',
+  };
+  static const _base = {'narrowing': 'Narrower', 'even': 'Even', 'widening': 'Wider'};
+  static const _length = {'short': 'Short', 'medium': 'Typical', 'long': 'Long'};
+  static const _build = {'slim': 'Slim', 'medium': 'Medium', 'thick': 'Thick'};
+  static const _phalanx = {'base': 'Base', 'middle': 'Middle', 'tip': 'Tip', 'even': 'Even'};
+  static const _fingers = {
+    'index': 'Index finger (Jupiter)',
+    'middle': 'Middle finger (Saturn)',
+    'ring': 'Ring finger (Sun)',
+    'little': 'Little finger (Mercury)',
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    Widget row(String label, String? helper, Map<String, String> options, String? value, void Function(String) set) =>
+        UiFieldLabel(
+          label: label,
+          helper: helper,
+          child: UiChoiceChips<String>(
+            options: [for (final e in options.entries) UiChoice(e.key, e.value)],
+            value: value,
+            size: UiSize.sm,
+            onChanged: (v) => onChanged(() => set(v)),
+          ),
+        );
+
+    final measured = f.tips != null || f.fingerDev.isNotEmpty || f.thumbLength != null;
+    return UiSection(
+      title: 'Fingers and thumb',
+      subtitle: measured
+          ? 'Measured from the photo. Tap to correct anything that does not match your hand; empty rows were not measured and are left out of the reading.'
+          : 'The camera could not tell your fingers apart in this photo (spread them a little next time). Set what you can see; empty rows are left out of the reading.',
+      child: UiCard(
+        child: UiColumn(
+          gap: UiSpace.lg,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            row('Fingertips', 'The shape of the top joint, seen from the palm side.', _tips, f.tips, (v) => f.tips = v),
+            row('Where the fingers meet the palm', 'Width at the base against the middle of the finger.', _base,
+                f.fingerBase, (v) => f.fingerBase = v),
+            for (final e in _fingers.entries)
+              row(e.value, null, _length, f.fingerDev[e.key], (v) => f.fingerDev[e.key] = v),
+            row('Thumb length', 'From the web between thumb and index finger to the tip.', _length, f.thumbLength,
+                (v) => f.thumbLength = v),
+            row('Thumb build', null, _build, f.thumbBuild, (v) => f.thumbBuild = v),
+            row('Longest finger joints', 'Which of the three joints (phalanges) is longest on most fingers.', _phalanx,
+                f.phalanx, (v) => f.phalanx = v),
           ],
         ),
       ),

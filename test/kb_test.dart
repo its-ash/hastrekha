@@ -29,6 +29,19 @@ Set<String>? allowedFor(String key, KnowledgeBase kb) {
       'fingers' => {...Vocab.fingerLengths},
       'line_density' => {...Vocab.densities},
       'side' => {'left', 'right'},
+      'tips' => {...Vocab.tipShapes},
+      'finger_base' => {...Vocab.fingerBases},
+      'phalanx' => {...Vocab.phalanges},
+      _ => null,
+    };
+  }
+  if (p.first == 'finger') {
+    return p.length == 3 && Vocab.fingerNames.contains(p[1]) && p[2] == 'length' ? {...Vocab.lengths} : null;
+  }
+  if (p.first == 'thumb' && p.length == 2) {
+    return switch (p[1]) {
+      'length' => {...Vocab.thumbLengths},
+      'build' => {...Vocab.thumbBuilds},
       _ => null,
     };
   }

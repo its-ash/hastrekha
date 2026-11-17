@@ -18,16 +18,15 @@ import 'vision_test.dart' show faintPalm, noisyBurst, syntheticPalm;
 void main() {
   testWidgets('capture guide', (tester) async {
     Directory('/tmp/hastrekha_debug').createSync(recursive: true);
-    for (final left in [true, false]) {
+    for (final good in [false, true]) {
       final recorder = ui.PictureRecorder();
       const size = Size(360, 640);
       final canvas = Canvas(recorder)..drawRect(Offset.zero & size, Paint()..color = const Color(0xFF6B5A4E));
-      HandGuidePainter(thumbOnLeft: left, line: const Color(0xFFFFFFFF), shade: const Color(0xFF000000))
-          .paint(canvas, size);
+      PalmFramePainter(color: good ? const Color(0xFF2E9E5B) : const Color(0xFFFFFFFF), good: good).paint(canvas, size);
       await tester.runAsync(() async {
         final image = await recorder.endRecording().toImage(360, 640);
         final png = await image.toByteData(format: ui.ImageByteFormat.png);
-        File('/tmp/hastrekha_debug/guide_${left ? 'left' : 'right'}.png').writeAsBytesSync(png!.buffer.asUint8List());
+        File('/tmp/hastrekha_debug/guide_${good ? 'good' : 'idle'}.png').writeAsBytesSync(png!.buffer.asUint8List());
       });
     }
   });

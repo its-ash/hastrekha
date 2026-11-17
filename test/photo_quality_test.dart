@@ -78,6 +78,13 @@ void main() {
     expect(q.problems, contains(QualityProblem.noHand));
   });
 
+  test('a hand that is tiny in the photo is refused', () {
+    final far = _edit(clean, (im) => img.copyResize(im, width: im.width * 2 ~/ 5, interpolation: img.Interpolation.average));
+    final q = check(far);
+    expect(q.problems, contains(QualityProblem.tooSmall), reason: '$q');
+    expect(check(clean).palmPixels, greaterThan(PhotoQuality.minPalmPixels));
+  });
+
   test('a file that is not an image is unreadable', () {
     final q = check(Uint8List.fromList([1, 2, 3, 4]));
     expect(q.main, QualityProblem.unreadable);
