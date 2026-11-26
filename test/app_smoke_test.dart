@@ -208,6 +208,8 @@ void main() {
     expect(find.text('Rising sign (lagna)'), findsOneWidget);
     expect(find.text('Name sign'), findsOneWidget);
     await tester.scrollUntilVisible(find.text('Clearly longer than it is wide'), 300, scrollable: list);
+    await tester.ensureVisible(find.text('Clearly longer than it is wide'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Clearly longer than it is wide'));
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('Palm marks (chinha)'), 300, scrollable: list);

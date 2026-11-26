@@ -16,6 +16,8 @@ import 'package:image/image.dart' as img;
 import 'vision_test.dart' show faintPalm, noisyBurst, syntheticPalm;
 
 void main() {
+  setUpAll(() => UiTypography.useGoogleFonts = false);
+
   testWidgets('capture guide', (tester) async {
     Directory('/tmp/hastrekha_debug').createSync(recursive: true);
     for (final good in [false, true]) {

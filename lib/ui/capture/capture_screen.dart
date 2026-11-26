@@ -61,6 +61,9 @@ const maxPhotos = 9;
 /// show differently under each, and the analyzer stacks them.
 const burstSize = 3;
 
+const _cameraBg = Colors.black;
+const _onCamera = Colors.white;
+
 /// Full-screen camera with a hand outline to line the palm up with.
 ///
 /// With [existing] (a finished capture of the same palm) it only adds
@@ -80,6 +83,9 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
   CameraController? _controller;
   Object? _error;
   bool _busy = false;
+  bool _initializing = false;
+  bool _active = true;
+  Future<void>? _disposeFuture;
 
   /// Frames that passed the quality check. Only these count.
   final _photos = <Uint8List>[];
@@ -150,20 +156,40 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     }
   }
 
+  Future<void> _disposeController(CameraController c) {
+    late final Future<void> fut;
+    fut = c.dispose().catchError((_) {}).whenComplete(() {
+      if (identical(_disposeFuture, fut)) _disposeFuture = null;
+    });
+    _disposeFuture = fut;
+    return fut;
+  }
+
   Future<void> _init() async {
+    if (_initializing || !_active || !mounted) return;
+    _initializing = true;
+    CameraController? c;
     try {
+      final pending = _disposeFuture;
+      if (pending != null) await pending;
+      if (!_active || !mounted) return;
       final cams = await availableCameras();
+      if (!_active || !mounted) return;
       if (cams.isEmpty) throw CameraException('NoCamera', 'This phone has no camera.');
       final cam = cams.firstWhere((c) => c.lensDirection == CameraLensDirection.back, orElse: () => cams.first);
-      final c = CameraController(cam, ResolutionPreset.veryHigh, enableAudio: false, imageFormatGroup: ImageFormatGroup.yuv420);
+      c = CameraController(cam, ResolutionPreset.veryHigh, enableAudio: false, imageFormatGroup: ImageFormatGroup.yuv420);
       await c.initialize();
+      if (!_active || !mounted) {
+        await _disposeController(c);
+        return;
+      }
       await c.setFlashMode(FlashMode.off);
       try {
         await c.setFocusMode(FocusMode.auto);
         await c.setExposureMode(ExposureMode.auto);
       } catch (_) {}
-      if (!mounted) {
-        await c.dispose();
+      if (!_active || !mounted) {
+        await _disposeController(c);
         return;
       }
       setState(() {
@@ -185,27 +211,42 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
         });
       }
     } catch (e) {
-      if (mounted) setState(() => _error = e);
+      if (c != null && _controller != c) {
+        await _disposeController(c);
+      }
+      if (mounted && _active) setState(() => _error = e);
+    } finally {
+      _initializing = false;
     }
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    final c = _controller;
-    if (state == AppLifecycleState.inactive) {
-      _controller = null;
-      c?.dispose();
-      if (mounted) setState(() {});
-    } else if (state == AppLifecycleState.resumed && c == null) {
+    if (_active && mounted && _controller == null && _error == null) {
       _init();
     }
   }
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.inactive || state == AppLifecycleState.paused) {
+      _active = false;
+      final c = _controller;
+      if (c != null) {
+        _controller = null;
+        _disposeController(c);
+        if (mounted) setState(() {});
+      }
+    } else if (state == AppLifecycleState.resumed) {
+      _active = true;
+      if (_controller == null) _init();
+    }
+  }
+
+  @override
   void dispose() {
+    _active = false;
     WidgetsBinding.instance.removeObserver(this);
     SystemChrome.setPreferredOrientations(const []);
-    _controller?.dispose();
+    final c = _controller;
+    _controller = null;
+    c?.dispose();
     super.dispose();
   }
 
@@ -438,6 +479,7 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     if (c == null) return;
     try {
       await c.setFlashMode(_torch ? FlashMode.off : FlashMode.torch);
+      if (!mounted) return;
       setState(() => _torch = !_torch);
     } catch (_) {
       _hasTorch = false;
@@ -452,14 +494,14 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
     final step = captureSteps[math.min(_step, captureSteps.length - 1)];
     final guide = _guide();
     final good = _busy || _auto.aligned;
-    final onCamera = colors.onSurfaceInverse;
+    const onCamera = _onCamera;
 
     // Shade behind text on the camera picture, fading out towards the middle.
     BoxDecoration scrim(Alignment from) => BoxDecoration(
           gradient: LinearGradient(
             begin: from,
             end: -from,
-            colors: [colors.surfaceInverse.withValues(alpha: 0.72), colors.surfaceInverse.withValues(alpha: 0)],
+            colors: [_cameraBg.withValues(alpha: 0.72), _cameraBg.withValues(alpha: 0)],
           ),
         );
 
@@ -550,7 +592,7 @@ class _CaptureScreenState extends State<CaptureScreen> with WidgetsBindingObserv
               );
 
     return Scaffold(
-      backgroundColor: colors.surfaceInverse,
+      backgroundColor: _cameraBg,
       body: SafeArea(
         child: Column(
           children: [
@@ -675,11 +717,11 @@ class _GuidePill extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.colors;
     final tone = guide.good ? colors.success : colors.warning;
-    final fg = colors.onSurfaceInverse;
+    const fg = _onCamera;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: UiSpace.lg, vertical: UiSpace.sm),
       decoration: BoxDecoration(
-        color: colors.surfaceInverse.withValues(alpha: 0.78),
+        color: _cameraBg.withValues(alpha: 0.78),
         borderRadius: BorderRadius.circular(UiRadius.lg),
         border: Border.all(color: tone, width: 2),
       ),
@@ -716,14 +758,14 @@ class _StepTrack extends StatelessWidget {
     Widget chip(int i) {
       final current = i == done;
       final required = i < minPhotos;
-      final fg = current ? colors.onAccent : colors.onSurfaceInverse;
+      final fg = current ? colors.onAccent : _onCamera;
       return Container(
         padding: EdgeInsets.symmetric(horizontal: required ? UiSpace.sm : 6, vertical: 4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(UiRadius.full),
           color: current ? colors.accent : Colors.transparent,
           border: Border.all(
-            color: colors.onSurfaceInverse.withValues(alpha: i <= done ? 0.9 : (required ? 0.35 : 0.2)),
+            color: _onCamera.withValues(alpha: i <= done ? 0.9 : (required ? 0.35 : 0.2)),
           ),
         ),
         child: Row(
@@ -747,7 +789,7 @@ class _StepTrack extends StatelessWidget {
       children: [
         for (var i = 0; i < captureSteps.length; i++) ...[
           if (i == minPhotos)
-            Text('+', style: context.text.labelMedium?.copyWith(color: colors.onSurfaceInverse.withValues(alpha: 0.6))),
+            Text('+', style: context.text.labelMedium?.copyWith(color: _onCamera.withValues(alpha: 0.6))),
           chip(i),
         ],
       ],
@@ -773,7 +815,7 @@ class _ShutterButton extends StatelessWidget {
           height: 72,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: colors.onSurfaceInverse, width: 4),
+            border: Border.all(color: _onCamera, width: 4),
           ),
           padding: const EdgeInsets.all(5),
           child: DecoratedBox(

@@ -52,10 +52,16 @@ Future<void> _shareImage(BuildContext context, GlobalKey key) async {
   try {
     final boundary = key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
     final image = await boundary.toImage(pixelRatio: 3);
-    final data = await image.toByteData(format: ui.ImageByteFormat.png);
+    final List<int> bytes;
+    try {
+      final data = await image.toByteData(format: ui.ImageByteFormat.png);
+      bytes = data!.buffer.asUint8List();
+    } finally {
+      image.dispose();
+    }
     final dir = await getTemporaryDirectory();
     final file = File('${dir.path}/hastrekha_reading.png');
-    await file.writeAsBytes(data!.buffer.asUint8List(), flush: true);
+    await file.writeAsBytes(bytes, flush: true);
     await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], text: 'My palm reading · Hastrekha'));
   } catch (e) {
     if (context.mounted) context.showToast('Could not create the image.', status: UiStatus.danger);

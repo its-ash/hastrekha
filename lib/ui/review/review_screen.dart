@@ -53,6 +53,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
   bool _saving = false;
 
   void _edit(void Function() change) {
+    if (!mounted) return;
     setState(() {
       change();
       if (!_elementManual) {
@@ -187,6 +188,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                   onTap: () async {
                     setState(() => _highlight = k);
                     final edited = await showLineEditor(context, k, _f.line(k));
+                    if (!mounted) return;
                     if (edited != null) _edit(() => _f.lines[k] = edited);
                   },
                 ),
@@ -212,6 +214,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                       );
                       if (k == null || !context.mounted) return;
                       final edited = await showLineEditor(context, k, LineFeature(present: true, confidence: 1, edited: true));
+                      if (!mounted) return;
                       if (edited != null) _edit(() => _f.lines[k] = edited);
                     },
             ),
@@ -698,6 +701,7 @@ class _SymbolsSection extends StatelessWidget {
             variant: UiButtonVariant.soft,
             onPressed: () async {
               final mark = await showSymbolPicker(context, kb);
+              if (!context.mounted) return;
               if (mark != null && !f.symbols.contains(mark)) onChanged(() => f.symbols.add(mark));
             },
           ),
